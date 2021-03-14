@@ -1,0 +1,21 @@
+{
+  "name": "HeroesGrid",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "lerna run --parallel dev",
+    "build": "npm run build:sanity && pwd && npm run build:web",
+    "build:web": "cd web && nuxt-ts build ../public/web",
+    "start:web": "cp .env ./studio/.env && cd web && nuxt-ts start",
+    "generate": "cd web && nuxt-ts generate",
+    "build:sanity": "cd studio && sanity build ../public/studio -y && cd ..",
+    "start:sanity": "cp .env ./studio/.env && cd studio && sanity start",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "dependencies": {
+    "react-icons": "^4.2.0"
+  }
+}

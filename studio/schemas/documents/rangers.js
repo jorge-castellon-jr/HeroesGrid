@@ -1,0 +1,160 @@
+import { GiRobotLeg } from "react-icons/gi";
+
+export default {
+  name: "ranger",
+  title: "Rangers",
+  type: "document",
+  fields: [
+    {
+      name: "name",
+      title: "Ranger's Name",
+      type: "string",
+    },
+    {
+      name: "color",
+      title: "Ranger's Color",
+      type: "colorlist", // required
+      options: {
+        list: [
+          { title: "Red", value: "#e53e3e" },
+          { title: "Blue", value: "#4299e1" },
+          { title: "Black", value: "#1a202c" },
+          { title: "Yellow", value: "#f6e05e" },
+          { title: "Pink", value: "#ed64a6" },
+          { title: "Green", value: "#48bb78" },
+          { title: "White", value: "#f7fafc" },
+          { title: "Gray", value: "#a0aec0" },
+          { title: "Purple", value: "#4299e1" },
+          { title: "Orange", value: "#f6ad55" },
+        ],
+      },
+    },
+    {
+      name: "team",
+      title: "Ranger's Team",
+      type: "reference",
+      to: [{ type: "team" }],
+    },
+    {
+      name: "abilityName",
+      title: "Ranger's Ability",
+      type: "string",
+    },
+    {
+      name: "abilityDesc",
+      title: "Ranger's Ability Description",
+      type: "text",
+    },
+    {
+      name: "Deck",
+      title: "Ranger's Deck",
+      type: "array",
+      options: {
+        // editModal: "popover",
+      },
+      of: [
+        {
+          name: "card",
+          title: "Card",
+          type: "cardRef",
+        },
+      ],
+    },
+    {
+      name: "zords",
+      title: "Ranger's Zord(s)",
+      type: "array",
+      options: {
+        editModal: "popover",
+      },
+      of: [
+        {
+          title: "Card",
+          name: "card",
+          type: "object",
+          icon: GiRobotLeg,
+          fields: [
+            {
+              name: "zord",
+              title: "Zord Name",
+              type: "string",
+            },
+            {
+              name: "ability",
+              title: "Zord Ability",
+              type: "text",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "expansion",
+      title: "Release",
+      type: "reference",
+      to: [{ type: "expansion" }],
+    },
+    {
+      title: "Exclusive?",
+      name: "exclusive",
+      type: "boolean",
+    },
+
+    {
+      name: "combatType",
+      title: "Ranger's Combat Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Combat", value: "combat" },
+          { title: "Support", value: "support" },
+          { title: "Energy", value: "energy" },
+        ],
+      },
+    },
+    {
+      name: "mapType",
+      title: "Ranger's Map Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Combat", value: "combat" },
+          { title: "Support", value: "support" },
+          { title: "Energy", value: "energy" },
+        ],
+      },
+    },
+
+    // {
+    //   name: "mainImage",
+    //   title: "Main image",
+    //   type: "image",
+    //   options: {
+    //     hotspot: true,
+    //   },
+    // },
+    // {
+    //   name: "body",
+    //   title: "Body",
+    //   type: "blockContent",
+    // },
+  ],
+  initialValue: {
+    exclusive: false,
+  },
+  preview: {
+    select: {
+      title: "name",
+      color: "color",
+      team: "team.season",
+    },
+    prepare(selection) {
+      const { title, color, team } = selection;
+      return {
+        title: title,
+        subtitle: `${team} ${color.title} Ranger`,
+      };
+    },
+  },
+};
