@@ -1,4 +1,5 @@
 import { GiRobotLeg } from "react-icons/gi";
+import sanityClient from "part:@sanity/base/client";
 
 export default {
   name: "ranger",
@@ -9,6 +10,20 @@ export default {
       name: "name",
       title: "Ranger's Name",
       type: "string",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: (doc) => {
+          console.log(doc);
+          const query = `*[_id=="${doc.team._ref}"][0] { season }`;
+          return sanityClient
+            .fetch(query)
+            .then((res) => `${res.season}-${doc.color.title}-ranger`);
+        },
+      },
     },
     {
       name: "color",
@@ -44,6 +59,11 @@ export default {
       name: "abilityDesc",
       title: "Ranger's Ability Description",
       type: "text",
+    },
+    {
+      name: "image",
+      title: "Teams's Image",
+      type: "image",
     },
     {
       name: "Deck",
