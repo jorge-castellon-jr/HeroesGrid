@@ -1406,9 +1406,9 @@
     std-env "^2.2.1"
 
 "@nuxt/types@^2.14.12":
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.15.2.tgz#040b2cf96b0fad86baccead95721b4e28444613f"
-  integrity sha512-X7fZDhuSMhkhVt1XCODby1Pmog9Tf5LNzKGkFmQ/PxlK4lbJXivsosXWgOzmDkDW4TXxv6+LvXEbN1h8VQmzOQ==
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.15.3.tgz#2c93829554ff261f488f41d7332aa1cc2e343ada"
+  integrity sha512-dOO5uSDOjeMxDtowRd3b1ZMMeoUQjVHsf/3rMjAgIDojESbIkLE+yN0zSPBzDomjh8KF82ZNYDeDrN34cadW5g==
   dependencies:
     "@types/autoprefixer" "^9.7.2"
     "@types/babel__core" "^7.1.12"
@@ -1418,7 +1418,7 @@
     "@types/file-loader" "^4.2.0"
     "@types/html-minifier" "^4.0.0"
     "@types/less" "^3.0.2"
-    "@types/node" "^12.20.4"
+    "@types/node" "^12.20.5"
     "@types/optimize-css-assets-webpack-plugin" "^5.0.2"
     "@types/pug" "^2.0.4"
     "@types/sass" "^1.16.0"
@@ -1441,12 +1441,12 @@
     typescript "~4.2"
 
 "@nuxt/typescript-runtime@^2.0.1":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/typescript-runtime/-/typescript-runtime-2.0.2.tgz#05dc62c55bb62494de5ff7529e9d00222f8f5f4d"
-  integrity sha512-bAGs3NjMs68ipDKSIpNuVtwC443WxjM0CvimTFawniwzTEQg+NSuOdiOfpxzY8/No+g74NtjoqjSCaIQu5S5+Q==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/typescript-runtime/-/typescript-runtime-2.1.0.tgz#8838bc929519f44ac40d8d2331aeb095a05965a5"
+  integrity sha512-quzxXiWq+jGdnCedDIYuBiExrfIJL3VL9o4gJyq6QzthKLYSvLzB6w4RiH6UbLtnNJyDoO9ywyNSI2+RUJr/Ng==
   dependencies:
     ts-node "^9.1.1"
-    typescript "~4.1"
+    typescript "~4.2"
 
 "@nuxt/utils@2.15.3":
   version "2.15.3"
@@ -1645,27 +1645,40 @@
   integrity sha512-YnrybIoM9WFqmeK1D8p/gutqjJnmXCVFWAU3ucka9M7Dzpen3f2Dy4KsC6k1wDHrCtHQuUHHwZovh3i5UPDaZw==
 
 "@sanity/cli@^2.0.5":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.5.0.tgz#655e8a91918d21daca71adc18251ed7d0037941a"
-  integrity sha512-zF3kpchx182PpvitHR1YNR88NTPvMoJIs5cTYwHMMtc5Ju51Czl6o1Wr+S+ULRxxChqa5SZ1FQM7tcnSl/VcXg==
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.6.0.tgz#ffc0ba15cf6e34627538fe8ba655369f5a655a48"
+  integrity sha512-lZFSF9ahk67YI/hYXP7RpQv1iubw5N/OA8+X7CjiLqoBe0C7kQ/B7hPnw3TyMz4r67Mwt5ApnsKd5466S5M3/A==
 
-"@sanity/client@1.149.18":
-  version "1.149.18"
-  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-1.149.18.tgz#b69da5a9339ced013de961971e737133e1501e8a"
-  integrity sha512-yuJt7t56jkgrSkg3rXGSsrD81+a/0CLnj18JyTqLWAkojihqD2/KjYy0XOTELFUVk74Z6d6pHnNt0CpqTzlGLQ==
+"@sanity/client@2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-2.2.6.tgz#81588e9a626e26cfecd21409d08a8474ad5210d8"
+  integrity sha512-8AimD4zQUZxdvBpnDt2SbZ3w+ZaPgMSfs59rvtS7MeSAXlnseghMUzZx0pYSaxgMkbnDTiXnRj9gQKpW9LsFCw==
   dependencies:
-    "@sanity/eventsource" "1.149.16"
-    "@sanity/generate-help-url" "1.149.16"
-    "@sanity/observable" "1.149.16"
+    "@sanity/eventsource" "2.2.6"
+    "@sanity/generate-help-url" "2.2.6"
+    "@sanity/observable" "2.0.9"
     deep-assign "^2.0.0"
     get-it "^5.0.3"
     make-error "^1.3.0"
     object-assign "^4.1.1"
 
-"@sanity/eventsource@1.149.16":
-  version "1.149.16"
-  resolved "https://registry.yarnpkg.com/@sanity/eventsource/-/eventsource-1.149.16.tgz#457021efd55914c351c147d45f2bf20bb7e689d6"
-  integrity sha512-sLacIXQ2Cr+BfDkgmXdUgu+AMNBPMspJDt3oOfB628zqLN2HjSg6Qz8H9wZk8v4DQI3tCKiIpi7xbf9T/7VUUA==
+"@sanity/client@^1.149.13":
+  version "1.150.7"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-1.150.7.tgz#e05eec38becd5fc8db0ba11d30e406d17013b9de"
+  integrity sha512-tqIi2MDE8MTJU6N2su0Ct7n+fioYe+tI9ZM2xVrvIUxU1wPxlBEs4f01rRdCttLRp6CoXUmRC7F0j68ZQWMcdA==
+  dependencies:
+    "@sanity/eventsource" "1.150.1"
+    "@sanity/generate-help-url" "1.150.1"
+    "@sanity/observable" "1.150.1"
+    deep-assign "^2.0.0"
+    get-it "^5.0.3"
+    make-error "^1.3.0"
+    object-assign "^4.1.1"
+
+"@sanity/eventsource@1.150.1":
+  version "1.150.1"
+  resolved "https://registry.yarnpkg.com/@sanity/eventsource/-/eventsource-1.150.1.tgz#4ccfbbe3936f411c7f15b65674446f46e31cba2a"
+  integrity sha512-Sqkfr1+X5aJvDYnE6i0ZO5FlFw/wOxLwlSLbWEBWq/l3fvArj2qQp5rH6YNRsg2Dl4hQHOPajUlHbnFPM6SUfA==
   dependencies:
     "@rexxars/eventsource-polyfill" "^1.0.0"
     eventsource "^1.0.6"
@@ -1908,10 +1921,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
   integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
-"@types/node@^12.20.4":
-  version "12.20.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.4.tgz#73687043dd00fcb6962c60fbf499553a24d6bdf2"
-  integrity sha512-xRCgeE0Q4pT5UZ189TJ3SpYuX/QGl6QIAOAIeDSbAVAd2gX1NxSZup4jNVK7cxIeP8KDSbJgcckun495isP1jQ==
+"@types/node@^12.20.5":
+  version "12.20.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.5.tgz#4ca82a766f05c359fd6c77505007e5a272f4bb9b"
+  integrity sha512-5Oy7tYZnu3a4pnJ//d4yVvOImExl4Vtwf0D40iKUlU+XlUsyV9iyFWyCFlwy489b72FMAik/EFwRkNLjjOdSPg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -4659,10 +4672,10 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz#f4a4bd2832e810e8cc7c1411ec85b3e85c0c53f9"
-  integrity sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
+eslint-config-prettier@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.1.0.tgz#4ef1eaf97afe5176e6a75ddfb57c335121abc5a6"
+  integrity sha512-oKMhGv3ihGbCIimCAjqkdzx2Q+jthoqnXSP+d86M9tptwugycmTFdVR4IpLgq2c4SHifbwO90z2fQ8/Aio73yw==
 
 eslint-config-standard@^16.0.2:
   version "16.0.2"
@@ -10706,9 +10719,9 @@ tr46@^2.0.2:
     punycode "^2.1.1"
 
 ts-jest@^26.4.4:
-  version "26.5.4"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.4.tgz#207f4c114812a9c6d5746dd4d1cdf899eafc9686"
-  integrity sha512-I5Qsddo+VTm94SukBJ4cPimOoFZsYTeElR2xy6H2TOVs+NsvgYglW8KuQgKoApOKuaU/Ix/vrF9ebFZlb5D2Pg==
+  version "26.5.3"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.3.tgz#a6ee00ba547be3b09877550df40a1465d0295554"
+  integrity sha512-nBiiFGNvtujdLryU7MiMQh1iPmnZ/QvOskBbD2kURiI1MwqvxlxNnaAB/z9TbslMqCsSbu5BXvSSQPc5tvHGeA==
   dependencies:
     bs-logger "0.x"
     buffer-from "1.x"
