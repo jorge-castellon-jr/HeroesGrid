@@ -12,20 +12,6 @@ export default {
       type: "string",
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: (doc) => {
-          console.log(doc);
-          const query = `*[_id=="${doc.team._ref}"][0] { season }`;
-          return sanityClient
-            .fetch(query)
-            .then((res) => `${res.season}-${doc.color.title}-ranger`);
-        },
-      },
-    },
-    {
       name: "color",
       title: "Ranger's Color",
       type: "colorlist", // required
@@ -39,7 +25,7 @@ export default {
           { title: "Green", value: "#48bb78" },
           { title: "White", value: "#f7fafc" },
           { title: "Gray", value: "#a0aec0" },
-          { title: "Purple", value: "#4299e1" },
+          { title: "Purple", value: "#805ad5" },
           { title: "Orange", value: "#f6ad55" },
         ],
       },
@@ -49,6 +35,25 @@ export default {
       title: "Ranger's Team",
       type: "reference",
       to: [{ type: "team" }],
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: (doc) => {
+          console.log(doc);
+          const query = `*[_id=="${doc.team._ref}"][0] { season }`;
+          return sanityClient
+            .fetch(query)
+            .then(
+              (res) =>
+                `${res.season}-${doc.color.title}-ranger${
+                  doc.exclusive ? "-ex" : ""
+                }`
+            );
+        },
+      },
     },
     {
       name: "abilityName",
@@ -168,12 +173,14 @@ export default {
       title: "name",
       color: "color",
       team: "team.season",
+      image: "image",
     },
     prepare(selection) {
-      const { title, color, team } = selection;
+      const { title, color, team, image } = selection;
       return {
         title: title,
         subtitle: `${team} ${color.title} Ranger`,
+        media: image,
       };
     },
   },
