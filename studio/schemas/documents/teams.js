@@ -8,5 +8,10 @@ export default {
       title: "Teams's Season",
       type: "string",
     },
+    {
+      name: "logo",
+      title: "Teams's Logo",
+      type: "image",
+    },
   ],
 };
