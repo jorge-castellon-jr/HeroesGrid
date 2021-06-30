@@ -13,5 +13,10 @@ export default {
       title: "Release Date",
       type: "date",
     },
+    {
+      name: "image",
+      title: "Teams's Image",
+      type: "image",
+    },
   ],
 };
