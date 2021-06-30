@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "color-list",
     "media-library",
-    "mdide"
+    "mdide",
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {
