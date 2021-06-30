@@ -1,20 +1,7 @@
-# HeroesGrid
+# Herores Grid | Companion app for Power Rangers: Heroes of the Grid
 
-## Build Setup
+## #1 Companion app for Power Rangers: Heroes of the Grid
 
-```bash
-# install dependencies
-$ yarn install
+A Companion app built for **_Power Rangers: Heroes of the Grid_**
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9ad2167c-35ee-4f34-9adc-bc1536c85ea8/deploy-status)](https://app.netlify.com/sites/pr-hotg/deploys)
