@@ -1,80 +1,96 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
-
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-  env: {
-    projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
-  },
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    titleTemplate: '%s - HeroesGrid',
-    title: 'HeroesGrid',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/sanityClient.js', mode: 'client' }],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en',
-    },
-  },
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
-  },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+	/*
+	 ** Nuxt rendering mode
+	 ** See https://nuxtjs.org/api/configuration-mode
+	 */
+	mode: "universal",
+	/*
+	 ** Headers of the page
+	 ** See https://nuxtjs.org/api/configuration-head
+	 */
+	head: {
+		title: "Heroes Grid | Heroes of the Grid Companion App",
+		meta: [
+			{ charset: "utf-8" },
+			{ name: "viewport", content: "width=device-width, initial-scale=1" },
+			{ name: "msapplication-TileColor", content: "#00aba9" },
+			{ name: "theme-color", content: "#ffffff" },
+			{
+				hid: "description",
+				name: "description",
+				content: process.env.npm_package_description || "",
+			},
+		],
+		link: [
+			{
+				rel: "apple-touch-icon",
+				size: "180x180",
+				href: "/favicon/apple-touch-icon.png",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "32x32",
+				href: "/favicon/favicon-32x32.png",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "16x16",
+				href: "/favicon/favicon-16x16.png",
+			},
+			{ rel: "manifest", href: "/favicon/site.webmanifest" },
+			{ rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#5bbad5" },
+			{ rel: "icon", type: "image/x-icon", href: "/favicon/favicon.ico" },
+		],
+	},
+	env: {
+		SANITY_PROJECT_ID: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
+	},
+	router: {
+		scrollBehavior(to, from, savedPosition) {
+			return window.scrollTo({ top: 0, behavior: "smooth" })
+		},
+		middleware: ["vuex"],
+	},
+	/*
+	 ** Global CSS
+	 */
+	css: ["~/assets/scss/index.scss"],
+	/*
+	 ** Plugins to load before mounting the App
+	 ** https://nuxtjs.org/guide/plugins
+	 */
+	plugins: [
+		"~/plugins/util.js",
+		{ src: "~/plugins/sanityClient.js", mode: "client" },
+	],
+	/*
+	 ** Nuxt.js dev-modules
+	 */
+	buildModules: [
+		// Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+		"@nuxtjs/tailwindcss",
+	],
+	tailwindcss: {
+		cssPath: "~/assets/scss/index.scss",
+	},
+	/*
+	 ** Nuxt.js modules
+	 */
+	modules: [
+		"@nuxtjs/pwa",
+		// Doc: https://github.com/nuxt/content
+		"@nuxt/content",
+	],
+	/*
+	 ** Content module configuration
+	 ** See https://content.nuxtjs.org/configuration
+	 */
+	content: {},
+	/*
+	 ** Build configuration
+	 ** See https://nuxtjs.org/api/configuration-build/
+	 */
+	build: {},
 }

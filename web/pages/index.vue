@@ -1,19 +1,25 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <nuxt-link to="/rangers">All Rangers</nuxt-link>
-    </v-col>
-  </v-row>
+	<div class="container max-w-3xl p-4 mx-auto text-center">
+		<h1 class="-mx-4">#1 Companion app for</h1>
+		<logo />
+		<nuxt-content :document="content" />
+	</div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Logo from "~/components/layout/Logo"
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo,
-  },
+	components: {
+		Logo,
+	},
+	async asyncData({ $content, store }) {
+		const homeContent = await $content("index").fetch()
+		return {
+			content: homeContent,
+		}
+	},
 }
 </script>
+
+<style lang="scss"></style>
