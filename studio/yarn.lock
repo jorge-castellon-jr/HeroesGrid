@@ -1693,7 +1693,7 @@
     "@types/react" "^17.0.0"
     rxjs "^6.5.3"
 
-"@sanity/ui@^0.34.3":
+"@sanity/ui@^0.34.3", "@sanity/ui@^0.34.4":
   version "0.34.4"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-0.34.4.tgz#cb01ea9384c355b9ce8fd2c834424668d5769565"
   integrity sha512-vRWBqwjzld7NvZ2Je7NtqyBO7u3yDvRzTN5L2JX1cac3+gdg2oh76QS8dn8OBe2z8GIYBQDVAR8m1EAmz90Tbw==
@@ -2928,7 +2928,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5, classnames@^2.2.6:
+classnames@^2.2.5:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
@@ -8056,6 +8056,11 @@ react-icons@^3.10.0:
   dependencies:
     camelcase "^5.0.0"
 
+react-icons@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
+
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -8644,13 +8649,13 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
-sanity-plugin-color-list@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/sanity-plugin-color-list/-/sanity-plugin-color-list-2.0.1.tgz#47f94119e3fd2d1680413abfb51b8e2e30f9334a"
-  integrity sha512-ro6MxRHjZufEXhfMqWQCdNdEqB+Wll8OzzxsoWrFlnjRaNQiCxRxTxkIP8yrHNuGYUQlKmOZ0B+1u8Wuuuhxag==
+sanity-plugin-color-list@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-color-list/-/sanity-plugin-color-list-2.0.2.tgz#4b9d124846dbab2e75f71364aed9499026a84a24"
+  integrity sha512-NEejkHQOUj3lXwzJRiWlYzbtMr6xgbiiQNmu872iCoZ2g3m/B2GAMLnPeMFrKfTvjA6lTW+CgR4okBeoZrKP4w==
   dependencies:
     "@ctrl/tinycolor" "^2.5.4"
-    classnames "^2.2.6"
+    "@sanity/ui" "^0.34.4"
     lodash "^4.17.20"
     prop-types "^15.7.2"
 

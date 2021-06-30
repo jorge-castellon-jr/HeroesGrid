@@ -101,7 +101,7 @@ export default {
           icon: GiRobotLeg,
           fields: [
             {
-              name: "zord",
+              name: "name",
               title: "Zord Name",
               type: "string",
             },
