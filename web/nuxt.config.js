@@ -48,9 +48,6 @@ export default {
 		SANITY_PROJECT_ID: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
 	},
 	router: {
-		scrollBehavior(to, from, savedPosition) {
-			return window.scrollTo({ top: 0, behavior: "smooth" })
-		},
 		middleware: ["vuex"],
 	},
 	/*
@@ -63,7 +60,8 @@ export default {
 	 */
 	plugins: [
 		"~/plugins/util.js",
-		{ src: "~/plugins/sanityClient.js", mode: "client" },
+		"~/plugins/sanityClient.js",
+		"~/plugins/route.js",
 	],
 	/*
 	 ** Nuxt.js dev-modules

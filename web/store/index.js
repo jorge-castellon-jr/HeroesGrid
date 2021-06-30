@@ -5,6 +5,7 @@ export const state = () => ({
 	monsters: [],
 	bosses: [],
 	initLoad: false,
+	loading: true,
 })
 
 export const mutations = {
@@ -25,6 +26,9 @@ export const mutations = {
 	},
 	setInitLoad(state, bool) {
 		state.initLoad = bool
+	},
+	setLoadingState(state, bool) {
+		state.loading = bool
 	},
 }
 
@@ -53,6 +57,9 @@ export const getters = {
 	},
 	getBosses(state) {
 		return state.bosses
+	},
+	getLoadingState(state) {
+		return state.loading
 	},
 }
 export const actions = {

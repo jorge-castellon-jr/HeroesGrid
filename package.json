@@ -3,22 +3,27 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "lerna run --parallel dev",
+    "dev": "yarn kill && lerna run --parallel dev",
     "dev:studio": "cd studio && yarn dev",
-    "build": "npm run build:sanity && pwd && npm run build:web",
+    "build": "yarn build:sanity && pwd && yarn build:web",
     "build:web": "cd web && nuxt-ts build ../public/web",
     "start:web": "cp .env ./studio/.env && cd web && nuxt-ts start",
     "generate": "cd web && nuxt-ts generate",
     "build:studio": "cd studio && sanity build ../public/studio -y && cd ..",
     "start:studio": "cp .env ./studio/.env && cd studio && sanity start",
-    "postinstall": "lerna bootstrap",
-    "lt": "lt -p 3000 -s heroesgrid -l localhost"
+    "postinstall": "yarn yarn",
+    "yarn": "yarn yarn:web && yarn yarn:studio",
+    "yarn:web": "cd web/ && yarn",
+    "yarn:studio": "cd studio/ && yarn",
+    "lt": "lt -p 3000 -s heroesgrid -l localhost",
+    "kill": "yarn kill:3333 && yarn kill:3000",
+    "kill:3000": "npx kill-port 3000",
+    "kill:3333": "npx kill-port 3333"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
   },
   "dependencies": {
-    "localtunnel": "^2.0.1",
-    "react-icons": "^4.2.0"
+    "localtunnel": "^2.0.1"
   }
 }

@@ -5,7 +5,11 @@ import "vue-transition-expand/dist/vue-transition-expand.css"
 Vue.use(TransitionExpand)
 
 export default (context, inject) => {
-	const getColor = color => {
+	const getColor = c => {
+		// if no color was found Default to gray
+		if (!c) return `bg-gray-500`
+
+		let color = c.toLowerCase()
 		// Main Colors
 		if (color == "red") return "bg-red-600"
 		if (color == "blue") return "bg-blue-500"
