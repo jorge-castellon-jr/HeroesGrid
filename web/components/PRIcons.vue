@@ -1,8 +1,8 @@
 <template>
-	<svg width="45" height="45">
+	<svg :width="width" :height="height">
 		<image
-			width="45"
-			height="45"
+			:width="width"
+			:height="height"
 			v-bind:xlink:href="`/svg/${icon}.svg`"
 			src="yourfallback.png"
 		/>
@@ -15,6 +15,14 @@ export default {
 		icon: {
 			type: String,
 			default: "pr-hotg",
+		},
+		width: {
+			type: [String, Number],
+			default: 45,
+		},
+		height: {
+			type: [String, Number],
+			default: 45,
 		},
 	},
 }

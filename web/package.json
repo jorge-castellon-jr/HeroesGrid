@@ -18,15 +18,13 @@
 		"@sanity/image-url": "0.140.22",
 		"nuxt": "^2.13.0",
 		"postcss-nested": "^4.2.1",
-		"prettier": "^2.3.2",
-		"vue-smooth-reflow": "^0.1.12",
-		"vue-transition-expand": "^0.1.0"
+		"prettier": "^2.3.2"
 	},
 	"devDependencies": {
 		"@nuxtjs/tailwindcss": "^4.2.0",
 		"@sanity/cli": "^2.0.5",
 		"localtunnel": "^2.0.1",
 		"node-sass": "^6.0.1",
-		"sass-loader": "^12.1.0"
+		"sass-loader": "^10"
 	}
 }

@@ -9,6 +9,24 @@ export default {
       type: "string",
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name",
+        slugify: (input) =>
+          input
+            .replace(/\./g, "")
+            .replace(/:/g, "")
+            .replace(/#/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/legendary-rangers-/i, "")
+            .replace(/legendary-ranger-/i, "")
+            .replace(/-game/i, "")
+            .toLowerCase(),
+      },
+    },
+    {
       name: "release",
       title: "Release Date",
       type: "date",

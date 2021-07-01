@@ -4,7 +4,7 @@
 		<div class="flex flex-col justify-between w-full p-3 leading-normal bg-white md:p-4">
 			<span class>
 				<p class="items-center font-bold text-gray-900 uppercase text-md">{{ ranger.name }}</p>
-				<p class="flex items-center text-sm text-gray-600">{{ teamPosition }}</p>
+				<p class="flex items-center text-sm text-gray-600">{{ ranger.teamPosition }}</p>
 				<div class="mb-2 text-xl font-bold text-gray-900">{{ ranger.abilityName }}</div>
 				<p v-if="!noDesc" class="text-base text-gray-700">{{ ranger.abilityDesc }}</p>
 			</span>
@@ -38,9 +38,7 @@ export default {
 	methods: {},
 	computed: {
 		rangerColor() {
-			if (this.sanity) {
-				return this.ranger.color.title.toLowerCase() || ""
-			}
+			if (this.sanity) return this.ranger.color.title
 			return this.ranger.color
 		},
 		teamPosition() {

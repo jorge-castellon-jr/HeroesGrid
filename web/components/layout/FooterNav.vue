@@ -51,12 +51,12 @@ export default {
 					icon: "morpher",
 					nuxt: true,
 				},
-				// {
-				// 	title: "Tokens",
-				// 	to: "/tokens",
-				// 	icon: "pr-hotg",
-				// 	nuxt: true,
-				// },
+				{
+					title: "Companion",
+					to: "/companion",
+					icon: "pr-hotg",
+					nuxt: true,
+				},
 				{
 					title: "Countdown",
 					to: "/countdown",
@@ -93,17 +93,16 @@ export default {
 	}
 
 	&__link {
-		@apply flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100 ease-in-out py-4 w-1/3;
+		@apply flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-nowrap text-sm transition-colors duration-100 ease-in-out py-4 w-1/3;
 		&:hover {
 			@apply bg-gray-100;
 		}
 
 		&#home-link {
-			@apply fixed border-purple-700 shadow-lg rounded-full bg-white transition-all h-20 w-20 flex items-center justify-center duration-500;
+			@apply fixed border-purple-700 shadow-lg rounded-full bg-white transition-all h-20 w-20 flex items-center justify-center duration-500 z-20;
 			left: 50%;
 			bottom: 24px;
 			transform: translateX(-50%);
-			z-index: 99;
 			// width: 77px;
 			&.open {
 				@apply bg-gray-200;

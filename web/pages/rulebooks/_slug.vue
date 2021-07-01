@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<nuxt-content :document="rulebook" />
+	<div class="max-w-3xl px-4 mx-auto">
+		<nuxt-content v-if="rulebook" :document="rulebook" />
 	</div>
 </template>
 
@@ -9,17 +9,33 @@ export default {
 	async asyncData() {
 		return {}
 	},
-	props: {
-		rulebook: {
-			type: Object,
-		},
+	data() {
+		return {
+			rulebook: null,
+		}
 	},
+	async mounted() {
+		const rulebooks = await this.$content("rulebooks").fetch()
+		let slug = this.$route.params.slug
+		let rulebook = rulebooks.find(r => {
+			return r.slug == slug
+		})
+
+		console.log(rulebook)
+		this.rulebook = rulebook
+		this.$store.commit("setLoadingState", false)
+	},
+	// props: {
+	// 	rulebook: {
+	// 		type: Object,
+	// 	},
+	// },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .highlight {
-	@apply bg-orange-300 inline-block p-2;
+	@apply bg-yellow-200 inline-block p-2;
 }
 .blue {
 	@apply text-blue-500;

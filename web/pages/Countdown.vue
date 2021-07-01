@@ -1,5 +1,5 @@
 <template>
-	<div class="max-w-md mx-4 sm:mx-auto">
+	<div class="max-w-md px-4 mx-auto">
 		<div class="mb-8">
 			<h1>Countdown</h1>
 		</div>
@@ -29,7 +29,7 @@
 				<div class="w-1/4 my-4" v-for="enemy in 8" :key="enemy">
 					<button
 						class="px-8 py-10 transition-colors duration-300 border border-gray-400 rounded-lg shadow-lg hover:bg-gray-300"
-						:class="enemy <= enemyCount ? enemy <= 4 ? 'bg-gray-400' : 'bg-orange-300' : ''"
+						:class="enemy <= enemyCount ? enemy <= 4 ? 'bg-gray-400' : 'bg-yellow-200' : ''"
 						@click="enemyCount = enemy"
 					>{{ enemy }}</button>
 				</div>
@@ -53,6 +53,9 @@ export default {
 			selectedDifficulty: "Normal",
 			enemyCount: 1,
 		}
+	},
+	mounted() {
+		this.$store.commit("setLoadingState", false)
 	},
 	methods: {
 		difficultySelected(difficulty) {

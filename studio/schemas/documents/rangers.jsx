@@ -37,25 +37,59 @@ export default {
       type: "reference",
       to: [{ type: "team" }],
     },
+
+    {
+      name: "expansion",
+      title: "Release",
+      type: "reference",
+      to: [{ type: "expansion" }],
+    },
+    {
+      title: "Exclusive?",
+      name: "exclusive",
+      type: "boolean",
+    },
+
     {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: {
         source: (doc) => {
-          console.log(doc);
-          const query = `*[_id=="${doc.team._ref}"][0] { season }`;
+          const query = `{
+            "team": *[_id=="${doc.team._ref}"][0] { season },
+            "expansion": *[_id=="${doc.expansion._ref}"][0] { "slug": slug.current }
+          }`;
           return sanityClient
             .fetch(query)
             .then(
-              (res) =>
-                `${res.season.replace(/\./g, "")}-${doc.color.title}${
-                  doc.exclusive ? "-ex" : ""
-                }`
+              (res) => {
+                console.log(res);
+                return `${res.team.slug}-${doc.color.title}-${res.expansion.slug}`}
             );
         },
       },
     },
+
+    {
+      name: "teamPosition",
+      title: "Team Position",
+      type: "slug",
+      options: {
+        source: (doc) => {
+          const query = `*[_id=="${doc.team._ref}"][0] { season }`;
+          return sanityClient
+            .fetch(query)
+            .then(
+              (res) => {
+                console.log(res);
+                return `${res.season} ${doc.color.title}`}
+            );
+        },
+        slugify: (input) => input,
+      },
+    },
+
     {
       name: "abilityName",
       title: "Ranger's Ability",
@@ -116,18 +150,6 @@ export default {
     },
 
     {
-      name: "expansion",
-      title: "Release",
-      type: "reference",
-      to: [{ type: "expansion" }],
-    },
-    {
-      title: "Exclusive?",
-      name: "exclusive",
-      type: "boolean",
-    },
-
-    {
       name: "combatType",
       title: "Ranger's Combat Type",
       type: "string",
@@ -172,15 +194,14 @@ export default {
   preview: {
     select: {
       title: "name",
+      team: "teamPosition.current",
       color: "color",
-      team: "team.season",
       image: "image",
     },
     prepare({ title, color, team, image }) {
-      console.log(image);
       return {
         title: title,
-        subtitle: `${team} ${color.title} Ranger`,
+        subtitle: `${team} Ranger`,
         media: image
           ? image
           : <span style={{background: color.value, borderRadius: 100, height: 40, width: 40}}></span>,

@@ -1,18 +1,35 @@
 <template>
-	<div>
-		<div class="mt-20 mb-40 md:px-4 md:mb-0">
+	<div :class="loading ? 'h-screen overflow-hidden' : ''">
+		<div class="px-6 mt-20 mb-40 md:mb-0">
 			<nuxt />
 		</div>
 		<FooterNav />
+		<transition name="topdown">
+			<Loading v-if="loading" />
+		</transition>
 	</div>
 </template>
 
 <script>
 import FooterNav from "~/components/layout/FooterNav"
+import Loading from "~/components/layout/Loading"
+import { mapGetters } from "vuex"
 
 export default {
 	components: {
 		FooterNav,
+		Loading,
+	},
+	watch: {
+		// $route(newValue, oldValue) {
+		// 	console.log("route change", newValue)
+		// 	this.$store.commit("setLoadingState", true)
+		// },
+	},
+	computed: {
+		...mapGetters({
+			loading: "getLoadingState",
+		}),
 	},
 }
 </script>
@@ -48,6 +65,15 @@ html {
 .page-enter,
 .page-leave-to {
 	opacity: 0;
+}
+
+.topdown-enter-active,
+.topdown-leave-active {
+	transition: all 0.5s ease;
+}
+.topdown-enter,
+.topdown-leave-to {
+	transform: translateY(-100vh);
 }
 
 @keyframes appear {

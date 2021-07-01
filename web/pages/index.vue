@@ -19,6 +19,9 @@ export default {
 			content: homeContent,
 		}
 	},
+	mounted() {
+		this.$store.commit("setLoadingState", false)
+	},
 }
 </script>
 

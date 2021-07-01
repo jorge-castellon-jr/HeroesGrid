@@ -1,8 +1,4 @@
 import Vue from "vue"
-import TransitionExpand from "vue-transition-expand"
-import "vue-transition-expand/dist/vue-transition-expand.css"
-
-Vue.use(TransitionExpand)
 
 export default (context, inject) => {
 	const getColor = c => {
@@ -16,14 +12,14 @@ export default (context, inject) => {
 		if (color == "pink") return "bg-pink-500"
 		if (color == "green") return "bg-green-500"
 		if (color == "black") return "bg-gray-900"
-		if (color == "yellow") return "bg-yellow-400 text-yellow-900"
+		if (color == "yellow") return "bg-yellow-300 text-yellow-900"
 
 		// Special Colors
 		if (color == "white") return "bg-gray-100 text-gray-800"
-		if (color == "gold") return "bg-yellow-600"
+		if (color == "gold") return "bg-yellow-400"
 		if (color == "shadow") return "bg-blue-200 text-blue-900"
 		if (color == "purple") return "bg-purple-600"
-		if (color == "orange") return "bg-orange-400"
+		if (color == "orange") return "bg-yellow-600"
 
 		// Enemies
 		if (color == "soldier") return "bg-green-200"
@@ -44,8 +40,78 @@ export default (context, inject) => {
 			.map(s => s.charAt(0).toUpperCase() + s.substring(1))
 			.join(" ")
 	}
+	const getQuery = (type, variable) => {
+		switch (type) {
+			case "allRangers":
+				return `
+					*[_type == 'ranger'] {
+						_id,
+						name,
+						abilityName,
+						abilityDesc,
+						color,
+						'imageUrl': image.asset->url,
+						'team': team->season,
+						'slug': slug.current,
+						'teamPosition': teamPosition.current
+					}
+				`
+			case "singleRanger":
+				return `
+					*[_type == 'ranger' && slug.current == '${variable}'] {
+						_id,
+						name,
+						abilityName,
+						abilityDesc,
+						color,
+						zords,
+						'imageUrl': image.asset->url,
+						'team': team->season,
+						'slug': slug.current,
+						'teamPosition': teamPosition.current,
+						'similar': *[_type == 'ranger' && color.title == ^.color.title] {
+							...,
+							'imageUrl': image.asset->url,
+							'team': team->season,
+							'slug': slug.current,
+							'teamPosition': teamPosition.current
+						}
+					}[0]
+				`
+			case "rangersByColor":
+				return `
+					*[_type == 'ranger' && color.title == '${variable}'] {
+						_id,
+						name,
+						abilityName,
+						abilityDesc,
+						color,
+						'imageUrl': image.asset->url,
+						'team': team->season,
+						'slug': slug.current,
+					}
+				`
+			case "teamRangers":
+				return `
+					*[_type == 'team' && slug.current == '${variable}'] {
+						season,
+						"rangers": *[_type == 'ranger' && team._ref == ^._id ] {
+							name,
+							abilityName,
+							color,
+							'team': team->season,
+							'slug': slug.current,
+						}
+					}[0]
+				`
+
+			default:
+				break
+		}
+	}
 
 	inject("getColor", getColor)
 	inject("friendlyURL", friendlyURL)
 	inject("dashToSpace", dashToSpace)
+	inject("getQuery", getQuery)
 }

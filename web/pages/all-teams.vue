@@ -10,6 +10,9 @@ export default {
 	components: {
 		RangerTeams,
 	},
+	mounted() {
+		this.$store.commit("setLoadingState", false)
+	},
 	computed: {
 		...mapGetters({
 			teams: "getTeams",

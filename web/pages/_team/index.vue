@@ -1,17 +1,17 @@
 <template>
 	<div class="flex flex-col">
 		<nuxt-child v-if="$route.params.ranger" />
-
+		<h2>{{team}} Rangers</h2>
 		<div class="flex flex-wrap justify-around" id="rangersTeam">
 			<nuxt-link
+				v-for="(ranger, i) in rangers"
+				:key="i"
 				:class="`no-underline px-3 py-6 md:px-6 w-1/2 flex ${
 					i % 2 == 0 ? 'justify-end' : 'justify-start'
 				}`"
-				:to="`/${$friendlyURL(team.toLowerCase() + '/' + ranger.slug)}`"
-				v-for="(ranger, i) in filterByTeam"
-				:key="i"
+				:to="`/${$friendlyURL(team + '/' + ranger.slug)}`"
 			>
-				<RangerCard class="lg:max-w-lg" noDesc :ranger="ranger" />
+				<RangerCard class="lg:max-w-lg" noDesc :ranger="ranger" sanity />
 			</nuxt-link>
 		</div>
 		<!-- #rangersTeam -->
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import RangerCard from "~/components/RangerCard"
+import RangerCard from "~/components/cards/RangerCard"
 import { mapGetters } from "vuex"
 
 export default {
@@ -29,24 +29,29 @@ export default {
 		RangerCard,
 	},
 	data() {
-		let team = this.$route.params.team
-			.split("-")
-			.map(s => s.charAt(0).toUpperCase() + s.substring(1))
-			.join(" ")
 		return {
-			team: team,
+			team: "",
+			rangers: [],
 		}
 	},
-	methods: {},
-	computed: {
-		...mapGetters({
-			rangers: "getRangers",
-		}),
-		filterByTeam() {
-			let team = this.rangers.filter(ranger => {
-				return this.$friendlyURL(ranger.team) == this.$route.params.team
-			})
-			return team
+	watch: {
+		$route(newValue, oldValue) {
+			this.fetchData()
+		},
+	},
+	mounted() {
+		this.fetchData()
+	},
+	methods: {
+		async fetchData() {
+			const { $store, $route, $sanityClient } = this
+			let teamRangersFetch = await $sanityClient.fetch(
+				this.$getQuery("teamRangers", $route.params.team),
+			)
+			this.rangers = teamRangersFetch.rangers
+			this.team = teamRangersFetch.season
+			// this.team = teamRangersFetch[0].team
+			if (!$route.params.ranger) $store.commit("setLoadingState", false)
 		},
 	},
 }
