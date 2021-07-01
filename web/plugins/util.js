@@ -89,6 +89,7 @@ export default (context, inject) => {
 						'imageUrl': image.asset->url,
 						'team': team->season,
 						'slug': slug.current,
+						'teamPosition': teamPosition.current,
 					}
 				`
 			case "teamRangers":
@@ -101,6 +102,7 @@ export default (context, inject) => {
 							color,
 							'team': team->season,
 							'slug': slug.current,
+							'teamPosition': teamPosition.current,
 						}
 					}[0]
 				`

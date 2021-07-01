@@ -86,7 +86,7 @@ export default {
 	@apply fixed bottom-0 w-full transition-all duration-500 bg-white border-purple-700 rounded-t-lg shadow;
 
 	&.open {
-		@apply h-full border-t-8 border-r-4 border-l-4;
+		@apply h-full border-t-8;
 	}
 	&.closed {
 		@apply h-0 border-t-0;
@@ -114,7 +114,7 @@ export default {
 		@apply h-full left-0 top-0 rounded-r-lg rounded-l-none flex-col justify-start;
 
 		&.open {
-			@apply w-32 border-r-8 border-t-4 border-b-4 border-l-0;
+			@apply w-32 border-r-8 border-t-0;
 		}
 
 		&.closed {

@@ -57,14 +57,13 @@ export default {
       options: {
         source: (doc) => {
           const query = `{
-            "team": *[_id=="${doc.team._ref}"][0] { season },
+            "team": *[_id=="${doc.team._ref}"][0] { 'slug': slug.current },
             "expansion": *[_id=="${doc.expansion._ref}"][0] { "slug": slug.current }
           }`;
           return sanityClient
             .fetch(query)
             .then(
               (res) => {
-                console.log(res);
                 return `${res.team.slug}-${doc.color.title}-${res.expansion.slug}`}
             );
         },
@@ -201,7 +200,7 @@ export default {
     prepare({ title, color, team, image }) {
       return {
         title: title,
-        subtitle: `${team} Ranger`,
+        subtitle: team[0] == '*' ? team.replace(/\*/g, '') : `${team.replace(/-/g, '')} Ranger`,
         media: image
           ? image
           : <span style={{background: color.value, borderRadius: 100, height: 40, width: 40}}></span>,

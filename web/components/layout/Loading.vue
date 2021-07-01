@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="fixed top-0 left-0 z-50 flex items-center justify-center w-screen h-screen overflow-hidden bg-white"
+		class="fixed top-0 left-0 z-50 flex items-center justify-center w-screen h-screen overflow-hidden bg-white border-b-8 border-purple-500"
 	>
 		<div class="spinner"></div>
 		<PRicon class="absolute" width="175" height="175" />

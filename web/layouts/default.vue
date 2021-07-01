@@ -60,7 +60,7 @@ html {
 
 .page-enter-active,
 .page-leave-active {
-	transition: opacity 0.5s;
+	transition: opacity 0.3s;
 }
 .page-enter,
 .page-leave-to {
@@ -69,7 +69,7 @@ html {
 
 .topdown-enter-active,
 .topdown-leave-active {
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 .topdown-enter,
 .topdown-leave-to {

@@ -65,7 +65,7 @@ export default {
 			this.ranger = currentRangerFetch
 			this.similar = currentRangerFetch.similar
 			this.contentRanger = content
-			setTimeout(() => $store.commit("setLoadingState", false), 300)
+			setTimeout(() => $store.commit("setLoadingState", false), 500)
 		},
 	},
 	computed: {
