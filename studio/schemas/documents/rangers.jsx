@@ -25,7 +25,7 @@ export default {
           { title: "Pink", value: "#ed64a6" },
           { title: "Green", value: "#48bb78" },
           { title: "White", value: "#f7fafc" },
-          { title: "Gray", value: "#a0aec0" },
+          { title: "Silver", value: "#a0aec0" },
           { title: "Purple", value: "#805ad5" },
           { title: "Orange", value: "#f6ad55" },
         ],
