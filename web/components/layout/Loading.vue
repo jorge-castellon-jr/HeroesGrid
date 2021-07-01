@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .loading {
-	box-shadow: 0 -16px 0 0 theme("colors.purple.700") inset;
+	box-shadow: 0 -32px 0 0 theme("colors.purple.700") inset;
 }
 .spinner {
 	width: 300px;
