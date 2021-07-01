@@ -34,12 +34,6 @@ export default {
 					nuxt: true,
 				},
 				{
-					title: "Rulebooks",
-					to: "/rulebooks",
-					icon: "rules",
-					nuxt: true,
-				},
-				{
 					title: "All Rangers",
 					to: "/all-rangers",
 					icon: "morpher",
@@ -49,6 +43,12 @@ export default {
 					title: "All Teams",
 					to: "/all-teams",
 					icon: "morpher",
+					nuxt: true,
+				},
+				{
+					title: "Rulebooks",
+					to: "/rulebooks",
+					icon: "rules",
 					nuxt: true,
 				},
 				{
@@ -83,10 +83,11 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-	@apply fixed bottom-0 w-full transition-all duration-500 bg-white border-purple-700 rounded-t-lg shadow;
+	@apply fixed bottom-0 w-full transition-all duration-500 bg-white border-purple-700  shadow;
 
 	&.open {
-		@apply h-full border-t-8;
+		@apply h-screen pt-4;
+		box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;
 	}
 	&.closed {
 		@apply h-0 border-t-0;
