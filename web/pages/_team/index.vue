@@ -2,7 +2,7 @@
 	<div class="flex flex-col">
 		<nuxt-child v-if="$route.params.ranger" />
 		<h2>{{team}} Rangers</h2>
-		<div class="flex flex-wrap justify-around" id="rangersTeam">
+		<div class="flex flex-wrap justify-around -mx-3" id="rangersTeam">
 			<nuxt-link
 				v-for="(ranger, i) in rangers"
 				:key="i"
