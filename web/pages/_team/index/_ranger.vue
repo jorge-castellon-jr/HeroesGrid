@@ -21,7 +21,7 @@
 				)} text-white flex flex-col`"
 				>
 					<span>{{ item.name }}</span>
-					<span>{{ item.team }} {{ item.color.title }}</span>
+					<span>{{ item.teamPosition[0] == '*' ? item.teamPosition.replace(/\*/g, '') : `${item.teamPosition.replace(/-/g, '')} Ranger` }}</span>
 				</nuxt-link>
 			</div>
 		</div>
