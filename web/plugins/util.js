@@ -69,7 +69,7 @@ export default (context, inject) => {
 						'team': team->season,
 						'slug': slug.current,
 						'teamPosition': teamPosition.current,
-						'similar': *[_type == 'ranger' && color.title == ^.color.title] {
+						'similar': *[_type == 'ranger' && color.title == ^.color.title && _id != ^._id] {
 							...,
 							'imageUrl': image.asset->url,
 							'team': team->season,
@@ -96,7 +96,7 @@ export default (context, inject) => {
 				return `
 					*[_type == 'team' && slug.current == '${variable}'] {
 						season,
-						"rangers": *[_type == 'ranger' && team._ref == ^._id ] {
+						"rangers": *[_type == 'ranger' && team._ref == ^._id] {
 							name,
 							abilityName,
 							color,
