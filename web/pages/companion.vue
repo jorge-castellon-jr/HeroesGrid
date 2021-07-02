@@ -1,9 +1,13 @@
 <template>
-	<div class="max-w-3xl mx-auto">
+	<div class="max-w-screen-lg mx-auto">
 		<h2>Randomizer</h2>
 		<p>Options:</p>
-		<div class="flex flex-wrap -mx-3 md:mx-auto">
-			<div v-for="option in expansions" :key="option._id" class="flex w-1/2 px-3 my-3 md:w-1/3">
+		<div class="flex flex-wrap justify-center -mx-3 md:mx-auto">
+			<div
+				v-for="option in expansions"
+				:key="option._id"
+				class="flex w-1/2 px-3 my-3 md:w-1/3 lg:w-1/4"
+			>
 				<input
 					type="checkbox"
 					:id="option._id"
@@ -32,11 +36,7 @@
 			<p v-if="error" class="text-center text-red-500">{{ errorMessage }}</p>
 		</div>
 		<div class="flex flex-wrap">
-			<div
-				class="flex py-3 md:py-6 md:w-1/2 md:px-6"
-				v-for="ranger in chosenRangers"
-				:key="ranger._id"
-			>
+			<div class="flex py-3 md:py-6 md:w-1/2 md:p-4" v-for="ranger in chosenRangers" :key="ranger._id">
 				<RangerCard :ranger="ranger" sanity />
 			</div>
 		</div>
