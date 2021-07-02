@@ -16,13 +16,13 @@
     "color-list",
     "media-library",
     "mdide",
-    "@sanity/dashboard"
+    "@sanity/dashboard",
+    "dashboard-widget-netlify",
+    "tabs"
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
@@ -32,7 +32,11 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./parts/deskStructure.js"
+      "path": "./parts/deskStructure"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./parts/dashboardConfig"
     }
   ]
 }

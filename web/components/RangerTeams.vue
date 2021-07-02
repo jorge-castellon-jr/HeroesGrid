@@ -1,17 +1,21 @@
 <template>
-	<div class="flex flex-wrap justify-around max-w-3xl mx-auto ranger-teams" id="allTeams">
-		<nuxt-link
+	<div class="flex flex-wrap justify-around max-w-3xl -mx-3 md:mx-auto ranger-teams" id="allTeams">
+		<div
 			v-for="(team, i) in teams"
 			:key="i"
-			:to="`/${$friendlyURL(team.team)}`"
-			class="flex flex-col justify-end w-2/5 p-4 my-6 bg-white border border-gray-400 rounded-lg shadow-lg"
+			class="flex w-1/2 px-3 my-3"
 			:id="$friendlyURL(team.team)"
 		>
-			<div class="flex items-center flex-grow mx-auto my-2">
-				<img :src="`/uploads/${$friendlyURL(team.team)}.png`" :alt="team.team" class />
-			</div>
-			<div class="text-center">{{ team.team }}</div>
-		</nuxt-link>
+			<nuxt-link
+				:to="`/${$friendlyURL(team.team)}`"
+				class="flex flex-col justify-end p-4 bg-white border border-gray-400 rounded-lg shadow-lg"
+			>
+				<div class="flex items-center flex-grow mx-auto my-2">
+					<img :src="`/uploads/${$friendlyURL(team.team)}.png`" :alt="team.team" class />
+				</div>
+				<div class="text-center">{{ team.team }}</div>
+			</nuxt-link>
+		</div>
 	</div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-	<img class="Logo" alt="Logo" src="/uploads/hotg-logo.png" />
+	<img class="Logo" alt="Logo" src="@/static/uploads/hotg-logo.png" />
 </template>
 <style>
 .Logo {

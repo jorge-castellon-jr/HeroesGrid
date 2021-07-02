@@ -42,6 +42,38 @@ export default (context, inject) => {
 	}
 	const getQuery = (type, variable) => {
 		switch (type) {
+			case "allData":
+				return `{
+					"rangers": *[_type == 'ranger'] {
+						_id,
+						name,
+						abilityName,
+						abilityDesc,
+						color,
+						'imageUrl': image.asset->url,
+						'team': team->season,
+						'slug': slug.current,
+						'teamPosition': teamPosition.current,
+						"expansion": expansion._ref
+					},
+					"expansions": *[_type == 'expansion' && phase < '3'] {
+						_id,
+						name,
+						phase,
+						'imageUrl': image.asset->url,
+					} | order(phase asc),
+					"zords": *[_type == 'zord'] {
+						_id,
+						name,
+						ability,
+					},
+					"megazords": *[_type == 'megazord'] {
+						_id,
+						name,
+						ability,
+					},
+				}`
+
 			case "allRangers":
 				return `
 					*[_type == 'ranger'] {

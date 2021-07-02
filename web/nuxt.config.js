@@ -69,6 +69,7 @@ export default {
 	buildModules: [
 		// Doc: https://github.com/nuxt-community/nuxt-tailwindcss
 		"@nuxtjs/tailwindcss",
+    // 'nuxt-vite'
 	],
 	tailwindcss: {
 		cssPath: "~/assets/scss/index.scss",
@@ -81,6 +82,15 @@ export default {
 		// Doc: https://github.com/nuxt/content
 		"@nuxt/content",
 	],
+  // vite: {
+  //   css: {
+  //     preprocessorOptions: {
+  //       scss: {
+  //         additionalData: '@import "@/assets/scss/index.scss";',
+  //       },
+  //     },
+  //   },
+  // },
 	/*
 	 ** Content module configuration
 	 ** See https://content.nuxtjs.org/configuration

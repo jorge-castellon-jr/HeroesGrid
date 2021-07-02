@@ -1,6 +1,6 @@
 <template>
 	<div :class="loading ? 'h-screen overflow-hidden' : ''">
-		<div class="px-6 mt-20 mb-40 md:mb-0">
+		<div class="px-4 mt-20 mb-40 md:mb-0">
 			<nuxt />
 		</div>
 		<FooterNav />
@@ -69,11 +69,20 @@ html {
 
 .topdown-enter-active,
 .topdown-leave-active {
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease;
 }
 .topdown-enter,
 .topdown-leave-to {
 	transform: translateY(-100vh);
+}
+
+.bottomup-enter-active,
+.bottomup-leave-active {
+	transition: transform 0.3s ease;
+}
+.bottomup-enter,
+.bottomup-leave-to {
+	transform: translateY(100vh);
 }
 
 @keyframes appear {

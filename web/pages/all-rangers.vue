@@ -2,7 +2,6 @@
 	<div>
 		<h1 class="py-4 text-center">All Rangers</h1>
 
-		<h2 class="py-4 text-center">From Sanity</h2>
 		<div v-if="sanityRangers.length" class="flex flex-wrap justify-around -mx-3" id="rangersTeam">
 			<nuxt-link
 				:class="`no-underline px-3 py-6 md:px-6 w-1/2 flex ${
@@ -13,20 +12,6 @@
 				:key="i"
 			>
 				<RangerCard class="lg:max-w-lg" noDesc :ranger="ranger" sanity />
-			</nuxt-link>
-		</div>
-
-		<h2 class="p-4 text-center">From Content</h2>
-		<div class="flex flex-wrap justify-around" id="rangersTeam">
-			<nuxt-link
-				:class="`no-underline px-3 py-6 md:px-6 w-1/2 flex ${
-					i % 2 == 0 ? 'justify-end' : 'justify-start'
-				}`"
-				:to="`/${$friendlyURL(ranger.team + '/' + ranger.slug)}`"
-				v-for="(ranger, i) in rangers"
-				:key="i"
-			>
-				<RangerCard class="lg:max-w-lg" noDesc :ranger="ranger" />
 			</nuxt-link>
 		</div>
 		<!-- #rangersTeam -->

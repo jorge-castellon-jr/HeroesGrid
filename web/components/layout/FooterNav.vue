@@ -4,16 +4,17 @@
 			<PRicon />
 			<span class="hidden text-sm capitalize md:block">Menu</span>
 		</a>
+		<transition name="bottomup">
+			<nav v-if="menuOpen" class="nav" :class="menuOpen ? 'open' : 'closed'" @click="menuOpen = false">
+				<div class="flex flex-wrap flex-1 md:flex-col md:w-full">
+					<nuxt-link v-for="link in nuxtLinks" :key="link.to" :to="link.to" class="nav__link">
+						<PRicon :icon="link.icon" />
 
-		<nav class="nav" :class="menuOpen ? 'open' : 'closed'" @click="menuOpen = false">
-			<div class="flex flex-wrap flex-1 md:flex-col md:w-full">
-				<nuxt-link v-for="link in nuxtLinks" :key="link.to" :to="link.to" class="nav__link">
-					<PRicon :icon="link.icon" />
-
-					<span class="pt-2 text-sm capitalize">{{ link.title }}</span>
-				</nuxt-link>
-			</div>
-		</nav>
+						<span class="pt-2 text-sm capitalize">{{ link.title }}</span>
+					</nuxt-link>
+				</div>
+			</nav>
+		</transition>
 	</div>
 </template>
 
@@ -83,15 +84,8 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-	@apply fixed bottom-0 w-full transition-all duration-500 bg-white border-purple-700  shadow;
-
-	&.open {
-		@apply h-screen pt-4;
-		box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;
-	}
-	&.closed {
-		@apply h-0 border-t-0;
-	}
+	@apply fixed bottom-0 w-full transition-all h-screen pt-4 border-t-0 duration-500 bg-white border-purple-700;
+	box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;
 
 	&__link {
 		@apply flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-nowrap text-sm transition-colors duration-100 ease-in-out py-4 w-1/3;
@@ -112,15 +106,8 @@ export default {
 		}
 	}
 	@media screen and (min-width: theme("screens.md")) {
-		@apply h-full left-0 top-0 rounded-r-lg rounded-l-none flex-col justify-start;
-
-		&.open {
-			@apply w-32 border-r-8 border-t-0;
-		}
-
-		&.closed {
-			@apply border-r-0 h-full w-0;
-		}
+		@apply h-full left-0 top-0 rounded-r-lg rounded-l-none flex-col justify-start w-32 border-r-8 border-t-0;
+		box-shadow: none;
 
 		&__link {
 			@apply flex-grow-0 w-full;

@@ -922,7 +922,7 @@
     pirates "^4.0.0"
     source-map-support "^0.5.16"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.14.0", "@babel/runtime@^7.2.0", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.14.0", "@babel/runtime@^7.2.0", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.4":
   version "7.14.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
   integrity sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==
@@ -1412,7 +1412,7 @@
     sanity-diff-patch "^1.0.9"
     styled-components "^5.2.1"
 
-"@sanity/form-builder@2.12.2":
+"@sanity/form-builder@2.12.2", "@sanity/form-builder@^2.0.1":
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/@sanity/form-builder/-/form-builder-2.12.2.tgz#c6af92527f86755b7827d7e8a3df98abc5c0b6c7"
   integrity sha512-zTgbXsNgnnfW6Yyf62RSxKlzkfbYOMK/tHCJk8XYUNYLi209/UDwoszgf0cU+sg4FSvBw9ZBo1Iuu48KD0DAUg==
@@ -2928,7 +2928,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
@@ -7780,6 +7780,11 @@ property-information@^5.0.0:
   dependencies:
     xtend "^4.0.0"
 
+proptypes@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/proptypes/-/proptypes-1.1.0.tgz#78b3828a5aa6bb1308939e0de3c6044dfd4bd239"
+  integrity sha1-eLOCilqmuxMIk54N48YETf1L0jk=
+
 proxy-addr@~2.0.5:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.7.tgz#f19fe69ceab311eeb94b42e70e8c2070f9ba1025"
@@ -7995,6 +8000,23 @@ react-color@^2.18.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
+react-debounce-render@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/react-debounce-render/-/react-debounce-render-5.0.0.tgz#ed5a30b40b0f1e52da83c7add33334a6cde7cead"
+  integrity sha512-3u4oUcZ1i9bOtENfnHW5f2x74b+01teKG24+NbuKSklCQhknWq/euyYiBnuRFhyJdaniVmtNqtLL66+2jCHXLw==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
+react-dom@^16.13.1:
+  version "16.14.0"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
+
 react-dom@^17.0:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -8029,6 +8051,13 @@ react-focus-lock@^2.5.0:
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
+
+react-google-charts@^3.0.15:
+  version "3.0.15"
+  resolved "https://registry.npmjs.org/react-google-charts/-/react-google-charts-3.0.15.tgz#30759a470f48336e744fd383d054122b039a1ff2"
+  integrity sha512-78s5xOQOJvL+jIewrWQZEHtlVk+5Yh4zZy+ODA1on1o1FaRjKWXxoo4n4JQl1XuqkF/A9NWque3KqM6pMggjzQ==
+  dependencies:
+    react-load-script "^0.0.6"
 
 react-hot-loader@^4.12.11:
   version "4.13.0"
@@ -8096,6 +8125,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-load-script@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/react-load-script/-/react-load-script-0.0.6.tgz#db6851236aaa25bb622677a2eb51dad4f8d2c258"
+  integrity sha512-aRGxDGP9VoLxcsaYvKWIW+LRrMOzz2eEcubTS4NvQPPugjk2VvMhow0wWTkSl7RxookomD1MwcP4l5UStg5ShQ==
 
 react-popper@^2.2.4, react-popper@^2.2.5:
   version "2.2.5"
@@ -8182,7 +8216,7 @@ react-tiny-virtual-list@^2.0.5:
   dependencies:
     prop-types "^15.5.7"
 
-react@^16.12.0:
+react@^16.12.0, react@^16.13.1:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
@@ -8672,12 +8706,21 @@ sanity-plugin-color-picker@^1.0.3:
 
 sanity-plugin-dashboard-widget-netlify@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/sanity-plugin-dashboard-widget-netlify/-/sanity-plugin-dashboard-widget-netlify-1.1.0.tgz#cc8218e5345eff08d7336d0612824336feb1c816"
+  resolved "https://registry.npmjs.org/sanity-plugin-dashboard-widget-netlify/-/sanity-plugin-dashboard-widget-netlify-1.1.0.tgz#cc8218e5345eff08d7336d0612824336feb1c816"
   integrity sha512-HzEK7TZx7xn75OBbFxF4qVzX2tM8yxcEm2k1T+Gbj9oIP0I7RxZsgwfFTr5+PclonQsnKx8ng+IN6sIGLaaYpg==
   dependencies:
     abort-controller "^2.0.3"
     react-props-stream "^1.0.0"
     rxjs "^6.0.0"
+
+sanity-plugin-google-analytics@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/sanity-plugin-google-analytics/-/sanity-plugin-google-analytics-0.2.6.tgz#ca21edd59064101e26acacd513571136b1188f43"
+  integrity sha512-Y1TuvkwPG+QbLv1kMMpffVzJOhseOez1zE8A781JaYFGqjGRlpUEeTNGJxDWAYaYKregpE0gaBEDTvoGbwxfVQ==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    react-debounce-render "^5.0.0"
+    react-google-charts "^3.0.15"
 
 sanity-plugin-mdide@^1.0.7:
   version "1.0.7"
@@ -8692,6 +8735,18 @@ sanity-plugin-media-library@^1.0.5:
   integrity sha512-v/7PJW3L53oigajcDYiNskaq2s+mVgDXlIYQnLo4QDbWsWqgM2bzNpMIU9IQq36VFTHZatHhsM34EEbGI2QTsQ==
   dependencies:
     styled-components "^5.2.1"
+
+sanity-plugin-tabs@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-tabs/-/sanity-plugin-tabs-2.0.1.tgz#24ba817a288a789cdc71238232a037f12b02937a"
+  integrity sha512-D+95V4uQGy2noD9lAnq904qKeAR1i8Vxk7iWsYqsTqbFlzbv2iYWehOVUrzzC8lUGdUtJw2orr0x7ft0wm27aA==
+  dependencies:
+    "@sanity/form-builder" "^2.0.1"
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    proptypes "^1.1.0"
+    react "^16.13.1"
+    react-dom "^16.13.1"
 
 sax@~1.2.4:
   version "1.2.4"
