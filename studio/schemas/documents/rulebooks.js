@@ -1,6 +1,9 @@
+import { IoIosPaper } from "react-icons/io";
+
 export default {
   name: "rulebook",
   title: "Rulebooks",
+  icon: IoIosPaper,
   type: "document",
   fields: [
     {

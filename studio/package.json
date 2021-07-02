@@ -6,12 +6,12 @@
 	"main": "package.json",
 	"author": "jorge-castellon-jr <jorge.castellon.jr@gmail.com>",
 	"license": "UNLICENSED",
-  "scripts": {
-    "dev": "sanity start",
-    "start": "sanity start",
-    "build": "sanity build",
-    "deploy": "sanity deploy"
-  },
+	"scripts": {
+		"dev": "sanity start",
+		"start": "sanity start",
+		"build": "sanity build",
+		"deploy": "sanity deploy"
+	},
 	"keywords": [
 		"sanity"
 	],

@@ -1,10 +1,12 @@
 import { GiRobotLeg } from "react-icons/gi";
+import { BsPeopleCircle } from "react-icons/bs";
 import sanityClient from "part:@sanity/base/client";
 import React from "react";
 
 export default {
   name: "ranger",
   title: "Rangers",
+  icon: BsPeopleCircle,
   type: "document",
   fields: [
     {
@@ -126,26 +128,10 @@ export default {
       options: {
         editModal: "popover",
       },
-      of: [
-        {
-          title: "Card",
-          name: "card",
-          type: "object",
-          icon: GiRobotLeg,
-          fields: [
-            {
-              name: "name",
-              title: "Zord Name",
-              type: "string",
-            },
-            {
-              name: "ability",
-              title: "Zord Ability",
-              type: "text",
-            },
-          ],
-        },
-      ],
+      of: [{
+        type: "reference",
+        to: [{ type: "zord" }],
+      }],
     },
 
     {

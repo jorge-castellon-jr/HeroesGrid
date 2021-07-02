@@ -1,6 +1,9 @@
+import { BiLayerPlus } from "react-icons/bi";
+
 export default {
   name: "expansion",
   title: "Expansions",
+  icon: BiLayerPlus,
   type: "document",
   fields: [
     {
@@ -25,6 +28,34 @@ export default {
             .replace(/-game/i, "")
             .toLowerCase(),
       },
+    },
+    {
+      name: "type",
+      title: "Type of Content",
+      type: "array",
+      of: [
+        {
+          name: "inlcude",
+          title: "Includes",
+          type: "string",
+
+          options: {
+            list: [
+              { title: "Rangers", value: "ranger" },
+              { title: "Megazords", value: "megazord" },
+              { title: "Foot Soldiers", value: "minion" },
+              { title: "Monsters", value: "monster" },
+              { title: "Nemesis", value: "nemesis" },
+              { title: "Bosses", value: "boss" },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      name: "phase",
+      title: "Release Phase",
+      type: "string",
     },
     {
       name: "release",

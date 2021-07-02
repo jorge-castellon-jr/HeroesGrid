@@ -1,6 +1,9 @@
+import { RiTeamFill } from "react-icons/ri";
+
 export default {
   name: "team",
   title: "Teams",
+  icon: RiTeamFill,
   type: "document",
   fields: [
     {
