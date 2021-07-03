@@ -13,7 +13,7 @@
 						<span class="pt-2 text-sm capitalize">{{ link.title }}</span>
 					</nuxt-link>
 				</div>
-				<span class="absolute bottom-0 left-0 p-2 text-sm text-gray-300">v.{{version}}</span>
+				<span class="absolute bottom-0 left-0 p-2 text-sm text-gray-300">v{{version}}</span>
 			</nav>
 		</transition>
 	</div>
@@ -60,12 +60,6 @@ export default {
 					nuxt: true,
 				},
 				{
-					title: "Countdown",
-					to: "/countdown",
-					icon: "pr-hotg",
-					nuxt: true,
-				},
-				{
 					title: "Dice Roller",
 					to: "/dice",
 					icon: "pr-hotg",
@@ -77,6 +71,12 @@ export default {
 					icon: "pr-hotg",
 					nuxt: true,
 				},
+				// {
+				// 	title: "Countdown",
+				// 	to: "/countdown",
+				// 	icon: "pr-hotg",
+				// 	nuxt: true,
+				// },
 			],
 		}
 	},
