@@ -35,6 +35,12 @@ export default {
 					nuxt: true,
 				},
 				{
+					title: "Rulebooks",
+					to: "/rulebooks",
+					icon: "rules",
+					nuxt: true,
+				},
+				{
 					title: "All Rangers",
 					to: "/all-rangers",
 					icon: "morpher",
@@ -44,12 +50,6 @@ export default {
 					title: "All Teams",
 					to: "/all-teams",
 					icon: "morpher",
-					nuxt: true,
-				},
-				{
-					title: "Rulebooks",
-					to: "/rulebooks",
-					icon: "rules",
 					nuxt: true,
 				},
 				{
