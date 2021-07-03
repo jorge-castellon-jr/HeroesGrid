@@ -70,12 +70,12 @@ export default {
 					icon: "pr-hotg",
 					nuxt: true,
 				},
-				{
-					title: "Token Tracker",
-					to: "/tokens",
-					icon: "pr-hotg",
-					nuxt: true,
-				},
+				// {
+				// 	title: "Token Tracker",
+				// 	to: "/tokens",
+				// 	icon: "pr-hotg",
+				// 	nuxt: true,
+				// },
 			],
 		}
 	},
