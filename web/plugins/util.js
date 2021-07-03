@@ -40,6 +40,9 @@ export default (context, inject) => {
 			.map(s => s.charAt(0).toUpperCase() + s.substring(1))
 			.join(" ")
 	}
+
+	const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
+
 	const getQuery = (type, variable) => {
 		switch (type) {
 			case "allData":
@@ -147,5 +150,6 @@ export default (context, inject) => {
 	inject("getColor", getColor)
 	inject("friendlyURL", friendlyURL)
 	inject("dashToSpace", dashToSpace)
+	inject("random", random)
 	inject("getQuery", getQuery)
 }

@@ -85,19 +85,19 @@ export default {
 			if (!this.filteredRangers.length)
 				return (this.error = true), (this.errorMessage = "Please Choose Option")
 
-			let random = this.random(0, this.filteredRangers.length)
+			let random = this.$random(0, this.filteredRangers.length)
 			let pickedRanger = this.filteredRangers[random]
 			let dupRanger = this.chosenRangers.find(r => r._id == pickedRanger._id)
 			if (dupRanger)
 				pickedRanger =
-					this.filteredRangers[this.random(0, this.filteredRangers.length)]
+					this.filteredRangers[this.$random(0, this.filteredRangers.length)]
 			this.chosenRangers.push(pickedRanger)
 		},
 		reset() {
 			this.chosenRangers = []
+			this.checkedOptions = []
 			this.error = false
 		},
-		random: (min, max) => Math.floor(Math.random() * (max - min)) + min,
 	},
 	computed: {
 		filteredRangers() {

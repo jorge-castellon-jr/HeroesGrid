@@ -53,14 +53,26 @@ export default {
 					nuxt: true,
 				},
 				{
-					title: "Companion",
-					to: "/companion",
+					title: "Randomizer",
+					to: "/randomizer",
 					icon: "pr-hotg",
 					nuxt: true,
 				},
 				{
 					title: "Countdown",
 					to: "/countdown",
+					icon: "pr-hotg",
+					nuxt: true,
+				},
+				{
+					title: "Dice Roller",
+					to: "/dice",
+					icon: "pr-hotg",
+					nuxt: true,
+				},
+				{
+					title: "Token Tracker",
+					to: "/tokens",
 					icon: "pr-hotg",
 					nuxt: true,
 				},
@@ -88,7 +100,7 @@ export default {
 	box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;
 
 	&__link {
-		@apply flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-nowrap text-sm transition-colors duration-100 ease-in-out py-4 w-1/3;
+		@apply flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-nowrap text-sm transition-colors duration-100 ease-in-out py-4 w-1/2;
 		&:hover {
 			@apply bg-gray-100;
 		}
