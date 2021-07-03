@@ -46,6 +46,7 @@ export default {
 	},
 	env: {
 		SANITY_PROJECT_ID: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
+		VERSION_NUMBER: "2.0.0",
 	},
 	router: {
 		middleware: ["vuex"],
@@ -69,7 +70,7 @@ export default {
 	buildModules: [
 		// Doc: https://github.com/nuxt-community/nuxt-tailwindcss
 		"@nuxtjs/tailwindcss",
-    // 'nuxt-vite'
+		// 'nuxt-vite'
 	],
 	tailwindcss: {
 		cssPath: "~/assets/scss/index.scss",
@@ -82,15 +83,15 @@ export default {
 		// Doc: https://github.com/nuxt/content
 		"@nuxt/content",
 	],
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       scss: {
-  //         additionalData: '@import "@/assets/scss/index.scss";',
-  //       },
-  //     },
-  //   },
-  // },
+	// vite: {
+	//   css: {
+	//     preprocessorOptions: {
+	//       scss: {
+	//         additionalData: '@import "@/assets/scss/index.scss";',
+	//       },
+	//     },
+	//   },
+	// },
 	/*
 	 ** Content module configuration
 	 ** See https://content.nuxtjs.org/configuration
