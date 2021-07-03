@@ -70,12 +70,12 @@ export default {
 					icon: "pr-hotg",
 					nuxt: true,
 				},
-				// {
-				// 	title: "Token Tracker",
-				// 	to: "/tokens",
-				// 	icon: "pr-hotg",
-				// 	nuxt: true,
-				// },
+				{
+					title: "Token Tracker",
+					to: "/tokens",
+					icon: "pr-hotg",
+					nuxt: true,
+				},
 			],
 		}
 	},
@@ -96,7 +96,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-	@apply fixed bottom-0 w-full transition-all h-screen pt-4 border-t-0 duration-500 bg-white border-purple-700;
+	@apply fixed bottom-0 w-full transition-all h-screen pt-4 border-t-0 duration-500 bg-white border-purple-700 z-40;
 	box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;
 
 	&__link {
@@ -106,7 +106,7 @@ export default {
 		}
 
 		&#home-link {
-			@apply fixed border-purple-700 shadow-lg rounded-full bg-white transition-all h-20 w-20 flex items-center justify-center duration-500 z-20;
+			@apply fixed border-purple-700 shadow-lg rounded-full bg-white transition-all h-20 w-20 flex items-center justify-center duration-500 z-50;
 			left: 50%;
 			bottom: 24px;
 			transform: translateX(-50%);
