@@ -59,7 +59,7 @@ export default (context, inject) => {
 						'teamPosition': teamPosition.current,
 						"expansion": expansion._ref
 					},
-					"expansions": *[_type == 'expansion' && phase < '3'] {
+					"expansions": *[_type == 'expansion' && phase < '3' && 'ranger' in type[]] {
 						_id,
 						name,
 						phase,
