@@ -76,7 +76,7 @@ export default {
 			this.zords = rangersFetch.zords
 			this.megazords = rangersFetch.megazords
 
-			$store.commit("setLoadingState", false)
+			setTimeout(() => $store.commit("setLoadingState", false), 500)
 		},
 		pickRanger() {
 			if (this.error) this.error = false

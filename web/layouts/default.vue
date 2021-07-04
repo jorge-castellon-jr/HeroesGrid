@@ -20,12 +20,6 @@ export default {
 		FooterNav,
 		Loading,
 	},
-	watch: {
-		// $route(newValue, oldValue) {
-		// 	console.log("route change", newValue)
-		// 	this.$store.commit("setLoadingState", true)
-		// },
-	},
 	computed: {
 		...mapGetters({
 			loading: "getLoadingState",
@@ -64,6 +58,15 @@ html {
 }
 .page-enter,
 .page-leave-to {
+	opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
 	opacity: 0;
 }
 

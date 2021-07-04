@@ -1,11 +1,21 @@
 <template>
-	<div class="max-w-3xl mx-auto ranger">
-		<RangerCard v-if="ranger" class="mb-10" :ranger="ranger" sanity />
+	<div v-if="ranger" class="max-w-3xl mx-auto ranger">
+		<RangerCard class="mb-10" :ranger="ranger" sanity />
 
-		<!-- <div v-for="zord in ranger.zords" :key="zord._key">
-			<h2>Zord: {{zord.name}}</h2>
-			<p>{{zord.ability}}</p>
-		</div>-->
+		<div v-if="ranger.deck" class="mb-10">
+			<h2>Deck</h2>
+			<div v-for="card in ranger.deck" :key="card._key">
+				<RangerDeckSingle :card="card" />
+			</div>
+		</div>
+
+		<div v-if="ranger.zords" class="mb-10">
+			<h2>Zords</h2>
+			<div v-for="zord in ranger.zords" :key="zord._key">
+				<h3>{{zord.name}}</h3>
+				<p>{{zord.ability}}</p>
+			</div>
+		</div>
 
 		<nuxt-content :document="contentRanger" />
 
@@ -30,6 +40,7 @@
 
 <script>
 import RangerCard from "~/components/cards/RangerCard"
+import RangerDeckSingle from "~/components/cards/RangerDeckSingle"
 import { mapGetters } from "vuex"
 
 export default {
@@ -37,6 +48,7 @@ export default {
 	scrollToTop: true,
 	components: {
 		RangerCard,
+		RangerDeckSingle,
 	},
 	data() {
 		return {

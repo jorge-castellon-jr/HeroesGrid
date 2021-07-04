@@ -49,9 +49,8 @@ export default {
 				this.$getQuery("teamRangers", $route.params.team),
 			)
 			this.rangers = teamRangersFetch.rangers
-			this.team = teamRangersFetch.season
-			// this.team = teamRangersFetch[0].team
-			if (!$route.params.ranger) $store.commit("setLoadingState", false)
+			this.team = teamRangersFetch.name
+			setTimeout(() => $store.commit("setLoadingState", false), 500)
 		},
 	},
 }

@@ -54,7 +54,7 @@ export default (context, inject) => {
 						abilityDesc,
 						color,
 						'imageUrl': image.asset->url,
-						'team': team->season,
+						'team': team->name,
 						'slug': slug.current,
 						'teamPosition': teamPosition.current,
 						"expansion": expansion._ref
@@ -86,10 +86,11 @@ export default (context, inject) => {
 						abilityDesc,
 						color,
 						'imageUrl': image.asset->url,
-						'team': team->season,
+						'team': team->name,
+						'gen': team->gen,
 						'slug': slug.current,
 						'teamPosition': teamPosition.current
-					}
+					} | order(gen asc, order asc)
 				`
 			case "singleRanger":
 				return `
@@ -99,19 +100,25 @@ export default (context, inject) => {
 						abilityName,
 						abilityDesc,
 						color,
-						zords,
+						'zords': zords[]->,
 						'imageUrl': image.asset->url,
-						'team': team->season,
+						'team': team->name,
 						'slug': slug.current,
 						'teamPosition': teamPosition.current,
+						'deck': Deck[],
 						'similar': *[_type == 'ranger' && color.title == ^.color.title && _id != ^._id] {
 							...,
 							'imageUrl': image.asset->url,
-							'team': team->season,
+							'team': team->name,
 							'slug': slug.current,
 							'teamPosition': teamPosition.current
 						}
 					}[0]
+				`
+
+			case "allTeams":
+				return `
+					*[_type == 'team'] | order(gen asc)
 				`
 			case "rangersByColor":
 				return `
@@ -122,7 +129,7 @@ export default (context, inject) => {
 						abilityDesc,
 						color,
 						'imageUrl': image.asset->url,
-						'team': team->season,
+						'team': team->name,
 						'slug': slug.current,
 						'teamPosition': teamPosition.current,
 					}
@@ -130,12 +137,12 @@ export default (context, inject) => {
 			case "teamRangers":
 				return `
 					*[_type == 'team' && slug.current == '${variable}'] {
-						season,
+						name,
 						"rangers": *[_type == 'ranger' && team._ref == ^._id] {
 							name,
 							abilityName,
 							color,
-							'team': team->season,
+							'team': team->name,
 							'slug': slug.current,
 							'teamPosition': teamPosition.current,
 						}

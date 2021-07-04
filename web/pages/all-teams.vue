@@ -11,7 +11,7 @@ export default {
 		RangerTeams,
 	},
 	mounted() {
-		this.$store.commit("setLoadingState", false)
+		setTimeout(() => this.$store.commit("setLoadingState", false), 500)
 	},
 	computed: {
 		...mapGetters({

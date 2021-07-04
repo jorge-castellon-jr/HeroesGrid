@@ -40,7 +40,7 @@ export default {
 	async mounted() {
 		const rulebooks = await this.$content("rulebooks").fetch()
 		this.rulebooks = rulebooks
-		this.$store.commit("setLoadingState", false)
+		setTimeout(() => this.$store.commit("setLoadingState", false), 500)
 	},
 	computed: {
 		// getRulebook() {

@@ -1,6 +1,6 @@
 <template>
 	<div class="w-full overflow-hidden border border-gray-400 rounded-lg shadow-lg lg:flex">
-		<div :class="`h-48 lg:h-auto lg:w-48 flex-none  ${$getColor(rangerColor)}`"></div>
+		<div :class="`h-32 lg:h-auto lg:w-48 flex-none  ${$getColor(rangerColor)}`"></div>
 		<div class="flex flex-col justify-between w-full p-3 leading-normal bg-white md:p-4">
 			<span class>
 				<p class="items-center font-bold text-gray-900 uppercase text-md">{{ ranger.name }}</p>
