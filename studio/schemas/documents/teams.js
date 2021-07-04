@@ -7,16 +7,21 @@ export default {
   type: "document",
   fields: [
     {
-      name: "season",
-      title: "Teams's Season",
+      name: "name",
+      title: "Teams's Name",
       type: "string",
+    },
+    {
+      name: "gen",
+      title: "Teams's Generation",
+      type: "number",
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: {
-        source: "season",
+        source: "name",
         slugify: (input) =>
           input.replace(/\./g, "").replace(/\s+/g, "-").toLowerCase(),
       },

@@ -90,6 +90,11 @@ export default {
         slugify: (input) => input,
       },
     },
+    {
+      name: "order",
+      title: "Ranger's Order",
+      type: "number",
+    },
 
     {
       name: "abilityName",
