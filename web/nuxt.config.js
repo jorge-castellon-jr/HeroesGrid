@@ -46,7 +46,7 @@ export default {
 	},
 	env: {
 		SANITY_PROJECT_ID: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
-		VERSION_NUMBER: "1.0.3",
+		VERSION_NUMBER: "1.1.0",
 	},
 	router: {
 		middleware: ["vuex"],

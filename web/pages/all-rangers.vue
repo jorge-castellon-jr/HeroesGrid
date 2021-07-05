@@ -119,7 +119,9 @@ export default {
 		let fetchRangers = await this.$sanityClient.fetch(
 			this.$getQuery("allRangers"),
 		)
-		let fetchTeams = await this.$sanityClient.fetch(this.$getQuery("allTeams"))
+		let fetchTeams = await this.$sanityClient.fetch(
+			this.$getQuery("allTeamsWithRangers"),
+		)
 		this.rangers = fetchRangers
 		this.teams = fetchTeams
 		setTimeout(() => this.$store.commit("setLoadingState", false), 500)

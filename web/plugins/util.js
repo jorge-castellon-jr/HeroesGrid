@@ -116,6 +116,10 @@ export default (context, inject) => {
 					}[0]
 				`
 
+			case "allTeamsWithRangers":
+				return `
+					*[_type == 'team' && count(*[_type == 'ranger' && team._ref == ^._id]) > 0] | order(gen asc)
+				`
 			case "allTeams":
 				return `
 					*[_type == 'team'] | order(gen asc)
