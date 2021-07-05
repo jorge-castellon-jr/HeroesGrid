@@ -122,7 +122,7 @@ export default {
         {
           name: "card",
           title: "Card",
-          type: "cardRef",
+          type: "rangerCardRef",
         },
       ],
     },
@@ -189,12 +189,14 @@ export default {
       image: "image",
     },
     prepare({ title, color, team, image }) {
+      let teamTitle = team[0] == '*' ? team.replace(/\*/g, '') : `${team.replace(/-/g, '')} Ranger`
+      let imgURL = image ? `https://cdn.sanity.io/images/8cmhkwlo/production/${image.asset._ref.replace(/image-/i, '').replace(/-png/i,'')}.png?w=40&amp;h=40&amp;fit=crop`: ''
       return {
-        title: title,
-        subtitle: team[0] == '*' ? team.replace(/\*/g, '') : `${team.replace(/-/g, '')} Ranger`,
+        title: `${title}`,
+        subtitle:  teamTitle,
         media: image
-          ? image
-          : <span style={{background: color.value, borderRadius: 100, height: 40, width: 40}}></span>,
+          ? <span style={{backgroundImage: `url(${imgURL})`,backgroundColor: color.value, borderRadius: 100, height: 40, width: 40}}></span>
+          : <span style={{backgroundColor: color.value, borderRadius: 100, height: 40, width: 40}}></span>,
       };
     },
   },

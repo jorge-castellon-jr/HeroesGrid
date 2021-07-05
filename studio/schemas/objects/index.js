@@ -1,6 +1,7 @@
 import blockContent from "./blockContent";
-import cardRef from "./cardRef";
+import rangerCardRef from "./rangerCardRef";
+import enemyCardRef from "./enemyCardRef";
 
-const objects = [blockContent, cardRef];
+const objects = [blockContent, rangerCardRef, enemyCardRef];
 
 export { objects };
