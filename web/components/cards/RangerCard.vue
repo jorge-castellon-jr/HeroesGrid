@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full overflow-hidden border border-gray-400 rounded-lg shadow-lg lg:flex">
+	<div class="w-full overflow-hidden border card lg:flex">
 		<div
 			:class="`lg:h-auto lg:w-48 flex-none  ${$getColor(rangerColor)} ${ranger.imageUrl ? '' : 'custom-height'}`"
 		>
@@ -10,7 +10,7 @@
 			/>
 		</div>
 
-		<div class="flex flex-col justify-between w-full p-3 leading-normal bg-white md:p-4">
+		<div class="flex flex-col justify-between w-full leading-normal bg-white content md:p-4">
 			<span class>
 				<p class="items-center font-bold text-gray-900 uppercase text-md">{{ ranger.name }}</p>
 				<p

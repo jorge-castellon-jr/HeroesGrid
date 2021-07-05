@@ -1,3 +1,11 @@
+Hello fellow rangers!
+
+Here with another update, v1.2.0. This time it primarily focuses on enemies. You can now use the randomizer for both rangers and enemies. There is still more I would like to add to it, like more options and the ability to remove a card from the chosen list, but for now this will help out a lot of rangers that want to randomize a game.
+
+Some of you rangers may already see the changes, but if you don't just reload the page, and you will see all the goodies.
+
+For anyone that is wondering, there was a v1.1.0, but that was out for only a day, which is why I decided to post about v1.2.0. Most of v1.1.0 what backend changes and adding images. I will add all changes including the v1.1.0 changes bellow.
+
 Changes:
 - Added filtering to the all rangers page
 - Removed All Teams page

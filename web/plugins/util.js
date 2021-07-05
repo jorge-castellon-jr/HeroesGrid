@@ -86,7 +86,7 @@ export default (context, inject) => {
 						"expansion": expansion._ref,
 						"image": image.asset->url
 					},
-					"monsters": *[_type == 'monster'] {
+					"monsters": *[_type == 'monster' || _type == 'nemesis'] {
 						...,
 						"expansion": expansion._ref,
 						"image": image.asset->url
