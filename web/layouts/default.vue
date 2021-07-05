@@ -1,6 +1,6 @@
 <template>
 	<div :class="loading ? 'h-screen overflow-hidden' : ''">
-		<div class="px-4 mt-20 mb-40 md:mb-0">
+		<div class="px-4 mb-40 md:mb-0">
 			<nuxt />
 		</div>
 		<FooterNav />
@@ -63,7 +63,8 @@ html {
 
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 0.5s;
+	transition: opacity 0.3s;
+	opacity: 1;
 }
 .fade-enter,
 .fade-leave-to {

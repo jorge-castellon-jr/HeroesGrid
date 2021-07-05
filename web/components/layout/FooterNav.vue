@@ -13,7 +13,7 @@
 						<span class="pt-2 text-sm capitalize">{{ link.title }}</span>
 					</nuxt-link>
 				</div>
-				<span class="absolute bottom-0 left-0 p-4 text-sm text-gray-300">v{{version}}</span>
+				<span class="absolute bottom-0 left-0 px-4 py-6 text-sm text-gray-300">v{{version}}</span>
 			</nav>
 		</transition>
 	</div>
@@ -47,12 +47,12 @@ export default {
 					icon: "morpher",
 					nuxt: true,
 				},
-				{
-					title: "All Teams",
-					to: "/all-teams",
-					icon: "morpher",
-					nuxt: true,
-				},
+				// {
+				// 	title: "All Teams",
+				// 	to: "/all-teams",
+				// 	icon: "morpher",
+				// 	nuxt: true,
+				// },
 				{
 					title: "Randomizer",
 					to: "/randomizer",

@@ -1,10 +1,5 @@
 export default {
 	/*
-	 ** Nuxt rendering mode
-	 ** See https://nuxtjs.org/api/configuration-mode
-	 */
-	mode: "universal",
-	/*
 	 ** Headers of the page
 	 ** See https://nuxtjs.org/api/configuration-head
 	 */
@@ -46,7 +41,7 @@ export default {
 	},
 	env: {
 		SANITY_PROJECT_ID: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
-		VERSION_NUMBER: "1.1.0",
+		VERSION_NUMBER: "1.2.0",
 	},
 	router: {
 		middleware: ["vuex"],

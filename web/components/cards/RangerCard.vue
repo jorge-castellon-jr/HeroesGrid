@@ -1,6 +1,8 @@
 <template>
 	<div class="w-full overflow-hidden border border-gray-400 rounded-lg shadow-lg lg:flex">
-		<div :class="`lg:h-auto lg:w-48 flex-none  ${$getColor(rangerColor)}`">
+		<div
+			:class="`lg:h-auto lg:w-48 flex-none  ${$getColor(rangerColor)} ${ranger.imageUrl ? '' : 'custom-height'}`"
+		>
 			<img
 				class="p-4 mx-auto rounded-full max-h-48 md:full h-"
 				v-if="ranger.imageUrl"
@@ -60,4 +62,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom-height {
+	@apply max-h-48;
+	height: 42.5vw;
+}
+</style>

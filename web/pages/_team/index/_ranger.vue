@@ -1,5 +1,5 @@
 <template>
-	<div v-if="ranger" class="max-w-3xl mx-auto ranger">
+	<div v-if="ranger" class="max-w-3xl mx-auto mt-6 ranger">
 		<RangerCard class="mb-10" :ranger="ranger" sanity />
 
 		<div v-if="ranger.deck" class="mb-10">

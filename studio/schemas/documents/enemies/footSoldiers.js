@@ -2,7 +2,7 @@ import { RiSkullFill } from "react-icons/ri";
 
 export default {
   name: "footsoldier",
-  title: "Footsoldiers",
+  title: "Foot Soldiers",
   icon: RiSkullFill,
   type: "document",
   fields: [

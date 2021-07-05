@@ -2,9 +2,6 @@ import Vue from "vue"
 
 export default (context, inject) => {
 	const getColor = c => {
-		// if no color was found Default to gray
-		if (!c) return `bg-gray-500`
-
 		let color = c.toLowerCase()
 		// Main Colors
 		if (color == "red") return "bg-red-600"
@@ -16,10 +13,11 @@ export default (context, inject) => {
 
 		// Special Colors
 		if (color == "white") return "bg-gray-100 text-gray-800"
-		if (color == "gold") return "bg-yellow-400"
+		if (color == "gold") return "bg-yellow-600"
 		if (color == "shadow") return "bg-blue-200 text-blue-900"
 		if (color == "purple") return "bg-purple-600"
-		if (color == "orange") return "bg-yellow-600"
+		if (color == "orange") return "bg-orange-400"
+		if (color == "silver") return "bg-gray-400"
 
 		// Enemies
 		if (color == "soldier") return "bg-green-200"
@@ -47,6 +45,18 @@ export default (context, inject) => {
 		switch (type) {
 			case "allData":
 				return `{
+					"rangerExpansions": *[_type == 'expansion' && phase < '3' && 'ranger' in type[]] {
+						_id,
+						name,
+						phase,
+						'imageUrl': image.asset->url,
+					} | order(phase asc),
+					"enemyExpansions": *[_type == 'expansion' && phase < '3' && ('minion' in type[] || 'nemesis' in type[] || 'monster' in type[] || 'boss' in type[])] {
+						_id,
+						name,
+						phase,
+						'imageUrl': image.asset->url,
+					} | order(phase asc),
 					"rangers": *[_type == 'ranger'] {
 						_id,
 						name,
@@ -59,22 +69,33 @@ export default (context, inject) => {
 						'teamPosition': teamPosition.current,
 						"expansion": expansion._ref
 					},
-					"expansions": *[_type == 'expansion' && phase < '3' && 'ranger' in type[]] {
-						_id,
-						name,
-						phase,
-						'imageUrl': image.asset->url,
-					} | order(phase asc),
 					"zords": *[_type == 'zord'] {
 						_id,
 						name,
 						ability,
+						"expansion": expansion._ref
 					},
 					"megazords": *[_type == 'megazord'] {
 						_id,
 						name,
 						ability,
+						"expansion": expansion._ref
 					},
+					"footSoldiers": *[_type == 'footsoldier'] {
+						...,
+						"expansion": expansion._ref,
+						"image": image.asset->url
+					},
+					"monsters": *[_type == 'monster'] {
+						...,
+						"expansion": expansion._ref,
+						"image": image.asset->url
+					},
+					"masters": *[_type == 'master'] {
+						...,
+						"expansion": expansion._ref,
+						"image": image.asset->url
+					}
 				}`
 
 			case "allRangers":
