@@ -4,29 +4,52 @@ export default (context, inject) => {
 	const getColor = c => {
 		if (!c) return `bg-gray-500`
 		let color = c.toLowerCase()
-		// Main Colors
-		if (color == "red") return "bg-red-600"
-		if (color == "blue") return "bg-blue-500"
-		if (color == "pink") return "bg-pink-500"
-		if (color == "green") return "bg-green-500"
-		if (color == "black") return "bg-gray-900"
-		if (color == "yellow") return "bg-yellow-300 text-yellow-900"
 
-		// Special Colors
-		if (color == "white") return "bg-gray-100 text-gray-800"
-		if (color == "gold") return "bg-yellow-600"
-		if (color == "shadow") return "bg-blue-200 text-blue-900"
-		if (color == "purple") return "bg-purple-600"
-		if (color == "orange") return "bg-orange-400"
-		if (color == "silver") return "bg-gray-400"
+		switch (color) {
+			// Main Colors
+			case "red":
+				return "bg-red-500"
+			case "blue":
+				return "bg-blue-400"
+			case "pink":
+				return "bg-pink-500"
+			case "green":
+				return "bg-green-500"
+			case "black":
+				return "bg-gray-900"
+			case "yellow":
+				return "bg-yellow-300 text-yellow-900"
 
-		// Enemies
-		if (color == "soldier") return "bg-green-200"
-		if (color == "monster") return "bg-orange-400"
-		if (color == "boss") return "bg-pink-700"
+			// Special Colors
+			case "white":
+				return "bg-bluegray-100 text-bluegray-800"
+			case "gold":
+				return "bg-yellow-600"
+			case "silver":
+				return "bg-gray-400"
+			case "crimson":
+				return "bg-red-800"
+			case "shadow":
+				return "bg-sky-300 text-blue-900"
+			case "purple":
+				return "bg-purple-600"
+			case "orange":
+				return "bg-orange-400"
 
-		// if no color was found Default to gray
-		return `bg-gray-500`
+			// Enemies
+			case "soldier":
+				return "bg-lime-300"
+			case "monster":
+				return "bg-orange-400"
+			case "nemesis":
+				return "bg-red-700"
+			case "boss":
+				return "bg-pink-800"
+
+			default:
+				// if no color was found Default to gray
+				return `bg-gray-500`
+		}
 	}
 
 	const friendlyURL = text => {

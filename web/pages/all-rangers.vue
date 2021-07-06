@@ -56,8 +56,8 @@
 								/>
 								<label
 									:for="color.title"
-									class="flex flex-col items-center justify-center w-full p-3 text-center transition-all duration-300 border border-gray-200 rounded-lg shadow-lg opacity-50 cursor-pointer hover:opacity-100 checkbox-colors"
-									:class="color.title == 'Black' ? 'text-white':''"
+									class="flex flex-col items-center justify-center w-full p-3 font-semibold tracking-wider text-center transition-all duration-300 border border-gray-200 rounded-lg shadow-lg opacity-50 cursor-pointer hover:opacity-100 checkbox-colors"
+									:class="color.text"
 									:style="`background: ${color.value};`"
 								>{{color.title}}</label>
 							</div>
@@ -98,17 +98,19 @@ export default {
 			rangers: [],
 			teams: [],
 			colors: [
-				{ title: "Red", value: "#e53e3e" },
-				{ title: "Blue", value: "#4299e1" },
-				{ title: "Black", value: "#1a202c" },
-				{ title: "Yellow", value: "#f6e05e" },
-				{ title: "Pink", value: "#ed64a6" },
-				{ title: "Green", value: "#48bb78" },
-				{ title: "White", value: "#f7fafc" },
-				{ title: "Silver", value: "#a0aec0" },
-				{ title: "Gold", value: "#D97706" },
-				{ title: "Purple", value: "#805ad5" },
-				{ title: "Orange", value: "#f6ad55" },
+				{ title: "Red", value: "#EF4444", text: "text-red-900" },
+				{ title: "Blue", value: "#60A5FA", text: "text-blue-900" },
+				{ title: "Black", value: "#1a202c", text: "text-gray-100" },
+				{ title: "Yellow", value: "#f6e05e", text: "text-yellow-900" },
+				{ title: "Pink", value: "#ed64a6", text: "text-pink-900" },
+				{ title: "Green", value: "#48bb78", text: "text-green-900" },
+				{ title: "White", value: "#f7fafc", text: "text-gray-900" },
+				{ title: "Purple", value: "#805ad5", text: "text-purple-900" },
+				{ title: "Orange", value: "#f6ad55", text: "text-orange-900" },
+				{ title: "Silver", value: "#a0aec0", text: "text-gray-900" },
+				{ title: "Gold", value: "#D97706", text: "text-orange-900" },
+				// { title: "Crimson", value: "#991B1B", text: 'text-red-100' },
+				{ title: "Shadow", value: "#7DD3FC", text: "text-sky-900" },
 			],
 			checkedTeams: [],
 			checkedColors: [],
