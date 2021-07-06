@@ -1,35 +1,31 @@
 <template>
-	<div class="max-w-3xl px-4 mx-auto">
-		<nuxt-content v-if="rulebook" :document="rulebook" />
+	<div class="max-w-3xl px-3 mx-auto">
+		<div v-html="compiledMD"></div>
 	</div>
 </template>
 
 <script>
+import marked from "marked"
 export default {
-	async asyncData() {
-		return {}
-	},
 	data() {
 		return {
-			rulebook: null,
+			rulebook: { content: "" },
 		}
 	},
 	async mounted() {
-		const rulebooks = await this.$content("rulebooks").fetch()
 		let slug = this.$route.params.slug
-		let rulebook = rulebooks.find(r => {
-			return r.slug == slug
-		})
+		let rulebook = await this.$sanityClient.fetch(
+			this.$getQuery("getRulebookSingle", slug),
+		)
 
-		console.log(rulebook)
 		this.rulebook = rulebook
 		setTimeout(() => this.$store.commit("setLoadingState", false), 500)
 	},
-	// props: {
-	// 	rulebook: {
-	// 		type: Object,
-	// 	},
-	// },
+	computed: {
+		compiledMD() {
+			return marked(this.rulebook.content)
+		},
+	},
 }
 </script>
 
@@ -60,6 +56,12 @@ h2,
 h3 {
 	clear: both;
 }
+h2 {
+	@apply mb-3 mt-6;
+}
+ol {
+	@apply pb-2;
+}
 
 .task-list-item {
 	@apply pl-6;
@@ -77,9 +79,9 @@ thead {
 }
 tbody {
 	tr {
-		display: flex;
+		@apply flex items-end;
 		td {
-			@apply w-full p-4;
+			@apply w-full p-2 text-center;
 		}
 	}
 }

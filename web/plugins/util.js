@@ -197,6 +197,13 @@ export default (context, inject) => {
 						}
 					}[0]
 				`
+			case "getRulebookSingle":
+				return `
+					*[_type == 'rulebook' && slug.current == '${variable}'] {
+						...,
+						"slug": slug.current
+					} [0]
+				`
 
 			default:
 				break
