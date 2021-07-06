@@ -2,6 +2,7 @@ import Vue from "vue"
 
 export default (context, inject) => {
 	const getColor = c => {
+		if (!c) return `bg-gray-500`
 		let color = c.toLowerCase()
 		// Main Colors
 		if (color == "red") return "bg-red-600"

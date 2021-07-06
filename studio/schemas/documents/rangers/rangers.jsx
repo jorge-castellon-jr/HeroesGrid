@@ -20,8 +20,8 @@ export default {
       type: "colorlist", // required
       options: {
         list: [
-          { title: "Red", value: "#e53e3e" },
-          { title: "Blue", value: "#4299e1" },
+          { title: "Red", value: "#EF4444" },
+          { title: "Blue", value: "#60A5FA" },
           { title: "Black", value: "#1a202c" },
           { title: "Yellow", value: "#f6e05e" },
           { title: "Pink", value: "#ed64a6" },
@@ -29,8 +29,10 @@ export default {
           { title: "White", value: "#f7fafc" },
           { title: "Silver", value: "#a0aec0" },
           { title: "Gold", value: "#D97706" },
+          { title: "Crimson", value: "#991B1B" },
           { title: "Purple", value: "#805ad5" },
           { title: "Orange", value: "#f6ad55" },
+          { title: "Shadow", value: "#7DD3FC" },
         ],
       },
     },
