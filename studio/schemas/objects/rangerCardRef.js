@@ -57,6 +57,7 @@ export default {
   ],
   initialValue: {
     damage: { special: false },
+    cost: { x: false },
   },
   preview: {
     select: {
