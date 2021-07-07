@@ -36,12 +36,20 @@ export default {
           description: "Does not include damage from extra effects",
           type: "number",
         },
+        {
+          title: "Special?",
+          name: "special",
+          type: "boolean",
+        },
       ],
     },
     { title: "Energy Cost", name: "cost", type: "number" },
     { title: "Shields", name: "shields", type: "number" },
     { title: "Quanity/Copies", name: "quantity", type: "number" },
   ],
+  initialValue: {
+    damage: { special: false },
+  },
   preview: {
     select: {
       name: "name",
