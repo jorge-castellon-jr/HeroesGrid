@@ -10,7 +10,8 @@ export default {
   title: "Card",
   fields: [
     { title: "Name", name: "name", type: "string" },
-    { title: "Description", name: "desc", type: "text" },
+    { title: "Effect", name: "desc", type: "text" },
+    { title: "Extra Effect", name: "extraDesc", type: "text" },
     {
       title: "Type",
       name: "type",
@@ -28,13 +29,18 @@ export default {
       name: "damage",
       type: "object",
       fields: [
-        { title: "Dice", name: "dice", type: "number" },
-        { title: "Static", name: "static", type: "number" },
+        { title: "Dice Damage", name: "dice", type: "number" },
+        {
+          title: "Static Damage",
+          name: "static",
+          description: "Does not include damage from extra effects",
+          type: "number",
+        },
       ],
     },
-    { title: "Cost", name: "cost", type: "number" },
+    { title: "Energy Cost", name: "cost", type: "number" },
     { title: "Shields", name: "shields", type: "number" },
-    { title: "Quanity", name: "quantity", type: "number" },
+    { title: "Quanity/Copies", name: "quantity", type: "number" },
   ],
   preview: {
     select: {
