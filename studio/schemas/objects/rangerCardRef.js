@@ -29,6 +29,11 @@ export default {
       name: "damage",
       type: "object",
       fields: [
+        {
+          title: "Special?",
+          name: "special",
+          type: "boolean",
+        },
         { title: "Dice Damage", name: "dice", type: "number" },
         {
           title: "Static Damage",
@@ -36,14 +41,17 @@ export default {
           description: "Does not include damage from extra effects",
           type: "number",
         },
-        {
-          title: "Special?",
-          name: "special",
-          type: "boolean",
-        },
       ],
     },
-    { title: "Energy Cost", name: "cost", type: "number" },
+    {
+      title: "Energy Cost",
+      name: "cost",
+      type: "object",
+      fields: [
+        { title: "X?", name: "x", type: "boolean" },
+        { title: "Amount", name: "amount", type: "number" },
+      ],
+    },
     { title: "Shields", name: "shields", type: "number" },
     { title: "Quanity/Copies", name: "quantity", type: "number" },
   ],
