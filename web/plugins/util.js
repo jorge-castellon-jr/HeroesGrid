@@ -191,6 +191,7 @@ export default (context, inject) => {
 							name,
 							abilityName,
 							color,
+							'imageUrl': image.asset->url,
 							'team': team->name,
 							'slug': slug.current,
 							'teamPosition': teamPosition.current,
