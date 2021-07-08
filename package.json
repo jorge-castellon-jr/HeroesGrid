@@ -15,7 +15,7 @@
     "yarn": "yarn yarn:web && yarn yarn:studio",
     "yarn:web": "cd web/ && yarn",
     "yarn:studio": "cd studio/ && yarn",
-    "lt": "lt -p 3000 -s heroesgrid -l localhost",
+    "lt": "lt -p 3333 -s heroesgrid -l localhost",
     "kill": "yarn kill:3333 && yarn kill:3000",
     "kill:3000": "npx kill-port 3000",
     "kill:3333": "npx kill-port 3333"

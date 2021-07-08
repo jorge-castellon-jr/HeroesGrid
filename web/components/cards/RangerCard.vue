@@ -1,16 +1,18 @@
 <template>
-	<div class="w-full overflow-hidden border card lg:flex">
-		<div
-			:class="`lg:h-auto lg:w-48 flex-none  ${$getColor(rangerColor)} ${ranger.imageUrl ? '' : 'custom-height'}`"
-		>
+	<div class="w-full overflow-hidden border card" :class="single ? 'sm:flex' : 'md:flex'">
+		<div class="ranger__image" :class="customClasses">
 			<img
-				class="p-4 mx-auto rounded-full max-h-48 md:full h-"
+				class="p-4 rounded-full max-h-48"
 				v-if="ranger.imageUrl"
-				:src="ranger.imageUrl"
+				:src="`${ranger.imageUrl}?h=${single ? '200' : '125'}`"
+				:alt="ranger.name"
 			/>
 		</div>
 
-		<div class="flex flex-col justify-between w-full leading-normal bg-white content md:p-4">
+		<div
+			class="flex flex-col justify-between w-full leading-normal bg-white content"
+			:class="single ? 'sm:p-2' : 'md:p-4'"
+		>
 			<span class>
 				<p class="items-center font-bold text-gray-900 uppercase text-md">{{ ranger.name }}</p>
 				<p
@@ -41,6 +43,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		single: {
+			type: Boolean,
+			default: false,
+		},
 		sanity: {
 			type: Boolean,
 			default: false,
@@ -58,11 +64,35 @@ export default {
 			}
 			return this.ranger.teamPosition
 		},
+		customClasses() {
+			let classes = []
+
+			if (this.single) classes.push("single")
+			if (!this.ranger.imageUrl) classes.push("custom-height")
+
+			classes.push(this.$getColor(this.rangerColor))
+
+			return classes.join(" ")
+		},
 	},
 }
 </script>
 
 <style lang="scss" scoped>
+.ranger {
+	&__image {
+		@apply flex-none flex justify-center items-center;
+
+		&.single {
+			@media screen and (min-width: theme("screens.sm")) {
+				@apply h-auto w-48;
+			}
+		}
+		@media screen and (min-width: theme("screens.lg")) {
+			@apply h-auto w-48;
+		}
+	}
+}
 .custom-height {
 	@apply max-h-48;
 	height: 42.5vw;

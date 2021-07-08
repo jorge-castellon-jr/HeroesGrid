@@ -72,7 +72,7 @@
 				<nuxt-link
 					v-for="(ranger, i) in filteredRangers"
 					:key="i"
-					:class="`no-underline p-3 md:px-6 w-1/2 flex ${
+					:class="`no-underline p-3 w-1/2 flex ${
 					i % 2 == 0 ? 'justify-end' : 'justify-start'
 				}`"
 					:to="`/${ ranger.team ? $friendlyURL(ranger.team) : ''}/${ranger.slug}`"

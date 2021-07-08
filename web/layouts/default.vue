@@ -1,6 +1,6 @@
 <template>
 	<div :class="loading ? 'h-screen overflow-hidden' : ''">
-		<div class="px-4 mb-40 md:mb-0">
+		<div class="px-4 mb-40 md:ml-32">
 			<nuxt />
 		</div>
 		<FooterNav />

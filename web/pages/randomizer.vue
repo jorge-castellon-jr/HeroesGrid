@@ -36,7 +36,7 @@
 							:for="option._id"
 							class="flex flex-col items-center justify-center w-full p-3 text-center transition-colors duration-300 border border-gray-200 rounded-lg shadow-lg cursor-pointer poin hover:bg-gray-200 checkbox"
 						>
-							<img class="w-2/5" :src="option.imageUrl" :alt="option.name" />
+							<img class="w-2/5" :src="`${option.imageUrl}?h=100`" :alt="option.name" />
 							{{ option.name }}
 						</label>
 					</div>
@@ -83,7 +83,7 @@
 							:for="option._id"
 							class="flex flex-col items-center justify-center w-full p-3 text-center transition-colors duration-300 border border-gray-200 rounded-lg shadow-lg cursor-pointer poin hover:bg-gray-200 checkbox"
 						>
-							<img class="w-2/5" :src="option.imageUrl" :alt="option.name" />
+							<img class="w-2/5" :src="`${option.imageUrl}?h=100`" :alt="option.name" />
 							{{ option.name }}
 						</label>
 					</div>

@@ -1,6 +1,6 @@
 <template>
 	<div v-if="ranger" class="max-w-3xl mx-auto mt-6 ranger">
-		<RangerCard class="mb-10" :ranger="ranger" sanity />
+		<RangerCard class="mb-10" :ranger="ranger" sanity single />
 
 		<div v-if="ranger.deck" class="mb-10">
 			<h2>Deck</h2>
