@@ -11,8 +11,6 @@ I will also not be posting minor versions, for example v1.2.1. Most of those ver
 Good luck rangers and may the power protect you!
 
 Changes:
-- Added filtering to the all rangers page
-- Removed All Teams page
-- Added enemy tab to randomizer, can randomize enemy foot soldiers, monsters, and masters
-- Updated ranger cards to show and image of the ranger card. Rangers that don't have images are rangers that are not fully released.
-- Updated single rangers page to show deck contents and zords. Only a few rangers have the deck list, but will slowly roll out for the rest of the rangers.
+- Desktop menu scrolls now when screen height too small
+- Better image optimization
+- Minor style adjustments for consitency
