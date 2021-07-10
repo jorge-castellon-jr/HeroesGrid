@@ -146,8 +146,8 @@ export default (context, inject) => {
 							'image': image.asset->url,
 							zords[]->
 						},
-						'gen': team->gen,
-					} | order(gen asc, order asc)
+						'gen': rangerInfo.team->gen,
+					} | order(gen asc, rangerInfo.order asc)
 				`
 			case "singleRanger":
 				return `
