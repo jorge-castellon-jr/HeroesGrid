@@ -24,50 +24,25 @@ const fetchDocuments = () => client.fetch(`*[_type == 'ranger'][0...100]`);
 
 const buildPatches = (docs) =>
   docs.map((doc) => {
-    let deckList = [];
-    if (doc.Deck)
-      doc.Deck.forEach((d) => {
-        deckList.push({
-          _key: d._key,
-          name: d.name,
-          effects: {
-            type: d.type,
-            effect: d.desc,
-          },
-          cardInfo: {
-            special: d.damage ? d.damage.special : null,
-            dice: d.damage ? d.damage.dice : null,
-            static: d.damage ? d.damage.static : null,
-            x: d.cost ? d.cost.x : null,
-            amount: d.cost ? d.cost.amount : null,
-            shields: d.shields,
-            quantity: d.quantity,
-          },
-        });
-      });
     return {
       id: doc._id,
       patch: {
-        set: {
-          rangerInfo: {
-            color: doc.color,
-            team: doc.team,
-            teamPosition: doc.teamPosition,
-            order: doc.order,
-            exclusive: doc.exclusive,
-            expansion: doc.expansion,
-            slug: doc.slug,
-          },
-          rangerCards: {
-            image: doc.image,
-            abilityName: doc.abilityName,
-            abilityDesc: doc.abilityDesc,
-            deck: deckList,
-            zords: doc.zords,
-            combatType: doc.combatType,
-            mapType: doc.mapType,
-          },
-        },
+        unset: [
+          "color",
+          "team",
+          "teamPosition",
+          "order",
+          "exclusive",
+          "expansion",
+          "slug",
+          "image",
+          "abilityName",
+          "abilityDesc",
+          "Deck",
+          "zords",
+          "combatType",
+          "mapType",
+        ],
         // this will cause the transaction to fail if the documents has been
         // modified since it was fetched.
         ifRevisionID: doc._rev,

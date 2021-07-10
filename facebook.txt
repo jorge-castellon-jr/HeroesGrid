@@ -4,7 +4,7 @@ Here with another update, v1.3.0. This isn't a big change to the frontend, at le
 
 As usual, some of you rangers may already see the changes, but if you don't just reload the page, and you will see all the goodies.
 
-I also want to give that's to everyone that was able to give me feedback. Some people encountered bugs while others suggest some great idea. Keep them coming! I really want this app to benifit everyone in the community.
+I also want to give thanks to everyone that was able to give me feedback. Some people encountered bugs while others suggest some great ideas. Keep them coming! I really want this app to benifit everyone in the community.
 
 Good luck rangers and may the power protect you!
 

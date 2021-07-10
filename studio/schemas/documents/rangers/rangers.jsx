@@ -153,18 +153,21 @@ export default {
           title: "Teams's Image",
           type: "image",
           fieldset: "ranger",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "abilityName",
           title: "Ranger's Ability",
           type: "string",
           fieldset: "ranger",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "abilityDesc",
           title: "Ranger's Ability Description",
           type: "text",
           fieldset: "ranger",
+          validation: (Rule) => Rule.required(),
         },
 
         {
@@ -228,157 +231,6 @@ export default {
         },
       ],
     },
-
-    // Non Tab
-    {
-      name: "color",
-      title: "Ranger's Color",
-      type: "colorlist", // required
-      options: {
-        list: [
-          { title: "Red", value: "#EF4444" },
-          { title: "Blue", value: "#60A5FA" },
-          { title: "Black", value: "#1a202c" },
-          { title: "Yellow", value: "#f6e05e" },
-          { title: "Pink", value: "#ed64a6" },
-          { title: "Green", value: "#48bb78" },
-          { title: "White", value: "#f7fafc" },
-          { title: "Silver", value: "#a0aec0" },
-          { title: "Gold", value: "#D97706" },
-          { title: "Crimson", value: "#991B1B" },
-          { title: "Purple", value: "#805ad5" },
-          { title: "Orange", value: "#f6ad55" },
-          { title: "Shadow", value: "#7DD3FC" },
-        ],
-      },
-    },
-    {
-      name: "team",
-      title: "Ranger's Team",
-      type: "reference",
-      to: [{ type: "team" }],
-    },
-
-    {
-      name: "expansion",
-      title: "Release",
-      type: "reference",
-      to: [{ type: "expansion" }],
-    },
-    {
-      title: "Exclusive?",
-      name: "exclusive",
-      type: "boolean",
-    },
-
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: (doc) => {
-          const query = `{
-            "team": *[_id=="${doc.team._ref}"][0] { 'slug': slug.current },
-            "expansion": *[_id=="${doc.expansion._ref}"][0] { "slug": slug.current }
-          }`;
-          return sanityClient.fetch(query).then((res) => {
-            return `${res.team.slug}-${doc.color.title}-${res.expansion.slug}`;
-          });
-        },
-      },
-    },
-
-    {
-      name: "teamPosition",
-      title: "Team Position",
-      type: "slug",
-      options: {
-        source: (doc) => {
-          const query = `*[_id=="${doc.team._ref}"][0] { season }`;
-          return sanityClient.fetch(query).then((res) => {
-            console.log(res);
-            return `${res.season} ${doc.color.title}`;
-          });
-        },
-        slugify: (input) => input,
-      },
-    },
-    {
-      name: "order",
-      title: "Ranger's Order",
-      type: "number",
-    },
-    {
-      name: "abilityName",
-      title: "Ranger's Ability",
-      type: "string",
-    },
-    {
-      name: "abilityDesc",
-      title: "Ranger's Ability Description",
-      type: "text",
-    },
-    {
-      name: "image",
-      title: "Teams's Image",
-      type: "image",
-    },
-
-    {
-      name: "Deck",
-      title: "Ranger's Deck",
-      type: "array",
-      options: {
-        // editModal: "popover",
-      },
-      of: [
-        {
-          name: "card",
-          title: "Card",
-          type: "rangerCardRef",
-        },
-      ],
-    },
-
-    {
-      name: "zords",
-      title: "Ranger's Zord(s)",
-      type: "array",
-      options: {
-        editModal: "popover",
-      },
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "zord" }],
-        },
-      ],
-    },
-
-    {
-      name: "combatType",
-      title: "Ranger's Combat Type",
-      type: "string",
-      options: {
-        list: [
-          { title: "Combat", value: "combat" },
-          { title: "Support", value: "support" },
-          { title: "Energy", value: "energy" },
-        ],
-      },
-    },
-    {
-      name: "mapType",
-      title: "Ranger's Map Type",
-      type: "string",
-      options: {
-        list: [
-          { title: "Combat", value: "combat" },
-          { title: "Support", value: "support" },
-          { title: "Energy", value: "energy" },
-        ],
-      },
-    },
   ],
   orderings: [
     {
@@ -392,14 +244,11 @@ export default {
       by: [{ field: "name", direction: "desc" }],
     },
   ],
-  initialValue: {
-    exclusive: false,
-  },
   preview: {
     select: {
       title: "name",
       team: "rangerInfo.teamPosition.current",
-      color: "color",
+      color: "rangerInfo.color",
       image: "rangerCards.image",
     },
     prepare({ title, color, team, image }) {

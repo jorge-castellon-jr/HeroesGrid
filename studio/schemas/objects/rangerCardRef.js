@@ -142,60 +142,7 @@ export default {
         },
       ],
     },
-
-    // non tabs
-
-    { title: "Effect", name: "desc", type: "text" },
-    { title: "Extra Effect", name: "extraDesc", type: "text" },
-    {
-      title: "Type",
-      name: "type",
-      type: "string",
-      options: {
-        list: [
-          { title: "Attack", value: "attack" },
-          { title: "Reaction", value: "reaction" },
-          { title: "Maneuver", value: "maneuver" },
-        ],
-      },
-    },
-
-    {
-      title: "Damage",
-      name: "damage",
-      type: "object",
-      fields: [
-        {
-          title: "Special?",
-          name: "special",
-          type: "boolean",
-        },
-        { title: "Dice Damage", name: "dice", type: "number" },
-        {
-          title: "Static Damage",
-          name: "static",
-          description: "Does not include damage from extra effects",
-          type: "number",
-        },
-      ],
-    },
-    {
-      title: "Energy Cost",
-      name: "cost",
-      type: "object",
-      fields: [
-        { title: "X?", name: "x", type: "boolean" },
-        { title: "Amount", name: "amount", type: "number" },
-      ],
-    },
-    { title: "Shields", name: "shields", type: "number" },
-    { title: "Quanity/Copies", name: "quantity", type: "number" },
   ],
-  initialValue: {
-    // damageInfo: { special: false, x: false },
-    damage: { special: false },
-    cost: { x: false },
-  },
   preview: {
     select: {
       name: "name",
