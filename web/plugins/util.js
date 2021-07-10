@@ -151,7 +151,7 @@ export default (context, inject) => {
 				`
 			case "singleRanger":
 				return `
-					*[_type == 'ranger' && slug.current == '${variable}'] {
+					*[_type == 'ranger' && rangerInfo.slug.current == '${variable}'] {
 						_id,
 						name,
 						rangerInfo {
