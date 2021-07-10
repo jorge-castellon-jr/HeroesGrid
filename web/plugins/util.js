@@ -66,6 +66,33 @@ export default (context, inject) => {
 
 	const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
 
+	const image = text => {
+		let hw = 20
+		return `<svg width='${hw}' height="${hw}" class="inline-block">
+				<image
+					width="${hw}"
+					height="${hw}"
+					xlink:href="/svg/${text}.svg"
+				/>
+			</svg>`
+	}
+	const changeIcon = text => {
+		let damage = image("damage")
+		let energy = image("energy")
+		let shield = image("shield")
+		let star = image("star")
+		let gold = image("gold")
+		let miss = image("miss")
+
+		return text
+			.replace(/\[DAMAGE\]/g, damage)
+			.replace(/\[ENERGY\]/g, energy)
+			.replace(/\[SHIELD\]/g, shield)
+			.replace(/\[STAR\]/g, star)
+			.replace(/\[GOLD\]/g, gold)
+			.replace(/\[MISS\]/g, miss)
+	}
+
 	const getQuery = (type, variable) => {
 		switch (type) {
 			case "allData":
@@ -237,5 +264,6 @@ export default (context, inject) => {
 	inject("friendlyURL", friendlyURL)
 	inject("dashToSpace", dashToSpace)
 	inject("random", random)
+	inject("changeIcon", changeIcon)
 	inject("getQuery", getQuery)
 }
