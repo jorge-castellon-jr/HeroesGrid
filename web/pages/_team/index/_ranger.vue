@@ -2,14 +2,14 @@
 	<div v-if="ranger" class="max-w-3xl mx-auto mt-6 ranger">
 		<RangerCard class="mb-10" :ranger="ranger" single />
 
-		<div v-if="ranger.rangerCards.deck" class="mb-10">
+		<div v-if="ranger.rangerCards.deck.length" class="mb-10">
 			<h2>Deck</h2>
 			<div v-for="card in ranger.rangerCards.deck" :key="card._key">
 				<RangerDeckSingle :card="card" />
 			</div>
 		</div>
 
-		<div v-if="ranger.rangerCards.zords" class="mb-10">
+		<div v-if="ranger.rangerCards.zords.length" class="mb-10">
 			<h2>Zords</h2>
 			<div v-for="zord in ranger.rangerCards.zords" :key="zord._key">
 				<h3>{{zord.name}}</h3>
