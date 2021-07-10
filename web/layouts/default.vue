@@ -63,11 +63,12 @@ html {
 
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 0.3s;
+	transition: opacity 0.3s 0.3s;
 	opacity: 1;
 }
 .fade-enter,
 .fade-leave-to {
+	transition: opacity 0.3s;
 	opacity: 0;
 }
 
