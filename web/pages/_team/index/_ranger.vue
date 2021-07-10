@@ -1,25 +1,24 @@
 <template>
 	<div v-if="ranger" class="max-w-3xl mx-auto mt-6 ranger">
-		<RangerCard class="mb-10" :ranger="ranger" sanity single />
+		<RangerCard class="mb-10" :ranger="ranger" single />
 
-		<div v-if="ranger.deck" class="mb-10">
+		<div v-if="ranger.rangerCards.deck" class="mb-10">
 			<h2>Deck</h2>
-			<div v-for="card in ranger.deck" :key="card._key">
+			<div v-for="card in ranger.rangerCards.deck" :key="card._key">
 				<RangerDeckSingle :card="card" />
 			</div>
 		</div>
 
-		<div v-if="ranger.zords" class="mb-10">
+		<div v-if="ranger.rangerCards.zords" class="mb-10">
 			<h2>Zords</h2>
-			<div v-for="zord in ranger.zords" :key="zord._key">
+			<div v-for="zord in ranger.rangerCards.zords" :key="zord._key">
 				<h3>{{zord.name}}</h3>
 				<p>{{zord.ability}}</p>
 			</div>
 		</div>
 
-		<nuxt-content :document="contentRanger" />
-
-		<div v-if="similar.length">
+		<!-- TODO: Better similar query -->
+		<!-- <div v-if="similar.length">
 			<h2>Similar Rangers</h2>
 			<div class="flex flex-wrap">
 				<nuxt-link
@@ -34,7 +33,7 @@
 					<span>{{ item.teamPosition[0] == '*' ? item.teamPosition.replace(/\*/g, '') : `${item.teamPosition.replace(/-/g, '')} Ranger` }}</span>
 				</nuxt-link>
 			</div>
-		</div>
+		</div>-->
 	</div>
 </template>
 
@@ -72,22 +71,17 @@ export default {
 				this.$getQuery("singleRanger", $route.params.ranger),
 			)
 
-			let content = await $store.getters.getCurrentRanger($route.params.ranger)
-
 			this.ranger = currentRangerFetch
 			this.similar = currentRangerFetch.similar
-			this.contentRanger = content
+
 			setTimeout(() => $store.commit("setLoadingState", false), 500)
 		},
 	},
 	computed: {
-		...mapGetters({
-			rangers: "getRangers",
-		}),
 		similarWOCurrent() {
 			return (
 				this.similar.filter(ranger => {
-					return ranger.slug != this.$route.params.ranger
+					return ranger.rangerInfo.slug != this.$route.params.ranger
 				}) || []
 			)
 		},

@@ -113,7 +113,7 @@ export default {
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 .nav {
 	@apply fixed bottom-0 w-full transition-all h-screen pt-4 border-t-0 duration-500 bg-white border-purple-700 z-40 overflow-y-auto;
 	box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;

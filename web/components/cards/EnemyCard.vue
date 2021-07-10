@@ -1,7 +1,7 @@
 <template>
 	<div class="w-full overflow-hidden border card lg:flex">
 		<div :class="`lg:h-auto lg:w-48 flex-none  ${enemyColor}`">
-			<img class="p-4 mx-auto max-h-48 md:full h-" v-if="enemy.image" :src="enemy.image" />
+			<img class="p-4 mx-auto max-h-48 md:full" v-if="enemy.image" :src="`${enemy.image}?h=150`" />
 		</div>
 
 		<div class="flex flex-col justify-between w-full leading-normal bg-white content md:p-4">

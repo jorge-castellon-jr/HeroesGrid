@@ -1,3 +1,4 @@
+// groq
 import Vue from "vue"
 
 export default (context, inject) => {
@@ -73,25 +74,31 @@ export default (context, inject) => {
 						_id,
 						name,
 						phase,
-						'imageUrl': image.asset->url,
+						'image': image.asset->url,
 					} | order(phase asc),
 					"enemyExpansions": *[_type == 'expansion' && phase < '3' && ('minion' in type[] || 'nemesis' in type[] || 'monster' in type[] || 'boss' in type[])] {
 						_id,
 						name,
 						phase,
-						'imageUrl': image.asset->url,
+						'image': image.asset->url,
 					} | order(phase asc),
+					
 					"rangers": *[_type == 'ranger'] {
 						_id,
 						name,
-						abilityName,
-						abilityDesc,
-						color,
-						'imageUrl': image.asset->url,
-						'team': team->name,
-						'slug': slug.current,
-						'teamPosition': teamPosition.current,
-						"expansion": expansion._ref
+						rangerInfo {
+							...,
+							'color': color.title,
+							'slug': slug.current,
+							'team': team->name,
+							"expansion": expansion._ref,
+							'teamPosition': teamPosition.current
+						},
+						rangerCards {
+							...,
+							'image': image.asset->url,
+							zords[]->
+						},
 					},
 					"zords": *[_type == 'zord'] {
 						_id,
@@ -127,14 +134,19 @@ export default (context, inject) => {
 					*[_type == 'ranger'] {
 						_id,
 						name,
-						abilityName,
-						abilityDesc,
-						color,
-						'imageUrl': image.asset->url,
-						'team': team->name,
+						rangerInfo {
+							...,
+							'color': color.title,
+							'slug': slug.current,
+							'team': team->name,
+							'teamPosition': teamPosition.current
+						},
+						rangerCards {
+							...,
+							'image': image.asset->url,
+							zords[]->
+						},
 						'gen': team->gen,
-						'slug': slug.current,
-						'teamPosition': teamPosition.current
 					} | order(gen asc, order asc)
 				`
 			case "singleRanger":
@@ -142,24 +154,29 @@ export default (context, inject) => {
 					*[_type == 'ranger' && slug.current == '${variable}'] {
 						_id,
 						name,
-						abilityName,
-						abilityDesc,
-						color,
-						'zords': zords[]->,
-						'imageUrl': image.asset->url,
-						'team': team->name,
-						'slug': slug.current,
-						'teamPosition': teamPosition.current,
-						'deck': Deck[],
-						'similar': *[_type == 'ranger' && color.title == ^.color.title && _id != ^._id] {
+						rangerInfo {
 							...,
-							'imageUrl': image.asset->url,
-							'team': team->name,
+							'color': color.title,
 							'slug': slug.current,
+							'team': team->name,
 							'teamPosition': teamPosition.current
-						}
+						},
+						rangerCards {
+							...,
+							'image': image.asset->url,
+							zords[]->
+						},
+
+						'deck': Deck[],
 					}[0]
 				`
+			// 'similar': *[_type == 'ranger' && color.title == ^.color.title && _id != ^._id] {
+			// 	...,
+			// 	'image': image.asset->url,
+			// 	'team': team->name,
+			// 	'slug': slug.current,
+			// 	'teamPosition': teamPosition.current
+			// }
 
 			case "allTeamsWithRangers":
 				return `
@@ -177,7 +194,7 @@ export default (context, inject) => {
 						abilityName,
 						abilityDesc,
 						color,
-						'imageUrl': image.asset->url,
+						'image': image.asset->url,
 						'team': team->name,
 						'slug': slug.current,
 						'teamPosition': teamPosition.current,
@@ -189,12 +206,18 @@ export default (context, inject) => {
 						name,
 						"rangers": *[_type == 'ranger' && team._ref == ^._id] {
 							name,
-							abilityName,
-							color,
-							'imageUrl': image.asset->url,
-							'team': team->name,
-							'slug': slug.current,
-							'teamPosition': teamPosition.current,
+							rangerInfo {
+								...,
+								'color': color.title,
+								'slug': slug.current,
+								'team': team->name,
+								'teamPosition': teamPosition.current
+							},
+							rangerCards {
+								...,
+								'image': image.asset->url,
+								zords[]->
+							},
 						}
 					}[0]
 				`

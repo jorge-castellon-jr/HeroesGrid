@@ -11,7 +11,7 @@
 
 		<div class="relative flex items-center justify-end mb-4">
 			<div class="pr-6">Filter:</div>
-			<div class>
+			<div class="teams">
 				<button class="relative z-20 w-32 mr-4 bg-white card content" @click="dropdownClick('teams')">
 					Teams
 					<strong v-if="checkedTeams.length">({{checkedTeams.length}})</strong>
@@ -37,7 +37,8 @@
 					</div>
 				</transition>
 			</div>
-			<div class>
+
+			<div class="colors">
 				<button class="relative z-20 w-32 bg-white card content" @click="dropdownClick('colors')">
 					Colors
 					<strong v-if="checkedColors.length">({{checkedColors.length}})</strong>
@@ -57,8 +58,7 @@
 								<label
 									:for="color.title"
 									class="flex flex-col items-center justify-center w-full p-3 font-semibold tracking-wider text-center transition-all duration-300 border border-gray-200 rounded-lg shadow-lg opacity-50 cursor-pointer hover:opacity-100 checkbox-colors"
-									:class="color.text"
-									:style="`background: ${color.value};`"
+									:class="[color.text, $getColor(color.title)]"
 								>{{color.title}}</label>
 							</div>
 						</div>
@@ -75,7 +75,7 @@
 					:class="`no-underline p-3 w-1/2 flex ${
 					i % 2 == 0 ? 'justify-end' : 'justify-start'
 				}`"
-					:to="`/${ ranger.team ? $friendlyURL(ranger.team) : ''}/${ranger.slug}`"
+					:to="`/${$friendlyURL(ranger.rangerInfo.team)}/${ranger.rangerInfo.slug}`"
 				>
 					<RangerCard class="lg:max-w-lg" noDesc :ranger="ranger" sanity />
 				</nuxt-link>
@@ -108,7 +108,7 @@ export default {
 				{ title: "Purple", value: "#805ad5", text: "text-purple-900" },
 				{ title: "Orange", value: "#f6ad55", text: "text-orange-900" },
 				{ title: "Silver", value: "#a0aec0", text: "text-gray-900" },
-				{ title: "Gold", value: "#D97706", text: "text-orange-900" },
+				{ title: "Gold", value: "#D97706", text: "text-yellow-900" },
 				// { title: "Crimson", value: "#991B1B", text: 'text-red-100' },
 				{ title: "Shadow", value: "#7DD3FC", text: "text-sky-900" },
 			],
@@ -155,19 +155,19 @@ export default {
 
 			if (this.checkedTeams.length && this.checkedColors.length) {
 				filtered = filtered.filter(r => {
-					let team = this.checkedTeams.find(t => t == r.team)
-					let color = this.checkedColors.find(c => c == r.color.title)
+					let team = this.checkedTeams.find(t => t == r.rangerInfo.team)
+					let color = this.checkedColors.find(c => c == r.rangerInfo.color)
 					return team && color
 				})
 			}
 			if (this.checkedTeams.length) {
 				filtered = filtered.filter(r => {
-					return this.checkedTeams.find(t => r.team == t)
+					return this.checkedTeams.find(t => r.rangerInfo.team == t)
 				})
 			}
 			if (this.checkedColors.length) {
 				filtered = filtered.filter(r => {
-					return this.checkedColors.find(c => r.color.title == c)
+					return this.checkedColors.find(c => r.rangerInfo.color == c)
 				})
 			}
 

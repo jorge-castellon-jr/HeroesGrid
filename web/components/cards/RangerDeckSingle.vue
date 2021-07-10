@@ -1,12 +1,12 @@
 <template>
 	<div class="my-4 card content">
-		<h3>{{card.name}}{{card.quantity > 1 ? ` x ${card.quantity}` : ''}}</h3>
-		<p v-if="card.cost">Cost: {{card.cost.x ? 'X' : card.cost.amount}}</p>
+		<h3>{{card.name}}{{card.cardInfo.quantity > 1 ? ` x ${card.cardInfo.quantity}` : ''}}</h3>
+		<p>Cost: {{card.cardInfo.x ? 'X' : card.cardInfo.amount}}</p>
 		<p>
 			<strong>{{cardType}}</strong>
 		</p>
-		<p>{{card.desc}}</p>
-		<p>Shields: {{card.shields}}</p>
+		<p>{{card.effects.effect}}</p>
+		<p>Shields: {{card.cardInfo.shields}}</p>
 	</div>
 </template>
 
@@ -20,13 +20,17 @@ export default {
 	},
 	computed: {
 		cardType() {
-			if (this.card.type == "attack") {
-				if (this.card.damage.special) return "Attack: Special"
-				if (this.card.damage.static)
-					return `Attack: ${this.card.damage.static} Damage`
-				return `Attack: ${this.card.damage.dice} Dice`
+			if (this.card.effects.type == "attack") {
+				let text = "Attack:"
+				if (this.card.cardInfo.special) return `${text} Special`
+
+				if (this.card.cardInfo.dice) text += ` ${this.card.cardInfo.dice} Dice`
+				if (this.card.cardInfo.static)
+					text += ` ${this.card.cardInfo.static} Damage`
+
+				return text
 			}
-			return this.$dashToSpace(this.card.type)
+			return this.$dashToSpace(this.card.effects.type)
 		},
 	},
 }

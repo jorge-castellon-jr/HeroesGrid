@@ -1,7 +1,10 @@
 <template>
 	<div class="flex flex-col">
 		<nuxt-child v-if="$route.params.ranger" />
-		<h2>{{team}} Rangers</h2>
+		<h2>
+			{{team}}
+			<br />Power Rangers
+		</h2>
 		<div class="flex flex-wrap justify-around -mx-3" id="rangersTeam">
 			<nuxt-link
 				v-for="(ranger, i) in rangers"
@@ -9,7 +12,7 @@
 				:class="`no-underline px-3 py-6 md:px-6 w-1/2 flex ${
 					i % 2 == 0 ? 'justify-end' : 'justify-start'
 				}`"
-				:to="`/${$friendlyURL(team + '/' + ranger.slug)}`"
+				:to="`/${$friendlyURL(team + '/' + ranger.rangerInfo.slug)}`"
 			>
 				<RangerCard class="lg:max-w-lg" noDesc :ranger="ranger" sanity />
 			</nuxt-link>

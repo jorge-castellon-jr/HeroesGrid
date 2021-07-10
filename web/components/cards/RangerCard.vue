@@ -3,8 +3,8 @@
 		<div class="ranger__image" :class="customClasses">
 			<img
 				class="p-4 rounded-full max-h-48"
-				v-if="ranger.imageUrl"
-				:src="`${ranger.imageUrl}?h=${single ? '200' : '125'}`"
+				v-if="ranger.rangerCards.image"
+				:src="`${ranger.rangerCards.image}?h=${single ? '200' : '125'}`"
 				:alt="ranger.name"
 			/>
 		</div>
@@ -17,9 +17,9 @@
 				<p class="items-center font-bold text-gray-900 uppercase text-md">{{ ranger.name }}</p>
 				<p
 					class="flex items-center text-sm text-gray-600"
-				>{{ ranger.teamPosition[0] == '*' ? ranger.teamPosition.replace(/\*/g, '') : `${ranger.teamPosition.replace(/-/g, '')} Ranger` }}</p>
-				<div class="mb-2 text-xl font-bold text-gray-900">{{ ranger.abilityName }}</div>
-				<p v-if="!noDesc" class="text-base text-gray-700">{{ ranger.abilityDesc }}</p>
+				>{{ ranger.rangerInfo.teamPosition[0] == '*' ? ranger.rangerInfo.teamPosition.replace(/\*/g, '') : `${ranger.rangerInfo.teamPosition.replace(/-/g, '')} Ranger` }}</p>
+				<div class="mb-2 text-xl font-bold text-gray-900">{{ ranger.rangerCards.abilityName }}</div>
+				<p v-if="!noDesc" class="text-base text-gray-700">{{ ranger.rangerCards.abilityDesc }}</p>
 			</span>
 		</div>
 	</div>
@@ -33,10 +33,10 @@ export default {
 			type: Object,
 			default: {
 				name: "",
-				teamPosition: "",
-				abilityName: "",
-				abilityDesc: "",
-				color: "",
+				rangerInfo: {
+					color: "",
+				},
+				rangerCards: {},
 			},
 		},
 		noDesc: {
@@ -47,28 +47,20 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		sanity: {
-			type: Boolean,
-			default: false,
-		},
 	},
 	methods: {},
 	computed: {
 		rangerColor() {
-			if (this.sanity) return this.ranger.color.title
-			return this.ranger.color
+			return this.ranger.rangerInfo.color
 		},
 		teamPosition() {
-			if (this.sanity) {
-				return `${this.ranger.team} ${this.ranger.color.title}`
-			}
-			return this.ranger.teamPosition
+			return `${this.ranger.rangerInfo.team} ${this.ranger.rangerInfo.color}`
 		},
 		customClasses() {
 			let classes = []
 
 			if (this.single) classes.push("single")
-			if (!this.ranger.imageUrl) classes.push("custom-height")
+			if (!this.ranger.rangerCards.image) classes.push("custom-height")
 
 			classes.push(this.$getColor(this.rangerColor))
 

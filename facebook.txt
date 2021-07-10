@@ -1,16 +1,20 @@
 Hello fellow rangers!
 
-Here with another update, v1.2.0. This time it primarily focuses on enemies. You can now use the randomizer for both rangers and enemies. There is still more I would like to add to the randomizer, like more options and the ability to remove a card from the chosen list, but for now this will help out a lot of rangers that want to randomize a game.
+Here with another update, v1.3.0. This isn't a big change to the frontend, at least visually speaking. This version primarily focuses on app optimization/performance, bug fixes, and data restructuring in the back end.
 
-Some of you rangers may already see the changes, but if you don't just reload the page, and you will see all the goodies.
+As usual, some of you rangers may already see the changes, but if you don't just reload the page, and you will see all the goodies.
 
-For anyone that is wondering, there was a v1.1.0, but that was out for only a day, which is why I decided to post about v1.2.0 instead. Most of v1.1.0 was back-end changes and adding images. I will add all changes including the v1.1.0 changes bellow.
-
-I will also not be posting minor versions, for example v1.2.1. Most of those versions are bug fixes and minor changes. If you are ever wondering what version you are on or if you are on the latest one, the bottom left corner of the menu will have the current version you are on and I will try to have description include the most up to date version for your reference.
+I also want to give that's to everyone that was able to give me feedback. Some people encountered bugs while others suggest some great idea. Keep them coming! I really want this app to benifit everyone in the community.
 
 Good luck rangers and may the power protect you!
 
 Changes:
 - Desktop menu scrolls now when screen height too small
+- Desktop menu is fixed now and separated from the mobile menu
 - Better image optimization
+- Minor bugfixes to the all rangers page filtering functionality
+- Fix the rulebooks page not working
+- Added images to the same team rangers on the bottom of the single ranger page
 - Minor style adjustments for consitency
+- Added a set all expansions button to randomizer
+- Big changes in the backend for easier editing on my part, which inturn restructured the data and frontend needed to be updated with those changes

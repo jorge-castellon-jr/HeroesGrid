@@ -391,16 +391,6 @@ export default {
       name: "name",
       by: [{ field: "name", direction: "desc" }],
     },
-    {
-      title: "Teams Position",
-      name: "teamPosition",
-      by: [{ field: "teamPosition", direction: "desc" }],
-    },
-    {
-      title: "Ranger Color",
-      name: "rangerColor",
-      by: [{ field: "color", direction: "desc" }],
-    },
   ],
   initialValue: {
     exclusive: false,

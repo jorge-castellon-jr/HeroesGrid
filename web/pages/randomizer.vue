@@ -20,6 +20,9 @@
 				<h2>Rangers</h2>
 				<p>Choose Expansion(s):</p>
 				<div class="flex flex-wrap justify-center -mx-3 md:mx-auto">
+					<div class="flex w-full p-2">
+						<button class="w-full p-3 text-center card" @click="setAllOptions('rangers')">All Expansions</button>
+					</div>
 					<div
 						v-for="option in rangerExpansions"
 						:key="option._id"
@@ -36,7 +39,7 @@
 							:for="option._id"
 							class="flex flex-col items-center justify-center w-full p-3 text-center transition-colors duration-300 border border-gray-200 rounded-lg shadow-lg cursor-pointer poin hover:bg-gray-200 checkbox"
 						>
-							<img class="w-2/5" :src="`${option.imageUrl}?h=100`" :alt="option.name" />
+							<img class="w-2/5" :src="`${option.image}?h=100`" :alt="option.name" />
 							{{ option.name }}
 						</label>
 					</div>
@@ -67,6 +70,9 @@
 				<h2>Enemies</h2>
 				<p>Choose Expansion(s):</p>
 				<div class="flex flex-wrap justify-center -mx-3 md:mx-auto">
+					<div class="flex w-full p-2">
+						<button class="w-full p-3 text-center card" @click="setAllOptions()">All Expansions</button>
+					</div>
 					<div
 						v-for="option in enemyExpansions"
 						:key="option._id"
@@ -83,7 +89,7 @@
 							:for="option._id"
 							class="flex flex-col items-center justify-center w-full p-3 text-center transition-colors duration-300 border border-gray-200 rounded-lg shadow-lg cursor-pointer poin hover:bg-gray-200 checkbox"
 						>
-							<img class="w-2/5" :src="`${option.imageUrl}?h=100`" :alt="option.name" />
+							<img class="w-2/5" :src="`${option.image}?h=100`" :alt="option.name" />
 							{{ option.name }}
 						</label>
 					</div>
@@ -210,6 +216,18 @@ export default {
 
 			setTimeout(() => $store.commit("setLoadingState", false), 500)
 		},
+		setAllOptions(text) {
+			let expansions =
+				text == "rangers" ? this.rangerExpansions : this.enemyExpansions
+			let chosen =
+				text == "rangers" ? this.rangerCheckedOptions : this.enemyCheckedOptions
+
+			expansions.forEach(e => {
+				let find = chosen.find(c => c == e._id)
+				if (find) return
+				this.$set(chosen, chosen.length, e._id)
+			})
+		},
 		pick(filtered, chosen, limit) {
 			if (this.error) this.error = false
 			if (chosen.length >= limit) {
@@ -261,7 +279,7 @@ export default {
 	computed: {
 		filteredRangers() {
 			return this.rangers.filter(r => {
-				return this.rangerCheckedOptions.find(o => o == r.expansion)
+				return this.rangerCheckedOptions.find(o => o == r.rangerInfo.expansion)
 			})
 		},
 		filteredFootSoldiers() {
