@@ -180,7 +180,7 @@ export default (context, inject) => {
 
 			case "allTeamsWithRangers":
 				return `
-					*[_type == 'team' && count(*[_type == 'ranger' && team._ref == ^._id]) > 0] | order(gen asc)
+					*[_type == 'team' && count(*[_type == 'ranger' && rangerInfo.team._ref == ^._id]) > 0] | order(gen asc)
 				`
 			case "allTeams":
 				return `
@@ -204,7 +204,7 @@ export default (context, inject) => {
 				return `
 					*[_type == 'team' && slug.current == '${variable}'] {
 						name,
-						"rangers": *[_type == 'ranger' && team._ref == ^._id] {
+						"rangers": *[_type == 'ranger' && rangerInfo.team._ref == ^._id] | order(rangerInfo.order asc) | {
 							name,
 							rangerInfo {
 								...,
@@ -216,7 +216,6 @@ export default (context, inject) => {
 							rangerCards {
 								...,
 								'image': image.asset->url,
-								zords[]->
 							},
 						}
 					}[0]
