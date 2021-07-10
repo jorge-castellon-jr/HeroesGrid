@@ -1,7 +1,8 @@
 <template>
 	<div
-		class="flex items-center justify-center border border-gray-400 rounded-lg shadow-lg w-14 h-14 md:w-20 md:h-20"
-	>{{symbol}}</div>
+		class="flex items-center justify-around w-16 h-16 p-2 border border-gray-400 rounded-lg shadow-lg md:w-20 md:h-20"
+		v-html="symbol"
+	></div>
 </template>
 
 <script>
@@ -15,9 +16,11 @@ export default {
 	computed: {
 		symbol() {
 			let symbol
-			if (this.number == 1 || this.number == 6) symbol = "O"
-			if (this.number == 2 || this.number == 4 || this.number == 5) symbol = "X"
-			if (this.number == 3) symbol = "X X"
+			if (this.number == 1 || this.number == 6)
+				symbol = this.$changeIcon("[MISS]")
+			if (this.number == 2 || this.number == 4 || this.number == 5)
+				symbol = this.$changeIcon("[DAMAGE]")
+			if (this.number == 3) symbol = this.$changeIcon("[DAMAGE][DAMAGE]")
 			return symbol
 		},
 	},

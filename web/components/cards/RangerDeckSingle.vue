@@ -3,15 +3,47 @@
 		<h3>{{card.name}}{{card.cardInfo.quantity > 1 ? ` x ${card.cardInfo.quantity}` : ''}}</h3>
 		<p>Cost: {{card.cardInfo.x ? 'X' : card.cardInfo.amount}}</p>
 		<p>
-			<strong>{{cardType}}</strong>
+			<strong>
+				<div v-if="card.effects.type == 'attack'" class="flex">
+					<span class="mr-2">Attack:</span>
+
+					<span v-if="card.cardInfo.special">X</span>
+					<div v-else v-for="a in card.cardInfo.dice" :key="`dice-${a}`">
+						<PRIcons icon="dice" class="inline-block" :height="18" :width="18" />
+					</div>
+					<div v-if="card.cardInfo.static">
+						<span v-if="card.cardInfo.dice" class="ml-2">+</span>
+						{{card.cardInfo.static}}
+						<PRIcons icon="damage" class="inline-block" :height="18" :width="18" />
+					</div>
+				</div>
+				<span v-else>{{$dashToSpace(card.effects.type)}}</span>
+			</strong>
 		</p>
-		<p>{{card.effects.effect}}</p>
-		<p>Shields: {{card.cardInfo.shields}}</p>
+		<p v-if="card.effects.effect" v-html="$changeIcon(card.effects.effect)"></p>
+		<p v-if="card.effects.extraEffect">
+			<PRIcons :icon="card.effects.extraType" class="inline-block" :height="18" :width="18" />
+			<span v-html="`: ${$changeIcon(card.effects.extraEffect)}`"></span>
+		</p>
+		<p class="text-right">
+			<PRIcons
+				v-for="s in card.cardInfo.shields"
+				:key="`shield-${s}`"
+				icon="shield"
+				class="inline-block"
+				:height="18"
+				:width="18"
+			/>
+		</p>
 	</div>
 </template>
 
 <script>
+import PRIcons from "@/components/PRIcons.vue"
 export default {
+	components: {
+		PRIcons,
+	},
 	props: {
 		card: {
 			type: Object,

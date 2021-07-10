@@ -19,7 +19,11 @@
 					class="flex items-center text-sm text-gray-600"
 				>{{ ranger.rangerInfo.teamPosition[0] == '*' ? ranger.rangerInfo.teamPosition.replace(/\*/g, '') : `${ranger.rangerInfo.teamPosition.replace(/-/g, '')} Ranger` }}</p>
 				<div class="mb-2 text-xl font-bold text-gray-900">{{ ranger.rangerCards.abilityName }}</div>
-				<p v-if="!noDesc" class="text-base text-gray-700">{{ ranger.rangerCards.abilityDesc }}</p>
+				<p
+					v-if="!noDesc"
+					class="text-base text-gray-700"
+					v-html="$changeIcon(ranger.rangerCards.abilityDesc)"
+				></p>
 			</span>
 		</div>
 	</div>

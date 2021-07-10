@@ -13,7 +13,7 @@
 			<h2>Zords</h2>
 			<div v-for="zord in ranger.rangerCards.zords" :key="zord._key">
 				<h3>{{zord.name}}</h3>
-				<p>{{zord.ability}}</p>
+				<p v-html="$changeIcon(zord.ability)"></p>
 			</div>
 		</div>
 
