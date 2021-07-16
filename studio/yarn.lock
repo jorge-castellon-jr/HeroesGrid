@@ -1317,11 +1317,13 @@
     styled-components "^5.2.1"
 
 "@sanity/default-login@^2.2.6":
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/@sanity/default-login/-/default-login-2.11.1.tgz#e3d4db645ad248fa755aede637d432c92a8f52d0"
-  integrity sha512-EXy3xeg/mqxpGuHKlAZoK98cCNh6HwcnowLqTD4fRvkq36fAEf8cf/STQLmttM60zAXdSg1mz+dDbHzodDaDiw==
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@sanity/default-login/-/default-login-2.13.0.tgz#2e4467e2978c89dae1f1b29d0d29c4796d741de8"
+  integrity sha512-aINaI4yEuuZQbI/11vRmcSR9yuy7fZBTM2YI2oir0tAbaUBZszLZL3s8WTW10JwJPK2tsHm4mourqNgIurTVLw==
   dependencies:
-    "@sanity/generate-help-url" "2.2.6"
+    "@sanity/generate-help-url" "^2.13.0"
+    "@sanity/logos" "^1.1.2"
+    "@sanity/ui" "^0.34.2"
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
@@ -1459,6 +1461,11 @@
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-2.2.6.tgz#1673872e2747d1e8aa9406486a80ba6d3e36869d"
   integrity sha512-DXRKXnOCoqObNEEuJJlJ78YOehgoBk92xm1ol4PfPuD4xJv5Z/cMwDecaQ2K05nx8Ecr4KJR/26XMF/FQMg9Tw==
 
+"@sanity/generate-help-url@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-2.13.0.tgz#e0990a94e5ea386b874d139da733e9664ae531fc"
+  integrity sha512-h+kRqRozLnmFC+ji82og7S60AQaY8Y4x/F1noS08M5T9N7mXCwGYZOHLfSMSNyBCaJwqWpEzzq/qvq9Wxxa7ow==
+
 "@sanity/icons@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-1.1.2.tgz#9ad5e24c8b0c744879c69463091070eaea56b735"
@@ -1513,6 +1520,11 @@
     lodash "^4.17.15"
     memoize-one "^3.1.1"
     oneline "^1.0.3"
+
+"@sanity/logos@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@sanity/logos/-/logos-1.1.2.tgz#d057fdda20a695a7bb85fdc04154160de84258d7"
+  integrity sha512-ayb5Mp1xy6vd0xv6SnCswEUrMRzHRPOk1OFkyBW/7NVupBDq1RctO9zHZZpWvSqxrHq7aUhX4IBv/nzYG6qryw==
 
 "@sanity/mutator@2.10.2":
   version "2.10.2"
@@ -1693,7 +1705,7 @@
     "@types/react" "^17.0.0"
     rxjs "^6.5.3"
 
-"@sanity/ui@^0.34.3", "@sanity/ui@^0.34.4":
+"@sanity/ui@^0.34.2", "@sanity/ui@^0.34.3", "@sanity/ui@^0.34.4":
   version "0.34.4"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-0.34.4.tgz#cb01ea9384c355b9ce8fd2c834424668d5769565"
   integrity sha512-vRWBqwjzld7NvZ2Je7NtqyBO7u3yDvRzTN5L2JX1cac3+gdg2oh76QS8dn8OBe2z8GIYBQDVAR8m1EAmz90Tbw==
