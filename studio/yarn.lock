@@ -1200,9 +1200,9 @@
   integrity sha512-6WE14xdSWMPfWHGs9kzZyK3eCUVc37U94R4hpqTwMbAYyxvpq6KEEqWh3lsrqrxUk97MQCoWyzCpfGjMmOfpCw==
 
 "@sanity/components@^2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-2.2.6.tgz#d1d6d1017a53ebb413ef026eabd5dd0b4a1bcdad"
-  integrity sha512-KK+6eJgrgHEd9Hq+LbRamdAI64cNXYoVn/f/Dn3ES1GA55AvQyKQUay4T/zZ1yEITKSyIZgETQjpAl/Hg+72eQ==
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-2.13.0.tgz#2e530cadea1965b2938c366704e73e089352d13c"
+  integrity sha512-g0fUibEb7KDLtw4jDlT9ecNxzx4ClFkiJHwcVk6wD+hLQLvRLJ9lwt2T66x2pW9BlQcl+yZ4qbrTD8wQJC1Qtg==
 
 "@sanity/core@^2.5.0":
   version "2.12.2"
