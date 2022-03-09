@@ -22,7 +22,7 @@
 		"prettier": "^2.3.2"
 	},
 	"devDependencies": {
-		"@nuxtjs/tailwindcss": "^4.2.0",
+		"@nuxtjs/tailwindcss": "^5.0.0",
 		"@sanity/cli": "^2.0.5",
 		"localtunnel": "^2.0.1",
 		"node-sass": "^6.0.1",
