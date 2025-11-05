@@ -1,0 +1,76 @@
+.nav {
+	@apply fixed bottom-0 w-full transition-all h-screen pt-4 border-t-0 duration-500 bg-white border-purple-700 z-40 overflow-y-auto;
+	box-shadow: 0 16px 0 0 theme("colors.purple.700") inset;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
+	&.desktop {
+		@apply hidden;
+	}
+
+	&__link {
+		@apply flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-nowrap text-sm transition-colors duration-100 ease-in-out py-4 w-1/2;
+		&:hover {
+			@apply bg-gray-100;
+		}
+
+		&#home-link {
+			@apply fixed border-purple-700 shadow-lg rounded-full bg-white transition-all h-20 w-20 flex items-center justify-center duration-500 z-50;
+			left: 50%;
+			bottom: 24px;
+			transform: translateX(-50%);
+			&.open {
+				@apply bg-gray-200;
+				box-shadow: 0 0 0 8px theme("colors.purple.700");
+			}
+		}
+	}
+
+	&__transition {
+		&--enter {
+			animation: bottomup-enter 0.3s ease;
+		}
+		&--leave {
+			animation: bottomup-leave 0.3s ease;
+		}
+	}
+
+	@media screen and (min-width: theme("screens.md")) {
+		@apply h-full left-0 top-0 rounded-r-lg rounded-l-none flex-col justify-start w-32 border-r-8 border-t-0;
+		box-shadow: none;
+
+		&.desktop {
+			@apply flex;
+		}
+
+		&__link {
+			@apply flex-grow-0 w-full;
+			&#home-link {
+				@apply hidden;
+			}
+		}
+	}
+}
+
+.active {
+	@apply bg-gray-200 text-purple-600;
+}
+
+@keyframes bottomup-enter {
+	from {
+		transform: translateY(100vh);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes bottomup-leave {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100vh);
+	}
+}

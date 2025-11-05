@@ -1,0 +1,26 @@
+.loading-transition {
+	&--enter {
+		animation: topdown-enter 0.3s ease;
+	}
+	&--leave {
+		animation: topdown-leave 0.3s ease;
+	}
+}
+
+@keyframes topdown-enter {
+	from {
+		transform: translateY(-100vh);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes topdown-leave {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100vh);
+	}
+}

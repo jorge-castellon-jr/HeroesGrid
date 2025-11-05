@@ -1,0 +1,66 @@
+.highlight {
+	background-color: #fef08a;
+	display: inline-block;
+	padding: 0.5rem;
+}
+
+.blue {
+	color: #3b82f6;
+}
+
+blockquote {
+	border: 1px solid #000;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+blockquote strong {
+	color: #dc2626;
+}
+
+.float.right {
+	float: right;
+}
+
+h1,
+h2,
+h3 {
+	clear: both;
+}
+
+h2 {
+	margin-bottom: 0.75rem;
+	margin-top: 1.5rem;
+}
+
+ol {
+	padding-bottom: 0.5rem;
+}
+
+.task-list-item {
+	padding-left: 1.5rem;
+}
+
+.task-list-item input {
+	display: none;
+}
+
+thead tr {
+	display: flex;
+}
+
+thead tr th {
+	width: 100%;
+	text-align: left;
+}
+
+tbody tr {
+	display: flex;
+	align-items: flex-end;
+}
+
+tbody tr td {
+	width: 100%;
+	padding: 0.5rem;
+	text-align: center;
+}

@@ -1,0 +1,62 @@
+html {
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	word-spacing: 1px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+	transition: opacity 0.3s;
+}
+.page-enter,
+.page-leave-to {
+	opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.3s 0.3s;
+	opacity: 1;
+}
+.fade-enter,
+.fade-leave-to {
+	transition: opacity 0.3s;
+	opacity: 0;
+}
+
+.topdown-enter-active,
+.topdown-leave-active {
+	transition: transform 0.3s ease;
+}
+.topdown-enter,
+.topdown-leave-to {
+	transform: translateY(-100vh);
+}
+
+.bottomup-enter-active,
+.bottomup-leave-active {
+	transition: transform 0.3s ease;
+}
+.bottomup-enter,
+.bottomup-leave-to {
+	transform: translateY(100vh);
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+}

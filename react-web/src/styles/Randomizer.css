@@ -1,0 +1,19 @@
+.tab {
+	@apply px-6 pt-3 pb-5 rounded-t-lg transition-all duration-300;
+}
+
+.tab--open {
+	@apply border-t border-b-8 border-l border-r shadow-lg pb-3;
+}
+
+input:checked ~ .checkbox {
+	@apply bg-gray-400;
+}
+
+label {
+	@apply relative;
+}
+
+label:after {
+	@apply absolute inset-0;
+}

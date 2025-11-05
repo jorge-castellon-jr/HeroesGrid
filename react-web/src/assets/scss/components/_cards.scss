@@ -1,0 +1,8 @@
+.card {
+	@apply border border-gray-200 rounded-lg shadow-lg;
+
+	.content,
+	&.content {
+		@apply p-3;
+	}
+}

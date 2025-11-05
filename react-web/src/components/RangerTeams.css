@@ -1,0 +1,44 @@
+.ranger-teams img {
+	max-width: 300px;
+	width: 100%;
+}
+
+#mighty-morphin {
+	order: 1;
+}
+
+#zeo {
+	order: 2;
+}
+
+#turbo {
+	order: 3;
+}
+
+#lost-galaxy {
+	order: 4;
+}
+
+#time-force {
+	order: 5;
+}
+
+#dino-thunder {
+	order: 6;
+}
+
+#spd {
+	order: 7;
+}
+
+#super-samurai {
+	order: 8;
+}
+
+#hyper-force {
+	order: 9;
+}
+
+.ranger-teams p {
+	display: inline-grid;
+}

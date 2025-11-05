@@ -1,0 +1,27 @@
+input:checked ~ .checkbox {
+	@apply bg-gray-400;
+}
+input:checked ~ .checkbox-colors {
+	@apply opacity-100;
+}
+.dropdown {
+	@apply absolute right-0 bg-white w-72 z-20;
+	top: 62px;
+
+	@media screen and (min-width: theme("screens.md")) {
+		width: 576px;
+	}
+}
+
+.fade-enter {
+	animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

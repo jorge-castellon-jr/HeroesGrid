@@ -1,0 +1,32 @@
+.enemies {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.enemies__unit {
+	width: 50%;
+	padding-bottom: 1.5rem;
+}
+
+.enemies__unit--left {
+	padding-right: 0.75rem;
+}
+
+.enemies__unit--right {
+	padding-left: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+	.enemies__unit {
+		width: calc(33% - 24px);
+	}
+	
+	.enemies__unit--left {
+		padding-right: 0;
+	}
+	
+	.enemies__unit--right {
+		padding-left: 0;
+	}
+}
