@@ -7,7 +7,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     colors: {
       transparent: "transparent",

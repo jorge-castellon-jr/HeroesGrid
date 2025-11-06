@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react'
+import { createContext, useContext, useReducer, useEffect } from 'react'
 
 const AppContext = createContext()
 
@@ -10,6 +10,7 @@ const initialState = {
 	bosses: [],
 	initLoad: false,
 	loading: true,
+	darkMode: localStorage.getItem('darkMode') === 'true',
 }
 
 const reducer = (state, action) => {
@@ -28,6 +29,8 @@ const reducer = (state, action) => {
 			return { ...state, initLoad: action.payload }
 		case 'SET_LOADING_STATE':
 			return { ...state, loading: action.payload }
+		case 'TOGGLE_DARK_MODE':
+			return { ...state, darkMode: !state.darkMode }
 		default:
 			return state
 	}
@@ -35,6 +38,16 @@ const reducer = (state, action) => {
 
 export const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
+
+	// Apply dark mode class to document element
+	useEffect(() => {
+		if (state.darkMode) {
+			document.documentElement.classList.add('dark')
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
+		localStorage.setItem('darkMode', state.darkMode)
+	}, [state.darkMode])
 
 	const getRangers = async () => {
 		if (state.rangers.length === 0) {
@@ -90,6 +103,10 @@ export const AppProvider = ({ children }) => {
 		dispatch({ type: 'SET_LOADING_STATE', payload: bool })
 	}
 
+	const toggleDarkMode = () => {
+		dispatch({ type: 'TOGGLE_DARK_MODE' })
+	}
+
 	const getCurrentRanger = (slug) => {
 		return state.rangers.find(ranger => ranger.slug === slug)
 	}
@@ -114,6 +131,7 @@ export const AppProvider = ({ children }) => {
 		setLoadingState,
 		getCurrentRanger,
 		getSimilarRangers,
+		toggleDarkMode,
 	}
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>
