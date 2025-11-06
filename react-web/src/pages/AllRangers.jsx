@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import RangerCard from '../components/cards/RangerCard'
 import { database } from '../database'
@@ -10,13 +10,23 @@ import './AllRangers.scss'
 
 const AllRangers = () => {
 	const { setLoadingState } = useApp()
+	const [searchParams, setSearchParams] = useSearchParams()
 	const [rangers, setRangers] = useState([])
 	const [teams, setTeams] = useState([])
-	const [checkedTeams, setCheckedTeams] = useState([])
-	const [checkedColors, setCheckedColors] = useState([])
 	const [teamsDropdown, setTeamsDropdown] = useState(false)
 	const [colorsDropdown, setColorsDropdown] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
+
+	// Get filter state from URL
+	const checkedTeams = useMemo(() => {
+		const teamsParam = searchParams.get('teams')
+		return teamsParam ? teamsParam.split(',').filter(Boolean) : []
+	}, [searchParams])
+
+	const checkedColors = useMemo(() => {
+		const colorsParam = searchParams.get('colors')
+		return colorsParam ? colorsParam.split(',').filter(Boolean) : []
+	}, [searchParams])
 
 	const colors = [
 		{ title: "Red", value: "#EF4444", text: "text-red-900" },
@@ -39,12 +49,20 @@ const AllRangers = () => {
 				// Wait for database initialization
 				await initializeDatabase();
 				
-				// Fetch rangers with team relationship
+				// Fetch rangers with team and season relationship
 				const rangersCollection = database.get('rangers')
 				const teamsCollection = database.get('teams')
+				const seasonsCollection = database.get('seasons')
 				
 				const fetchedRangers = await rangersCollection.query(Q.where('published', true)).fetch()
 				const fetchedTeams = await teamsCollection.query().fetch()
+				const fetchedSeasons = await seasonsCollection.query().fetch()
+				
+				// Create a season order map
+				const seasonOrderMap = {}
+				fetchedSeasons.forEach(s => {
+					seasonOrderMap[s.id] = s.order
+				})
 				
 				// Transform WatermelonDB models to match component structure
 				const transformedRangers = await Promise.all(
@@ -58,7 +76,8 @@ const AllRangers = () => {
 								color: r.color,
 								teamPosition: r.teamPosition,
 								cardTitle: r.cardTitle,
-								title: r.title
+								title: r.title,
+								seasonOrder: team?.seasonId ? seasonOrderMap[team.seasonId] : 999
 							},
 							rangerCards: {
 								image: r.imageUrl,
@@ -68,6 +87,15 @@ const AllRangers = () => {
 						}
 					})
 				)
+				
+				// Sort rangers by season order, then by team position
+				transformedRangers.sort((a, b) => {
+					if (a.rangerInfo.seasonOrder !== b.rangerInfo.seasonOrder) {
+						return a.rangerInfo.seasonOrder - b.rangerInfo.seasonOrder
+					}
+					// Sort by team position within same season
+					return (a.rangerInfo.teamPosition || '').localeCompare(b.rangerInfo.teamPosition || '')
+				})
 				
 				const transformedTeams = fetchedTeams.map(t => ({
 					_id: t.id,
@@ -92,7 +120,7 @@ const AllRangers = () => {
 		if (checkedTeams.length && checkedColors.length) {
 			filtered = filtered.filter(r => {
 				const team = checkedTeams.find(t => t === r.rangerInfo.team)
-				const color = checkedColors.find(c => c === r.rangerInfo.color)
+				const color = checkedColors.find(c => c.toLowerCase() === r.rangerInfo.color?.toLowerCase())
 				return team && color
 			})
 		} else if (checkedTeams.length) {
@@ -101,7 +129,7 @@ const AllRangers = () => {
 			})
 		} else if (checkedColors.length) {
 			filtered = filtered.filter(r => {
-				return checkedColors.find(c => r.rangerInfo.color === c)
+				return checkedColors.find(c => c.toLowerCase() === r.rangerInfo.color?.toLowerCase())
 			})
 		}
 
@@ -125,24 +153,35 @@ const AllRangers = () => {
 	}
 
 	const resetFiltered = () => {
-		setCheckedTeams([])
-		setCheckedColors([])
+		setSearchParams({})
 	}
 
 	const toggleTeam = (teamName) => {
-		setCheckedTeams(prev => 
-			prev.includes(teamName) 
-				? prev.filter(t => t !== teamName)
-				: [...prev, teamName]
-		)
+		const newCheckedTeams = checkedTeams.includes(teamName)
+			? checkedTeams.filter(t => t !== teamName)
+			: [...checkedTeams, teamName]
+		
+		const newParams = new URLSearchParams(searchParams)
+		if (newCheckedTeams.length > 0) {
+			newParams.set('teams', newCheckedTeams.join(','))
+		} else {
+			newParams.delete('teams')
+		}
+		setSearchParams(newParams)
 	}
 
 	const toggleColor = (colorTitle) => {
-		setCheckedColors(prev => 
-			prev.includes(colorTitle) 
-				? prev.filter(c => c !== colorTitle)
-				: [...prev, colorTitle]
-		)
+		const newCheckedColors = checkedColors.includes(colorTitle)
+			? checkedColors.filter(c => c !== colorTitle)
+			: [...checkedColors, colorTitle]
+		
+		const newParams = new URLSearchParams(searchParams)
+		if (newCheckedColors.length > 0) {
+			newParams.set('colors', newCheckedColors.join(','))
+		} else {
+			newParams.delete('colors')
+		}
+		setSearchParams(newParams)
 	}
 
 	if (isLoading) {
