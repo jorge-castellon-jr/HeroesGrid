@@ -12,6 +12,7 @@ import Countdown from './pages/Countdown'
 import Randomizer from './pages/Randomizer'
 import Team from './pages/Team'
 import Ranger from './pages/Ranger'
+import Admin from './pages/Admin'
 import './App.css'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/randomizer" element={<Randomizer />} />
 					<Route path="/rulebooks" element={<Rulebooks />} />
 					<Route path="/rulebooks/:slug" element={<RulebookSingle />} />
+					<Route path="/admin" element={<Admin />} />
 					<Route path="/:team" element={<Team />} />
 					<Route path="/:team/:ranger" element={<Ranger />} />
 					</Routes>

@@ -2,7 +2,8 @@ import { useState, useEffect, useMemo } from 'react';
 import { useApp } from '../context/AppContext';
 import RangerCard from '../components/cards/RangerCard';
 import EnemyCard from '../components/cards/EnemyCard';
-import sanity from '../lib/sanityClient';
+import { database } from '../database';
+import { Q } from '@nozbe/watermelondb';
 import '../styles/Randomizer.css';
 
 export default function Randomizer() {
@@ -31,72 +32,88 @@ export default function Randomizer() {
 	const [error, setError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
-	// Fetch data from Sanity
+	// Fetch data from WatermelonDB
 	useEffect(() => {
 		const fetchData = async () => {
-			const query = `{
-				"rangers": *[_type == "ranger"] {
-					_id,
-					name,
-					slug,
-					rangerInfo {
-						...,
-						'color': color.title,
-						'slug': slug.current,
-						'team': team->name,
-						'teamPosition': teamPosition.current,
-						"expansion": expansion._ref
-					},
-					rangerCards {
-						...,
-						'image': image.asset->url
-					},
-					"imageLarge": rangerInfo.image.asset->url
-				},
-				"footSoldiers": *[_type == "footsoldier"] {
-					...,
-					"expansion": expansion._ref,
-					"image": image.asset->url
-				},
-				"monsters": *[_type == "monster"] {
-					...,
-					"expansion": expansion._ref,
-					"image": image.asset->url
-				},
-				"masters": *[_type == "master"] {
-					...,
-					"expansion": expansion._ref,
-					"image": image.asset->url
-				},
-				"rangerExpansions": *[_type == "expansion"] | order(name asc) {
-					_id,
-					name,
-					"image": image.asset->url
-				},
-				"enemyExpansions": *[_type == "expansion"] | order(name asc) {
-					_id,
-					name,
-					"image": image.asset->url
-				}
-			}`;
-
-			const data = await sanity.fetch(query);
-
-			setRangers(data.rangers || []);
-			setFootSoldiers(data.footSoldiers || []);
-			setMonsters(data.monsters || []);
-			setMasters(data.masters || []);
-			setRangerExpansions(data.rangerExpansions || []);
-			setEnemyExpansions(data.enemyExpansions || []);
-
-			console.log('Rangers:', data.rangers?.slice(0, 2));
-			console.log('Expansions:', data.rangerExpansions);
-
-			setTimeout(() => setLoadingState(false), 500);
+			try {
+				const rangersCollection = database.get('rangers');
+				const enemiesCollection = database.get('enemies');
+				const expansionsCollection = database.get('expansions');
+				
+				// Fetch all data
+				const fetchedRangers = await rangersCollection.query(Q.where('published', true)).fetch();
+				const fetchedEnemies = await enemiesCollection.query().fetch();
+				const fetchedExpansions = await expansionsCollection.query().fetch();
+				
+				// Transform rangers
+				const transformedRangers = await Promise.all(
+					fetchedRangers.map(async (r) => {
+						const team = await r.team.fetch();
+						return {
+							_id: r.id,
+							name: r.name,
+							rangerInfo: {
+								slug: r.slug,
+								team: team?.name || '',
+								color: r.color,
+								teamPosition: r.teamPosition,
+								expansion: r.expansionId,
+								cardTitle: r.cardTitle,
+								title: r.title
+							},
+							rangerCards: {
+								image: r.imageUrl,
+								abilityName: r.abilityName,
+								abilityDesc: r.abilityDesc
+							}
+						}
+					})
+				);
+				
+				// Transform enemies by type
+				const transformEnemy = (e) => ({
+					_id: e.id,
+					name: e.name,
+					slug: e.slug,
+					expansion: e.expansionId,
+					image: null // TODO: add image field to Enemy model if needed
+				});
+				
+				const footSoldiersData = fetchedEnemies
+					.filter(e => e.monsterType?.toLowerCase() === 'footsoldier')
+					.map(transformEnemy);
+				
+				const monstersData = fetchedEnemies
+					.filter(e => e.monsterType?.toLowerCase() === 'monster')
+					.map(transformEnemy);
+				
+				const mastersData = fetchedEnemies
+					.filter(e => e.monsterType?.toLowerCase() === 'master')
+					.map(transformEnemy);
+				
+				// Transform expansions
+				const transformedExpansions = fetchedExpansions.map(e => ({
+					_id: e.id,
+					name: e.name,
+					image: e.imageUrl
+				}));
+				
+				setRangers(transformedRangers);
+				setFootSoldiers(footSoldiersData);
+				setMonsters(monstersData);
+				setMasters(mastersData);
+				setRangerExpansions(transformedExpansions);
+				setEnemyExpansions(transformedExpansions);
+				
+				setTimeout(() => setLoadingState(false), 500);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+				setLoadingState(false);
+			}
 		};
 
 		fetchData();
-	}, []);
+	}, [setLoadingState]);
 
 	// Computed filtered arrays
 	const filteredRangers = useMemo(() => {

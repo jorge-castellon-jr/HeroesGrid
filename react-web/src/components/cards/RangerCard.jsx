@@ -3,14 +3,23 @@ import './RangerCard.css';
 
 export default function RangerCard({ ranger, noDesc = false, single = false, className = '' }) {
 	const rangerColor = ranger?.rangerInfo?.color || '';
-	const teamPosition = ranger?.rangerInfo?.teamPosition || '';
+	const cardTitle = ranger?.rangerInfo?.cardTitle;
+	const title = ranger?.rangerInfo?.title;
+	const name = ranger?.name;
+	const teamName = ranger?.rangerInfo?.team || '';
 	
-	// Format team position text
-	const formatTeamPosition = (position) => {
-		if (!position) return '';
-		return position[0] === '*' 
-			? position.replace(/\*/g, '') 
-			: `${position.replace(/-/g, '')} Ranger`;
+	// Get display name: cardTitle > name
+	const getDisplayName = () => {
+		return cardTitle || name;
+	};
+	
+	// Get display title (team position): title > default format
+	const getDisplayTitle = () => {
+		if (title) return title;
+		
+		// Default: "{team name} {ranger color} Ranger"
+		const color = rangerColor.charAt(0).toUpperCase() + rangerColor.slice(1);
+		return `${teamName} ${color} Ranger`;
 	};
 
 	// Build custom classes
@@ -44,10 +53,10 @@ export default function RangerCard({ ranger, noDesc = false, single = false, cla
 			>
 				<span>
 					<p className="items-center font-bold text-gray-900 uppercase text-md">
-						{ranger?.name}
+						{getDisplayName()}
 					</p>
 					<p className="flex items-center text-sm text-gray-600">
-						{formatTeamPosition(teamPosition)}
+						{getDisplayTitle()}
 					</p>
 					<div className="mb-2 text-xl font-bold text-gray-900">
 						{ranger?.rangerCards?.abilityName}

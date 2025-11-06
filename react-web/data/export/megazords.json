@@ -1,0 +1,538 @@
+[
+  {
+    "id": 23,
+    "name": "ASTRO MEGAZORD",
+    "slug": "astro-megazord",
+    "ability": "During each battle, Rangers may look at the top card of their deck at any time. Once per Ranger turn, a Ranger may swap that card with a card in their hand.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 45,
+    "name": "BEAST-X KING ULTRAZORD",
+    "slug": "beast-x-king-ultrazord",
+    "ability": "Exhaust this card after any Ranger resolves a card with an energy cost of X. Return all [ENERGY] spent to play that card to the shared energy pool.",
+    "expansion_id": 36,
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 44,
+    "name": "BEAST-X MEGAZORD",
+    "slug": "beast-x-megazord",
+    "ability": "At the start of each battle, place 3 energy tokens on this card (max 3). Any Ranger may remove 1 energy token from this card to play 1 card from their discard pile as though it were in their hand. If they do, reduce its energy cost by 1.",
+    "expansion_id": 4,
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 43,
+    "name": "BULL RIDER MEGAZORD",
+    "slug": "bull-rider-megazord",
+    "ability": "While this card is in play, each time a Ranger plays a card with an energy cost of zero, gain 1 [ENERGY].",
+    "expansion_id": 9,
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 46,
+    "name": "CHRONOS HYPERFORCE MEGAZORD",
+    "slug": "chronos-hyperforce-megazord",
+    "ability": "At the start of each battle, each participating Ranger may search their deck or discard pile for a card and add it to their hand. If they do, they must shuffle their deck.",
+    "expansion_id": 2,
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 39,
+    "name": "CLAW ARMOR MEGAZORD",
+    "slug": "claw-armor-megazord",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle. Double all [HIT] dealt by Rangers during this turn.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 32,
+    "name": "DELTA COMMAND MEGAZORD",
+    "slug": "delta-command-megazord",
+    "ability": "Exhaust this card to place the Megazord token in any location. When any Ranger moves to that location or performs the RECOVER action in that location, they may power up.",
+    "expansion_id": 6,
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 30,
+    "name": "DELTA SQUAD MEGAZORD",
+    "slug": "delta-squad-megazord",
+    "ability": "Once per battle, when an enemy card is defeated, place their deployment card here until the end of the battle. Each time a Ranger performs an attack that targets them during the battle, that Ranger may gain 1 [ENERGY] or reroll any number of dice.",
+    "expansion_id": 14,
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 31,
+    "name": "DELTAMAX MEGAZORD",
+    "slug": "deltamax-megazord",
+    "ability": "During each battle, when a foot soldier card is defeated, deal 2 [HIT] to another enemy card.",
+    "expansion_id": 14,
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 41,
+    "name": "DINO CHARGE MEGAZORD",
+    "slug": "dino-charge-megazord",
+    "ability": "During each battle, all Rangers may each use their once-per-battle ability an additional time.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 1,
+    "name": "DINO MEGAZORD",
+    "slug": "dino-megazord",
+    "ability": "Exhaust this card to place the Megazord token in any location. At the start of each battle in the Megazord’s current location, deal 1 [HIT] to each enemy card.",
+    "expansion_id": 1,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 7,
+    "name": "DRAGON THUNDERZORD",
+    "slug": "dragon-thunderzord",
+    "ability": "Each time a Ranger rolls at least 1 [MISS] result during an attack, deal 1 [HIT] to an enemy card other than the target.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 2,
+    "name": "DRAGONZORD BATTLE MODE",
+    "slug": "dragonzord-battle-mode",
+    "ability": "Exhaust this card to place the Megazord token in any location. At the start of each battle in the Megazord’s current location, roll 6 dice and deal that much [HIT] to an enemy card of your choice.",
+    "expansion_id": 15,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 34,
+    "name": "FLASH POINT MEGAZORD",
+    "slug": "flash-point-megazord",
+    "ability": "Exhaust this card at any time to palace the Megazord token in any location. Each time a Ranger in that location rolls at least 1 [HIT][HIT] result, that Ranger may return 1 card from their discard pile to the bottom of their deck.",
+    "expansion_id": 5,
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 24,
+    "name": "GALAXY MEGAZORD",
+    "slug": "galaxy-megazord",
+    "ability": "Once during each Ranger turn in battle, if at least 1 Ranger flips an action token to gain 2 [ENERGY], any Ranger may play an additional attack or maneuver card that turn.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 40,
+    "name": "GOSEI GREAT MEGAZORD",
+    "slug": "gosei-great-megazord",
+    "ability": "Exhaust this card at any time. Each Ranger flips over their deck and discard pile and swaps them without shuffling either.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 35,
+    "name": "HIGH OCTANE MEGAZORD",
+    "slug": "high-octane-megazord",
+    "ability": "Exhaust this card at the end of any Ranger turn in battle. Gain 2 [ENERGY]. The Rangers may take an additional turn after this one. The next time any Ranger performs an attack during this battle, add 2 dice to that attack.",
+    "expansion_id": 12,
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 26,
+    "name": "LIGHTSPEED SOLARZORD",
+    "slug": "lightspeed-solarzord",
+    "ability": "When any Ranger reveals a card with exactly 1 [SHIELD] for defense, that Ranger may either deal 1 [HIT] to an enemy card of their choice or add +1 [SHIELD] to that card.",
+    "expansion_id": 7,
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 3,
+    "name": "MEGA DRAGONZORD",
+    "slug": "mega-dragonzord",
+    "ability": "When any Ranger defeats an enemy card with an attack, place a number of hit tokens on this card equal to the amount of excess [HIT]. During each Ranger turn in battle, instead of playing a card, any ranger may remove up to 6 tokens from this card and place them on an enemy card of their choice.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 15,
+    "name": "MEGA GRAVEZORD",
+    "slug": "mega-gravezord",
+    "ability": "Exhaust this card to deal 2 [HIT] to an enemy card of your choice. If this card is exhausted when any Ranger exhausts another Zord card, reach this card.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 49,
+    "name": "MEGA MEGAZORD",
+    "slug": "mega-megazord",
+    "ability": "At the start of each battle, summon 2 Zord cards of your choice from the box. Return them to the box at the end of that battle.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      15,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      30,
+      33
+    ]
+  },
+  {
+    "id": 8,
+    "name": "MEGA TIGERZORD",
+    "slug": "mega-tigerzord",
+    "ability": "Exhaust this card to place the Megazord token in any location. At the end of each battle in that location, roll 5 dice. Deal that much [HIT] divided as you choose among enemy cards.",
+    "expansion_id": 16,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 21,
+    "name": "MEGA VOYAGER",
+    "slug": "mega-voyager",
+    "ability": "When you summon this card, and at the start of each Action Phase, place 5 energy tokens on this card (max 5). Each time a Ranger suffers damage, you may remove 1 energy token from this card to reduce that damage by 3.",
+    "expansion_id": 3,
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 10,
+    "name": "NINJA MEGAFALCONZORD",
+    "slug": "ninja-megafalconzord",
+    "ability": "Exhaust this card after any Ranger resolves a card. That Ranger may immediately play that card a second time, ignoring its energy cost, if its energy cost is zero, they may immediately play it a third time.",
+    "expansion_id": 44,
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 9,
+    "name": "NINJA MEGAZORD",
+    "slug": "ninja-megazord",
+    "ability": "When this card is summoned and at the start of each Action Phase, add 2 energy tokens to this card (max 2). Once per battle, after any Ranger turn, the Rangers may remove 1 token from this card to immediately take another turn.",
+    "expansion_id": 44,
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 11,
+    "name": "NINJA ULTRAZORD",
+    "slug": "ninja-ultrazord",
+    "ability": "At the end of each turn in battle, if at least 2 Rangers played cards during that turn, deal 2 [HIT] to an enemy card of your choice.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 25,
+    "name": "ORION GALAXY MEGAZORD",
+    "slug": "orion-galaxy-megazord",
+    "ability": "At the start of each battle, add 5 energy tokens to this card (max 5). When any Ranger performs an attack, they may spend up to 2 energy tokens from this card to reduce that attack’s energy cost by an equal amount.",
+    "expansion_id": 8,
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 42,
+    "name": "PLESIO CHARGE MEGAZORD",
+    "slug": "plesio-charge-megazord",
+    "ability": "At the start of each Ranger turn, any Ranger may draw 1 card from the bottom of their deck. Once per turn, with any Ranger draws 1 or more cards, they may deal 1 [HIT] to an enemy card of their choice.",
+    "expansion_id": 8,
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 28,
+    "name": "PREDAZORD",
+    "slug": "predazord",
+    "ability": "Once per turn, when any Ranger reveals a card for defense, they may choose to gain 1 [ENERGY], deal 1 [HIT] to an enemy card of their choice, or add 1 [SHIELD] to the revealed card.",
+    "expansion_id": 5,
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 20,
+    "name": "RESCUE MEGAZORD",
+    "slug": "rescue-megazord",
+    "ability": "After the last enemy turn in each battle, gain 2 [ENERGY]. The Rangers may take an additional turn.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 38,
+    "name": "RPM ULTRAZORD",
+    "slug": "rpm-ultrazord",
+    "ability": "At the start of each battle, place 2 energy tokens on this card (max 2). After any Ranger resolves a card, they may remove 1 energy token from this card to immediately play that card a second time, then remove it from the game.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 13,
+    "name": "SHOGUN MEGAFALCONZORD",
+    "slug": "shogun-megafalconzord",
+    "ability": "Each time a Ranger suffers damage, they may discard 1 card from their hand. If they do, reduce that damage by 2 and deal 1 [HIT] to an enemy card of their choice.",
+    "expansion_id": 45,
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 12,
+    "name": "SHOGUN MEGAZORD",
+    "slug": "shogun-megazord",
+    "ability": "Exhaust this card when any enemy card deals damage to a Ranger. Prevent all of that damage and deal an equal amount of [HIT] to that enemy card.",
+    "expansion_id": 45,
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 14,
+    "name": "SHOGUN ULTRAZORD",
+    "slug": "shogun-ultrazord",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle. Deal 2 [HIT] to each enemy card.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 48,
+    "name": "SOLAR MEGAZORD",
+    "slug": "solar-megazord",
+    "ability": "Exhaust this card during a battle. Gain 7 [ENERGY].",
+    "expansion_id": 4,
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 18,
+    "name": "SUPER ZEO MEGAZORD",
+    "slug": "super-zeo-megazord",
+    "ability": "Exhaust this card at the start of a battle. Each time a Ranger performs an attack during that battle, they may divide the [HIT] from that attack among any number of targets.",
+    "expansion_id": 46,
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 5,
+    "name": "THUNDER MEGAZORD (MMPR)",
+    "slug": "thunder-megazord-mmpr",
+    "ability": "Each time any Ranger performs an attack, they may reroll any number of dice once.",
+    "expansion_id": 16,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 50,
+    "name": "THUNDER MEGAZORD (NS)",
+    "slug": "thunder-megazord-ns",
+    "ability": "While this card is in play, the health value of all enemy cards is reduced by 1.",
+    "expansion_id": 9,
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 6,
+    "name": "THUNDER ULTRAZORD",
+    "slug": "thunder-ultrazord",
+    "ability": "Exhaust this card after an enemy card deals damage. Deal an amount of [HIT] equal to the number of [SHIELD] on cards discarded for defense as a result of that damage. You may divide the [HIT] from this effect among any number of enemy cards.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 29,
+    "name": "THUNDERSAURUS MEGAZORD",
+    "slug": "thundersaurus-megazord",
+    "ability": "When this card is summoned and at the start of each round, add 4 energy tokens to this card (max 4). Once per Ranger turn in battle, any Ranger may remove 1 energy token from this card to ready an exhausted Zord card.",
+    "expansion_id": 11,
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 27,
+    "name": "TIME FORCE MEGAZORD",
+    "slug": "time-force-megazord",
+    "ability": "Exhaust this card to place the Megazord token in any location. At the start of each battle in that location, choose the FAST or GUARD keyword. Rangers may ignore the chosen keyword until the end of battle.",
+    "expansion_id": 13,
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 33,
+    "name": "TITAN MEGAZORD",
+    "slug": "titan-megazord",
+    "ability": "When you summon this card, and at the start of each Action Phase, place 3 energy tokens on this card (max 3). During any Ranger turn in battle, the Rangers may remove 1 token from this card to play both an attack card and a maneuver card.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 19,
+    "name": "TURBO MEGAZORD",
+    "slug": "turbo-megazord",
+    "ability": "Each time a Ranger plays a card with an energy cost of X, resolve that card as through they spent +2 [ENERGY].",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 47,
+    "name": "ULTRA OMEGAZORD",
+    "slug": "ultra-omegazord",
+    "ability": "Each time a Ranger exhausts a Zord card, gain 1 [ENERGY] and deal 1 [HIT] to an enemy card of your choice.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      3
+    ]
+  },
+  {
+    "id": 4,
+    "name": "ULTRAZORD",
+    "slug": "ultrazord",
+    "ability": "Once per Ranger turn in battle, any Ranger may exhaust 1 Zord card to deal 3 [HIT] to an enemy card that has resolved.",
+    "expansion_id": 49,
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 36,
+    "name": "VALVEMAX MEGAZORD",
+    "slug": "valvemax-megazord",
+    "ability": "Place 3 energy tokens on this card at the start of each battle (max 3). After any Ranger plays a card, they may remove 1 energy token from this card to place the played card on the bottom of their deck instead of discarding it and draw 1 card.",
+    "expansion_id": 12,
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 22,
+    "name": "WINGED MEGA VOYAGER",
+    "slug": "winged-mega-voyager",
+    "ability": "When you summon this card, and at the start of each Action Phase, place 5 energy tokens on this card (max 5). Each time a Ranger plays a card, they may remove 1 energy token from this card to place that on top of their deck instead of discarding it.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 37,
+    "name": "ZENITH MEGAZORD",
+    "slug": "zenith-megazord",
+    "ability": "When this card is summoned and at the start of each action phase place 5 energy tokens on this card. Once during each Ranger attack, you may gain 1 energy token from this card and add 1 die to that attack.",
+    "expansion_id": 55,
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 17,
+    "name": "ZEO MEGA BATTLEZORD",
+    "slug": "zeo-mega-battlezord",
+    "ability": "At the start of each battle, add 2 energy tokens to this card (max 2). When any Ranger performs an attack, they may remove 1 energy token from this card to add 3 dice to that attack.",
+    "expansion_id": 46,
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 16,
+    "name": "ZEO MEGAZORD",
+    "slug": "zeo-megazord",
+    "ability": "Exhaust this card to place the Megazord token in any location. During each battle in the Megazord’s location, reduce the energy cost of all cards by 1.",
+    "expansion_id": 10,
+    "compatible_team_ids": [
+      5
+    ]
+  }
+]

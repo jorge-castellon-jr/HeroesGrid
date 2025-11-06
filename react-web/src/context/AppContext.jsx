@@ -1,7 +1,4 @@
 import { createContext, useContext, useReducer } from 'react'
-// Note: sanityClient and getQuery will be used when implementing data fetching
-// import sanityClient from '../lib/sanityClient'
-// import { getQuery } from '../utils/helpers'
 
 const AppContext = createContext()
 

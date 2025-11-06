@@ -1,0 +1,194 @@
+[
+  {
+    "id": 6,
+    "name": "ANGEL GROVE HIGH",
+    "slug": "angel-grove-high",
+    "effect": "Each Ranger in this location has their maximum hand size reduced by 2. Excess cards are immediately discarded.",
+    "figure_limit": 1,
+    "expansion_id": 1
+  },
+  {
+    "id": 5,
+    "name": "ANGEL GROVE PARK",
+    "slug": "angel-grove-park",
+    "effect": "At the end of each round, move 1 foot soldier from this location to the next location clockwise that is not panicked.",
+    "figure_limit": 1,
+    "expansion_id": 1
+  },
+  {
+    "id": 15,
+    "name": "BIO LAB",
+    "slug": "bio-lab",
+    "effect": "During each battle in this location, the first time a foot soldier card is defeated, do not place it's figure on the experience track.",
+    "figure_limit": 1,
+    "expansion_id": 34
+  },
+  {
+    "id": 14,
+    "name": "CLOCK TOWER",
+    "slug": "clock-tower",
+    "effect": "During each battle in this location, the first time a foot soldier card is defeated, take an extra figure from the supply and place it on the experience track.",
+    "figure_limit": 1,
+    "expansion_id": 34
+  },
+  {
+    "id": 23,
+    "name": "CYBER DIMENSION",
+    "slug": "cyber-dimension",
+    "effect": "Rangers in this location cannot add [ENERGY] to their personal storage.",
+    "figure_limit": 1,
+    "expansion_id": 4
+  },
+  {
+    "id": 4,
+    "name": "DOCKYARD",
+    "slug": "dockyard",
+    "effect": "At the start of each battle in this location, drain 1 [ENERGY].",
+    "figure_limit": 1,
+    "expansion_id": 26
+  },
+  {
+    "id": 2,
+    "name": "ERNIE’S JUICE BAR",
+    "slug": "ernie-s-juice-bar",
+    "effect": "When a Ranger in this location performs the RECOVER action, they may recover cards with a total of up to 9 shields (instead of 6).",
+    "figure_limit": 1,
+    "expansion_id": 1
+  },
+  {
+    "id": 3,
+    "name": "INDUSTRIAL DISTRICT",
+    "slug": "industrial-district",
+    "effect": "At the start of each battle in this location, each Ranger may draw 1 card and then place 1 card from their hand back on top of their deck.",
+    "figure_limit": 1,
+    "expansion_id": 1
+  },
+  {
+    "id": 10,
+    "name": "INTERSTATE HIGHWAY",
+    "slug": "interstate-highway",
+    "effect": "When a Ranger moves away from this location, they must discard the top card of their deck.",
+    "figure_limit": 1,
+    "expansion_id": 34
+  },
+  {
+    "id": 13,
+    "name": "K0-35",
+    "slug": "k0-35",
+    "effect": "When any Ranger moves to or from this location, they must discard the top card of their deck.",
+    "figure_limit": 1,
+    "expansion_id": 3
+  },
+  {
+    "id": 19,
+    "name": "KAT’S LAB",
+    "slug": "kat-s-lab",
+    "effect": "The first time a Ranger resolves a once-per-battle ability during each battle in this location, gain 2 [ENERGY].",
+    "figure_limit": 1,
+    "expansion_id": 35
+  },
+  {
+    "id": 20,
+    "name": "OCEAN BLUFF RESERVOIR",
+    "slug": "ocean-bluff-reservoir",
+    "effect": "This location loses its panic token as soon as it contains fewer than 5 foot soldiers and no monsters or bosses.",
+    "figure_limit": 1,
+    "expansion_id": 5
+  },
+  {
+    "id": 21,
+    "name": "PAI ZHUA ACADEMY",
+    "slug": "pai-zhua-academy",
+    "effect": "This location gains its panic token as soon as it contains 4 or more enemies.",
+    "figure_limit": 1,
+    "expansion_id": 5
+  },
+  {
+    "id": 18,
+    "name": "PIGGY’S CAFE",
+    "slug": "piggy-s-cafe",
+    "effect": "The first time a Ranger resolves a once-per-battle ability during each battle in this location, drain 2 [ENERGY].",
+    "figure_limit": 1,
+    "expansion_id": 35
+  },
+  {
+    "id": 7,
+    "name": "POWER PLANT",
+    "slug": "power-plant",
+    "effect": "At the start of each battle in this location, gain 1 [ENERGY].",
+    "figure_limit": 1,
+    "expansion_id": 26
+  },
+  {
+    "id": 17,
+    "name": "REEFSIDE HIGH",
+    "slug": "reefside-high",
+    "effect": "The first time a Ranger performs an attack during each battle in this location, remove 1 die from that attack.",
+    "figure_limit": 1,
+    "expansion_id": 35
+  },
+  {
+    "id": 22,
+    "name": "RESEARCH LAB",
+    "slug": "research-lab",
+    "effect": "At the start and end of every round, each Ranger in this location who has no [ENERGY] in their personal storage may add 1 [ENERGY] to their personal storage.",
+    "figure_limit": 1,
+    "expansion_id": 4
+  },
+  {
+    "id": 25,
+    "name": "RESISTANCE HIDEOUT",
+    "slug": "resistance-hideout",
+    "effect": "Each time a Ranger in this location uses a Zord ability, that Ranger must discard the top card of their deck.",
+    "figure_limit": 1,
+    "expansion_id": 2
+  },
+  {
+    "id": 8,
+    "name": "SHOPPING MALL",
+    "slug": "shopping-mall",
+    "effect": "At the start of each battle in this location, the lead ranger deals 1 [HIT] to an enemy card of their choice.",
+    "figure_limit": 1,
+    "expansion_id": 26
+  },
+  {
+    "id": 11,
+    "name": "STONE CANYON HIGH",
+    "slug": "stone-canyon-high",
+    "effect": "When a Ranger moves away from this location, they may choose 1 card from their discard pile and place it on top of their deck.",
+    "figure_limit": 1,
+    "expansion_id": 34
+  },
+  {
+    "id": 9,
+    "name": "STONE QUARRY",
+    "slug": "stone-quarry",
+    "effect": "At the start of each battle in this location, 1 Ranger suffers 2 damage.",
+    "figure_limit": 1,
+    "expansion_id": 26
+  },
+  {
+    "id": 12,
+    "name": "SURF SPOT",
+    "slug": "surf-spot",
+    "effect": "When any Ranger moves to or from this location, they may choose 1 card from their discard pile and place it on the bottom of their deck.",
+    "figure_limit": 1,
+    "expansion_id": 3
+  },
+  {
+    "id": 16,
+    "name": "THE ARCADE",
+    "slug": "the-arcade",
+    "effect": "The first time a Ranger performs an attack during each battle in this location, add 1 die to that attack.",
+    "figure_limit": 1,
+    "expansion_id": 35
+  },
+  {
+    "id": 24,
+    "name": "ZORD GRAVEYARD",
+    "slug": "zord-graveyard",
+    "effect": "At the start of each Action phase, choose 1 random Zord card from the box and place it at this location. Once per battle, a Ranger in this location may discard 1 Zord card from this location to use its ability.",
+    "figure_limit": 1,
+    "expansion_id": 2
+  }
+]

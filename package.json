@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "yarn kill && lerna run --parallel dev",
+    "dev:react": "cd react-web && yarn dev",
     "dev:studio": "cd studio && yarn dev",
     "build": "yarn build:sanity && pwd && yarn build:web",
     "build:web": "cd web && nuxt-ts build ../public/web",

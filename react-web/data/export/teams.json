@@ -1,0 +1,346 @@
+[
+  {
+    "id": "38",
+    "name": "Dimension X",
+    "slug": "dimension-x",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "39",
+    "name": "Drakkon",
+    "slug": "drakkon",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "31",
+    "name": "Holidays",
+    "slug": "holidays",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "42",
+    "name": "Infinity Force",
+    "slug": "infinity-force",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "40",
+    "name": "Junior",
+    "slug": "junior",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "41",
+    "name": "Prime",
+    "slug": "prime",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "43",
+    "name": "Street Fighter",
+    "slug": "street-fighter",
+    "season_id": null,
+    "generation": null,
+    "published": false
+  },
+  {
+    "id": "1",
+    "name": "Mighty Morphin",
+    "slug": "mighty-morphin",
+    "season_id": "1",
+    "generation": 1993,
+    "published": true
+  },
+  {
+    "id": "2",
+    "name": "Mighty Morphin Ninja",
+    "slug": "mighty-morphin-ninja",
+    "season_id": "1",
+    "generation": 1993,
+    "published": false
+  },
+  {
+    "id": "4",
+    "name": "Aquitar",
+    "slug": "aquitar",
+    "season_id": "2",
+    "generation": 1995,
+    "published": true
+  },
+  {
+    "id": "51",
+    "name": "Ninjetti",
+    "slug": "ninjetti",
+    "season_id": "36",
+    "generation": 1995.1,
+    "published": false
+  },
+  {
+    "id": "5",
+    "name": "Zeo",
+    "slug": "zeo",
+    "season_id": "3",
+    "generation": 1996,
+    "published": true
+  },
+  {
+    "id": "6",
+    "name": "Turbo",
+    "slug": "turbo",
+    "season_id": "4",
+    "generation": 1997,
+    "published": true
+  },
+  {
+    "id": "47",
+    "name": "Psycho",
+    "slug": "psycho",
+    "season_id": "5",
+    "generation": 1998,
+    "published": false
+  },
+  {
+    "id": "8",
+    "name": "Space",
+    "slug": "space",
+    "season_id": "5",
+    "generation": 1998,
+    "published": true
+  },
+  {
+    "id": "9",
+    "name": "Galaxy",
+    "slug": "galaxy",
+    "season_id": "6",
+    "generation": 1999,
+    "published": true
+  },
+  {
+    "id": "10",
+    "name": "Lightspeed",
+    "slug": "lightspeed",
+    "season_id": "7",
+    "generation": 2000,
+    "published": true
+  },
+  {
+    "id": "11",
+    "name": "Time Force",
+    "slug": "time-force",
+    "season_id": "8",
+    "generation": 2001,
+    "published": true
+  },
+  {
+    "id": "12",
+    "name": "Wild Force",
+    "slug": "wild-force",
+    "season_id": "9",
+    "generation": 2002,
+    "published": true
+  },
+  {
+    "id": "13",
+    "name": "Ninja Storm",
+    "slug": "ninja-storm",
+    "season_id": "10",
+    "generation": 2003,
+    "published": true
+  },
+  {
+    "id": "14",
+    "name": "Dino Thunder",
+    "slug": "dino-thunder",
+    "season_id": "11",
+    "generation": 2004,
+    "published": true
+  },
+  {
+    "id": "15",
+    "name": "S.P.D.",
+    "slug": "s-p-d",
+    "season_id": "12",
+    "generation": 2005,
+    "published": true
+  },
+  {
+    "id": "16",
+    "name": "Mystic Force",
+    "slug": "mystic-force",
+    "season_id": "13",
+    "generation": 2006,
+    "published": false
+  },
+  {
+    "id": "17",
+    "name": "Overdrive",
+    "slug": "overdrive",
+    "season_id": "14",
+    "generation": 2007,
+    "published": true
+  },
+  {
+    "id": "18",
+    "name": "Jungle Fury",
+    "slug": "jungle-fury",
+    "season_id": "15",
+    "generation": 2008,
+    "published": true
+  },
+  {
+    "id": "19",
+    "name": "RPM",
+    "slug": "rpm",
+    "season_id": "16",
+    "generation": 2009,
+    "published": true
+  },
+  {
+    "id": "21",
+    "name": "Samurai",
+    "slug": "samurai",
+    "season_id": "17",
+    "generation": 2011,
+    "published": true
+  },
+  {
+    "id": "22",
+    "name": "Megaforce",
+    "slug": "megaforce",
+    "season_id": "18",
+    "generation": 2013,
+    "published": false
+  },
+  {
+    "id": "23",
+    "name": "Super Megaforce",
+    "slug": "super-megaforce",
+    "season_id": "19",
+    "generation": 2014,
+    "published": true
+  },
+  {
+    "id": "24",
+    "name": "Dino Charge",
+    "slug": "dino-charge",
+    "season_id": "20",
+    "generation": 2015,
+    "published": true
+  },
+  {
+    "id": "25",
+    "name": "Ninja Steel",
+    "slug": "ninja-steel",
+    "season_id": "21",
+    "generation": 2017,
+    "published": true
+  },
+  {
+    "id": "46",
+    "name": "All-New Power Rangers",
+    "slug": "all-new-power-rangers",
+    "season_id": "31",
+    "generation": 2017.1,
+    "published": false
+  },
+  {
+    "id": "50",
+    "name": "Cenozoic",
+    "slug": "cenozoic",
+    "season_id": "35",
+    "generation": 2017.2,
+    "published": false
+  },
+  {
+    "id": "33",
+    "name": "HyperForce",
+    "slug": "hyperforce",
+    "season_id": "22",
+    "generation": 2018,
+    "published": true
+  },
+  {
+    "id": "26",
+    "name": "Beast Morphers",
+    "slug": "beast-morphers",
+    "season_id": "23",
+    "generation": 2019,
+    "published": true
+  },
+  {
+    "id": "44",
+    "name": "Mighty Morphin Turtle Rangers",
+    "slug": "mighty-morphin-turtle-rangers",
+    "season_id": "29",
+    "generation": 2019.1,
+    "published": false
+  },
+  {
+    "id": "27",
+    "name": "Dino Fury",
+    "slug": "dino-fury",
+    "season_id": "24",
+    "generation": 2021,
+    "published": false
+  },
+  {
+    "id": "48",
+    "name": "Squadron",
+    "slug": "squadron",
+    "season_id": "34",
+    "generation": 2022.1,
+    "published": false
+  },
+  {
+    "id": "49",
+    "name": "The Emissaries",
+    "slug": "the-emissaries",
+    "season_id": "34",
+    "generation": 2022.1,
+    "published": false
+  },
+  {
+    "id": "28",
+    "name": "Cosmic Fury",
+    "slug": "cosmic-fury",
+    "season_id": "25",
+    "generation": 2023,
+    "published": false
+  },
+  {
+    "id": "45",
+    "name": "Cobra Kai",
+    "slug": "cobra-kai",
+    "season_id": "30",
+    "generation": 2023.1,
+    "published": false
+  },
+  {
+    "id": "3",
+    "name": "Omega",
+    "slug": "omega",
+    "season_id": "26",
+    "generation": 9999,
+    "published": true
+  },
+  {
+    "id": "30",
+    "name": "Solar",
+    "slug": "solar",
+    "season_id": "26",
+    "generation": 9999,
+    "published": false
+  }
+]

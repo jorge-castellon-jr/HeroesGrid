@@ -1,0 +1,2269 @@
+{
+  "arsenal_cards": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "cost",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "type",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "description",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "uses",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 28,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "expansion_id": 27,
+      "cost": "3",
+      "name": "RED BATTLIZER ARMOR",
+      "type": "armor",
+      "description": "Use before you roll dice for an attack. Add 1 die to that attack.",
+      "uses": "3",
+      "updated_at": "2025-04-22T05:54:01.048Z",
+      "created_at": "2025-04-22T05:54:01.083Z"
+    }
+  },
+  "arsenal_cards_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 27,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 1,
+      "id": "68072ef15957706773a31d29",
+      "expansion_id": 27
+    }
+  },
+  "arsenal_cards_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "enemies": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "monster_type",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "nemesis_effect",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "season_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 103,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "expansion_id": 1,
+      "name": "Putty Patrollers",
+      "monster_type": "foot",
+      "nemesis_effect": null,
+      "season_id": 1,
+      "updated_at": "2025-04-24T07:58:34.353Z",
+      "created_at": "2025-04-22T22:55:12.999Z"
+    }
+  },
+  "enemies_deck": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "health",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "description",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "count",
+        "type": "numeric",
+        "notNull": 1,
+        "defaultValue": "1"
+      }
+    ],
+    "rowCount": 459,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 1,
+      "id": "6809b352d27458aac46c6dfd",
+      "health": "2",
+      "name": "FLANKING",
+      "description": "While this card is in play, each time another enemy card deals damage, increase that damage by 1.",
+      "count": 2
+    }
+  },
+  "enemies_deck_card_type": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 600,
+    "sample": {
+      "order": 1,
+      "parent_id": "6809b352d27458aac46c6dfd",
+      "value": "PASSIVE",
+      "id": 1
+    }
+  },
+  "enemies_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 103,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 1,
+      "id": "68081de3f66ae91a15fbacd4",
+      "expansion_id": 1
+    }
+  },
+  "enemies_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "enemies_rels": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "path",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "locations_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "tags_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 284,
+    "sample": {
+      "id": 146,
+      "order": 1,
+      "parent_id": 1,
+      "path": "locations",
+      "locations_id": 2,
+      "tags_id": null
+    }
+  },
+  "expansions": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 55,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "name": "Base Game",
+      "updated_at": "2025-04-21T21:45:18.041Z",
+      "created_at": "2025-04-21T20:19:08.830Z"
+    }
+  },
+  "expansions_urls": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "label",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "link",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 103,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 9,
+      "id": "6806bbebb7b7c1096ed752dd",
+      "label": "Official Site",
+      "link": "https://renegadegamestudios.com/power-rangers-heroes-of-the-grid-allies-pack-4/"
+    }
+  },
+  "locations": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "effect",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "figure_limit",
+        "type": "numeric",
+        "notNull": 1,
+        "defaultValue": "1"
+      }
+    ],
+    "rowCount": 24,
+    "sample": {
+      "id": 2,
+      "status": "draft",
+      "source": "official",
+      "expansion_id": 1,
+      "name": "ERNIE’S JUICE BAR",
+      "effect": "When a Ranger in this location performs the RECOVER action, they may recover cards with a total of up to 9 shields (instead of 6).",
+      "updated_at": "2025-04-23T01:27:43.444Z",
+      "created_at": "2025-04-23T01:27:43.614Z",
+      "figure_limit": 1
+    }
+  },
+  "locations_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 22,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 1,
+      "id": "680841aa5db3c780c17e749e",
+      "expansion_id": 5
+    }
+  },
+  "locations_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "media": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "alt",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "url",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "thumbnail_u_r_l",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "filename",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "mime_type",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "filesize",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "width",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "height",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "focal_x",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "focal_y",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "megazords": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "ability",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 50,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "expansion_id": 1,
+      "name": "DINO MEGAZORD",
+      "ability": "Exhaust this card to place the Megazord token in any location. At the start of each battle in the Megazord’s current location, deal 1 [HIT] to each enemy card.",
+      "updated_at": "2025-04-29T20:46:37.437Z",
+      "created_at": "2025-04-20T04:59:47.999Z"
+    }
+  },
+  "megazords_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 46,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 49,
+      "id": "68072a33a5c1e9dcc0ce4e41",
+      "expansion_id": 55
+    }
+  },
+  "megazords_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "megazords_rels": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "path",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "teams_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 87,
+    "sample": {
+      "id": 84,
+      "order": 1,
+      "parent_id": 49,
+      "path": "team",
+      "teams_id": 1
+    }
+  },
+  "payload_locked_documents": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "global_slug",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 2,
+    "sample": {
+      "id": 2,
+      "global_slug": null,
+      "updated_at": "2025-04-22T00:08:35.894Z",
+      "created_at": "2025-04-22T00:07:46.924Z"
+    }
+  },
+  "payload_locked_documents_rels": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "path",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "rangers_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "ranger_cards_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "zords_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "megazords_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "arsenal_cards_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "unique_cards_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "enemies_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "locations_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "expansions_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "teams_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "seasons_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "tags_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "media_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "users_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 20,
+    "sample": {
+      "id": 5,
+      "order": null,
+      "parent_id": 1,
+      "path": "document",
+      "rangers_id": null,
+      "ranger_cards_id": null,
+      "zords_id": 6,
+      "megazords_id": null,
+      "arsenal_cards_id": null,
+      "unique_cards_id": null,
+      "enemies_id": null,
+      "locations_id": null,
+      "expansions_id": null,
+      "teams_id": null,
+      "seasons_id": null,
+      "tags_id": null,
+      "media_id": null,
+      "users_id": null
+    }
+  },
+  "payload_migrations": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "batch",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 1,
+    "sample": {
+      "id": 1,
+      "name": "dev",
+      "batch": -1,
+      "updated_at": "2025-04-28 16:15:26",
+      "created_at": "2025-04-19T19:39:01.782Z"
+    }
+  },
+  "payload_preferences": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "key",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 359,
+    "sample": {
+      "id": 1,
+      "key": "teams-list",
+      "value": "{\"preset\":null,\"limit\":10}",
+      "updated_at": "2025-04-23T03:34:10.484Z",
+      "created_at": "2025-04-19T20:40:07.376Z"
+    }
+  },
+  "payload_preferences_rels": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "path",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "users_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 361,
+    "sample": {
+      "id": 2,
+      "order": null,
+      "parent_id": 2,
+      "path": "user",
+      "users_id": 1
+    }
+  },
+  "ranger_cards": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "energy_cost",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "type",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "description",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "shields",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "attack_dice",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "attack_hit",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "icon_ability_icon",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "icon_ability_description",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 533,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "expansion_id": null,
+      "energy_cost": "0",
+      "name": "TEAM TACTICS",
+      "type": "MANEUVER",
+      "description": "Gain 1 [ENERGY]. Another Ranger of your choice may immediately play 1 card.",
+      "shields": "1",
+      "attack_dice": 0,
+      "attack_hit": 0,
+      "icon_ability_icon": null,
+      "icon_ability_description": null,
+      "updated_at": "2025-04-21T18:11:55.104Z",
+      "created_at": "2025-04-19T19:40:47.357Z"
+    }
+  },
+  "ranger_cards_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "ranger_cards_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "rangers": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "title",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "ability_name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "ability",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "is_once_per_battle",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "team_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "color",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "type",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "card_title",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 337,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "expansion_id": 1,
+      "name": "Jason Lee Scott",
+      "title": "Mighty Morphin Red",
+      "ability_name": "Leadership",
+      "ability": "Once per battle, a Ranger of your choice may reroll any number of dice during an attack.",
+      "is_once_per_battle": 1,
+      "team_id": 1,
+      "color": "red",
+      "type": "core",
+      "card_title": null,
+      "updated_at": "2025-04-23T01:51:45.029Z",
+      "created_at": "2025-04-19T19:42:49.357Z"
+    }
+  },
+  "rangers_deck": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "card_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "count",
+        "type": "numeric",
+        "notNull": 1,
+        "defaultValue": "1"
+      },
+      {
+        "name": "override_name",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_data_expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_data_replaces_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 785,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 63,
+      "id": "6803fcd083a52503b81f84de",
+      "card_id": 11,
+      "count": 2,
+      "override_name": null,
+      "expansion_data_expansion_id": null,
+      "expansion_data_replaces_id": null
+    }
+  },
+  "rangers_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 90,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 82,
+      "id": "6806e9231ff5a049ef772e12",
+      "expansion_id": 55
+    }
+  },
+  "rangers_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 424,
+    "sample": {
+      "order": 1,
+      "parent_id": "6806e3597ec6ef84d716eba8",
+      "value": "ability",
+      "id": 1
+    }
+  },
+  "rangers_rels": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "path",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "tags_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 423,
+    "sample": {
+      "id": 1,
+      "order": 1,
+      "parent_id": 1,
+      "path": "tags",
+      "tags_id": 1
+    }
+  },
+  "seasons": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "numeric",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 36,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "name": "Mighty Morphin Power Rangers",
+      "order": 1993,
+      "updated_at": "2025-04-22T18:17:44.982Z",
+      "created_at": "2025-04-22T18:17:45.225Z"
+    }
+  },
+  "tags": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 75,
+    "sample": {
+      "id": 1,
+      "name": "Red Charge",
+      "updated_at": "2025-04-22T21:21:54.548Z",
+      "created_at": "2025-04-22T21:21:54.617Z"
+    }
+  },
+  "teams": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "season_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 43,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "name": "Mighty Morphin",
+      "season_id": 1,
+      "updated_at": "2025-04-22T18:19:09.470Z",
+      "created_at": "2025-04-19T19:40:31.698Z"
+    }
+  },
+  "unique_cards": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "rules",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "card_title",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "color",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "unique_cards_deck": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "card_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "count",
+        "type": "numeric",
+        "notNull": 1,
+        "defaultValue": "1"
+      },
+      {
+        "name": "override_name",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "override_color",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "unique_cards_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "unique_cards_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "users": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "type",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "email",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "reset_password_token",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "reset_password_expiration",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "salt",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "hash",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "login_attempts",
+        "type": "numeric",
+        "notNull": 0,
+        "defaultValue": "0"
+      },
+      {
+        "name": "lock_until",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 3,
+    "sample": {
+      "id": 1,
+      "type": "super",
+      "updated_at": "2025-04-19T22:25:13.239Z",
+      "created_at": "2025-04-19T20:40:04.312Z",
+      "email": "jorge@castellon.dev",
+      "reset_password_token": "7f4bc5c07961959ba756276d4740bc0f0353fb4b",
+      "reset_password_expiration": "2025-04-19T23:25:12.956Z",
+      "salt": "9ce88cf6a3616778a527a3217a9af1cee56fd0129846e981d831d039f0130e40",
+      "hash": "d1acd392b9ff17e200c46c77c01e299272140536431a6a26e37df044747b416a56b72b85b351e5c67690822afc4de7e482a4f3aaf8fdd30d380aff023c59cadad7fcc68cfc5900e41794cd3cf6c532729209df80132f6e20dfdceaddb7211c5684e38df3330cb1c0f99209d64a54bb9d58232f47d1366080bb86570a8b7af8b0eaecd1fde8e599f6ef82aa0688ff6d0d2c170dcf97f2e4d0ce0bb3d6c32c077926db3c2ecc77e85d43d6898e262393a678f8e0007ecd55b1a89ff9bddadcf7c119c604adbc09d268c937986dd73d1ef1e285cc3f4006483a92cec21e28876de4e4d57717f71249cac8a4d534f0a658cbb9e2e24779b14678554a0bd23cbf52740cece9f393ec34ca1efb2bd082009351c147e49e8b6450c9ad9b5db9b9b90211737c6aa6c52965b6b93a4da263d72afa1e138df6bb0028dfd6ea64a73c36d3ce87c1fc91a87b67a4183e5f737d0601fd7548770929ef34af7996891bdd4766c1ac89d8a2408f91ab42de6a38244dee8ef806ebb1e65298e871ff90af6821bba2ad3a980ff9dbdd02c6dd92e0391b9042b511b2a961ee8ef826c6b965395b711d3c93050b931a74941c12b44bb49d933ef9417dfd3db08eebe06a6e39953353f7de694a8e3166c2010d695c6a81a532dec0e3bcf1e32524f4a28edf192e84722d524532e1b3ef302bdd0c05fd3aaaee659bef8f0c21c5de8e939c230387cfb0ad",
+      "login_attempts": 1,
+      "lock_until": null
+    }
+  },
+  "zords": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "status",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'draft'"
+      },
+      {
+        "name": "source",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "'official'"
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "name",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "ability",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "is_any",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "which_any_team_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "subcategory",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "updated_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      },
+      {
+        "name": "created_at",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": "strftime('%Y-%m-%dT%H:%M:%fZ', 'now')"
+      }
+    ],
+    "rowCount": 359,
+    "sample": {
+      "id": 1,
+      "status": "published",
+      "source": "official",
+      "expansion_id": 1,
+      "name": "TYRANNOSAURUS",
+      "ability": "Exhaust this card before a Ranger performs an attack to add 2 dice to that attack.",
+      "is_any": 0,
+      "which_any_team_id": null,
+      "subcategory": "Dinozord System",
+      "updated_at": "2025-04-22T04:46:03.957Z",
+      "created_at": "2025-04-20T04:36:44.089Z"
+    }
+  },
+  "zords_expansions": {
+    "columns": [
+      {
+        "name": "_order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "_parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "expansion_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 146,
+    "sample": {
+      "_order": 1,
+      "_parent_id": 14,
+      "id": "6806ff8760a47964b4164d2e",
+      "expansion_id": 15
+    }
+  },
+  "zords_expansions_includes": {
+    "columns": [
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "value",
+        "type": "TEXT",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 0,
+    "sample": null
+  },
+  "zords_rels": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "order",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "path",
+        "type": "TEXT",
+        "notNull": 1,
+        "defaultValue": null
+      },
+      {
+        "name": "teams_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      },
+      {
+        "name": "rangers_id",
+        "type": "INTEGER",
+        "notNull": 0,
+        "defaultValue": null
+      }
+    ],
+    "rowCount": 1291,
+    "sample": {
+      "id": 1215,
+      "order": 1,
+      "parent_id": 14,
+      "path": "team",
+      "teams_id": 1,
+      "rangers_id": null
+    }
+  }
+}

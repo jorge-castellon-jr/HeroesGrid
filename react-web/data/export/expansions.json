@@ -1,0 +1,332 @@
+[
+  {
+    "id": "56",
+    "name": "Alpha 5 Character Pack",
+    "slug": "alpha-5-character-pack",
+    "published": true
+  },
+  {
+    "id": "27",
+    "name": "Arsenal Pack",
+    "slug": "arsenal-pack",
+    "published": true
+  },
+  {
+    "id": "1",
+    "name": "Base Game",
+    "slug": "base-game",
+    "published": true
+  },
+  {
+    "id": "18",
+    "name": "Bulk & Skull Character pack",
+    "slug": "bulk-skull-character-pack",
+    "published": true
+  },
+  {
+    "id": "37",
+    "name": "Card Storage Box",
+    "slug": "card-storage-box",
+    "published": false
+  },
+  {
+    "id": "38",
+    "name": "Card Storage Box 2",
+    "slug": "card-storage-box-2",
+    "published": false
+  },
+  {
+    "id": "23",
+    "name": "Classic Megazord Deluxe Pack",
+    "slug": "classic-megazord-deluxe-pack",
+    "published": true
+  },
+  {
+    "id": "24",
+    "name": "Cyclopsis Deluxe Figure",
+    "slug": "cyclopsis-deluxe-figure",
+    "published": true
+  },
+  {
+    "id": "11",
+    "name": "Dino Thunder Pack",
+    "slug": "dino-thunder-pack",
+    "published": true
+  },
+  {
+    "id": "55",
+    "name": "Eternal Rangers",
+    "slug": "eternal-rangers",
+    "published": false
+  },
+  {
+    "id": "49",
+    "name": "Fan Appreciation Kit",
+    "slug": "fan-appreciation-kit",
+    "published": false
+  },
+  {
+    "id": "21",
+    "name": "Foot Soldier Pack",
+    "slug": "foot-soldier-pack",
+    "published": true
+  },
+  {
+    "id": "43",
+    "name": "Foot Soldier Promo Pack #1",
+    "slug": "foot-soldier-promo-pack-1",
+    "published": true
+  },
+  {
+    "id": "48",
+    "name": "Forever Blue Pack",
+    "slug": "forever-blue-pack",
+    "published": true
+  },
+  {
+    "id": "47",
+    "name": "Forever Red Pack",
+    "slug": "forever-red-pack",
+    "published": true
+  },
+  {
+    "id": "53",
+    "name": "Green Samurai Ranger Promo Figure",
+    "slug": "green-samurai-ranger-promo-figure",
+    "published": true
+  },
+  {
+    "id": "26",
+    "name": "Kickstarter Exclusive Deluxe Box",
+    "slug": "kickstarter-exclusive-deluxe-box",
+    "published": true
+  },
+  {
+    "id": "15",
+    "name": "Legendary Ranger: Tommy Oliver Pack",
+    "slug": "legendary-ranger-tommy-oliver-pack",
+    "published": true
+  },
+  {
+    "id": "16",
+    "name": "Legendary Rangers: Forever Rangers Pack",
+    "slug": "legendary-rangers-forever-rangers-pack",
+    "published": true
+  },
+  {
+    "id": "5",
+    "name": "Light and Darkness",
+    "slug": "light-and-darkness",
+    "published": true
+  },
+  {
+    "id": "25",
+    "name": "Mega Goldar Deluxe Figure",
+    "slug": "mega-goldar-deluxe-figure",
+    "published": true
+  },
+  {
+    "id": "22",
+    "name": "Megazord Deluxe Figure",
+    "slug": "megazord-deluxe-figure",
+    "published": false
+  },
+  {
+    "id": "34",
+    "name": "Merciless Minions Pack #1",
+    "slug": "merciless-minions-pack-1",
+    "published": true
+  },
+  {
+    "id": "35",
+    "name": "Merciless Minions Pack #2",
+    "slug": "merciless-minions-pack-2",
+    "published": true
+  },
+  {
+    "id": "51",
+    "name": "Metal Lead Ranger Token",
+    "slug": "metal-lead-ranger-token",
+    "published": false
+  },
+  {
+    "id": "42",
+    "name": "Power Board/Panic Token Upgrade & Errata Pack",
+    "slug": "power-board-panic-token-upgrade-errata-pack",
+    "published": false
+  },
+  {
+    "id": "54",
+    "name": "Psycho Silver Alt Figure",
+    "slug": "psycho-silver-alt-figure",
+    "published": false
+  },
+  {
+    "id": "12",
+    "name": "RPM Ranger pack",
+    "slug": "rpm-ranger-pack",
+    "published": true
+  },
+  {
+    "id": "6",
+    "name": "Ranger Allies Pack #1",
+    "slug": "ranger-allies-pack-1",
+    "published": true
+  },
+  {
+    "id": "7",
+    "name": "Ranger Allies Pack #2",
+    "slug": "ranger-allies-pack-2",
+    "published": true
+  },
+  {
+    "id": "8",
+    "name": "Ranger Allies Pack #3",
+    "slug": "ranger-allies-pack-3",
+    "published": true
+  },
+  {
+    "id": "9",
+    "name": "Ranger Allies Pack #4",
+    "slug": "ranger-allies-pack-4",
+    "published": true
+  },
+  {
+    "id": "39",
+    "name": "Ranger Dice Set",
+    "slug": "ranger-dice-set",
+    "published": false
+  },
+  {
+    "id": "40",
+    "name": "Ranger Dice Set #2",
+    "slug": "ranger-dice-set-2",
+    "published": false
+  },
+  {
+    "id": "4",
+    "name": "Rangers United",
+    "slug": "rangers-united",
+    "published": true
+  },
+  {
+    "id": "3",
+    "name": "Rise of the Psycho Rangers",
+    "slug": "rise-of-the-psycho-rangers",
+    "published": true
+  },
+  {
+    "id": "14",
+    "name": "S.P.D. Ranger Pack",
+    "slug": "s-p-d-ranger-pack",
+    "published": true
+  },
+  {
+    "id": "20",
+    "name": "Santa Vs. Heximas Holiday Pack",
+    "slug": "santa-vs-heximas-holiday-pack",
+    "published": true
+  },
+  {
+    "id": "50",
+    "name": "Scenario Book 2",
+    "slug": "scenario-book-2",
+    "published": false
+  },
+  {
+    "id": "52",
+    "name": "Shadow Ranger Alternate Sculpt Promo Figure",
+    "slug": "shadow-ranger-alternate-sculpt-promo-figure",
+    "published": false
+  },
+  {
+    "id": "36",
+    "name": "Shadow of Venjix Theme Pack",
+    "slug": "shadow-of-venjix-theme-pack",
+    "published": true
+  },
+  {
+    "id": "2",
+    "name": "Shattered Grid",
+    "slug": "shattered-grid",
+    "published": true
+  },
+  {
+    "id": "19",
+    "name": "Squatt & Baboo Character Pack",
+    "slug": "squatt-baboo-character-pack",
+    "published": true
+  },
+  {
+    "id": "13",
+    "name": "Time Force Ranger Pack",
+    "slug": "time-force-ranger-pack",
+    "published": true
+  },
+  {
+    "id": "29",
+    "name": "Villain Pack #1",
+    "slug": "villain-pack-1",
+    "published": true
+  },
+  {
+    "id": "30",
+    "name": "Villain Pack #2: Machine Empire",
+    "slug": "villain-pack-2-machine-empire",
+    "published": true
+  },
+  {
+    "id": "31",
+    "name": "Villain Pack #3: Legacy of Evil",
+    "slug": "villain-pack-3-legacy-of-evil",
+    "published": true
+  },
+  {
+    "id": "32",
+    "name": "Villain Pack #4: A Dark Turn",
+    "slug": "villain-pack-4-a-dark-turn",
+    "published": true
+  },
+  {
+    "id": "33",
+    "name": "Villain Pack #5: Terror Through Time",
+    "slug": "villain-pack-5-terror-through-time",
+    "published": true
+  },
+  {
+    "id": "17",
+    "name": "Zeo Gold Character pack",
+    "slug": "zeo-gold-character-pack",
+    "published": true
+  },
+  {
+    "id": "10",
+    "name": "Zeo Rangers pack",
+    "slug": "zeo-rangers-pack",
+    "published": true
+  },
+  {
+    "id": "44",
+    "name": "Zord Pack #1",
+    "slug": "zord-pack-1",
+    "published": true
+  },
+  {
+    "id": "45",
+    "name": "Zord Pack #2",
+    "slug": "zord-pack-2",
+    "published": true
+  },
+  {
+    "id": "46",
+    "name": "Zord Pack #3",
+    "slug": "zord-pack-3",
+    "published": true
+  },
+  {
+    "id": "41",
+    "name": "Zordon Dice Tower & GM Screen",
+    "slug": "zordon-dice-tower-gm-screen",
+    "published": false
+  }
+]

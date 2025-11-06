@@ -2,8 +2,10 @@ import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import RangerCard from '../components/cards/RangerCard'
-import sanityClient from '../lib/sanityClient'
-import { getQuery, friendlyURL, getColor } from '../utils/helpers'
+import { database } from '../database'
+import { initializeDatabase } from '../database/seed'
+import { Q } from '@nozbe/watermelondb'
+import { friendlyURL, getColor } from '../utils/helpers'
 import './AllRangers.scss'
 
 const AllRangers = () => {
@@ -14,6 +16,7 @@ const AllRangers = () => {
 	const [checkedColors, setCheckedColors] = useState([])
 	const [teamsDropdown, setTeamsDropdown] = useState(false)
 	const [colorsDropdown, setColorsDropdown] = useState(false)
+	const [isLoading, setIsLoading] = useState(true)
 
 	const colors = [
 		{ title: "Red", value: "#EF4444", text: "text-red-900" },
@@ -33,12 +36,51 @@ const AllRangers = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const fetchRangers = await sanityClient.fetch(getQuery("allRangers"))
-				const fetchTeams = await sanityClient.fetch(getQuery("allTeamsWithRangers"))
-				setRangers(fetchRangers)
-				setTeams(fetchTeams)
+				// Wait for database initialization
+				await initializeDatabase();
+				
+				// Fetch rangers with team relationship
+				const rangersCollection = database.get('rangers')
+				const teamsCollection = database.get('teams')
+				
+				const fetchedRangers = await rangersCollection.query(Q.where('published', true)).fetch()
+				const fetchedTeams = await teamsCollection.query().fetch()
+				
+				// Transform WatermelonDB models to match component structure
+				const transformedRangers = await Promise.all(
+					fetchedRangers.map(async (r) => {
+						const team = await r.team.fetch()
+						return {
+							name: r.name,
+							rangerInfo: {
+								slug: r.slug,
+								team: team?.name || '',
+								color: r.color,
+								teamPosition: r.teamPosition,
+								cardTitle: r.cardTitle,
+								title: r.title
+							},
+							rangerCards: {
+								image: r.imageUrl,
+								abilityName: r.abilityName,
+								abilityDesc: r.abilityDesc
+							}
+						}
+					})
+				)
+				
+				const transformedTeams = fetchedTeams.map(t => ({
+					_id: t.id,
+					name: t.name,
+					slug: { current: t.slug }
+				}))
+				
+				setRangers(transformedRangers)
+				setTeams(transformedTeams)
 			} catch (error) {
 				console.error('Error fetching rangers:', error)
+			} finally {
+				setIsLoading(false)
 			}
 		}
 		fetchData()
@@ -100,6 +142,14 @@ const AllRangers = () => {
 			prev.includes(colorTitle) 
 				? prev.filter(c => c !== colorTitle)
 				: [...prev, colorTitle]
+		)
+	}
+
+	if (isLoading) {
+		return (
+			<div className="flex items-center justify-center h-screen">
+				<p className="text-lg">Loading rangers...</p>
+			</div>
 		)
 	}
 

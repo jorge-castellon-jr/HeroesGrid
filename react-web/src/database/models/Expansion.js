@@ -1,11 +1,10 @@
 import { Model } from '@nozbe/watermelondb';
 import { field } from '@nozbe/watermelondb/decorators';
 
-export default class Rulebook extends Model {
-	static table = 'rulebooks';
+export default class Expansion extends Model {
+	static table = 'expansions';
 
-	@field('slug') slug;
 	@field('name') name;
-	@field('content') content;
+	@field('slug') slug;
 	@field('published') published;
 }

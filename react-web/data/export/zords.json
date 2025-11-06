@@ -1,0 +1,5594 @@
+[
+  {
+    "id": 154,
+    "name": "AERO RESCUE 3",
+    "slug": "aero-rescue-3",
+    "ability": "???",
+    "subcategory": "Lightspeed Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      153
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 67,
+    "name": "ALLIGATOR WILDZORD",
+    "slug": "alligator-wildzord",
+    "ability": "Exhaust this card when any Ranger suffers damage. Reduce that damage by 3. Then swap this card with the Hammerhead Shark Wildzord or the Wolf WIldzord. (The swapped card remains exhausted.)",
+    "subcategory": "Wildzord System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      70
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 303,
+    "name": "AMMONITE ZORD",
+    "slug": "ammonite-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      103,
+      219,
+      218,
+      220,
+      221,
+      222,
+      104,
+      225,
+      223,
+      226,
+      105
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 325,
+    "name": "ANKYLO HAMMER ZORD",
+    "slug": "ankylo-hammer-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      237
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 298,
+    "name": "ANKYLO ZORD",
+    "slug": "ankylo-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      225
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 190,
+    "name": "ANKYLOZORD",
+    "slug": "ankylozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 240,
+    "name": "ANTELOPE ANIMAL SPIRIT",
+    "slug": "antelope-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      190
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 255,
+    "name": "APE  FOLDINGZORD",
+    "slug": "ape-foldingzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      205
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 153,
+    "name": "AQUA RESCUE 2",
+    "slug": "aqua-rescue-2",
+    "ability": "???",
+    "subcategory": "Lightspeed Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      152
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 302,
+    "name": "ARCHELON ZORD",
+    "slug": "archelon-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      103,
+      219,
+      218,
+      220,
+      221,
+      222,
+      104,
+      225,
+      223,
+      226,
+      105
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 176,
+    "name": "ARMADILLO WILDZORD",
+    "slug": "armadillo-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      159
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 48,
+    "name": "ARTILLATRON",
+    "slug": "artillatron",
+    "ability": "Exhaust this card when any Ranger performs an attack. Gain 1 [ENERGY]. That Ranger may ignore the GUARD keyword when choosing a target for that attack.",
+    "subcategory": "Rescuezord System",
+    "expansion_id": 6,
+    "compatible_ranger_ids": [
+      52,
+      53
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 318,
+    "name": "ASTRO ZORD",
+    "slug": "astro-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233,
+      228,
+      229,
+      230,
+      231,
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 131,
+    "name": "AURIC THE CONQUEROR",
+    "slug": "auric-the-conqueror",
+    "ability": "???",
+    "subcategory": "Other Zeo Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      42,
+      162,
+      44,
+      48,
+      137,
+      47,
+      46
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 29,
+    "name": "BACONODON",
+    "slug": "baconodon",
+    "ability": "Exhaust this card when any Ranger suffers damage to increase that damage by 1, then deal 3 [HIT] to an enemy card of your choice.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 18,
+    "compatible_ranger_ids": [
+      29
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 237,
+    "name": "BAT ANIMAL SPIRIT",
+    "slug": "bat-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      193,
+      190
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 226,
+    "name": "BATTLEFLEET ZORD 14",
+    "slug": "battlefleet-zord-14",
+    "ability": "???",
+    "subcategory": "BattleFleet System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      182
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 227,
+    "name": "BATTLEFLEET ZORD 15",
+    "slug": "battlefleet-zord-15",
+    "ability": "???",
+    "subcategory": "BattleFleet System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      183
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 228,
+    "name": "BATTLEFLEET ZORD 16",
+    "slug": "battlefleet-zord-16",
+    "ability": "???",
+    "subcategory": "BattleFleet System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      184
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 229,
+    "name": "BATTLEFLEET ZORD 17",
+    "slug": "battlefleet-zord-17",
+    "ability": "???",
+    "subcategory": "BattleFleet System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      185
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 230,
+    "name": "BATTLEFLEET ZORD 18",
+    "slug": "battlefleet-zord-18",
+    "ability": "???",
+    "subcategory": "BattleFleet System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      186
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 89,
+    "name": "BEAR CRAWLER",
+    "slug": "bear-crawler",
+    "ability": "Exhaust this card when there is at least 5 [ENERGY] in the shared pool. Gain 3 [ENERGY].",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": 12,
+    "compatible_ranger_ids": [
+      97
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 254,
+    "name": "BEAR FOLDINGZORD",
+    "slug": "bear-foldingzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      204
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 104,
+    "name": "BEAST-X KING ZORD",
+    "slug": "beast-x-king-zord",
+    "ability": "Exhaust this card when any Ranger plays a card with an energy cost of X. Resolve that card as through they spend +3 [ENERGY] to play it.",
+    "subcategory": "Beast-X King System",
+    "expansion_id": 36,
+    "compatible_ranger_ids": [
+      107,
+      108,
+      109,
+      110,
+      111
+    ],
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 258,
+    "name": "BEETLEZORD",
+    "slug": "beetlezord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      204
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 130,
+    "name": "BLACK BATTLE BORG",
+    "slug": "black-battle-borg",
+    "ability": "???",
+    "subcategory": "Battle Borg System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      146
+    ],
+    "compatible_team_ids": [
+      4
+    ]
+  },
+  {
+    "id": 179,
+    "name": "BLACK BEAR WILDZORD",
+    "slug": "black-bear-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      157
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 170,
+    "name": "BLACK BISON WILDZORD",
+    "slug": "black-bison-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      159
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 19,
+    "name": "BLACK FROG NINJAZORD",
+    "slug": "black-frog-ninjazord",
+    "ability": "Exhaust this card after any Ranger resolves an attack. That Ranger may immediately perform an additional attack with 2 dice.",
+    "subcategory": "Ninjazord System",
+    "expansion_id": 44,
+    "compatible_ranger_ids": [
+      17,
+      18,
+      19,
+      20,
+      39
+    ],
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 24,
+    "name": "BLACK SHOGUNZORD",
+    "slug": "black-shogunzord",
+    "ability": "Exhaust this card when any Ranger plays an attack card with an energy cost of 1 or zero. Choose 1 rolled die from that attack and deal that much [HIT] to each enemy card adjacent to the target.",
+    "subcategory": "Shogunzord System",
+    "expansion_id": 45,
+    "compatible_ranger_ids": [
+      17,
+      18,
+      19,
+      20,
+      39,
+      146
+    ],
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 121,
+    "name": "BLACK SOLAR ZORD",
+    "slug": "black-solar-zord",
+    "ability": "Exhaust this card when any Ranger would be defeated while there is no [ENERGY] in the shared energy pool. Prevent that defeat and any other defeat that Ranger would suffer until the end of the next Ranger turn in this battle.",
+    "subcategory": "Solarzord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      130
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 204,
+    "name": "BLAST RUNNER",
+    "slug": "blast-runner",
+    "ability": "???",
+    "subcategory": "Other S.P.D. Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      150
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 129,
+    "name": "BLUE BATTLE BORG",
+    "slug": "blue-battle-borg",
+    "ability": "???",
+    "subcategory": "Battle Borg System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      145
+    ],
+    "compatible_team_ids": [
+      4
+    ]
+  },
+  {
+    "id": 344,
+    "name": "BLUE PHOENIX ZORD",
+    "slug": "blue-phoenix-zord",
+    "ability": "???",
+    "subcategory": "Street Fighter Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      254
+    ],
+    "compatible_team_ids": [
+      43
+    ]
+  },
+  {
+    "id": 169,
+    "name": "BLUE SHARK WILDZORD",
+    "slug": "blue-shark-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      158
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 23,
+    "name": "BLUE SHOGUNZORD",
+    "slug": "blue-shogunzord",
+    "ability": "Exhaust this card during a battle. Gain 1 [ENERGY] and deal 1 [HIT] to an enemy card of your choice.",
+    "subcategory": "Shogunzord System",
+    "expansion_id": 45,
+    "compatible_ranger_ids": [
+      10,
+      11,
+      12,
+      145
+    ],
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 119,
+    "name": "BLUE SOLAR ZORD",
+    "slug": "blue-solar-zord",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle while there is no [ENERGY] in the shared energy pool. During this turn, any Ranger may play 1 card from their discard pile instead of their hand, then place it on the bottom of their deck.",
+    "subcategory": "Solarzord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      128
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 17,
+    "name": "BLUE WOLF NINJAZORD",
+    "slug": "blue-wolf-ninjazord",
+    "ability": "Exhaust this card when any Ranger suffers damage. Reduce that damage by 2. That Ranger may look at the top card of their deck and may swap it with a card from their hand.",
+    "subcategory": "Ninjazord System",
+    "expansion_id": 44,
+    "compatible_ranger_ids": [
+      10,
+      11,
+      12
+    ],
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 74,
+    "name": "BRACHIOZORD",
+    "slug": "brachiozord",
+    "ability": "When you summon this card, and at the start of each Action Phase, take 1 random Zord card from the box and attach it to this card. Exhaust this card to use the ability of an attached Zord card, then discard that card.",
+    "subcategory": "Biozord System",
+    "expansion_id": 15,
+    "compatible_ranger_ids": [
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 215,
+    "name": "BRIGHTSTAR",
+    "slug": "brightstar",
+    "ability": "???",
+    "subcategory": "Mount System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      86,
+      90
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 93,
+    "name": "BULLZORD",
+    "slug": "bullzord",
+    "ability": "Exhaust this card when any Ranger plays a card to reduce that card’s energy cost by 1. If it is an attack, add 1 die to that attack.",
+    "subcategory": "FoldingZord System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      101,
+      201
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 196,
+    "name": "CARNOZORD",
+    "slug": "carnozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 83,
+    "name": "CATASTROS",
+    "slug": "catastros",
+    "ability": "Exhaust this card when any Ranger uses a ★ ability. That Ranger may use that ability two more times.",
+    "subcategory": "Mount System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      91
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 197,
+    "name": "CEARAZORD",
+    "slug": "cearazord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 223,
+    "name": "CEMENT DRIVER",
+    "slug": "cement-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      184
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 188,
+    "name": "CEPHALAZORD",
+    "slug": "cephalazord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 109,
+    "name": "CERBERUS HYPER ZORD",
+    "slug": "cerberus-hyper-zord",
+    "ability": "Exhaust this card to deal 1 [HIT] each to up to 3 enemy cards.",
+    "subcategory": "Chronos System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      118
+    ],
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 241,
+    "name": "CHAMELEON ANIMAL SPIRIT",
+    "slug": "chameleon-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      195
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 195,
+    "name": "CHASMOZORD",
+    "slug": "chasmozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 232,
+    "name": "CHEETAH ANIMAL SPIRIT",
+    "slug": "cheetah-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      190
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 100,
+    "name": "CHOPPER ZORD",
+    "slug": "chopper-zord",
+    "ability": "Exhaust this card to allow any Ranger to shuffle their hand into their deck. That Ranger may then draw up to 5 cards.",
+    "subcategory": "Beast-X System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      108
+    ],
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 145,
+    "name": "CONDOR GALACTABEAST",
+    "slug": "condor-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      142
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 337,
+    "name": "COSMIC BULL ZORD",
+    "slug": "cosmic-bull-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      245
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 339,
+    "name": "COSMIC CHAMELEON ZORD",
+    "slug": "cosmic-chameleon-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      244
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 338,
+    "name": "COSMIC COBRA ZORD",
+    "slug": "cosmic-cobra-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      246
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 330,
+    "name": "COSMIC COMBO RAPTOR ZORDS",
+    "slug": "cosmic-combo-raptor-zords",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      239,
+      235,
+      240,
+      237,
+      112,
+      238,
+      236,
+      241,
+      316
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 106,
+    "name": "COSMIC DRAGON ZORD",
+    "slug": "cosmic-dragon-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      113
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 340,
+    "name": "COSMIC EAGLE ZORD",
+    "slug": "cosmic-eagle-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      233
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 342,
+    "name": "COSMIC GRIZZLY ZORD",
+    "slug": "cosmic-grizzly-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      233
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 333,
+    "name": "COSMIC LION ZORD",
+    "slug": "cosmic-lion-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      242
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 336,
+    "name": "COSMIC SCALE ZORD",
+    "slug": "cosmic-scale-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      246
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 334,
+    "name": "COSMIC SCORPION ZORD",
+    "slug": "cosmic-scorpion-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      247
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 341,
+    "name": "COSMIC SHARK ZORD",
+    "slug": "cosmic-shark-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      246
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 335,
+    "name": "COSMIC WOLF ZORD",
+    "slug": "cosmic-wolf-zord",
+    "ability": "???",
+    "subcategory": "Cosmic Zord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      243
+    ],
+    "compatible_team_ids": [
+      28
+    ]
+  },
+  {
+    "id": 224,
+    "name": "CRANE DRIVER",
+    "slug": "crane-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      183
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 343,
+    "name": "CRIMSON HAWK ZORD",
+    "slug": "crimson-hawk-zord",
+    "ability": "???",
+    "subcategory": "Street Fighter Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      253
+    ],
+    "compatible_team_ids": [
+      43
+    ]
+  },
+  {
+    "id": 68,
+    "name": "CRIMSON INSECTIZORD",
+    "slug": "crimson-insectizord",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle. Until the end of this turn, the health value of all enemy cards without the GUARD keyword is reduced by 1.",
+    "subcategory": "Hurricane System",
+    "expansion_id": 9,
+    "compatible_ranger_ids": [
+      71
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 242,
+    "name": "CROC CARRIER",
+    "slug": "croc-carrier",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      99,
+      98
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 177,
+    "name": "DEER WILDZORD",
+    "slug": "deer-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      160
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 301,
+    "name": "DEINOSUCHUS ZORD",
+    "slug": "deinosuchus-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      319
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 81,
+    "name": "DELTA BASE",
+    "slug": "delta-base",
+    "ability": "Exhaust this card when any Ranger performs the RECOVER action. That Ranger may recover +4 [SHIELD].",
+    "subcategory": "Delta Base System",
+    "expansion_id": 6,
+    "compatible_ranger_ids": [
+      85
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 76,
+    "name": "DELTA RUNNER 1",
+    "slug": "delta-runner-1",
+    "ability": "Exhaust this card at the start of a battle. This Ranger may ignore the FAST keyword to take the first turn in battle, but cannot play cards during that turn with an energy cost greater than zero.",
+    "subcategory": "Delta Max System",
+    "expansion_id": 14,
+    "compatible_ranger_ids": [
+      79,
+      179,
+      172
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 77,
+    "name": "DELTA RUNNER 2",
+    "slug": "delta-runner-2",
+    "ability": "Exhaust this card at the start of an enemy turn in battle. Each time a Ranger suffers damage during that turn, reduce that damage by 1.",
+    "subcategory": "Delta Max System",
+    "expansion_id": 14,
+    "compatible_ranger_ids": [
+      80,
+      171,
+      174
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 78,
+    "name": "DELTA RUNNER 3",
+    "slug": "delta-runner-3",
+    "ability": "Exhaust this card when any Ranger plays a card. Reduce that card’s energy cost by 2. If this effect reduces that card’s energy cost to zero, gain 1 [ENERGY].",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      81,
+      82,
+      173
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 79,
+    "name": "DELTA RUNNER 4",
+    "slug": "delta-runner-4",
+    "ability": "Exhaust this card after any Ranger rolls dice for an attack. Remove 1 die from that attack to deal 2 [HIT] to any enemy card other than the target.",
+    "subcategory": "Delta Max System",
+    "expansion_id": 14,
+    "compatible_ranger_ids": [
+      83
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 80,
+    "name": "DELTA RUNNER 5",
+    "slug": "delta-runner-5",
+    "ability": "Exhaust this card after any Ranger rolls dice for an attack. Gain 1 [ENERGY]. Convert 1 [HIT] result to a [HIT][HIT] result.",
+    "subcategory": "Delta Max System",
+    "expansion_id": 14,
+    "compatible_ranger_ids": [
+      84
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 289,
+    "name": "DELTA RUNNER ZORD",
+    "slug": "delta-runner-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      217,
+      213,
+      216,
+      214,
+      215,
+      102
+    ],
+    "compatible_team_ids": [
+      23,
+      15
+    ]
+  },
+  {
+    "id": 137,
+    "name": "DESERT THUNDER TURBOZORD",
+    "slug": "desert-thunder-turbozord",
+    "ability": "???",
+    "subcategory": "Turbozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      135,
+      55
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 327,
+    "name": "DIMETRO BLAZING ZORD",
+    "slug": "dimetro-blazing-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      239
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 187,
+    "name": "DIMETROZORD",
+    "slug": "dimetrozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 184,
+    "name": "DOLPHINZORD",
+    "slug": "dolphinzord",
+    "ability": "???",
+    "subcategory": "Hurricane System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      168
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 219,
+    "name": "DOZER DRIVER",
+    "slug": "dozer-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      185
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 252,
+    "name": "DRAGON FOLDINGZORD",
+    "slug": "dragon-foldingzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      202
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 306,
+    "name": "DRAGON ZORD",
+    "slug": "dragon-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      228
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 6,
+    "name": "DRAGONZORD",
+    "slug": "dragonzord",
+    "ability": "Exhaust this card when any Ranger defeats an enemy card with an attack to deal excess [HIT] from that attack to another enemy card of your choice.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 15,
+    "compatible_ranger_ids": [
+      21,
+      22,
+      23,
+      25,
+      24,
+      3,
+      82
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 75,
+    "name": "DRAGOZORD",
+    "slug": "dragozord",
+    "ability": "Exhaust this card when any enemy card is defeated. Deal 2 [HIT] divided as you choose among enemy cards adjacent to that card.",
+    "subcategory": "Biozord System",
+    "expansion_id": 11,
+    "compatible_ranger_ids": [
+      78
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 222,
+    "name": "DRILL DRIVER",
+    "slug": "drill-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      185
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 216,
+    "name": "DUMP DRIVER",
+    "slug": "dump-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      182
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 139,
+    "name": "DUNE STAR TURBOZORD",
+    "slug": "dune-star-turbozord",
+    "ability": "???",
+    "subcategory": "Turbozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      127,
+      57
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 87,
+    "name": "EAGLE RACER",
+    "slug": "eagle-racer",
+    "ability": "Exhaust this card when any Ranger performs an attack. That Ranger may add 1 die to that attack and ignore the GUARD keyword when choosing a target for that attack.",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": 12,
+    "compatible_ranger_ids": [
+      95
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 191,
+    "name": "EDOPHOZORD",
+    "slug": "edophozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 236,
+    "name": "ELEPHANT ANIMAL SPIRIT",
+    "slug": "elephant-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      192,
+      189
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 172,
+    "name": "ELEPHANT WILDZORD",
+    "slug": "elephant-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      160
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 244,
+    "name": "FALCON CHOPPER",
+    "slug": "falcon-chopper",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      196
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 173,
+    "name": "FALCON WILDZORD",
+    "slug": "falcon-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      156
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 311,
+    "name": "FALCON ZORD",
+    "slug": "falcon-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 30,
+    "name": "FEATHERDACTYL",
+    "slug": "featherdactyl",
+    "ability": "Exhaust this card to allow any Ranger to choose any number of cards from their discard pile and return them to the bottom of their deck. That Ranger must then discard an equal number of cards from the top of their deck.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 18,
+    "compatible_ranger_ids": [
+      30
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 12,
+    "name": "FIREBIRD THUNDERZORD",
+    "slug": "firebird-thunderzord",
+    "ability": "Exhaust this card. Shuffle any Ranger’s deck, then reveal the top card of their deck. Gain an amount of [ENERGY] equal to that card’s shield value.",
+    "subcategory": "Thunderzord System",
+    "expansion_id": 16,
+    "compatible_ranger_ids": [
+      13,
+      14,
+      15,
+      16,
+      307
+    ],
+    "compatible_team_ids": [
+      1,
+      48
+    ]
+  },
+  {
+    "id": 174,
+    "name": "GIRAFFE WILDZORD",
+    "slug": "giraffe-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      158
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 238,
+    "name": "GORILLA ANIMAL SPIRIT",
+    "slug": "gorilla-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      188
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 320,
+    "name": "GORILLA BLAST ZORD",
+    "slug": "gorilla-blast-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233,
+      228,
+      229,
+      230,
+      231,
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 146,
+    "name": "GORILLA GALACTABEAST",
+    "slug": "gorilla-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      141
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 178,
+    "name": "GORILLA WILDZORD",
+    "slug": "gorilla-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      156
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 273,
+    "name": "GOSEI BIRD ZORD",
+    "slug": "gosei-bird-zord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      207
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 280,
+    "name": "GOSEI CROCODILE ZORD",
+    "slug": "gosei-crocodile-zord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      209
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 282,
+    "name": "GOSEI DOLPHIN ZORD",
+    "slug": "gosei-dolphin-zord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      211,
+      312
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 263,
+    "name": "GOSEI DRAGON MECHAZORD",
+    "slug": "gosei-dragon-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      207
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 281,
+    "name": "GOSEI ELEPHANT ZORD",
+    "slug": "gosei-elephant-zord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      210
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 264,
+    "name": "GOSEI PHOENIX MECHAZORD",
+    "slug": "gosei-phoenix-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      208
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 279,
+    "name": "GOSEI RHINO BEETLE ZORD",
+    "slug": "gosei-rhino-beetle-zord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      208
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 267,
+    "name": "GOSEI SHARK MECHAZORD",
+    "slug": "gosei-shark-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      211
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 265,
+    "name": "GOSEI SNAKE MECHAZORD",
+    "slug": "gosei-snake-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      209
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 266,
+    "name": "GOSEI TIGER MECHAZORD",
+    "slug": "gosei-tiger-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      210
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 31,
+    "name": "GRAVEZORD",
+    "slug": "gravezord",
+    "ability": "Exhaust this card to use the ability of another Zord that has been summoned.",
+    "subcategory": "Other MMPR Zords",
+    "expansion_id": 26,
+    "compatible_ranger_ids": [
+      36
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 122,
+    "name": "GREEN SOLAR ZORD",
+    "slug": "green-solar-zord",
+    "ability": "Exhaust this card when any Ranger suffers damage while there is no [ENERGY] in the shared energy pool. Reduce that damage by 2. Deal 2 [HIT] to an enemy card of your choice.",
+    "subcategory": "Solarzord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      131
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 10,
+    "name": "GRIFFIN THUNDERZORD",
+    "slug": "griffin-thunderzord",
+    "ability": "Exhaust this card after any Ranger plays a card. That Ranger may immediately play another card with the same name. Then that Ranger may draw 1 card.",
+    "subcategory": "Thunderzord System",
+    "expansion_id": 16,
+    "compatible_ranger_ids": [
+      6,
+      7,
+      8,
+      9,
+      306
+    ],
+    "compatible_team_ids": [
+      1,
+      48
+    ]
+  },
+  {
+    "id": 218,
+    "name": "GYRO DRIVER",
+    "slug": "gyro-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      184
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 66,
+    "name": "HAMMERHEAD SHARK WILDZORD",
+    "slug": "hammerhead-shark-wildzord",
+    "ability": "Exhaust this card during a battle. Gain 1 [ENERGY] and deal 1 [HIT] to an enemy card of your choice. Then swap this card with the Alligator Wildzord or the Wolf Wildzord. (The swapped card remains exhausted.)",
+    "subcategory": "Wildzord System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      70
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 182,
+    "name": "HAWKZORD",
+    "slug": "hawkzord",
+    "ability": "???",
+    "subcategory": "Hurricane System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      167
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 155,
+    "name": "HAZ RESCUE 4",
+    "slug": "haz-rescue-4",
+    "ability": "???",
+    "subcategory": "Lightspeed Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      154
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 112,
+    "name": "HYDRA HYPER ZORD",
+    "slug": "hydra-hyper-zord",
+    "ability": "Exhaust this card when any Ranger discards a card for defense. Place that card on the bottom of their deck. Deal 1 [HIT] to an enemy card of your choice.",
+    "subcategory": "Other Hyperforce Zords",
+    "expansion_id": 7,
+    "compatible_ranger_ids": [
+      119
+    ],
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 233,
+    "name": "JAGUAR ANIMAL SPIRIT",
+    "slug": "jaguar-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      189
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 103,
+    "name": "JET ZORD",
+    "slug": "jet-zord",
+    "ability": "Exhaust this card at any time. Any Ranger may choose 2 cards from their discard pile and place them on the bottom of their deck, in any order. They may then draw 1 card.",
+    "subcategory": "Beast-X System",
+    "expansion_id": 36,
+    "compatible_ranger_ids": [
+      111
+    ],
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 271,
+    "name": "KNIGHT BROTHERS ZORDS",
+    "slug": "knight-brothers-zords",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      212
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 308,
+    "name": "KODIAK ZORD",
+    "slug": "kodiak-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      230
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 269,
+    "name": "LAND BROTHERS ZORDS",
+    "slug": "land-brothers-zords",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      210,
+      209
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 46,
+    "name": "LIGHTNING CRUISER",
+    "slug": "lightning-cruiser",
+    "ability": "Exhaust this card at the start of a battle to allow the Rangers to take the first turn, even if there is an enemy card with the FAST keyword in play. Skip the final Ranger turn in this battle.",
+    "subcategory": "Other Turbo Zords",
+    "expansion_id": 15,
+    "compatible_ranger_ids": [
+      48,
+      49
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 134,
+    "name": "LIGHTNING FIRE TAMER RESCUEZORD",
+    "slug": "lightning-fire-tamer-rescuezord",
+    "ability": "???",
+    "subcategory": "Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      49,
+      77
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 262,
+    "name": "LIGHTZORD",
+    "slug": "lightzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      206
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 86,
+    "name": "LION ANIMAL SPIRIT",
+    "slug": "lion-animal-spirit",
+    "ability": "Exhaust this card before any Ranger performs an attack with 3 dice or fewer. Add 2 [HIT] to that attack.",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      94
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 310,
+    "name": "LION FIRE ZORD",
+    "slug": "lion-fire-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 251,
+    "name": "LION FOLDINGZORD",
+    "slug": "lion-foldingzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      201,
+      101
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 144,
+    "name": "LION GALACTABEAST",
+    "slug": "lion-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      140
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 88,
+    "name": "LION HAULER",
+    "slug": "lion-hauler",
+    "ability": "Exhaust this card when any Ranger plays a maneuver card. Gain 1 [ENERGY]. That Ranger may place that card on top of their deck instead of discarding it.",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": 12,
+    "compatible_ranger_ids": [
+      96
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 107,
+    "name": "LION HYPER ZORD",
+    "slug": "lion-hyper-zord",
+    "ability": "Exhaust this card when any Ranger performs an attack to convert all [MISS] results to [HIT] results.",
+    "subcategory": "Chronos System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      114
+    ],
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 272,
+    "name": "LION MECHAZORD",
+    "slug": "lion-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      212
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 13,
+    "name": "LION THUNDERZORD",
+    "slug": "lion-thunderzord",
+    "ability": "Exhaust this card during any Ranger turn in battle. Defeat 1 foot soldier card instead of playing a card.",
+    "subcategory": "Thunderzord System",
+    "expansion_id": 16,
+    "compatible_ranger_ids": [
+      17,
+      18,
+      19,
+      20,
+      309
+    ],
+    "compatible_team_ids": [
+      1,
+      48
+    ]
+  },
+  {
+    "id": 183,
+    "name": "LIONZORD",
+    "slug": "lionzord",
+    "ability": "???",
+    "subcategory": "Hurricane System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      169
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 185,
+    "name": "MAMMOTHZORD",
+    "slug": "mammothzord",
+    "ability": "???",
+    "subcategory": "Hurricane System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      167,
+      169,
+      168,
+      71,
+      72,
+      73
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 5,
+    "name": "MASTODON",
+    "slug": "mastodon",
+    "ability": "Exhaust this card to immediately remove 1 foot soldier figure from any location and place it on the experience track.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 1,
+    "compatible_ranger_ids": [
+      17,
+      18,
+      19,
+      20
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 349,
+    "name": "MASTODON BATTLE ZORD",
+    "slug": "mastodon-battle-zord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      330
+    ],
+    "compatible_team_ids": [
+      50
+    ]
+  },
+  {
+    "id": 57,
+    "name": "MAX SOLARZORD",
+    "slug": "max-solarzord",
+    "ability": "Exhaust this card at the start of any turn in battle. Ignore the effect text of all enemy cards with the PASSIVE keyword until the end of that turn.",
+    "subcategory": "Lightspeed Rescuezord System",
+    "expansion_id": 7,
+    "compatible_ranger_ids": [
+      63
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 355,
+    "name": "MECHAZORD",
+    "slug": "mechazord",
+    "ability": "???",
+    "subcategory": "Promethia System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      4
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 156,
+    "name": "MED RESCUE 5",
+    "slug": "med-rescue-5",
+    "ability": "???",
+    "subcategory": "Lightspeed Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      155
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 32,
+    "name": "MEGA BLACK DRAGON",
+    "slug": "mega-black-dragon",
+    "ability": "Exhaust this card during a battle. Place the Dragon Claw token on an enemy card of your choice. The health value of any enemy card with the Dragon Claw token is reduced by 1.",
+    "subcategory": "Other MMPR Zords",
+    "expansion_id": 27,
+    "compatible_ranger_ids": [
+      37,
+      321
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 49,
+    "name": "MEGA V1",
+    "slug": "mega-v1",
+    "ability": "Exhaust this card when any Ranger performs a maneuver or a reaction. Gain 1 [ENERGY]. That Ranger may place that card on the bottom of their deck instead of discarding it.",
+    "subcategory": "Mega Zord System",
+    "expansion_id": 3,
+    "compatible_ranger_ids": [
+      54
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 50,
+    "name": "MEGA V2",
+    "slug": "mega-v2",
+    "ability": "Exhaust this card at any time. Any Ranger may discard up to 2 cards from their hand, then choose twice that many cards from their discard pile and place them on top of their deck in any order.",
+    "subcategory": "Mega Zord System",
+    "expansion_id": 3,
+    "compatible_ranger_ids": [
+      55
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 51,
+    "name": "MEGA V3",
+    "slug": "mega-v3",
+    "ability": "Exhaust this card when any Ranger performs an attack. After rolling, that Ranger may remove 1 die to add 2 [HIT] to that attack.",
+    "subcategory": "Mega Zord System",
+    "expansion_id": 3,
+    "compatible_ranger_ids": [
+      56
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 52,
+    "name": "MEGA V4",
+    "slug": "mega-v4",
+    "ability": "Exhaust this card at any time. Gain 1 [ENERGY]. Any Ranger may draw any number of cards.",
+    "subcategory": "Mega Zord System",
+    "expansion_id": 3,
+    "compatible_ranger_ids": [
+      57
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 53,
+    "name": "MEGA V5",
+    "slug": "mega-v5",
+    "ability": "Exhaust this card when any Ranger suffers damage. Reduce that damage by 2. That Ranger may then choose 1 card from their hand and place it on top of their deck.",
+    "subcategory": "Mega Zord System",
+    "expansion_id": 3,
+    "compatible_ranger_ids": [
+      58
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 54,
+    "name": "MEGA WINGER",
+    "slug": "mega-winger",
+    "ability": "Exhaust this card at the end of a battle. Move any amount of [ENERGY] from the shared energy pool to this card (max 4). At the start of a battle, you may move all [ENERGY] from this card to the shared energy pool.",
+    "subcategory": "Mega Zord System",
+    "expansion_id": 7,
+    "compatible_ranger_ids": [
+      59
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 354,
+    "name": "METALHEAD",
+    "slug": "metalhead",
+    "ability": "???",
+    "subcategory": "Turtle System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      261,
+      260,
+      258,
+      259,
+      262
+    ],
+    "compatible_team_ids": [
+      44
+    ]
+  },
+  {
+    "id": 194,
+    "name": "MEZODON",
+    "slug": "mezodon",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 328,
+    "name": "MOSA RAZOR ZORD",
+    "slug": "mosa-razor-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      239
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 135,
+    "name": "MOUNTAIN BLASTER TURBOZORD",
+    "slug": "mountain-blaster-turbozord",
+    "ability": "???",
+    "subcategory": "Turbozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      50
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 290,
+    "name": "MYSTIC DRAGON",
+    "slug": "mystic-dragon",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      217,
+      213,
+      216,
+      214,
+      215,
+      102
+    ],
+    "compatible_team_ids": [
+      23,
+      16
+    ]
+  },
+  {
+    "id": 213,
+    "name": "MYSTIC FIREBIRD",
+    "slug": "mystic-firebird",
+    "ability": "???",
+    "subcategory": "Legend System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      86
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 207,
+    "name": "MYSTIC GARUDA",
+    "slug": "mystic-garuda",
+    "ability": "???",
+    "subcategory": "Mystic Titan System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      87
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 214,
+    "name": "MYSTIC LION",
+    "slug": "mystic-lion",
+    "ability": "???",
+    "subcategory": "Legend System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      87,
+      88,
+      89,
+      181
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 208,
+    "name": "MYSTIC MERMAID",
+    "slug": "mystic-mermaid",
+    "ability": "???",
+    "subcategory": "Mystic Titan System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      88
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 210,
+    "name": "MYSTIC MINOTAUR",
+    "slug": "mystic-minotaur",
+    "ability": "???",
+    "subcategory": "Mystic Titan System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      181
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 206,
+    "name": "MYSTIC PHOENIX",
+    "slug": "mystic-phoenix",
+    "ability": "???",
+    "subcategory": "Mystic Titan System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      86
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 209,
+    "name": "MYSTIC SPRITE",
+    "slug": "mystic-sprite",
+    "ability": "???",
+    "subcategory": "Mystic Titan System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      89
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 69,
+    "name": "NAVY BEETLEZORD",
+    "slug": "navy-beetlezord",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle. Until the end of this turn, the health value of all enemy cards with the GUARD keyword is reduced by 1.",
+    "subcategory": "Hurricane System",
+    "expansion_id": 9,
+    "compatible_ranger_ids": [
+      72
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 356,
+    "name": "NINJA APEZORD",
+    "slug": "ninja-apezord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      336
+    ],
+    "compatible_team_ids": [
+      51
+    ]
+  },
+  {
+    "id": 357,
+    "name": "NINJA BEARZORD",
+    "slug": "ninja-bearzord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      337
+    ],
+    "compatible_team_ids": [
+      51
+    ]
+  },
+  {
+    "id": 98,
+    "name": "NINJA BULL ZORD & ROBO RIDER ZORD",
+    "slug": "ninja-bull-zord-robo-rider-zord",
+    "ability": "Exhaust this card after any Ranger plays a card with an energy cost of 1. Another Ranger may immediately play a card with an energy cost of 3.",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": 9,
+    "compatible_ranger_ids": [
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 360,
+    "name": "NINJA CRANEZORD",
+    "slug": "ninja-cranezord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      340
+    ],
+    "compatible_team_ids": [
+      51
+    ]
+  },
+  {
+    "id": 361,
+    "name": "NINJA FALCONZORD",
+    "slug": "ninja-falconzord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      341
+    ],
+    "compatible_team_ids": [
+      51
+    ]
+  },
+  {
+    "id": 359,
+    "name": "NINJA FROGZORD",
+    "slug": "ninja-frogzord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      339
+    ],
+    "compatible_team_ids": [
+      51
+    ]
+  },
+  {
+    "id": 358,
+    "name": "NINJA WOLFZORD",
+    "slug": "ninja-wolfzord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      338
+    ],
+    "compatible_team_ids": [
+      51
+    ]
+  },
+  {
+    "id": 292,
+    "name": "NINJA ZORD",
+    "slug": "ninja-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      217,
+      213,
+      216,
+      214,
+      215,
+      102
+    ],
+    "compatible_team_ids": [
+      23,
+      13
+    ]
+  },
+  {
+    "id": 186,
+    "name": "NINJAKON",
+    "slug": "ninjakon",
+    "ability": "???",
+    "subcategory": "Other Storm Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      167,
+      169,
+      168,
+      71,
+      72,
+      73
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 28,
+    "name": "NINJOR BATTLE MODE",
+    "slug": "ninjor-battle-mode",
+    "ability": "Exhaust this card to allow up to 3 Rangers to each choose 1 card from their discard pile and place it on the bottom of their deck.",
+    "subcategory": "Other MMPR Zords",
+    "expansion_id": 6,
+    "compatible_ranger_ids": [
+      35
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 307,
+    "name": "NITRO ZORD",
+    "slug": "nitro-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      229
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 261,
+    "name": "OCTOZORD",
+    "slug": "octozord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      206
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 115,
+    "name": "OMEGA BLACK ZORD",
+    "slug": "omega-black-zord",
+    "ability": "Exhaust this card when an enemy card is defeated. Gain 1 [ENERGY]. Any Ranger may exhaust another Zord card to gain +3 [ENERGY].",
+    "subcategory": "Omegazord System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      17
+    ],
+    "compatible_team_ids": [
+      3
+    ]
+  },
+  {
+    "id": 113,
+    "name": "OMEGA RED ZORD",
+    "slug": "omega-red-zord",
+    "ability": "Exhaust this card when any Ranger performs an attack. Add 1 die to that attack. Any Ranger may exhaust another Zord card to add 3 more dice to that attack.",
+    "subcategory": "Omegazord System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      120,
+      121
+    ],
+    "compatible_team_ids": [
+      3
+    ]
+  },
+  {
+    "id": 114,
+    "name": "OMEGA YELLOW ZORD",
+    "slug": "omega-yellow-zord",
+    "ability": "Exhaust this card when any Ranger suffers damage. Reduce that damage by 2. Any Ranger may exhaust another Zord card to prevent that damage entirely.",
+    "subcategory": "Omegazord System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      122
+    ],
+    "compatible_team_ids": [
+      3
+    ]
+  },
+  {
+    "id": 198,
+    "name": "OMEGAMAX CYCLE",
+    "slug": "omegamax-cycle",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      149
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 162,
+    "name": "OMEGAZORD 1",
+    "slug": "omegazord-1",
+    "ability": "???",
+    "subcategory": "Omegazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      151
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 163,
+    "name": "OMEGAZORD 2",
+    "slug": "omegazord-2",
+    "ability": "???",
+    "subcategory": "Omegazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      152
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 164,
+    "name": "OMEGAZORD 3",
+    "slug": "omegazord-3",
+    "ability": "???",
+    "subcategory": "Omegazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      153
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 165,
+    "name": "OMEGAZORD 4",
+    "slug": "omegazord-4",
+    "ability": "???",
+    "subcategory": "Omegazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      154
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 166,
+    "name": "OMEGAZORD 5",
+    "slug": "omegazord-5",
+    "ability": "???",
+    "subcategory": "Omegazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      155
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 304,
+    "name": "OVIRAPTOR ZORD",
+    "slug": "oviraptor-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      103,
+      219,
+      218,
+      220,
+      221,
+      222,
+      104,
+      225,
+      223,
+      226,
+      105
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 331,
+    "name": "PACHA SMASH & BABY PACHA ZORDS",
+    "slug": "pacha-smash-baby-pacha-zords",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      239,
+      235,
+      240,
+      237,
+      112,
+      238,
+      236,
+      241,
+      316
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 299,
+    "name": "PACKY ZORD",
+    "slug": "packy-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      223
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 247,
+    "name": "PALEOZORD 1/MAMMOTH STEAM TRAIN",
+    "slug": "paleozord-1-mammoth-steam-train",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      198
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 248,
+    "name": "PALEOZORD 2/TYRANNO FREIGHT TRAIN",
+    "slug": "paleozord-2-tyranno-freight-train",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      199
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 249,
+    "name": "PALEOZORD 3/TRICERA PASSENGER LINER",
+    "slug": "paleozord-3-tricera-passenger-liner",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      200
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 246,
+    "name": "PALEOZORDS",
+    "slug": "paleozords",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      95
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 315,
+    "name": "PANDA ZORD",
+    "slug": "panda-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      231
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 295,
+    "name": "PARA ZORD",
+    "slug": "para-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      218
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 239,
+    "name": "PENGUIN ANIMAL SPIRIT",
+    "slug": "penguin-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      189
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 150,
+    "name": "PHOENIX GALACTABEAST",
+    "slug": "phoenix-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      140,
+      142,
+      141,
+      143,
+      144,
+      60,
+      61,
+      62
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 110,
+    "name": "PHOENIX HYPER ZORD",
+    "slug": "phoenix-hyper-zord",
+    "ability": "Exhaust this card to allow a Ranger of your choice to choose a card from their discard pile and return it to their hand.",
+    "subcategory": "Chronos System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      115
+    ],
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 18,
+    "name": "PINK CRANE NINJAZORD",
+    "slug": "pink-crane-ninjazord",
+    "ability": "Exhaust this card at the start of a battle. Deal 1 [HIT] to an enemy card of your choice. The next time any Ranger performs an attack during this battle, they may ignore the GUARD keyword.",
+    "subcategory": "Ninjazord System",
+    "expansion_id": 44,
+    "compatible_ranger_ids": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 126,
+    "name": "PINK SHOGUNZORD",
+    "slug": "pink-shogunzord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      41,
+      16,
+      13,
+      14,
+      129
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 120,
+    "name": "PINK SOLAR ZORD",
+    "slug": "pink-solar-zord",
+    "ability": "Exhaust this card at the end of any Ranger turn in battle while there is no [ENERGY] in the shared energy pool. The Rangers may take an additional turn after this one.",
+    "subcategory": "Solarzord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      129
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 316,
+    "name": "PIRANHA ZORD",
+    "slug": "piranha-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 96,
+    "name": "PLESIO ZORD",
+    "slug": "plesio-zord",
+    "ability": "Exhaust this card after any Ranger plays a card. Place that card on top of their deck instead of discarding it. Another Ranger may then draw up to 2 cards from the bottom of their deck.",
+    "subcategory": "Dino Charge System",
+    "expansion_id": 8,
+    "compatible_ranger_ids": [
+      104
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 180,
+    "name": "POLAR BEAR WILDZORD",
+    "slug": "polar-bear-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      157
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 7,
+    "name": "POWER BLASTER",
+    "slug": "power-blaster",
+    "ability": "Once per Ranger turn in battle, any Ranger may discard a card to place 1 hit token on this card (max 5). Exhaust this card at the end of a battle to remove all hit tokens from it and roll an equal number of dice. Deal that much [HIT], divided as you choose among enemy cards.",
+    "subcategory": "Other MMPR Zords",
+    "expansion_id": 16,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 92,
+    "name": "PROJECT GO-ONGER",
+    "slug": "project-go-onger",
+    "ability": "Exhaust this card at any time. Any Ranger may choose 1 card from their discard pile and shuffle it back into their deck, then draw up to 5 cards.",
+    "subcategory": "Other RPM Zords",
+    "expansion_id": 8,
+    "compatible_ranger_ids": [
+      95,
+      96,
+      97,
+      98,
+      99,
+      100
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 329,
+    "name": "PTERA FREEZE ZORD",
+    "slug": "ptera-freeze-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      239,
+      235,
+      240,
+      237,
+      112,
+      238,
+      236,
+      241,
+      316
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 297,
+    "name": "PTERA ZORD",
+    "slug": "ptera-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      222
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 72,
+    "name": "PTERAZORD",
+    "slug": "pterazord",
+    "ability": "Exhaust this card during any Ranger turn in battle. Gain 1 [ENERGY]. Reduce the health value of an enemy card that has not suffered any [HIT] by 2 until the end of this turn.",
+    "subcategory": "Biozord System",
+    "expansion_id": 11,
+    "compatible_ranger_ids": [
+      75
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 352,
+    "name": "PTERODACTLY BATTLE ZORD",
+    "slug": "pterodactly-battle-zord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      335
+    ],
+    "compatible_team_ids": [
+      50
+    ]
+  },
+  {
+    "id": 4,
+    "name": "PTERODACTYL",
+    "slug": "pterodactyl",
+    "ability": "Exhaust this card during a battle to gain 2 [ENERGY].",
+    "subcategory": "Dinozord System",
+    "expansion_id": 1,
+    "compatible_ranger_ids": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 39,
+    "name": "PYRAMIDAS",
+    "slug": "pyramidas",
+    "ability": "Exhaust this card when any Ranger reveals a card for defense. Add 1 [SHIELD] to that card, gain 1 [ENERGY], and deal 1 [HIT] to an enemy card of your choice.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 6,
+    "compatible_ranger_ids": [
+      47,
+      46
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 152,
+    "name": "PYRO RESCUE 1",
+    "slug": "pyro-rescue-1",
+    "ability": "???",
+    "subcategory": "Lightspeed Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      151
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Q-REX DRILL",
+    "slug": "q-rex-drill",
+    "ability": "Exhaust this card in battle. Roll a number of dice equal to the number of exhausted Zord cards in play. Deal that much [HIT] to an enemy card of your choice.",
+    "subcategory": "Super Mega System",
+    "expansion_id": 9,
+    "compatible_ranger_ids": [
+      102
+    ],
+    "compatible_team_ids": [
+      23
+    ]
+  },
+  {
+    "id": 63,
+    "name": "QUANTASAURUS REX",
+    "slug": "quantasaurus-rex",
+    "ability": "Exhaust this card during a battle. Roll 2 dice and place them on this card (max 2). When any Ranger performs an attack, they may swap any rolled dice with dice from this card. At the end of the battle, remove all dice from this card.",
+    "subcategory": "Other Time Force Zords",
+    "expansion_id": 13,
+    "compatible_ranger_ids": [
+      69
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 99,
+    "name": "RACER ZORD",
+    "slug": "racer-zord",
+    "ability": "Exhaust this card at the start of a battle. Roll 2 dice an deal that much [HIT] to an enemy card of your choice.",
+    "subcategory": "Beast-X System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      107
+    ],
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 157,
+    "name": "RAIL RESCUE 1",
+    "slug": "rail-rescue-1",
+    "ability": "???",
+    "subcategory": "Rail Rescue System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      151
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 158,
+    "name": "RAIL RESCUE 2",
+    "slug": "rail-rescue-2",
+    "ability": "???",
+    "subcategory": "Rail Rescue System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      152
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 159,
+    "name": "RAIL RESCUE 3",
+    "slug": "rail-rescue-3",
+    "ability": "???",
+    "subcategory": "Rail Rescue System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      153
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 160,
+    "name": "RAIL RESCUE 4",
+    "slug": "rail-rescue-4",
+    "ability": "???",
+    "subcategory": "Rail Rescue System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      154
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 161,
+    "name": "RAIL RESCUE 5",
+    "slug": "rail-rescue-5",
+    "ability": "???",
+    "subcategory": "Rail Rescue System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      155
+    ],
+    "compatible_team_ids": [
+      10
+    ]
+  },
+  {
+    "id": 108,
+    "name": "RAM HYPER ZORD",
+    "slug": "ram-hyper-zord",
+    "ability": "Exhaust this card when any Ranger suffers damage to reduce that damage by 3.",
+    "subcategory": "Chronos System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      116
+    ],
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 193,
+    "name": "RAMPHOZORDS",
+    "slug": "ramphozords",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 296,
+    "name": "RAPTOR ZORD",
+    "slug": "raptor-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      220
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 15,
+    "name": "RED APE NINJAZORD",
+    "slug": "red-ape-ninjazord",
+    "ability": "Exhaust this card at the start of any turn in battle. Choose a card name. All cards with that name have a shield value of 3 [SHIELD] until the end of this turn.",
+    "subcategory": "Ninjazord System",
+    "expansion_id": 44,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 127,
+    "name": "RED BATTLE BORG",
+    "slug": "red-battle-borg",
+    "ability": "???",
+    "subcategory": "Battle Borg System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      148
+    ],
+    "compatible_team_ids": [
+      4
+    ]
+  },
+  {
+    "id": 124,
+    "name": "RED BATTLEZORD",
+    "slug": "red-battlezord",
+    "ability": "Exhaust this card during any Ranger turn in battle to perform an attack with 3 dice instead of playing a card.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 17,
+    "compatible_ranger_ids": [
+      45
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 9,
+    "name": "RED DRAGON THUNDERZORD",
+    "slug": "red-dragon-thunderzord",
+    "ability": "Exhaust this card when any Ranger performs an attack. Add 1 die to that attack. Any Ranger may discard 1 card to add 2 more dice to that attack.",
+    "subcategory": "Thunderzord System",
+    "expansion_id": 16,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      304
+    ],
+    "compatible_team_ids": [
+      1,
+      48
+    ]
+  },
+  {
+    "id": 133,
+    "name": "RED LIGHTNING TURBOZORD",
+    "slug": "red-lightning-turbozord",
+    "ability": "???",
+    "subcategory": "Turbozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      49,
+      77
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 291,
+    "name": "RED LION SAMURAI WILDZORD",
+    "slug": "red-lion-samurai-wildzord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      217,
+      213,
+      216,
+      214,
+      215,
+      102
+    ],
+    "compatible_team_ids": [
+      23,
+      12,
+      21
+    ]
+  },
+  {
+    "id": 167,
+    "name": "RED LION WILDZORD",
+    "slug": "red-lion-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      156
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 21,
+    "name": "RED SHOGUNZORD",
+    "slug": "red-shogunzord",
+    "ability": "Exhaust this card when any Ranger places a card on the bottom of their deck after revealing it for defense. Roll 2 dice and deal that much [HIT] to an enemy card of your choice.",
+    "subcategory": "Shogunzord System",
+    "expansion_id": 45,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      148
+    ],
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 117,
+    "name": "RED SOLAR ZORD",
+    "slug": "red-solar-zord",
+    "ability": "Exhaust this card when any Ranger rolls dice for an attack while there is no [ENERGY] in the shared energy pool. Add 2 dice to that attack. They may reroll any number of dice during that attack.",
+    "subcategory": "Solarzord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      126
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 123,
+    "name": "REINDEER ZORD",
+    "slug": "reindeer-zord",
+    "ability": "Exhaust this card during a battle. Gain 1 [ENERGY]. If any Ranger flips 1 action token face down, you may move any Ranger to an outer location of your choice.",
+    "subcategory": "Other Zords",
+    "expansion_id": 20,
+    "compatible_ranger_ids": [
+      132
+    ],
+    "compatible_team_ids": [
+      31
+    ]
+  },
+  {
+    "id": 84,
+    "name": "RESCUE RUNNERS",
+    "slug": "rescue-runners",
+    "ability": "Exhaust this card before any Ranger rolls exactly 3 dice. Treat those dice as if they rolled 1 [MISS] result, 1 [HIT] result, and 1 [HIT][HIT] result.",
+    "subcategory": "Rescue Runner System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      92
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 149,
+    "name": "RHINO GALACTABEAST",
+    "slug": "rhino-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      140,
+      142,
+      141,
+      143,
+      144,
+      60,
+      61,
+      62
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 234,
+    "name": "RHINO STEEL ZORD",
+    "slug": "rhino-steel-zord",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      191
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 175,
+    "name": "RHINO WILDZORD",
+    "slug": "rhino-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      159
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 250,
+    "name": "ROAD ATTACK ZORD",
+    "slug": "road-attack-zord",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      95,
+      96,
+      97,
+      98,
+      99,
+      196,
+      197,
+      198,
+      199,
+      200
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 47,
+    "name": "ROBO RACER",
+    "slug": "robo-racer",
+    "ability": "Exhaust this card when any Ranger performs an attack. Apply all the effects that match the target’s keywords. FAST: That Ranger may reroll any number of dice during that attack. GUARD: Add 1 [HIT] to that attack. PASSIVE: Gain 1 [ENERGY].",
+    "subcategory": "Turbozord System",
+    "expansion_id": 9,
+    "compatible_ranger_ids": [
+      51
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 305,
+    "name": "ROBO RED ZORD",
+    "slug": "robo-red-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 317,
+    "name": "RUMBLE TUSK ZORD",
+    "slug": "rumble-tusk-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233,
+      228,
+      229,
+      230,
+      231,
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 199,
+    "name": "S.W.A.T. FLYER 1",
+    "slug": "s-w-a-t-flyer-1",
+    "ability": "???",
+    "subcategory": "S.W.A.T. System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      79,
+      170,
+      172
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 200,
+    "name": "S.W.A.T. FLYER 2",
+    "slug": "s-w-a-t-flyer-2",
+    "ability": "???",
+    "subcategory": "S.W.A.T. System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      170,
+      171,
+      174
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 201,
+    "name": "S.W.A.T. FLYER 3",
+    "slug": "s-w-a-t-flyer-3",
+    "ability": "???",
+    "subcategory": "S.W.A.T. System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      81,
+      173,
+      82
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 202,
+    "name": "S.W.A.T. FLYER 4",
+    "slug": "s-w-a-t-flyer-4",
+    "ability": "???",
+    "subcategory": "S.W.A.T. System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      84
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 203,
+    "name": "S.W.A.T. FLYER 5",
+    "slug": "s-w-a-t-flyer-5",
+    "ability": "???",
+    "subcategory": "S.W.A.T. System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      83
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 2,
+    "name": "SABER-TOOTHED TIGER",
+    "slug": "saber-toothed-tiger",
+    "ability": "Exhaust this card during a battle to allow each participating Ranger to draw up to 2 cards.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 1,
+    "compatible_ranger_ids": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 351,
+    "name": "SABERTOOTH BATTLE ZORD",
+    "slug": "sabertooth-battle-zord",
+    "ability": "???",
+    "subcategory": null,
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      334
+    ],
+    "compatible_team_ids": [
+      50
+    ]
+  },
+  {
+    "id": 322,
+    "name": "SABERTOOTH ZORD",
+    "slug": "sabertooth-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233,
+      228,
+      229,
+      230,
+      231,
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 256,
+    "name": "SAMURAI CLAWZORD",
+    "slug": "samurai-clawzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      206
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 70,
+    "name": "SAMURAI STAR CHOPPER",
+    "slug": "samurai-star-chopper",
+    "ability": "Exhaust this card when any Ranger suffers damage. Reduce that damage by 2. Exhaust this card when any Ranger performs an attack. That Ranger may reroll any number of dice during that attack.",
+    "subcategory": "Hurricane System",
+    "expansion_id": 7,
+    "compatible_ranger_ids": [
+      73
+    ],
+    "compatible_team_ids": [
+      13
+    ]
+  },
+  {
+    "id": 270,
+    "name": "SEA BROTHERS ZORDS",
+    "slug": "sea-brothers-zords",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      211,
+      312
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 111,
+    "name": "SERPENT HYPER ZORD",
+    "slug": "serpent-hyper-zord",
+    "ability": "Exhaust this card during a battle to flip up to 2 foot soldier cards face down, as through defeated. (Do not remove any foot soldier figures from that location.)",
+    "subcategory": "Chronos System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      117
+    ],
+    "compatible_team_ids": [
+      33
+    ]
+  },
+  {
+    "id": 312,
+    "name": "SERPENT ZORD",
+    "slug": "serpent-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      228
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 64,
+    "name": "SHADOW WINGER",
+    "slug": "shadow-winger",
+    "ability": "Exhaust this card at any time. Swap the positions of any 2 Rangers in outer locations.",
+    "subcategory": "Shadow Force System",
+    "expansion_id": 13,
+    "compatible_ranger_ids": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 235,
+    "name": "SHARK ANIMAL SPIRIT",
+    "slug": "shark-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      188,
+      194
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 151,
+    "name": "SHARK GALACTABEAST",
+    "slug": "shark-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      140,
+      142,
+      141,
+      143,
+      144,
+      60,
+      61,
+      62
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 260,
+    "name": "SHARKZORD",
+    "slug": "sharkzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      201,
+      101
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 221,
+    "name": "SHOVEL DRIVER",
+    "slug": "shovel-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      186
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 143,
+    "name": "SILVER TITANUS",
+    "slug": "silver-titanus",
+    "ability": "???",
+    "subcategory": "Other Space Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      54,
+      56,
+      136,
+      139,
+      134,
+      59
+    ],
+    "compatible_team_ids": [
+      8
+    ]
+  },
+  {
+    "id": 136,
+    "name": "SIREN BLASTER RESCUEZORD",
+    "slug": "siren-blaster-rescuezord",
+    "ability": "???",
+    "subcategory": "Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      50
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 268,
+    "name": "SKY BROTHERS ZORDS",
+    "slug": "sky-brothers-zords",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      207,
+      208
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 345,
+    "name": "SOARING FALCON ZORD",
+    "slug": "soaring-falcon-zord",
+    "ability": "???",
+    "subcategory": "Street Fighter Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      255
+    ],
+    "compatible_team_ids": [
+      43
+    ]
+  },
+  {
+    "id": 212,
+    "name": "SOLAR STREAK",
+    "slug": "solar-streak",
+    "ability": "???",
+    "subcategory": "Other Mystic Force Zords",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      180
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 116,
+    "name": "SOLAR ZORD",
+    "slug": "solar-zord",
+    "ability": "Exhaust this card when there is no [ENERGY] in the shared energy pool. Gain 3 [ENERGY].",
+    "subcategory": "Solarzord System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      125
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 225,
+    "name": "SONIC STREAKER",
+    "slug": "sonic-streaker",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      182
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 217,
+    "name": "SPEED DRIVER",
+    "slug": "speed-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      183
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 97,
+    "name": "SPINO ZORD",
+    "slug": "spino-zord",
+    "ability": "Exhaust this card at any time. Any Ranger may return up to 3 cards from their discard pile to their hand. They must then discard an equal number of cards from their hand.",
+    "subcategory": "Dino Charge System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      105
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 192,
+    "name": "SPINOZORD",
+    "slug": "spinozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 140,
+    "name": "STAR RACER RESCUEZORD",
+    "slug": "star-racer-rescuezord",
+    "ability": "???",
+    "subcategory": "Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      127,
+      57
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 326,
+    "name": "STEGO SPIKE ZORD",
+    "slug": "stego-spike-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      238
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 293,
+    "name": "STEGO ZORD",
+    "slug": "stego-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      219
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 321,
+    "name": "STEGOSAURUS ZORD",
+    "slug": "stegosaurus-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233,
+      228,
+      229,
+      230,
+      231,
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 189,
+    "name": "STEGOZORD",
+    "slug": "stegozord",
+    "ability": "???",
+    "subcategory": "Biozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      74,
+      76,
+      75,
+      78,
+      77
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 346,
+    "name": "STINGING CRANE ZORD",
+    "slug": "stinging-crane-zord",
+    "ability": "???",
+    "subcategory": "Street Fighter Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      256
+    ],
+    "compatible_team_ids": [
+      43
+    ]
+  },
+  {
+    "id": 132,
+    "name": "STORM BLASTER",
+    "slug": "storm-blaster",
+    "ability": "???",
+    "subcategory": "Other Turbo Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      50
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 347,
+    "name": "STORM EAGLE ZORD",
+    "slug": "storm-eagle-zord",
+    "ability": "???",
+    "subcategory": "Street Fighter Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      257
+    ],
+    "compatible_team_ids": [
+      43
+    ]
+  },
+  {
+    "id": 220,
+    "name": "SUB DRIVER",
+    "slug": "sub-driver",
+    "ability": "???",
+    "subcategory": "Delta Max System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      186
+    ],
+    "compatible_team_ids": [
+      17
+    ]
+  },
+  {
+    "id": 319,
+    "name": "SUB SURFER ZORD",
+    "slug": "sub-surfer-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      227,
+      232,
+      233,
+      228,
+      229,
+      230,
+      231,
+      106
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 284,
+    "name": "SUPER MEGA JET ZORD",
+    "slug": "super-mega-jet-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      214
+    ],
+    "compatible_team_ids": [
+      23
+    ]
+  },
+  {
+    "id": 286,
+    "name": "SUPER MEGA RACER ZORD",
+    "slug": "super-mega-racer-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      216
+    ],
+    "compatible_team_ids": [
+      23
+    ]
+  },
+  {
+    "id": 283,
+    "name": "SUPER MEGA SKYSHIP ZORD",
+    "slug": "super-mega-skyship-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      213
+    ],
+    "compatible_team_ids": [
+      23
+    ]
+  },
+  {
+    "id": 285,
+    "name": "SUPER MEGA WHEELER ZORD",
+    "slug": "super-mega-wheeler-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      215
+    ],
+    "compatible_team_ids": [
+      23
+    ]
+  },
+  {
+    "id": 40,
+    "name": "SUPER ZEO ZORD I",
+    "slug": "super-zeo-zord-i",
+    "ability": "Exhaust this card at any time. Each Ranger may look at the top card of their deck and may swap it with a card from their hand.",
+    "subcategory": "Super Zeo Zord System",
+    "expansion_id": 46,
+    "compatible_ranger_ids": [
+      16
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 41,
+    "name": "SUPER ZEO ZORD II",
+    "slug": "super-zeo-zord-ii",
+    "ability": "Exhaust this card when any Ranger performs an attack. Convert 1 [MISS] or [HIT] result to a [HIT][HIT] result.",
+    "subcategory": "Super Zeo Zord System",
+    "expansion_id": 46,
+    "compatible_ranger_ids": [
+      42
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 42,
+    "name": "SUPER ZEO ZORD III",
+    "slug": "super-zeo-zord-iii",
+    "ability": "Exhaust this card during a battle. Attach 2 energy tokens to an enemy card that has not yet been defeated.",
+    "subcategory": "Super Zeo Zord System",
+    "expansion_id": 46,
+    "compatible_ranger_ids": [
+      5
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 43,
+    "name": "SUPER ZEO ZORD IV",
+    "slug": "super-zeo-zord-iv",
+    "ability": "Exhaust this card at any time. Add 2 hit tokens to any Ranger’s character card (max 3). While this card is in play, when any Ranger performs an attack, they may remove 1 hit token from their character card to add 1 die to that attack.",
+    "subcategory": "Super Zeo Zord System",
+    "expansion_id": 46,
+    "compatible_ranger_ids": [
+      44
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 44,
+    "name": "SUPER ZEO ZORD V",
+    "slug": "super-zeo-zord-v",
+    "ability": "Exhaust this card at any time. Choose a number of cards from Ranger discard piles with a total of up to 5 [SHIELD]. Each of those cards must have the ★ icon in it's ability text. Return those cards to their respective Rangers’ hands.",
+    "subcategory": "Super Zeo Zord System",
+    "expansion_id": 46,
+    "compatible_ranger_ids": [
+      45
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 257,
+    "name": "SWORDFISHZORD",
+    "slug": "swordfishzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      202
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 348,
+    "name": "T-REX BATTLE ZORD",
+    "slug": "t-rex-battle-zord",
+    "ability": "??",
+    "subcategory": "Battle Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      328,
+      329
+    ],
+    "compatible_team_ids": [
+      50
+    ]
+  },
+  {
+    "id": 323,
+    "name": "T-REX CHAMPION ZORD",
+    "slug": "t-rex-champion-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      235,
+      240
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 332,
+    "name": "T-REX VOID ZORD",
+    "slug": "t-rex-void-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      241
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 95,
+    "name": "T-REX ZORD",
+    "slug": "t-rex-zord",
+    "ability": "Exhaust this card after any Ranger resolves an attack. If that attack did not defeat the target, roll 2 dice and deal that many [HIT] to the target.",
+    "subcategory": "Dino Charge System",
+    "expansion_id": 27,
+    "compatible_ranger_ids": [
+      103
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 90,
+    "name": "TAIL SPINNER",
+    "slug": "tail-spinner",
+    "ability": "Exhaust this card when any Ranger enters a new location during a battle. That Ranger may draw up to 2 cards and deal an equal amount of [HIT] to an enemy card of their choice.",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": 12,
+    "compatible_ranger_ids": [
+      98
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 138,
+    "name": "THUNDER LOADER RESCUEZORD",
+    "slug": "thunder-loader-rescuezord",
+    "ability": "???",
+    "subcategory": "Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      135,
+      55
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 231,
+    "name": "TIGER ANIMAL SPIRIT",
+    "slug": "tiger-animal-spirit",
+    "ability": "???",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      188
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 105,
+    "name": "TIGER CLAW ZORD",
+    "slug": "tiger-claw-zord",
+    "ability": "Exhaust this card after any Ranger performs an attack. During the next Ranger turn in this battle, instead of playing a card, you may perform an attack with half that many dice (rounded down).",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      112
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 245,
+    "name": "TIGER JET",
+    "slug": "tiger-jet",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      197
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 314,
+    "name": "TIGER ZORD",
+    "slug": "tiger-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      230
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 259,
+    "name": "TIGERZORD",
+    "slug": "tigerzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      201,
+      101
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 58,
+    "name": "TIME FLYER 1",
+    "slug": "time-flyer-1",
+    "ability": "Exhaust this card during any Ranger turn in battle. Instead of playing a card, any Ranger may discard 1 attack card to perform an attack with 4 dice.",
+    "subcategory": "Time Flyer System",
+    "expansion_id": 13,
+    "compatible_ranger_ids": [
+      64
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 59,
+    "name": "TIME FLYER 2",
+    "slug": "time-flyer-2",
+    "ability": "Exhaust this card during a battle. Gain 1 [ENERGY]. Any Ranger may swap their hand with their deck. If they do, they must then shuffle their deck.",
+    "subcategory": "Time Flyer System",
+    "expansion_id": 13,
+    "compatible_ranger_ids": [
+      65
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 60,
+    "name": "TIME FLYER 3",
+    "slug": "time-flyer-3",
+    "ability": "Exhaust this card at the start of a battle. Swap the positions of any number of foot soldier cards in the combat sequence.",
+    "subcategory": "Time Flyer System",
+    "expansion_id": 13,
+    "compatible_ranger_ids": [
+      66
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 61,
+    "name": "TIME FLYER 4",
+    "slug": "time-flyer-4",
+    "ability": "Exhaust this card during a battle. You may spend up to 2 [ENERGY]. For each [ENERGY] spent, deal 2 [HIT] to a different enemy card.",
+    "subcategory": "Time Flyer System",
+    "expansion_id": 13,
+    "compatible_ranger_ids": [
+      67
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 62,
+    "name": "TIME FLYER 5",
+    "slug": "time-flyer-5",
+    "ability": "Exhaust this card to allow a Ranger of your choice to play a card in a battle taking place in another location, as though they were in that location.",
+    "subcategory": "Time Flyer System",
+    "expansion_id": 2,
+    "compatible_ranger_ids": [
+      68
+    ],
+    "compatible_team_ids": [
+      11
+    ]
+  },
+  {
+    "id": 300,
+    "name": "TITANO ZORD",
+    "slug": "titano-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      226
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 8,
+    "name": "TITANUS",
+    "slug": "titanus",
+    "ability": "Exhaust this card. Deal 2 [HIT] to an enemy card of your choice.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 49,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 181,
+    "name": "TOR THE SHUTTLEZORD",
+    "slug": "tor-the-shuttlezord",
+    "ability": "???",
+    "subcategory": "Thunderzord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      308
+    ],
+    "compatible_team_ids": [
+      1,
+      48
+    ]
+  },
+  {
+    "id": 56,
+    "name": "TOROZORD",
+    "slug": "torozord",
+    "ability": "Exhaust this card after any Ranger discards a card for defense. Deal an amount of [HIT] to an already resolved enemy card equal to the number of [SHIELD] on that card.",
+    "subcategory": "Galactabeast Zord System",
+    "expansion_id": 6,
+    "compatible_ranger_ids": [
+      62,
+      61
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 148,
+    "name": "TOROZORD/MEGA DEFENDER",
+    "slug": "torozord-mega-defender",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      61,
+      62
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 313,
+    "name": "TORTOISE ZORD",
+    "slug": "tortoise-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      229
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  },
+  {
+    "id": 324,
+    "name": "TRICERA BLADE ZORD",
+    "slug": "tricera-blade-zord",
+    "ability": "???",
+    "subcategory": "Dino Fury System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      236
+    ],
+    "compatible_team_ids": [
+      27
+    ]
+  },
+  {
+    "id": 294,
+    "name": "TRICERA ZORD",
+    "slug": "tricera-zord",
+    "ability": "???",
+    "subcategory": "Dino Charge System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      221
+    ],
+    "compatible_team_ids": [
+      24
+    ]
+  },
+  {
+    "id": 3,
+    "name": "TRICERATOPS",
+    "slug": "triceratops",
+    "ability": "Exhaust this card to allow any Ranger to choose up to 2 cards from their discard pile and return them to the top of their deck, in any order.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 1,
+    "compatible_ranger_ids": [
+      10,
+      11,
+      12
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 350,
+    "name": "TRICERATOPS BATTLE ZORD",
+    "slug": "triceratops-battle-zord",
+    "ability": "???",
+    "subcategory": "Battle Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      332,
+      333
+    ],
+    "compatible_team_ids": [
+      50
+    ]
+  },
+  {
+    "id": 73,
+    "name": "TRICERAZORD",
+    "slug": "tricerazord",
+    "ability": "Exhaust this card when any Ranger suffers damage. Reduce that damage by 2. That Ranger may choose 1 card from their discard pile and place it on top of their deck.",
+    "subcategory": "Biozord System",
+    "expansion_id": 11,
+    "compatible_ranger_ids": [
+      76
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 287,
+    "name": "TURBO FALCON ZORD",
+    "slug": "turbo-falcon-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      217,
+      213,
+      216,
+      214,
+      215,
+      95,
+      96,
+      97,
+      98,
+      99,
+      196,
+      197,
+      100,
+      198,
+      199,
+      200
+    ],
+    "compatible_team_ids": [
+      23,
+      19
+    ]
+  },
+  {
+    "id": 253,
+    "name": "TURTLE  FOLDINGZORD",
+    "slug": "turtle-foldingzord",
+    "ability": "???",
+    "subcategory": "FoldingZord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      203
+    ],
+    "compatible_team_ids": [
+      21
+    ]
+  },
+  {
+    "id": 353,
+    "name": "TYPHONIS",
+    "slug": "typhonis",
+    "ability": "???",
+    "subcategory": "All-New Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      290
+    ],
+    "compatible_team_ids": [
+      46
+    ]
+  },
+  {
+    "id": 1,
+    "name": "TYRANNOSAURUS",
+    "slug": "tyrannosaurus",
+    "ability": "Exhaust this card before a Ranger performs an attack to add 2 dice to that attack.",
+    "subcategory": "Dinozord System",
+    "expansion_id": 1,
+    "compatible_ranger_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 71,
+    "name": "TYRANNOZORD",
+    "slug": "tyrannozord",
+    "ability": "Exhaust this card when any Ranger performs an attack. Add 1 die to that attack. That Ranger may reroll any number of dice during that attack.",
+    "subcategory": "Biozord System",
+    "expansion_id": 11,
+    "compatible_ranger_ids": [
+      74
+    ],
+    "compatible_team_ids": [
+      14
+    ]
+  },
+  {
+    "id": 274,
+    "name": "ULTRA DRAGON MECHAZORD",
+    "slug": "ultra-dragon-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      207
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 275,
+    "name": "ULTRA PHOENIX MECHAZORD",
+    "slug": "ultra-phoenix-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      208
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 278,
+    "name": "ULTRA SHARK MECHAZORD",
+    "slug": "ultra-shark-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      211
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 276,
+    "name": "ULTRA SNAKE MECHAZORD",
+    "slug": "ultra-snake-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      209
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 277,
+    "name": "ULTRA TIGER MECHAZORD",
+    "slug": "ultra-tiger-mechazord",
+    "ability": "???",
+    "subcategory": "Mechazord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      210
+    ],
+    "compatible_team_ids": [
+      22
+    ]
+  },
+  {
+    "id": 11,
+    "name": "UNICORN THUNDERZORD",
+    "slug": "unicorn-thunderzord",
+    "ability": "Exhaust this card. Choose a number of cards in Ranger discard piles with a total of up to 4 [SHIELD]. Place those cards on top of their respective Rangers’ decks, in any order.",
+    "subcategory": "Thunderzord System",
+    "expansion_id": 16,
+    "compatible_ranger_ids": [
+      10,
+      11,
+      12,
+      305
+    ],
+    "compatible_team_ids": [
+      1,
+      48
+    ]
+  },
+  {
+    "id": 45,
+    "name": "WARRIOR WHEEL",
+    "slug": "warrior-wheel",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle. Skip that turn. The next time any Ranger performs an attack with an energy cost of 1 or zero during this battle, add 5 dice to that attack.",
+    "subcategory": "Super Zeo Zord System",
+    "expansion_id": 46,
+    "compatible_ranger_ids": [
+      16,
+      42,
+      43,
+      44,
+      45,
+      47,
+      46
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 243,
+    "name": "WHALE JUMBO JET",
+    "slug": "whale-jumbo-jet",
+    "ability": "???",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      196,
+      197
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 101,
+    "name": "WHEELER ZORD",
+    "slug": "wheeler-zord",
+    "ability": "Exhaust this card at any time. Move up to 2 foot soldier figures from any location to an outer location of your choice.",
+    "subcategory": "Beast-X System",
+    "expansion_id": 4,
+    "compatible_ranger_ids": [
+      109
+    ],
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 33,
+    "name": "WHITE BATTLE BORG",
+    "slug": "white-battle-borg",
+    "ability": "Exhaust this card during any Ranger attack. Gain 1 [ENERGY] and add 1 die with a [MISS] result to that attack.",
+    "subcategory": "Battle Borg System",
+    "expansion_id": 8,
+    "compatible_ranger_ids": [
+      40
+    ],
+    "compatible_team_ids": [
+      4
+    ]
+  },
+  {
+    "id": 20,
+    "name": "WHITE NINJA FALCONZORD",
+    "slug": "white-ninja-falconzord",
+    "ability": "Exhaust this card after any Ranger resolves a card with an energy cost of zero. That Ranger may immediately play that card again. Then they must discard the top card of their deck.",
+    "subcategory": "Ninjazord System",
+    "expansion_id": 44,
+    "compatible_ranger_ids": [
+      26,
+      27,
+      28
+    ],
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 25,
+    "name": "WHITE SHOGUNZORD",
+    "slug": "white-shogunzord",
+    "ability": "Exhaust this card when any Ranger plays a card. Reduce the energy cost of that card by 1. After that card resolves, that Ranger may place it on top of their deck instead of discarding it.",
+    "subcategory": "Shogunzord System",
+    "expansion_id": 45,
+    "compatible_ranger_ids": [
+      13,
+      14,
+      15,
+      16,
+      26,
+      27,
+      28,
+      40
+    ],
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 26,
+    "name": "WHITE TIGER DRAGONZORD",
+    "slug": "white-tiger-dragonzord",
+    "ability": "Exhaust this card after any Ranger performs a maneuver. Deal an amount of [HIT] to an enemy card of your choice equal to the number of defeated enemy cards.",
+    "subcategory": "Other MMPR Zords",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      21,
+      22,
+      23,
+      26,
+      27,
+      28,
+      25,
+      24,
+      3,
+      82
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 171,
+    "name": "WHITE TIGER WILDZORD",
+    "slug": "white-tiger-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      160
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 14,
+    "name": "WHITE TIGERZORD",
+    "slug": "white-tigerzord",
+    "ability": "Exhaust this card when any Ranger performs a maneuver to allow another Ranger to immediately play 1 card with an energy cost of zero.",
+    "subcategory": "Thunderzord System",
+    "expansion_id": 15,
+    "compatible_ranger_ids": [
+      26,
+      27,
+      28
+    ],
+    "compatible_team_ids": [
+      1
+    ]
+  },
+  {
+    "id": 125,
+    "name": "WHITE TIGERZORD RED TIGER MODE",
+    "slug": "white-tigerzord-red-tiger-mode",
+    "ability": "Exhaust this card after any Ranger resolves an attack card with an energy cost of zero. Another Ranger may immediately play 1 maneuver card.",
+    "subcategory": "Other MMPR Zords",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      26,
+      27,
+      28,
+      120,
+      121
+    ],
+    "compatible_team_ids": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": 82,
+    "name": "WHITE TITAN FORM",
+    "slug": "white-titan-form",
+    "ability": "Exhaust this card during any Ranger attack. Convert 1 [HIT] or [HIT][HIT] result to a [MISS] result. If you do, immediately defeat 1 foot soldier card.",
+    "subcategory": "Other Mystic Force Zords",
+    "expansion_id": 8,
+    "compatible_ranger_ids": [
+      90
+    ],
+    "compatible_team_ids": [
+      16
+    ]
+  },
+  {
+    "id": 55,
+    "name": "WILDCAT GALACTABEAST",
+    "slug": "wildcat-galactabeast",
+    "ability": "Exhaust this card during any Ranger attack. That Ranger may ignore the GUARD keyword when choosing a target for that attack, and they may reroll any number of dice during that attack.",
+    "subcategory": "Galactabeast Zord System",
+    "expansion_id": 8,
+    "compatible_ranger_ids": [
+      60
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 141,
+    "name": "WIND CHASER TURBOZORD",
+    "slug": "wind-chaser-turbozord",
+    "ability": "???",
+    "subcategory": "Turbozord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      166,
+      58
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 142,
+    "name": "WIND RESCUE RESCUEZORD",
+    "slug": "wind-rescue-rescuezord",
+    "ability": "???",
+    "subcategory": "Rescuezord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      166,
+      58
+    ],
+    "compatible_team_ids": [
+      6
+    ]
+  },
+  {
+    "id": 85,
+    "name": "WOLF ANIMAL SPIRIT",
+    "slug": "wolf-animal-spirit",
+    "ability": "Exhaust this card after any Ranger performs a maneuver or reaction. Roll 2 dice and and deal that much [HIT] to an enemy card of your choice.",
+    "subcategory": "Animal Spirit System",
+    "expansion_id": 7,
+    "compatible_ranger_ids": [
+      93
+    ],
+    "compatible_team_ids": [
+      18
+    ]
+  },
+  {
+    "id": 91,
+    "name": "WOLF CRUISER",
+    "slug": "wolf-cruiser",
+    "ability": "Exhaust this card when any Ranger reveals a card for defense. If that Ranger has 3 cards of fewer in their deck, add 3 [SHIELD] to the revealed card.",
+    "subcategory": "Zord Attack Vehicles System",
+    "expansion_id": 12,
+    "compatible_ranger_ids": [
+      99
+    ],
+    "compatible_team_ids": [
+      19
+    ]
+  },
+  {
+    "id": 147,
+    "name": "WOLF GALACTABEAST",
+    "slug": "wolf-galactabeast",
+    "ability": "???",
+    "subcategory": "Galactabeast System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      143
+    ],
+    "compatible_team_ids": [
+      9
+    ]
+  },
+  {
+    "id": 65,
+    "name": "WOLF WILDZORD",
+    "slug": "wolf-wildzord",
+    "ability": "Exhaust this card before any Ranger performs an attack. That Ranger may draw up to 2 cards and ignore the GUARD keyword. Then swap this card with the Alligator Wildzord or the Hammerhead Shark Wildzord. (The swapped card remains exhausted.)",
+    "subcategory": "Wildzord System",
+    "expansion_id": 5,
+    "compatible_ranger_ids": [
+      70
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 102,
+    "name": "WRECKER ZORD",
+    "slug": "wrecker-zord",
+    "ability": "Exhaust this card at any time. Up to 3 different Rangers may each reveal 1 card from their hand. If there is at least 1 copy of that card in their discard pile, they may place that copy on top of their deck.",
+    "subcategory": "Beast-X System",
+    "expansion_id": 36,
+    "compatible_ranger_ids": [
+      110
+    ],
+    "compatible_team_ids": [
+      26
+    ]
+  },
+  {
+    "id": 205,
+    "name": "X-ZORD",
+    "slug": "x-zord",
+    "ability": "???",
+    "subcategory": "Other S.P.D. Zords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      79,
+      170,
+      179,
+      80,
+      81,
+      171,
+      172,
+      84,
+      83,
+      149,
+      85,
+      150,
+      173,
+      174,
+      82,
+      178,
+      177
+    ],
+    "compatible_team_ids": [
+      15
+    ]
+  },
+  {
+    "id": 128,
+    "name": "YELLOW BATTLE BORG",
+    "slug": "yellow-battle-borg",
+    "ability": "???",
+    "subcategory": "Battle Borg System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      147
+    ],
+    "compatible_team_ids": [
+      4
+    ]
+  },
+  {
+    "id": 16,
+    "name": "YELLOW BEAR NINJAZORD",
+    "slug": "yellow-bear-ninjazord",
+    "ability": "Exhaust this card during any Ranger turn in battle. ANy Ranger may choose 2 cards with the same name from their discard pile and add them to their hand.",
+    "subcategory": "Ninjazord System",
+    "expansion_id": 44,
+    "compatible_ranger_ids": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "compatible_team_ids": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 168,
+    "name": "YELLOW EAGLE WILDZORD",
+    "slug": "yellow-eagle-wildzord",
+    "ability": "???",
+    "subcategory": "Wildzords",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      157
+    ],
+    "compatible_team_ids": [
+      12
+    ]
+  },
+  {
+    "id": 22,
+    "name": "YELLOW SHOGUNZORD",
+    "slug": "yellow-shogunzord",
+    "ability": "Exhaust this card at the start of any Ranger turn in battle. CHoose a Ranger. Gain 1 [ENERGY] each time the chosen Ranger plays a card during this turn.",
+    "subcategory": "Shogunzord System",
+    "expansion_id": 45,
+    "compatible_ranger_ids": [
+      6,
+      7,
+      8,
+      9,
+      147
+    ],
+    "compatible_team_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "id": 118,
+    "name": "YELLOW SOLAR ZORD",
+    "slug": "yellow-solar-zord",
+    "ability": "Exhaust this card when any Ranger rolls at least 1 [HIT] [HIT] result during an attack while there is no [ENERGY] in the shared energy pool. Add 3 [HIT] to that attack.",
+    "subcategory": "Solarzord System",
+    "expansion_id": 55,
+    "compatible_ranger_ids": [
+      127
+    ],
+    "compatible_team_ids": [
+      30
+    ]
+  },
+  {
+    "id": 288,
+    "name": "ZEO RACER ZORD",
+    "slug": "zeo-racer-zord",
+    "ability": "???",
+    "subcategory": "Legendary Zord System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      217,
+      213,
+      216,
+      214,
+      215,
+      102
+    ],
+    "compatible_team_ids": [
+      23,
+      5
+    ]
+  },
+  {
+    "id": 34,
+    "name": "ZEO ZORD I",
+    "slug": "zeo-zord-i",
+    "ability": "Exhaust this card to gain 1 [ENERGY] and allow each Ranger to look at the top card of their deck. Each Ranger may either draw that card or return it to the top of their deck.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 10,
+    "compatible_ranger_ids": [
+      41
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 35,
+    "name": "ZEO ZORD II",
+    "slug": "zeo-zord-ii",
+    "ability": "Exhaust this card before any Ranger performs an attack. Add 3 dice to that attack, then after rolling remove 3 dice from that attack.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 10,
+    "compatible_ranger_ids": [
+      42
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 36,
+    "name": "ZEO ZORD III",
+    "slug": "zeo-zord-iii",
+    "ability": "Exhaust this card to allow 2 different Rangers to each choose 1 card from their discard pile and place it on top of their deck.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 10,
+    "compatible_ranger_ids": [
+      43
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 37,
+    "name": "ZEO ZORD IV",
+    "slug": "zeo-zord-iv",
+    "ability": "Exhaust this card to deal [HIT] to an already resolved enemy card equal to the number of hit tokens on it.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 10,
+    "compatible_ranger_ids": [
+      44
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 38,
+    "name": "ZEO ZORD V",
+    "slug": "zeo-zord-v",
+    "ability": "Exhaust this card when any Ranger discards a card for defense. Gain 1 [ENERGY]. That Ranger may return that card to the top of their deck.",
+    "subcategory": "Zeo Zord System",
+    "expansion_id": 10,
+    "compatible_ranger_ids": [
+      45
+    ],
+    "compatible_team_ids": [
+      5
+    ]
+  },
+  {
+    "id": 309,
+    "name": "ZOOM ZORD",
+    "slug": "zoom-zord",
+    "ability": "???",
+    "subcategory": "Ninja Fusion System",
+    "expansion_id": null,
+    "compatible_ranger_ids": [
+      231
+    ],
+    "compatible_team_ids": [
+      25
+    ]
+  }
+]

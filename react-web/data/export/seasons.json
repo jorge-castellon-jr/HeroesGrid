@@ -1,0 +1,254 @@
+[
+  {
+    "id": "1",
+    "name": "Mighty Morphin Power Rangers",
+    "slug": "mighty-morphin-power-rangers",
+    "order": 1993,
+    "published": true
+  },
+  {
+    "id": "2",
+    "name": "Mighty Morphin Alien Rangers",
+    "slug": "mighty-morphin-alien-rangers",
+    "order": 1995,
+    "published": true
+  },
+  {
+    "id": "36",
+    "name": "Mighty Morphin Power Rangers: The Movie",
+    "slug": "mighty-morphin-power-rangers-the-movie",
+    "order": 1995.1,
+    "published": false
+  },
+  {
+    "id": "3",
+    "name": "Power Rangers Zeo",
+    "slug": "power-rangers-zeo",
+    "order": 1996,
+    "published": true
+  },
+  {
+    "id": "4",
+    "name": "Power Rangers Turbo",
+    "slug": "power-rangers-turbo",
+    "order": 1997,
+    "published": true
+  },
+  {
+    "id": "5",
+    "name": "Power Rangers In Space",
+    "slug": "power-rangers-in-space",
+    "order": 1998,
+    "published": true
+  },
+  {
+    "id": "6",
+    "name": "Power Rangers Lost Galaxy",
+    "slug": "power-rangers-lost-galaxy",
+    "order": 1999,
+    "published": true
+  },
+  {
+    "id": "7",
+    "name": "Power Rangers Lightspeed Rescue",
+    "slug": "power-rangers-lightspeed-rescue",
+    "order": 2000,
+    "published": true
+  },
+  {
+    "id": "8",
+    "name": "Power Rangers Time Force",
+    "slug": "power-rangers-time-force",
+    "order": 2001,
+    "published": true
+  },
+  {
+    "id": "9",
+    "name": "Power Rangers Wild Force",
+    "slug": "power-rangers-wild-force",
+    "order": 2002,
+    "published": true
+  },
+  {
+    "id": "10",
+    "name": "Power Rangers Ninja Storm",
+    "slug": "power-rangers-ninja-storm",
+    "order": 2003,
+    "published": true
+  },
+  {
+    "id": "11",
+    "name": "Power Rangers Dino Thunder",
+    "slug": "power-rangers-dino-thunder",
+    "order": 2004,
+    "published": true
+  },
+  {
+    "id": "12",
+    "name": "Power Rangers S.P.D.",
+    "slug": "power-rangers-s-p-d",
+    "order": 2005,
+    "published": true
+  },
+  {
+    "id": "13",
+    "name": "Power Rangers Mystic Force",
+    "slug": "power-rangers-mystic-force",
+    "order": 2006,
+    "published": false
+  },
+  {
+    "id": "14",
+    "name": "Power Rangers Operation Overdrive",
+    "slug": "power-rangers-operation-overdrive",
+    "order": 2007,
+    "published": true
+  },
+  {
+    "id": "15",
+    "name": "Power Rangers Jungle Fury",
+    "slug": "power-rangers-jungle-fury",
+    "order": 2008,
+    "published": true
+  },
+  {
+    "id": "16",
+    "name": "Power Rangers RPM",
+    "slug": "power-rangers-rpm",
+    "order": 2009,
+    "published": true
+  },
+  {
+    "id": "17",
+    "name": "Power Rangers Samurai",
+    "slug": "power-rangers-samurai",
+    "order": 2011,
+    "published": true
+  },
+  {
+    "id": "18",
+    "name": "Power Rangers Megaforce",
+    "slug": "power-rangers-megaforce",
+    "order": 2013,
+    "published": false
+  },
+  {
+    "id": "19",
+    "name": "Power Rangers Super Megaforce",
+    "slug": "power-rangers-super-megaforce",
+    "order": 2014,
+    "published": true
+  },
+  {
+    "id": "20",
+    "name": "Power Rangers Dino Charge",
+    "slug": "power-rangers-dino-charge",
+    "order": 2015,
+    "published": false
+  },
+  {
+    "id": "21",
+    "name": "Power Rangers Ninja Steel",
+    "slug": "power-rangers-ninja-steel",
+    "order": 2017,
+    "published": true
+  },
+  {
+    "id": "31",
+    "name": "Mighty Morphin Power Rangers: Pink",
+    "slug": "mighty-morphin-power-rangers-pink",
+    "order": 2017.1,
+    "published": false
+  },
+  {
+    "id": "35",
+    "name": "Power Rangers (2017)",
+    "slug": "power-rangers-2017",
+    "order": 2017.2,
+    "published": false
+  },
+  {
+    "id": "22",
+    "name": "Power Rangers HyperForce",
+    "slug": "power-rangers-hyperforce",
+    "order": 2018,
+    "published": true
+  },
+  {
+    "id": "28",
+    "name": "Mighty Morphin Power Rangers Shattered Grid",
+    "slug": "mighty-morphin-power-rangers-shattered-grid",
+    "order": 2018.1,
+    "published": true
+  },
+  {
+    "id": "27",
+    "name": "Mighty Morphin Power Rangers Beyond the Grid",
+    "slug": "mighty-morphin-power-rangers-beyond-the-grid",
+    "order": 2018.2,
+    "published": false
+  },
+  {
+    "id": "23",
+    "name": "Power Rangers Beast Morphers",
+    "slug": "power-rangers-beast-morphers",
+    "order": 2019,
+    "published": true
+  },
+  {
+    "id": "29",
+    "name": "Mighty Morphin Power Rangers/Teenage Mutant Ninja Turtles",
+    "slug": "mighty-morphin-power-rangers-teenage-mutant-ninja-turtles",
+    "order": 2019.1,
+    "published": false
+  },
+  {
+    "id": "32",
+    "name": "Mighty Morphin Power Rangers Necessary Evil",
+    "slug": "mighty-morphin-power-rangers-necessary-evil",
+    "order": 2019.2,
+    "published": false
+  },
+  {
+    "id": "33",
+    "name": "Power Rangers: The Psycho Path",
+    "slug": "power-rangers-the-psycho-path",
+    "order": 2019.3,
+    "published": false
+  },
+  {
+    "id": "24",
+    "name": "Power Rangers Dino Fury",
+    "slug": "power-rangers-dino-fury",
+    "order": 2021,
+    "published": false
+  },
+  {
+    "id": "34",
+    "name": "Power Rangers Universe",
+    "slug": "power-rangers-universe",
+    "order": 2022.1,
+    "published": false
+  },
+  {
+    "id": "25",
+    "name": "Power Rangers Cosmic Fury",
+    "slug": "power-rangers-cosmic-fury",
+    "order": 2023,
+    "published": false
+  },
+  {
+    "id": "30",
+    "name": "Cobra Kai",
+    "slug": "cobra-kai",
+    "order": 2023.1,
+    "published": false
+  },
+  {
+    "id": "26",
+    "name": "Power Rangers (BOOM! Studios)",
+    "slug": "power-rangers-boom-studios",
+    "order": 9999,
+    "published": false
+  }
+]

@@ -1,0 +1,4606 @@
+[
+  {
+    "id": 80,
+    "name": "Astronema",
+    "slug": "astronema",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 5,
+    "expansion_id": 32,
+    "deck": [
+      {
+        "name": "PSYCHOKINESIS",
+        "health": "5",
+        "description": "While this card is in play, cards cannot leave Ranger discard piles.\nWhen this card resolves, drain 2 [ENERGY] and each Ranger must discard 1 random card from their hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "ASTRAL VORTEX",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger deals any amount of [HIT] to an enemy card without the GUARD keyword, drain 1 [ENERGY] and that Ranger must discard the top card of their deck.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "WRATH STAFF",
+        "health": "4",
+        "description": "One Ranger must discard the top 2 cards of their deck. Then deal 4 damage to that Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SHATTERBOLT",
+        "health": "5",
+        "description": "Deal an amount of damage to each Ranger equal to the number of Rangers in this battle.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "DARK MATTER WAVE",
+        "health": "6",
+        "description": "Each Ranger must reveal a random card from their hand. Deal 3 damage to each Ranger, increased by 1 for each [SHIELD] on their revealed card.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 91,
+    "name": "Cyclopsis",
+    "slug": "cyclopsis",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 24,
+    "deck": [
+      {
+        "name": "HEAD OF CYCLOPSIS (Undamaged)",
+        "health": "6",
+        "description": "Rangers cannot use Zord abilities.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "CORE OF CYCLOPSIS (Undamaged)",
+        "health": "8",
+        "description": "At the end of each battle, move 1 hit token from each other Cyclopsis component card to this card.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "RIGHT ARM OF CYCLOPSIS (Undamaged)",
+        "health": "4",
+        "description": "Each time a Ranger attacks another Cyclopsis component card, deal 2 damage to that Ranger.",
+        "count": 1,
+        "order": 3
+      },
+      {
+        "name": "LEFT ARM OF CYCLOPSIS (Undamaged)",
+        "health": "4",
+        "description": "Each other Cyclopsis component card has +1 health.",
+        "count": 1,
+        "order": 4
+      },
+      {
+        "name": "RIGHT LEG OF CYCLOPSIS (Undamaged)",
+        "health": "5",
+        "description": "At the start of each battle, draw and resolve 1 Cyclopsis enemy card.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "LEFT LEG OF CYCLOPSIS (Undamaged)",
+        "health": "5",
+        "description": "At the end of each battle, draw and resolve 1 Cyclopsis enemy card.",
+        "count": 1,
+        "order": 6
+      },
+      {
+        "name": "HEAD OF CYCLOPSIS (Damaged)",
+        "health": "X",
+        "description": "Each time the Rangers use a Zord ability, deal 3 damage.",
+        "count": 1,
+        "order": 7
+      },
+      {
+        "name": "CORE OF CYCLOPSIS (Damaged)",
+        "health": "X",
+        "description": "When this card is flipped to this side, immediately deal 10 damage, divided among the Rangers as they choose.",
+        "count": 1,
+        "order": 8
+      },
+      {
+        "name": "RIGHT ARM OF CYCLOPSIS (Damaged)",
+        "health": "X",
+        "description": "Each time Cyclopsis deals damage, increase that damage by 1.",
+        "count": 1,
+        "order": 9
+      },
+      {
+        "name": "LEFT ARM OF CYCLOPSIS (Damaged)",
+        "health": "X",
+        "description": "Each time Cyclopsis deals damage, increase that damage by 1.",
+        "count": 1,
+        "order": 10
+      },
+      {
+        "name": "RIGHT LEG OF CYCLOPSIS (Damaged)",
+        "health": "X",
+        "description": "At the start of each battle, each Ranger must place 1 card from their hand on the bottom of their deck.",
+        "count": 1,
+        "order": 11
+      },
+      {
+        "name": "LEFT LEG OF CYCLOPSIS (Damaged)",
+        "health": "X",
+        "description": "At the end of each battle, each Ranger must discard 1 card from the bottom of their deck.",
+        "count": 1,
+        "order": 12
+      },
+      {
+        "name": "DEVASTATING STRIKE",
+        "health": "X",
+        "description": "Deal 3 damage. Increase this damage by 1 for each defeated Cyclopsis component card.",
+        "count": 1,
+        "order": 13
+      },
+      {
+        "name": "ARC LIGHTNING",
+        "health": "X",
+        "description": "Deal 2 damage to each Ranger.",
+        "count": 1,
+        "order": 14
+      },
+      {
+        "name": "UNSTOPPABLE FORCE",
+        "health": "X",
+        "description": "Deal 3 damage to the lead Ranger.",
+        "count": 2,
+        "order": 15
+      },
+      {
+        "name": "MISSILE BARRAGE",
+        "health": "X",
+        "description": "Drain 1 [ENERGY]. Deal 4 damage, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 16
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 86,
+    "name": "Dai Shi",
+    "slug": "dai-shi",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 15,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "PHANTOM BEAST STANCE",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger plays a card that is not the first card played that turn, deal 3 damage to that Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "FEROCIOUS ROAR",
+        "health": "6",
+        "description": "Skip the next 2 Ranger turns in this battle.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "RINZIN TECHNIQUE",
+        "health": "5",
+        "description": "Once this card has resolved, drain 1 [ENERGY] at the end of each enemy turn in this battle.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BEAST KING FANG",
+        "health": "5",
+        "description": "Once this card has resolved, deal 4 damage to the lead Ranger at the end of each enemy turn in this battle.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "BEAST KING CLAWS",
+        "health": "5",
+        "description": "Once this card has resolved, deal 2 damage to each Ranger at the end of each enemy turn in this battle.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 93,
+    "name": "Death Ranger",
+    "slug": "death-ranger",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 26,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 79,
+    "name": "Divatox",
+    "slug": "divatox",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 4,
+    "expansion_id": 31,
+    "deck": [
+      {
+        "name": "PIRATE QUEEN",
+        "health": "5",
+        "description": "While this card is in play, all foot soldier cards gain the GUARD keyword and have +1 health.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "VIVA LA DIVA!",
+        "health": "6",
+        "description": "Deal 4 damage each to half of the Rangers in this battle (rounded up). Increase this damage by 1 for each Divatox card that has been defeated or discarded.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "DEPTH CHARGE",
+        "health": "4",
+        "description": "While this card is in play, after each Ranger attack resolves, deal 1 damage to that Ranger. Increase this damage by 1 for each [MISS] result rolled during that attack.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "EYE OF CHAOS",
+        "health": "5",
+        "description": "Roll 1 die. On a [MISS] result, drain 3 [ENERGY]. On a [HIT] result, deal 3 damage to each Ranger. On a [HIT][HIT] result, do both.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "FIRE TORPEDOES",
+        "health": "5",
+        "description": "Two different Rangers must each discard the bottom 2 cards of their deck.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 84,
+    "name": "Emperor Gruumm",
+    "slug": "emperor-gruumm",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 12,
+    "expansion_id": 55,
+    "deck": [
+      {
+        "name": "SHADOW AXE",
+        "health": "7",
+        "description": "Deal an amount of damage to the lead Ranger equal to the total number of cards in their hand and deck. If this effect defeats that Ranger, repeat it with the new lead Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DARK TITHE",
+        "health": "6",
+        "description": "While this card is in play, deal an amount of damage at the end of each turn equal to the total amount of [ENERGY] spent and drained during that turn. When this card resolves, drain 3 [ENERGY].",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "CONQUERER’S AURA",
+        "health": "5",
+        "description": "Deal an amount of damage equal to the total health value of all enemy cards in play, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "EMPEROR’S RIDE",
+        "health": "4",
+        "description": "Each Ranger must discard the top card of their deck. Deal an amount of damage to each Ranger equal to their card’s shield value.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "FRAGMENTATION BLAST",
+        "health": "4",
+        "description": "Deal 6 damage to each Ranger. Each Ranger may spend 1 [ENERGY] to reduce the damage they suffer by 3.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 94,
+    "name": "Final Drakkon",
+    "slug": "final-drakkon",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 28,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 87,
+    "name": "Final Venjix",
+    "slug": "final-venjix",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 16,
+    "expansion_id": 36,
+    "deck": [
+      {
+        "name": "DELETION BEAM",
+        "health": "7",
+        "description": "Deal an amount of damage equal to the number of combat cards that have been removed from the game so far.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DATA ABSORPTION",
+        "health": "5",
+        "description": "While this card is in play, after a Ranger in this location resolves a combat card, remove that card from the game.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "VIRAL CODE",
+        "health": "4",
+        "description": "Deal 2 damage to each Ranger. Remove the bottom card of each Ranger’s deck from the game.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CATACLYSMIC BURST",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger. If any cards are discarded for defense as a result of this damage, remove them from the game.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "DARK DOWNLOAD",
+        "health": "6",
+        "description": "Drain 3 [ENERGY]. One Ranger must choose 2 cards from their hand and remove them from the game.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 74,
+    "name": "Goldar",
+    "slug": "goldar",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "VENGEFUL",
+        "health": "6",
+        "description": "While this card is in play, each time a Goldar card (including this one) is defeated, deal 3 damage.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "HEAT BEAM EYES",
+        "health": "6",
+        "description": "Deal 4 damage to each Ranger.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "SWORD STRIKE",
+        "health": "5",
+        "description": "Deal 6 damage to the lead Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "GRUDGE ",
+        "health": "4",
+        "description": "Deal 2 damage. Increase this damage by 1 for each hit token on Goldar cards (including this one) in this battle.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "ROARING SLASH",
+        "health": "5",
+        "description": "Deal 5 damage to 2 different Rangers.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 103,
+    "name": "King Mondo (Errata)",
+    "slug": "king-mondo-errata",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 3,
+    "expansion_id": 30,
+    "deck": [
+      {
+        "name": "MACHINE KING",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger rolls dice for an attack, remove 1 die from that attack before rolling and place 1 hit token on this card.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SWORD OF DAMOCLES",
+        "health": "10",
+        "description": "Deal 10 damage to each Ranger. Reduce this damage by 1 for each hit token on this card.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "IMPERIAL FIST",
+        "health": "4",
+        "description": "Deal 4 damage. The Ranger who suffers this damage must discard 1 random card from their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "TYRANT BARRAGE",
+        "health": "5",
+        "description": "Deal 2 damage to each Ranger twice.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "THUNDER WAVE",
+        "health": "6",
+        "description": "Deal 4 damage to each Ranger.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 77,
+    "name": "King Mondo (Original)",
+    "slug": "king-mondo-original",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 3,
+    "expansion_id": 30,
+    "deck": [
+      {
+        "name": "MACHINE KING",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger rolls dice for an attack, remove 1 die from that attack and place 1 hit token on this card.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SWORD OF DAMOCLES",
+        "health": "10",
+        "description": "Deal 10 damage to each Ranger. Reduce this damage by 1 for each hit token on this card.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "IMPERIAL FIST",
+        "health": "4",
+        "description": "Deal 4 damage. The Ranger who suffers this damage must discard 1 random card from their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "TYRANT BARRAGE",
+        "health": "5",
+        "description": "Deal 2 damage to each Ranger twice.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "THUNDER WAVE",
+        "health": "6",
+        "description": "Deal 4 damage to each Ranger.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 90,
+    "name": "Kiya",
+    "slug": "kiya",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 32,
+    "expansion_id": 4,
+    "deck": [
+      {
+        "name": "GRIM CONVICTIONS",
+        "health": "7",
+        "description": "While this card is in play, each time Kiya rolls a [MISS] result, 1 Ranger must discard the top card of their deck.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "OMEGA TRIDENT",
+        "health": "6",
+        "description": "Drain 3 [ENERGY]. Roll 6 dice and deal that much damage to the lead Ranger.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "ANOINTED STRIKE",
+        "health": "4",
+        "description": "Drain 1 [ENERGY]. Roll 4 dice and deal that much damage each to half of the Rangers in this battle (rounded up).",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DEEP SCARS",
+        "health": "5",
+        "description": "While this card is in play, at the end of each Ranger turn, roll a number of dice equal to twice the number of defeated Kiya cards in this battle and deal that much damage to each Ranger.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "NECESSARY EVIL",
+        "health": "5",
+        "description": "Reveal 1 random card from the deck of each defeated monster. Deal an amount of damage to each Ranger equal to the highest health value among those cards.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 89,
+    "name": "Lord Drakkon",
+    "slug": "lord-drakkon",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 28,
+    "expansion_id": 2,
+    "deck": [
+      {
+        "name": "STOLEN POWER",
+        "health": "7",
+        "description": "While this card is in play, when [ENERGY] is spent or drained, place the energy tokens on this card.\nEach time Lord Drakkon deals damage, increase that damage by 1 for each energy token on this card.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "THUNDER SLASH",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger twice.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "DOMINATE",
+        "health": "6",
+        "description": "The lead Ranger must discard 2 random cards from their hand. Deal damage to each other Ranger equal to the number of [SHIELD] on the discarded cards.",
+        "count": 1,
+        "order": 3
+      },
+      {
+        "name": "HAVOC BLOW",
+        "health": "5",
+        "description": "Deal 3 damage. Drain 2 [ENERGY].",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "CYCLONE STRIKE",
+        "health": "5",
+        "description": "Deal 4 damage.\nDeal 3 damage.\nDeal 2 damage.",
+        "count": 3,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 72,
+    "name": "Lord Zedd",
+    "slug": "lord-zedd",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "AURA OF DOOM",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger plays a card with an energy cost greater than zero, deal 2 damage to that Ranger after the card resolves.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DARKNESS BURST",
+        "health": "7",
+        "description": "Deal damage to each Ranger equal to the number of cards in their hand.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "INFERNO",
+        "health": "5",
+        "description": "Deal 5 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CRUEL STRIKE",
+        "health": "4",
+        "description": "One Ranger must discard the top 3 cards of their deck.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "Z-LIGHTNING",
+        "health": "5",
+        "description": "Deal 12 damage, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 78,
+    "name": "Louie Kaboom",
+    "slug": "louie-kaboom",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 3,
+    "expansion_id": 30,
+    "deck": [
+      {
+        "name": "SHOCK AND AWE",
+        "health": "3",
+        "description": "Deal 3 damage to each Ranger. Skip the next Ranger turn in this battle.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "WARHEAD",
+        "health": "5",
+        "description": "This card cannot be dealt [HIT] until all other Louie Kaboom cards in this battle have been defeated.\nDeal 6 damage to each Ranger at the end of this battle.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "EXPLOSIVE ENTRANCE",
+        "health": "6",
+        "description": "Roll 1 die and deal three times that much damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BUNKER BUSTER",
+        "health": "5",
+        "description": "Each Ranger must discard the top card and bottom card of their deck.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "BOMBARDMENT",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 98,
+    "name": "Madame Odius",
+    "slug": "madame-odius",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 21,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 76,
+    "name": "Master Vile",
+    "slug": "master-vile",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 29,
+    "deck": [
+      {
+        "name": "WARLOCK’S CURSE",
+        "health": "6",
+        "description": "While this card is in play, the energy cost of all combat cards is increased by 1.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "HIDEOUS POWER",
+        "health": "6",
+        "description": "While this card is in play, each time a Master vile card deals damage, increase that damage by 2.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "GRAVITY WELL",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger twice.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEGATION WAVE",
+        "health": "5",
+        "description": "Drain 6 [ENERGY].",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "HEX BLAST",
+        "health": "5",
+        "description": "Deal 6 damage.\nDeal 6 damage.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 95,
+    "name": "Master Zedd",
+    "slug": "master-zedd",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 25,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 92,
+    "name": "Mega Goldar",
+    "slug": "mega-goldar",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 25,
+    "deck": [
+      {
+        "name": "HELM OF GOLDAR (Undamaged)",
+        "health": "6",
+        "description": "Two different Rangers must each discard the top card of their deck.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "ARMOR OF GOLDAR (Undamaged)",
+        "health": "8",
+        "description": "Remove 2 hit tokens from each Mega Goldar card (including this one).",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "RIGHT WING OF GOLDAR (Undamaged)",
+        "health": "4",
+        "description": "Deal 2 damage to each Ranger",
+        "count": 1,
+        "order": 3
+      },
+      {
+        "name": "LEFT WING OF GOLDAR (Undamaged)",
+        "health": "4",
+        "description": "Drain 2 [ENERGY].",
+        "count": 1,
+        "order": 4
+      },
+      {
+        "name": "SWORD OF GOLDAR (Undamaged)",
+        "health": "7",
+        "description": "Deal 5 damage to the lead Ranger.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "CLAW OF GOLDAR (Undamaged)",
+        "health": "6",
+        "description": "Deal 2 damage to 2 different Rangers.",
+        "count": 1,
+        "order": 6
+      },
+      {
+        "name": "HELM OF GOLDAR (Damaged)",
+        "health": "X",
+        "description": "Two different Rangers must each discard card from their hand.",
+        "count": 1,
+        "order": 7
+      },
+      {
+        "name": "ARMOR OF GOLDAR (Damaged)",
+        "health": "X",
+        "description": "Drain 1 [ENERGY].\nDeal 3 damage.",
+        "count": 1,
+        "order": 8
+      },
+      {
+        "name": "RIGHT WING OF GOLDAR (Damaged)",
+        "health": "X",
+        "description": "Each time Mega Goldar deals damage, increase that damage by 1.",
+        "count": 1,
+        "order": 9
+      },
+      {
+        "name": "LEFT WING OF GOLDAR (Damaged)",
+        "health": "X",
+        "description": "Each time Mega Goldar deals damage, increase that damage by 1.",
+        "count": 1,
+        "order": 10
+      },
+      {
+        "name": "SWORD OF GOLDAR (Damaged)",
+        "health": "X",
+        "description": "Deal 2 damage to the Ranger with the fewest cards in their deck.\nDeal 2 damage to the Ranger with the fewest cards in their deck.",
+        "count": 1,
+        "order": 11
+      },
+      {
+        "name": "CLAW OF GOLDAR (Damaged)",
+        "health": "X",
+        "description": "Deal 2 damage to each Ranger.",
+        "count": 1,
+        "order": 12
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 83,
+    "name": "Mesogog",
+    "slug": "mesogog",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 11,
+    "expansion_id": 32,
+    "deck": [
+      {
+        "name": "MERCILESS PLAN",
+        "health": "6",
+        "description": "While this card is in play, resolve +1 enemy card during each enemy turn in battle.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "OPPRESSIVE AURA",
+        "health": "7",
+        "description": "While this card is in play, Rangers cannot add extra dice or [HIT] to their attacks.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "RIPCLAW RUSH",
+        "health": "6",
+        "description": "Deal 4 damage. The Ranger who suffers this damage must then discard a number of cards from the top of their deck equal to the number of cards they discarded for defense.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "PSIONIC BLAST",
+        "health": "4",
+        "description": "Deal an amount of damage to each Ranger equal to the number of cards in their hand.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "MIND SPIKE",
+        "health": "6",
+        "description": "The lead Ranger must draw 2 cards, then discard all duplicate cards from their hand. If they discarded no cards, deal 4 damage to that Ranger.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 88,
+    "name": "Perfect Evox",
+    "slug": "perfect-evox",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 23,
+    "expansion_id": 36,
+    "deck": [
+      {
+        "name": "MORPH-X FISSION",
+        "health": "5",
+        "description": "While this card is in play, if the shared energy pool has less than 2 [ENERGY], increase the health value of all Perfect Evox cards (including this one) by 2.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "REALITY TRESPASS",
+        "health": "8",
+        "description": "If this card is in play at the end of this battle, move Perfect Evox’s figure to the next location clockwise that is not at its future limit. That location becomes panicked.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "CORRUPT COMMAND",
+        "health": "6",
+        "description": "Deal 3 damage to each Ranger and remove 1 energy token from the Command Center. If there are no energy tokens in the command center, deal 5 damage to each Ranger instead.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "PERFECT ASSAULT",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger. Drain an amount of [ENERGY] equal to the number of cards discarded for defense as a result of this damage.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "CRASH THE SYSTEM",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger and drain all [ENERGY]. Increase this damage by 3 if the shared energy pool was empty.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 55,
+    "name": "Psycho Rangers",
+    "slug": "psycho-rangers",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO SWORD",
+        "health": "5",
+        "description": "Deal 5 damage to the lead Ranger.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF FLAME",
+        "health": "6",
+        "description": "While this card is in play, each time a defeated enemy card resolves, deal 3 damage.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      },
+      {
+        "name": "PSYCHO STAFF",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 1,
+        "order": 7
+      },
+      {
+        "name": "PATH OF STONE",
+        "health": "6",
+        "description": "While this card is in play, the health value of all other enemy cards is increased by 1.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 8
+      },
+      {
+        "name": "PSYCHO AXE",
+        "health": "5",
+        "description": "Three different Rangers must each discard from their hand the card with the highest energy cost.",
+        "count": 1,
+        "order": 9
+      },
+      {
+        "name": "PATH OF FROST",
+        "health": "6",
+        "description": "While this card is in play, the shared energy pool cannot be greater than 2. Drain any excess [ENERGY].\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 10
+      },
+      {
+        "name": "PSYCHO SLINGER",
+        "health": "5",
+        "description": "Three different Rangers must each discard from their hand the card with the most [SHIELD].",
+        "count": 1,
+        "order": 11
+      },
+      {
+        "name": "PATH OF VENOM",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger reveals a card for defense, remove 1 [SHIELD] from that card.\nWhen this card resolves, resolve all [PSYCHO] effects.\n",
+        "count": 1,
+        "order": 12
+      },
+      {
+        "name": "PSYCHO BOW",
+        "health": "5",
+        "description": "Drain 2 [ENERGY].\nDeal 3 damage to the Ranger with the fewest cards in their deck.",
+        "count": 1,
+        "order": 13
+      },
+      {
+        "name": "PATH OF THORNS",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger attacks this card or an adjacent enemy card, deal 2 damage to that Ranger.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 14
+      },
+      {
+        "name": "PSYCHO DAGGER",
+        "health": "5",
+        "description": "Each Ranger must discard the top card of their deck.",
+        "count": 1,
+        "order": 15
+      },
+      {
+        "name": "PATH OF CRUELTY",
+        "health": "6",
+        "description": "While this card is in play, the first time each Ranger plays a card in the battle, they must discard the top card of their deck.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 16
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 82,
+    "name": "Ransik",
+    "slug": "ransik",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 8,
+    "expansion_id": 33,
+    "deck": [
+      {
+        "name": "BONE BLADE",
+        "health": "6",
+        "description": "Deal 6 damage. During the next Ranger turn in this battle, only the Ranger who suffered this damage can play combat cards. If that Ranger is defeated, skip the next Ranger turn instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "EYE FOR AN EYE",
+        "health": "6",
+        "description": "While this card is in play, after a Ranger attacks a Ransik card, deal 3 damage to each Ranger if that card is not defeated.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "MUTANT STRENGTH",
+        "health": "5",
+        "description": "While this card is in play, the health value of all adjacent Ransik cards is increased by 2. When this card resolves, deal 5 damage.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BLAST BURN",
+        "health": "6",
+        "description": "Deal 2 damage. Increase this damage by an amount equal to this card’s health value.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "MUTANT MAYHEM",
+        "health": "5",
+        "description": "Deal an amount of damage to each Ranger equal to this card’s health value.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 68,
+    "name": "Rita Repulsa (1st Printing)",
+    "slug": "rita-repulsa-1st-printing",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "SHADOW BINDING",
+        "health": "7",
+        "description": "Deal 3 damage to the Ranger with the most cards in their hand. That Ranger must discard their entire hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "WITCH’S CURSE",
+        "health": "5",
+        "description": "While this card is in play, the energy cost of all attack cards is increased by 1.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "CHAIN LIGHTNING",
+        "health": "4",
+        "description": "Deal 4 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "WICKED HEX",
+        "health": "6",
+        "description": "Deal 6 damage to the Ranger with the fewest cards in their deck.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "CRUEL LAUGHTER",
+        "health": "4",
+        "description": "Each Ranger must discard from their hand the card with the most [SHIELD].",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 69,
+    "name": "Rita Repulsa (2nd Printing)",
+    "slug": "rita-repulsa-2nd-printing",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "SHADOW BINDING",
+        "health": "7",
+        "description": "Deal 4 damage to the Ranger with the most cards in their hand. That Ranger must choose 1 card to keep, then discard the rest of their hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "WITCH’S CURSE",
+        "health": "5",
+        "description": "While this card is in play, the energy cost of all attack cards is increased by 1.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "CHAIN LIGHTNING",
+        "health": "4",
+        "description": "Deal 4 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "WICKED HEX",
+        "health": "6",
+        "description": "Deal 6 damage to the Ranger with the fewest cards in their deck.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "CRUEL LAUGHTER",
+        "health": "4",
+        "description": "Each Ranger must discard from their hand the card with the most [SHIELD].",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 70,
+    "name": "Rita Repulsa (VP3)",
+    "slug": "rita-repulsa-vp3",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "VOID BINDING",
+        "health": "7",
+        "description": "Deal 5 damage to the Ranger with the most cards in their hand. That Ranger must discard all but 1 card from their hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "WITCH’S CURSE",
+        "health": "5",
+        "description": "While this card is in play, the energy cost of all attack cards is increased by 1.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "CHAIN LIGHTNING",
+        "health": "4",
+        "description": "Deal 4 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "WICKED HEX",
+        "health": "6",
+        "description": "Deal 6 damage to the Ranger with the fewest cards in their deck.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "CRUEL LAUGHTER",
+        "health": "4",
+        "description": "Each Ranger must discard from their hand the card with the most [SHIELD].",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 75,
+    "name": "Rito Revolto",
+    "slug": "rito-revolto",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 29,
+    "deck": [
+      {
+        "name": "STUMBLING FOOL",
+        "health": "6",
+        "description": "Draw 2 cards from Rito Revolto’s enemy deck and place them after this card in the combat sequence. Place 1 hit token on each of those cards.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "HIDEOUT STRENGTH",
+        "health": "6",
+        "description": "While this card is in play, each time a Rito Revolto card deals damage, increase that damage by 2.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "FLAMETHROWER ",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BLADE OF BONES",
+        "health": "4",
+        "description": "Deal 5 damage.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "CRUSHING IMPACT",
+        "health": "5",
+        "description": "Deal 3 damage to a single Ranger twice.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 71,
+    "name": "Scorpina",
+    "slug": "scorpina",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "SWEEPING SLASH",
+        "health": "6",
+        "description": "Deal 5 damage to 2 different Rangers.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "FEINTING SLASH",
+        "health": "6",
+        "description": "Deal 5 damage. Skip the next Ranger turn in this battle.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "SCORPION STRIKE",
+        "health": "4",
+        "description": "Deal 4 damage. Drain 2 [ENERGY].",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DEADLY STINGER",
+        "health": "4",
+        "description": "Deal 5 damage to the Ranger with the feweset cards in their deck.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "BOOMERANG BLADE",
+        "health": "6",
+        "description": "Deal 4 damage when this card resolves.\nAfter the last scorpina card in this battle resolves, if this card has not been defeated, deal 4 damage.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 85,
+    "name": "Thrax",
+    "slug": "thrax",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 14,
+    "expansion_id": 31,
+    "deck": [
+      {
+        "name": "CURSE OF DOOM",
+        "health": "6",
+        "description": "While this card is in play, after each Ranger combat card resolves, deal 3 damage to that Ranger. That Ranger may spend 1 [ENERGY] to prevent the damage.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "HIDEOUS BLOW",
+        "health": "6",
+        "description": "Deal 4 damage to the Ranger with the most cards in their hand. Increase this damage by 1 for each card in that Ranger’s hand.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "LIGHTNING BEAM",
+        "health": "6",
+        "description": "Deal 10 damage, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "VOID BURST",
+        "health": "4",
+        "description": "Deal 6 damage to each Ranger. Reduce the damage that each Ranger suffers by 1 for each card in their discard pile.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "IMPLOSION WAVE",
+        "health": "5",
+        "description": "Drain 3 [ENERGY]. Each Ranger must either discard 1 random card from their hand or discard the top 2 cards of their deck.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 81,
+    "name": "Trakeena",
+    "slug": "trakeena",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 6,
+    "expansion_id": 33,
+    "deck": [
+      {
+        "name": "CHITIN ARMOR",
+        "health": "5",
+        "description": "While this card is in play, the first time each Trakeena card is dealt any amount of [HIT], reduce that amount by 1.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "INSECT QUEEN",
+        "health": "6",
+        "description": "While this card is in play, after another Trakeena card deals any amount of damage to a single Ranger, deal half that much damage (rounded up) to each other Ranger.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "BITTER BLADE",
+        "health": "4",
+        "description": "Deal 5 damage. If any Trakeena cards are defeated or discarded, deal 8 damage instead.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CHITINOUS SLASH",
+        "health": "5",
+        "description": "Deal 3 damage. Repeat this effect once for each Trakeena card that has resolved but is not defeated.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "WASP CUTTER",
+        "health": "6",
+        "description": "Deal 4 damage to a single Ranger twice.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 73,
+    "name": "Wizard of Deception",
+    "slug": "wizard-of-deception",
+    "monster_type": "boss",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "FOUL RITUAL",
+        "health": "7",
+        "description": "At the end of this battle, if this card has not been defeated, deal 7 damage to each Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SHADOW PHANTASM",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger defeats a Wizard of Deception card (including this one), they must discard the top 2 cards of their deck.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "BANISHMENT ",
+        "health": "5",
+        "description": "The lead Ranger must discard their entire hand.",
+        "count": 1,
+        "order": 3
+      },
+      {
+        "name": "SHADOW PACT",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger. Drain 2 [ENERGY].",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "DARK KNOWLEDGE",
+        "health": "4",
+        "description": "Each Ranger must draw 2 cards and then discard 2 random cards from their hand.",
+        "count": 3,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 11,
+    "name": "Blue-Head Krybots",
+    "slug": "blue-head-krybots",
+    "monster_type": "elite",
+    "nemesis_effect": null,
+    "season_id": 12,
+    "expansion_id": 35,
+    "deck": [
+      {
+        "name": "HEADHUNTER",
+        "health": "5",
+        "description": "Deal 5 damage to the lead Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "UNDER PRESSURE",
+        "health": "4",
+        "description": "While this card is in play, each time a Ranger uses a once-per-battle ability, they must first spend 1 [ENERGY] as an extra cost.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "TWO-PRONGED STRIKE",
+        "health": "4",
+        "description": "Deploy 1 Krybot to the location with the fewest food soldiers. Each Ranger in that location must discard the top card of their deck.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BLUE BURST",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "TROOBIAN TACTICS",
+        "health": "4",
+        "description": "Reveal the top 2 cards of the Krybots deck and resolve their effects, one at a time, then shuffle the Krybots deck.",
+        "count": 3,
+        "order": 5
+      }
+    ],
+    "locations": [
+      {
+        "id": 18,
+        "name": "PIGGY’S CAFE"
+      },
+      {
+        "id": 19,
+        "name": "KAT’S LAB"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Rinshi Beast",
+    "slug": "rinshi-beast",
+    "monster_type": "elite",
+    "nemesis_effect": null,
+    "season_id": 15,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "MANTOR",
+        "health": "4",
+        "description": "Deal 6 damage.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "BUFFALORD ",
+        "health": "4",
+        "description": "Deal 4 damage, unless a Ranger discards 2 cards from their hand to prevent it.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "PORCUPONGOR ",
+        "health": "4",
+        "description": "While this card is in play, after a Ranger attacks this card or an adjacent enemy card, deal 2 damage to that Ranger.",
+        "count": 1,
+        "order": 3
+      },
+      {
+        "name": "GAKKO ",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger",
+        "count": 1,
+        "order": 4
+      },
+      {
+        "name": "TOADY ",
+        "health": "4",
+        "description": "Drain 1 [ENERGY]. Two different Rangers must each discard 1 card from their hand.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "STINGERELLA ",
+        "health": "4",
+        "description": "Deal 3 damage. Skip the next Ranger turn in this battle, unless a Ranger discards 2 cards from their hand to prevent this effect.",
+        "count": 1,
+        "order": 6
+      },
+      {
+        "name": "RANTIPEDE ",
+        "health": "4",
+        "description": "While this card is in play, each time another enemy card deals damage, increase that damage by 1.",
+        "count": 1,
+        "order": 7
+      },
+      {
+        "name": "NAJA ",
+        "health": "4",
+        "description": "Remove 1 enemy figure from the experience track. Deploy 1 Rinshi to this location.",
+        "count": 1,
+        "order": 8
+      }
+    ],
+    "locations": [
+      {
+        "id": 20,
+        "name": "OCEAN BLUFF RESERVOIR"
+      },
+      {
+        "id": 21,
+        "name": "PAI ZHUA ACADEMY"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Chaos Putties",
+    "slug": "chaos-putties",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 26,
+    "expansion_id": 34,
+    "deck": [
+      {
+        "name": "FORCED FRENZY",
+        "health": "3",
+        "description": "One Ranger must discard one random card from their hand. If it is an attack, deal 2 damage to another Ranger. Otherwise, drain 1 [ENERGY]",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "CAUSE HAVOC",
+        "health": "2",
+        "description": "Drain 1 [ENERGY]. Skip the next Ranger turn this battle.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "TOTAL MAYHEM",
+        "health": "3",
+        "description": "Deal 1 damage to each Ranger. Increase this damage by 1 for each panicked location.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CHAOS BURST",
+        "health": "3",
+        "description": "Deal an amount of damage to a single Ranger equal to the number of cards in their hand. If their hand is empty, they must discard the top card of their deck instead.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "ERRATIC MOVEMENT",
+        "health": "2",
+        "description": "While this card is in play, increase the health value of each adjacent enemy card by 1.",
+        "count": 3,
+        "order": 5
+      }
+    ],
+    "locations": [
+      {
+        "id": 2,
+        "name": "ERNIE’S JUICE BAR"
+      },
+      {
+        "id": 5,
+        "name": "ANGEL GROVE PARK"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cogs",
+    "slug": "cogs",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 3,
+    "expansion_id": 34,
+    "deck": [
+      {
+        "name": "CLOCKWORK BLASTER",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nDeal 2 damage.\n",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "DISASSEMBLY REQUIRED",
+        "health": "3",
+        "description": "While this card is in play, when another foot soldier card would be defeated by [HIT], all hit tokens are removed from that card and this card is defeated instead.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "SHOCK SPEAR",
+        "health": "2",
+        "description": "Drain 2 [ENERGY], unless a Ranger suffers 3 damage to prevent it.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "TICK TOCK KICK",
+        "health": "3",
+        "description": "Deal 2 damage. Increase this damage by 1 for each other food soldier card that has not resolved.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 10,
+        "name": "INTERSTATE HIGHWAY"
+      },
+      {
+        "id": 11,
+        "name": "STONE CANYON HIGH"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Cyclobots",
+    "slug": "cyclobots",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 8,
+    "expansion_id": 34,
+    "deck": [
+      {
+        "name": "DENSE DEFENSE",
+        "health": "4",
+        "description": "Drain 1 [Energy].",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "OVERWHELM",
+        "health": "2",
+        "description": "Deal 2 damage. Skip the next Ranger turn in this battle",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CLEAVING STRIKE",
+        "health": "3",
+        "description": "Deal 2 damage to 2 different Rangers.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "FORWARD MARCH",
+        "health": "3",
+        "description": "While this card is in play, after each adjacent enemy card resolves, deal 2 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 14,
+        "name": "CLOCK TOWER"
+      },
+      {
+        "id": 15,
+        "name": "BIO LAB"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Krybots",
+    "slug": "krybots",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 12,
+    "expansion_id": 35,
+    "deck": [
+      {
+        "name": "SHELL SHOCK",
+        "health": "3",
+        "description": "Deal 4 damage, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "OVERLOAD BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger, then place 1 hit token on this card.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CANNON FODDER",
+        "health": "3",
+        "description": "Deal 2 damage.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "UNDERWORLD SHOTS",
+        "health": "2",
+        "description": "Half of the Rangers in this battle (rounded up) must each discard the bottom card of their deck.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 18,
+        "name": "PIGGY’S CAFE"
+      },
+      {
+        "id": 19,
+        "name": "KAT’S LAB"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Mastodon Troopers",
+    "slug": "mastodon-troopers",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 28,
+    "expansion_id": 2,
+    "deck": [
+      {
+        "name": "ALPHA STRIKE",
+        "health": "2",
+        "description": "Deal 4 total damage, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "DRAGON CANNON",
+        "health": "3",
+        "description": "Drain 1 [ENERGY]. Each Ranger must discard 1 card from their hand.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "ARMORED ASSAULT",
+        "health": "3",
+        "description": "Roll 2 dice and deal that much damage to a single Ranger.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "BLASTER RIFLE",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 24,
+        "name": "ZORD GRAVEYARD"
+      },
+      {
+        "id": 25,
+        "name": "RESISTANCE HIDEOUT"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Putty Patrollers",
+    "slug": "putty-patrollers",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "FLANKING",
+        "health": "2",
+        "description": "While this card is in play, each time another enemy card deals damage, increase that damage by 1.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "SWARM ATTACK",
+        "health": "3",
+        "description": "Deal 1 damage. Increase this damage by 1 for each foot soldier in this location.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CANNON FODDER",
+        "health": "3",
+        "description": "Deal 2 damage.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "LEAPING ATTACK",
+        "health": "2",
+        "description": "Deal 3 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 2,
+        "name": "ERNIE’S JUICE BAR"
+      },
+      {
+        "id": 5,
+        "name": "ANGEL GROVE PARK"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Quantrons",
+    "slug": "quantrons",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PHALANX FORMATION",
+        "health": "X",
+        "description": "Drain 1 [ENERGY] when this card resolves. This card’s health value is equal to the number of foot soldiers in this location.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "CYBER SLASH ",
+        "health": "3",
+        "description": "Deal 3 damage, unless a Ranger discards 1 card from their hand to prevent it.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PRIORITY TARGET",
+        "health": "3",
+        "description": "Deal 3 damage to the lead Ranger.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "Q-BLADES",
+        "health": "2",
+        "description": "Deal 2 damage.\nDeal 2 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 12,
+        "name": "SURF SPOT"
+      },
+      {
+        "id": 13,
+        "name": "K0-35"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Ranger Sentries",
+    "slug": "ranger-sentries",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 28,
+    "expansion_id": 43,
+    "deck": [
+      {
+        "name": "TYRANNOSAURUS SENTRY",
+        "health": "3",
+        "description": "While this card is in play, each time an adjacent enemy card deals damage or drains ⚡, increase the effect by 1.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "PTERODACTYL SNIPER",
+        "health": "2",
+        "description": "Roll 3 dice and deal that much damage to the Ranger with the fewest cards in their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "SABERTOOTH COMMANDO",
+        "health": "2",
+        "description": "Deal 2 damage to 2 different Rangers twice.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SILVER SPACE SCOUT",
+        "health": "3",
+        "description": "During the next Ranger turn in this battle, increase the energy cost of all cards by 1.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "DINO CHARGE GOLD VANGUARD",
+        "health": "4",
+        "description": "Deal 1 damage to each Ranger. Increase this damage by 1 for each hit token on this card.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": [
+      {
+        "id": 24,
+        "name": "ZORD GRAVEYARD"
+      },
+      {
+        "id": 25,
+        "name": "RESISTANCE HIDEOUT"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Rinshi",
+    "slug": "rinshi",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 15,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "LEAPING ATTACK",
+        "health": "2",
+        "description": "Deal 3 damage.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "RINSHI COUNTER",
+        "health": "3",
+        "description": "While this card is in play, after a Ranger performs a reaction, they must discard the top card of their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "RINSHI SPEAR",
+        "health": "3",
+        "description": "When this card resolves, deal 3 damage. Once this card has resolves, Rangers cannot perform maneuvers.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "CONSUME FEAR",
+        "health": "2",
+        "description": "Drain 1 [ENERGY]. If this location is panicked, deal 2 damage to each Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 20,
+        "name": "OCEAN BLUFF RESERVOIR"
+      },
+      {
+        "id": 21,
+        "name": "PAI ZHUA ACADEMY"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Super Putty Patrollers",
+    "slug": "super-putty-patrollers",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "SWARM ATTACK",
+        "health": "3",
+        "description": "Deal 1 damage. Increase this damage by 1 for each foot soldier in this location.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "REGROW",
+        "health": "2",
+        "description": "Deploy 1 Super Putty Patroller to this location.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PUTTY PUMMEL",
+        "health": "3",
+        "description": "Deal 3 damage.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "ENGULF",
+        "health": "2",
+        "description": "Drain 1 [ENERGY].",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 3,
+        "name": "INDUSTRIAL DISTRICT"
+      },
+      {
+        "id": 6,
+        "name": "ANGEL GROVE HIGH"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Tenga Warriors (Errata)",
+    "slug": "tenga-warriors-errata",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "PIERCING SCREECH",
+        "health": "3",
+        "description": "Each Ranger must discard 1 card from their hand.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "SWARM ATTACK",
+        "health": "3",
+        "description": "Deal 1 damage. Increase this damage by 1 for each foot soldier in this location.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DEADLY TALONS",
+        "health": "2",
+        "description": "Deal 3 damage.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "FLY AWAY",
+        "health": "3",
+        "description": "Move 1 Tenga Warrior from this location to the next location clockwise that is not panicked. Then, flip this card facedown. (It is not considered defeated.)",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 8,
+        "name": "SHOPPING MALL"
+      },
+      {
+        "id": 9,
+        "name": "STONE QUARRY"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Tenga Warriors (Original)",
+    "slug": "tenga-warriors-original",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "PIERCING SCREECH",
+        "health": "3",
+        "description": "Each Ranger must discard 1 card from their hand.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "SWARM ATTACK",
+        "health": "3",
+        "description": "Deal 1 damage. Increase this damage by 1 for each foot soldier in this location.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DEADLY TALONS",
+        "health": "2",
+        "description": "Deal 3 damage.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "FLY AWAY",
+        "health": "3",
+        "description": "Move 1 Tenga Warrior from this location to the next location clockwise that is not panicked.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 8,
+        "name": "SHOPPING MALL"
+      },
+      {
+        "id": 9,
+        "name": "STONE QUARRY"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Tronics",
+    "slug": "tronics",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 23,
+    "expansion_id": 4,
+    "deck": [
+      {
+        "name": "ENERGY THIEVES",
+        "health": "2",
+        "description": "While this card is in play, each time an adjacent enemy card resolves, drain 1 [ENERGY]. When this card resolves, drain 1 [ENERGY].",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "SCATTER SHOTS",
+        "health": "2",
+        "description": "Deal 2 damage each to half of the Rangers in this battle (rounded up).",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "LASER RAID",
+        "health": "3",
+        "description": "Drain 1 [ENERGY]. Deal 2 damage to the Ranger with the most cards in their hand.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "CYBER SLASH",
+        "health": "3",
+        "description": "Deal 3 damage, unless a Ranger discards 1 card from their hand to prevent it.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 22,
+        "name": "RESEARCH LAB"
+      },
+      {
+        "id": 23,
+        "name": "CYBER DIMENSION"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Tyrannodrones",
+    "slug": "tyrannodrones",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 11,
+    "expansion_id": 35,
+    "deck": [
+      {
+        "name": "FOUL TACTICS",
+        "health": "2",
+        "description": "While this card is in play, each time a Ranger attacks this card or an adjacent enemy card, they cannot roll more than 2 dice.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "HARDENED SCALES",
+        "health": "3",
+        "description": "Drain 1 [ENERGY]. The next time a Ranger performs an attack during this battle, remove 1 die from that attack before rolling.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CLEAVING STRIKE",
+        "health": "3",
+        "description": "Deal 2 damage each to 2 different Rangers.",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "WICKED SPINES",
+        "health": "2",
+        "description": "When this card is defeated, deal 3 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 16,
+        "name": "THE ARCADE"
+      },
+      {
+        "id": 17,
+        "name": "REEFSIDE HIGH"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Z Putty Patrollers (Errata)",
+    "slug": "z-putty-patrollers-errata",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "SELF-DESTRUCT",
+        "health": "2",
+        "description": "While this card is in play, each time a Z Putty Patroller card (including this one) is defeated, deal 2 damage.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "OVERWHELM",
+        "health": "2",
+        "description": "Deal 2 damage. Skip the next Ranger turn in this battle.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "Z-SHIELD",
+        "health": "3",
+        "description": "Drain 2 [ENERGY].",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "FIERCE STRIKE",
+        "health": "3",
+        "description": "Deal 4 damage",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 4,
+        "name": "DOCKYARD"
+      },
+      {
+        "id": 7,
+        "name": "POWER PLANT"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Z Putty Patrollers (Original)",
+    "slug": "z-putty-patrollers-original",
+    "monster_type": "foot",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "SELF-DESTRUCT",
+        "health": "2",
+        "description": "While this card is in play, each time a Z Putty Patroller card (including this one) is defeated, deal 2 damage.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "OVERWHELM",
+        "health": "2",
+        "description": "Deal 2 damage. Skip the next Ranger turn in this battle.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "Z-SHIELD",
+        "health": "3",
+        "description": "Drain 2 [ENERGY].",
+        "count": 3,
+        "order": 3
+      },
+      {
+        "name": "FIERCE STRIKE",
+        "health": "3",
+        "description": "Deal 4 damage",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": [
+      {
+        "id": 4,
+        "name": "DOCKYARD"
+      },
+      {
+        "id": 7,
+        "name": "POWER PLANT"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Baboo",
+    "slug": "baboo",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 19,
+    "deck": [
+      {
+        "name": "PUNK POTION",
+        "health": "6",
+        "description": "While this card is in play, Rangers cannot use abilities or card effects to affect Rangers other than themselves.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PICK YOUR POISON",
+        "health": "4",
+        "description": "Drain 2 [ENERGY]. The Ranger who most recently drank something must discard either 2 cards from their hand or 2 cards from the top of their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "SCAPEGOAT",
+        "health": "2",
+        "description": "When this card is defeated, instead of discarding it, place it on the bottom of Baboo’s deck. Then draw another card from Baboo’s deck to replace it in the combat sequence.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "AWFUL ALCHEMY",
+        "health": "4",
+        "description": "The Ranger with the most cards in their deck must guess the [SHIELD] value of the top card, then discard it.\nIf they guessed wrong, repeat this effect until they guess right or are defeated.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 54,
+    "name": "Black Dragon",
+    "slug": "black-dragon",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 28,
+    "expansion_id": 2,
+    "deck": [
+      {
+        "name": "CHAOS WAVE",
+        "health": "5",
+        "description": "While this card is in play, each time a Ranger plays a card, drain 1 ⚡ after that card resolves.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "NEGA-BEAM",
+        "health": "5",
+        "description": "Each Ranger must shuffle 1 random card from their hand back into their deck, then discard the top 2 cards of their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DRAGON CRUSHER",
+        "health": "4",
+        "description": "Deal 3 damage. The Ranger who suffers this damage must discard from their hand the card with the most [SHIELD].",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BLACK CLAW",
+        "health": "4",
+        "description": "Deal 5 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 51,
+    "name": "Blaze",
+    "slug": "blaze",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 23,
+    "expansion_id": 4,
+    "deck": [
+      {
+        "name": "CRIMSON SWORD",
+        "health": "6",
+        "description": "Each Ranger must search their deck for all cards with exactly 3 [SHIELD], then discard those cards and shuffle their deck.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SPITEFUL SLASH",
+        "health": "4",
+        "description": "Deal 2 damage to the Ranger with the most cards in their deck. Increase this damage by 1 for each card in their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "MORPH-X RAID",
+        "health": "4",
+        "description": "Drain 2 [ENERGY]. Deal an amount of damage to each Ranger equal to the number of undefeated food soldier cards in this battle.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SHOCKWAVE KICK",
+        "health": "5",
+        "description": "Deal 3 damage each to half of the Rangers in this battle (rounded up).",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 17,
+    "name": "Bones",
+    "slug": "bones",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "REGENERATION",
+        "health": "7",
+        "description": "Flip all defeated Bones cards in this battle face up. They are no longer defeated.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "EYE LASERS",
+        "health": "3",
+        "description": "Deal 3 damage to 2 different Rangers.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "GRAVE DIGGER SLASH",
+        "health": "5",
+        "description": "Drain 1 [ENERGY].\nEach Ranger must discard the bottom card of their deck.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SKELETON SWORD",
+        "health": "3",
+        "description": "Deal 4 damage to the lead Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 29,
+    "name": "Commander Crayfish",
+    "slug": "commander-crayfish",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 29,
+    "deck": [
+      {
+        "name": "DEFORMED POWER SWORD",
+        "health": "5",
+        "description": "Deal 5 damage when this card resolves. While this card is in play, each time an adjacent enemy card deals damage, increase that damage by 2.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SHELLFISH SLASHER",
+        "health": "3",
+        "description": "Deal 4 damage.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CRAYFISH COMMAND",
+        "health": "4",
+        "description": "Deal 2 damage. Increase this damage by 1 for each foot soldier in this location.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CLAW CRUSHER",
+        "health": "4",
+        "description": "Deal 3 damage to a single Ranger twice.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 45,
+    "name": "Cursed Tyzon",
+    "slug": "cursed-tyzon",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 14,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "LIQUID FORM",
+        "health": "6",
+        "description": "While this card is in play, Rangers cannot deal [HIT] to an enemy card if another enemy card has more hit tokens than that card does.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "METAL HUNTER",
+        "health": "4",
+        "description": "Each Ranger must reveal the card from their hand with the most dice in its attack value. Deal damage to each Ranger equal to the number of dice in their card’s attack value.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "THUNDERBEAM",
+        "health": "4",
+        "description": "Deal 8 damage, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "EMPOWERED LANCE",
+        "health": "5",
+        "description": "Roll 1 die and deal twice that much damage to each Ranger. If the result is O, deal 3 damage to each Ranger instead.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 39,
+    "name": "Darkonda",
+    "slug": "darkonda",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 5,
+    "expansion_id": 4,
+    "deck": [
+      {
+        "name": "NINE LIVES",
+        "health": "9",
+        "description": "While this card is in play, all [HIT] dealt to adjacent Darkonda cards is dealt to this card instead. At the end of each enemy turn, remove 1 hit token from this card.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "BRUTAL PULSE",
+        "health": "3",
+        "description": "Deal 3 damage each to 3 different Rangers. This damage cannot be reduced.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "RENDING SLASH",
+        "health": "4",
+        "description": "Two Rangers who do not have at least 9 [SHIELD] total in their discard pile must each discard cards from their hand and/or the top of their deck until they do.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DARK BLADE",
+        "health": "4",
+        "description": "Deal 9 damage, divided among the Rangers as they choose. This damage cannot be reduced.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 40,
+    "name": "Ecliptor",
+    "slug": "ecliptor",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 5,
+    "expansion_id": 32,
+    "deck": [
+      {
+        "name": "REGENERATION",
+        "health": "7",
+        "description": "Flip all defeated Ecliptor cards in this battle face up. They are no longer defeated.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "MIRROR IMAGE",
+        "health": "4",
+        "description": "While this card is in play, deal 3 damage at the start of each enemy turn in battle.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "EYE OF EXLIPTOR",
+        "health": "4",
+        "description": "Half of the Rangers in this battle (rounded up) must each shuffle their deck, then discard half of their deck (rounded up).",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "ECLIPSE BLADE",
+        "health": "4",
+        "description": "Deal 2 damage to each Ranger, increased by 1 for each [SHIELD] on the top card of their discard pile.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 43,
+    "name": "Elsa",
+    "slug": "elsa",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 11,
+    "expansion_id": 32,
+    "deck": [
+      {
+        "name": "HARSH DISCIPLINE",
+        "health": "6",
+        "description": "While this card is in play, each time Elsa deals damage, she targets the Ranger with the fewest cards in their deck.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "BLAST CASCADE",
+        "health": "5",
+        "description": "Each Ranger must discard cards from the top of their deck until they are tied with all other Rangers for having the fewest cards in their deck. Then deal 3 damage.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "RAPID CUTS",
+        "health": "3",
+        "description": "Deal 1 damage.\nDeal 2 damage.\nDeal 3 damage.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "APOSTLE’S BLADE",
+        "health": "4",
+        "description": "Deal 4 damage. Then the Ranger with the fewest cards in their deck must discard the top card of their deck.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 42,
+    "name": "Evil Dino Thunder White",
+    "slug": "evil-dino-thunder-white",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 11,
+    "expansion_id": 11,
+    "deck": [
+      {
+        "name": "BRUTAL PERSONA",
+        "health": "6",
+        "description": "Each time a Ranger discards a card for defense, drain 1 [ENERGY].",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "ZORD CONTROL",
+        "health": "4",
+        "description": "Deal 3 damage. Repeat this effect once for each Zord card in play.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DARK LASER ARROW",
+        "health": "5",
+        "description": "Roll 1 die for each [ENERGY] in the shared energy pool and in the storage of Rangers in this battle. Deal damage to each Ranger equal to the total [HIT] results.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DRAGO SWORD",
+        "health": "4",
+        "description": "Deal 4 damage. The Ranger who suffers this damage reduced the shield value of each card they reveal for defense by 1.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 22,
+    "name": "Evil Green Ranger",
+    "slug": "evil-green-ranger",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "DRAGON SHIELD",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger deals [HIT] to an Evil Green Ranger card (including this one), deal 2 damage to that Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DRAGON RUSH",
+        "health": "4",
+        "description": "Roll 6 dice and deal that much damage to the lead Ranger. Roll 2 dice and deal that much damage to each other Ranger.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "SWORD OF DARKNESS",
+        "health": "6",
+        "description": "Deal 6 damage to the lead Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DRAGON DAGGER",
+        "health": "4",
+        "description": "Roll 4 dice and deal that much damage to 2 different Rangers.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 50,
+    "name": "Evil Robot Tommy",
+    "slug": "evil-robot-tommy",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 21,
+    "expansion_id": 15,
+    "deck": [
+      {
+        "name": "SINGLE COMBAT",
+        "health": "5",
+        "description": "While this card is in play, only the lead Ranger can play combat cards.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "HEARTLESS BARRAGE",
+        "health": "4",
+        "description": "The lead Ranger must discard the top 3 cards of their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DARK BRACHIO STAFF",
+        "health": "5",
+        "description": "Deal 4 damage to the lead Ranger.\nDeal 2 damage to each other Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CYBORG BEATDOWN",
+        "health": "3",
+        "description": "Deal 3 damage to the lead Ranger. The lead Ranger must discard 1 card.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 28,
+    "name": "Eye Guy",
+    "slug": "eye-guy",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "DEVOUR MIND",
+        "health": "5",
+        "description": "The Ranger with the most cards in their hand must discard 3 cards from their hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "FOCUSED FIRE",
+        "health": "3",
+        "description": "Deal 4 damage to the Ranger with the fewest cards in their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "SCATTERED VISAGE",
+        "health": "3",
+        "description": "While this card is in play, each time a Ranger deals [HIT] to this card, reduce it to 1.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "OPTIC BLAST",
+        "health": "4",
+        "description": "Deal 2 damage to each Ranger twice.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 23,
+    "name": "Finister",
+    "slug": "finister",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "ARTISTIC GENIUS",
+        "health": "5",
+        "description": "While this card is in play, all foot soldier cards have +1 health and each time a foot soldier card resolves (even if it is defeated0, deal 2 damage.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "FRESHLY MADE",
+        "health": "4",
+        "description": "Deploy 2 Putty Patrollers to this location.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CRAFTED CANNON",
+        "health": "4",
+        "description": "Deal 3 damage to 2 different Rangers. Drain 3 [ENERGY].",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "KILL COMMAND",
+        "health": "6",
+        "description": "Deal 3 damage. Increase this damage by 1 for each foot soldier in this location.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 41,
+    "name": "Frax",
+    "slug": "frax",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 8,
+    "expansion_id": 33,
+    "deck": [
+      {
+        "name": "MINION MASTER",
+        "health": "4",
+        "description": "While this card is in play, Rangers cannot place hit tokens on a Frax card until each foot soldier card adjacent to that card is defeated or resolved.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "FOCUSED FIRE",
+        "health": "3",
+        "description": "Deal 4 damage to the Ranger with the fewest cards in their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DARK SCIENCE",
+        "health": "4",
+        "description": "Drain 1 [ENERGY]. One Ranger must discard the top 2 cards of their deck.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "ASSAULT ORDER",
+        "health": "3",
+        "description": "Deal 2 damage to a single Ranger twice. If there are at least 4 foot soldiers in this location, deal 2 damage to each Ranger twice instead.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 38,
+    "name": "General Venjix",
+    "slug": "general-venjix",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 9,
+    "expansion_id": 30,
+    "deck": [
+      {
+        "name": "MACHINE EMPIRE ELITE",
+        "health": "5",
+        "description": "While this card is in play, the shield value of all combat cards with exactly 3 [SHIELD] is reduced by 2 [SHIELD].",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "BIG BAD BEATING",
+        "health": "4",
+        "description": "The Lead Ranger must discard cards from the top of their deck until they have discarded at least 3 [SHIELD] or are defeated.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "THUNDER BURST",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SHADOW CLAW",
+        "health": "5",
+        "description": "Deal 3 damage to the lead Ranger twice.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 47,
+    "name": "Heximas",
+    "slug": "heximas",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 20,
+    "expansion_id": 20,
+    "deck": [
+      {
+        "name": "CURSED COAL",
+        "health": "6",
+        "description": "While this card is in play, each time a card is placed in a Ranger discard pile, that Ranger must remove 1 hit token from an enemy card of their choice.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SEASON’S BEATINGS",
+        "health": "4",
+        "description": "Deal an amount of damage equal to the total number of figures in this location (including Ranger and enemy figures).",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "ROCKET SLEIGH",
+        "health": "4",
+        "description": "Each Ranger must draw 1 card. Deal an amount of damage to each Ranger equal to the shield value of their drawn card.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "TANNENBOOM ",
+        "health": "4",
+        "description": "Half of the Rangers in this battle (rounded up) must each discard 1 card from their hand. Each other Ranger must discard the top card of their deck.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 31,
+    "name": "King Sphinx",
+    "slug": "king-sphinx",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 31,
+    "deck": [
+      {
+        "name": "COBRA BEAM",
+        "health": "6",
+        "description": "Deal 4 damage each to half of the Rangers in this battle (rounded up).",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SPHINX SLAM",
+        "health": "5",
+        "description": "Deal 5 damage. The Ranger who suffers this damage must discard 1 card from their hand.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "GALE FORCE WING",
+        "health": "3",
+        "description": "Remove 1 Ranger from this battle and move their figure to the next location clockwise. That Ranger must discard their entire hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SCEPTER BARRAGE",
+        "health": "4",
+        "description": "Deal 2 damage to a single Ranger four times.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 20,
+    "name": "Knasty Knight",
+    "slug": "knasty-knight",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "BLADE BEAM",
+        "health": "5",
+        "description": "Deal 4 damage to the lead Ranger and 2 damage to each other Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SMASH & SLASH",
+        "health": "4",
+        "description": "Deal 3 damage to a single Ranger twice.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "KNASTY SLASH",
+        "health": "4",
+        "description": "Deal 4 damage.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "LION SHIELD",
+        "health": "4",
+        "description": "After a Ranger deals [HIT] to this card, deal the same amount of damage to that Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 44,
+    "name": "Koragg",
+    "slug": "koragg",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 13,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "EYE OF THE MASTER",
+        "health": "5",
+        "description": "While this card is in play, Rangers cannot perform reactions or use ★ abilities. When this card resolves, drain 2 [ENERGY].",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "WOLF ATTACK",
+        "health": "4",
+        "description": "Each Ranger must reveal the top card of their deck. Deal damage equal to the total [SHIELD] on the revealed cards, increased by 2 for each revealed ★ ability, divided among the Rangers as they choose.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "DARK MAGIC STRIKE ",
+        "health": "4",
+        "description": "Each Ranger must look at the top 2 cards of their deck and discard the card with the most [SHIELD].",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SHIELD OF DARKNESS",
+        "health": "5",
+        "description": "While this card is in play, each time a Ranger deals [HIT] to this card, deal the same amount of damage to that Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 21,
+    "name": "Madame Woe",
+    "slug": "madame-woe",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "TELEPORT",
+        "health": "5",
+        "description": "While this card is in play, Rangers cannot deal [HIT] to any other Madame Woe cards.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "BRAID LASH",
+        "health": "4",
+        "description": "Deal 3 damage. Drain 1 [ENERGY].",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "BREATH OF DEATH",
+        "health": "4",
+        "description": "Each Ranger must discard 1 random card from their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DEADLY CLAWS",
+        "health": "3",
+        "description": "Deal 4 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 33,
+    "name": "Pirantishead",
+    "slug": "pirantishead",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 31,
+    "deck": [
+      {
+        "name": "ZORD LOCKDOWN",
+        "health": "3",
+        "description": "While this card is in play, Rangers cannot use Zord abilities.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "POWERFUL CURRENT",
+        "health": "4",
+        "description": "Exhaust all Zord cards in play. If 1 or fewer Zord cards were exhausted this way, deal 3 damage to each Ranger.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "CHUM-CHUCKS",
+        "health": "4",
+        "description": "Deal 4 damage to each Ranger with at least 1 Zord card. If no Zord cards are in play, deal 2 damage to each Ranger instead.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "HIJACK ATTACK",
+        "health": "5",
+        "description": "Deal 4 damage each to half of the Rangers in this battle )rounded up). Increase this damage by 1 for each Zord card in play.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 49,
+    "name": "Poisandra",
+    "slug": "poisandra",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 20,
+    "expansion_id": 55,
+    "deck": [
+      {
+        "name": "BLUE PAINT BODYSWAP",
+        "health": "5",
+        "description": "At the start of this battle, 2 Rangers must swap character cards. Return those cards to their original Rangers when this card is defeated or when this battle ends. When this card resolves, deal 4 damage to the swapped Rangers.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SCYTHE HEART LANCE",
+        "health": "3",
+        "description": "Deal 5 damage each to half of the Rangers in this battle (rounded down).",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "WEAKENING GRAY PAINT",
+        "health": "4",
+        "description": "For each Ranger in this battle with more than 3 cards in their hand, drain 1 [ENERGY].",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CAKE BOMB",
+        "health": "4",
+        "description": "Each Ranger must return 1 card from their discard pile to their hand. Deal an amount of damage to each Ranger equal to twice their card’s shield value.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 30,
+    "name": "Polluticorn",
+    "slug": "polluticorn",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 29,
+    "deck": [
+      {
+        "name": "UNICORN BLASTER",
+        "health": "6",
+        "description": "Deal 9 damage, divide among the Rangers as they choose.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "TOXIC TORNADO",
+        "health": "5",
+        "description": "The Rangers must discard a total of 4 cards, divided as they choose.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PRISMATIC ORBS",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger twice.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "FEROCIOUS STRENGTH",
+        "health": "4",
+        "description": "Deal 5 damage.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 26,
+    "name": "Primator",
+    "slug": "primator",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "COPY CONFUSION",
+        "health": "5",
+        "description": "While this card is in play, each time a Ranger attacks a Primator card (including this one), deal 2 damage to the lead Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "ELECTRIC THUNDER",
+        "health": "4",
+        "description": "Deal 2 damage to each Ranger.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "MOCKING DANCE",
+        "health": "3",
+        "description": "Two Rangers must each discard 1 card from their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "MIMICRY",
+        "health": "4",
+        "description": "One Ranger must discard 1 random card from their hand. Deal damage to that Ranger equal to the number of [SHIELD] on that card.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 36,
+    "name": "Prince Gasket",
+    "slug": "prince-gasket",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 3,
+    "expansion_id": 30,
+    "deck": [
+      {
+        "name": "LOVER’S BARRAGE",
+        "health": "6",
+        "description": "Deal 2 damage to each Ranger. Then, if any Prince Gasket or Princess Archerina cards have been defeated or discarded, deal 3 damage to each Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DUELIST STANCE",
+        "health": "5",
+        "description": "While this card is in play, each time a Ranger deals [HIT] to this card, they must discard the top card of their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "EN GARDE!",
+        "health": "4",
+        "description": "Deal 4 damage.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DISARMING SLASH",
+        "health": "4",
+        "description": "The Ranger with the most cards in their hand must place 1 random card from their hand on top of their deck. Then deal 4 damage to that Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 37,
+    "name": "Princess Archerina",
+    "slug": "princess-archerina",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 3,
+    "expansion_id": 30,
+    "deck": [
+      {
+        "name": "LOVER’S BARRAGE",
+        "health": "6",
+        "description": "Deal 2 damage to each Ranger. Then, if any Prince Gasket or Princess Archerina cards have been defeated or discarded, deal 3 damage to each Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "LOVER’S SHOT",
+        "health": "4",
+        "description": "While this card is in play, each time a Ranger deals [HIT] to an enemy card with the FAST or GUARD keyword, they must discard the top card of their deck.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "ENCHANTING ARROW",
+        "health": "5",
+        "description": "One Ranger must discard all attack cards from their hand. If they discarded fewer than 2 cards, deal 4 damage to that Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "HEART STRIKE",
+        "health": "4",
+        "description": "Deal 4 damage to the Ranger with the most cards in their hand.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 18,
+    "name": "Pudgy Pig (Base)",
+    "slug": "pudgy-pig-base",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "RAVENOUS HUNGER",
+        "health": "5",
+        "description": "While this card is in play, rangers cannot play cards with an energy cost greater than zero.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "BUTTER KNIFE CUTTER",
+        "health": "4",
+        "description": "Deal 3 damage to 2 different Rangers.",
+        "count": 3,
+        "order": 2
+      },
+      {
+        "name": "SALAD FORK STAB",
+        "health": "3",
+        "description": "Deal 4 damage to the Ranger with the most cards in their hand.",
+        "count": 3,
+        "order": 3
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 19,
+    "name": "Pudgy Pig (VP3)",
+    "slug": "pudgy-pig-vp3",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 1,
+    "deck": [
+      {
+        "name": "I’M HUNGRY",
+        "health": "5",
+        "description": "Drain 2 [ENERGY]. Each Ranger must discard from their hand the card with the highest energy cost. When this card is defeated, each Ranger may return 1 card from their discard pile to their hand.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "BUTTER KNIFE CUTTER",
+        "health": "4",
+        "description": "Deal 3 damage to 2 different Rangers.",
+        "count": 3,
+        "order": 2
+      },
+      {
+        "name": "SALAD FORK STAB",
+        "health": "3",
+        "description": "Deal 4 damage to the Ranger with the most cards in their hand.",
+        "count": 3,
+        "order": 3
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 24,
+    "name": "Pumpkin Rapper",
+    "slug": "pumpkin-rapper",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "HIP-HOP BOMB DROP",
+        "health": "5",
+        "description": "Each Ranger must discard from their hand 1 card with an energy cost of zero.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "RHYMIN’ VINES",
+        "health": "5",
+        "description": "Deal 2 damage.\nDeal 2 damage.\nDeal 2 damage.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "RAPPER’S TRAP",
+        "health": "3",
+        "description": "While this card is in play, each time a Ranger attacks this card, they must spend +1 [ENERGY].",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SPIT HOT FIRE",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 53,
+    "name": "Ranger Slayer",
+    "slug": "ranger-slayer",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 28,
+    "expansion_id": 2,
+    "deck": [
+      {
+        "name": "BOW OF DARKNESS",
+        "health": "6",
+        "description": "Deal 6 damage to the lead Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SUPPRESSING SHOTS",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger. Skip the next Ranger turn.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "THUNDER KICK",
+        "health": "4",
+        "description": "The Ranger with the most cards in their hand must discard cards from their hand until they have discarded at least 4 [SHIELD] or until they have no cards remaining in their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "SLAYING SHOT",
+        "health": "4",
+        "description": "Roll 4 dice and deal that much damage to the Ranger with the fewest cards in their deck.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 27,
+    "name": "Rhinoblaster",
+    "slug": "rhinoblaster",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "WATER MIST BREATH",
+        "health": "4",
+        "description": "Each Ranger must discard 1 card from their hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "GRIM SCIMITAR",
+        "health": "5",
+        "description": "Deal 5 damage.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "LIGHTNING HORN",
+        "health": "4",
+        "description": "The Rangers must discard a total of 4 cards, divided as they choose.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CHARGING TACKLE",
+        "health": "4",
+        "description": "Deal 6 damage, unless a Ranger discards 2 cards from their hand to prevent it.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 25,
+    "name": "Robogoat",
+    "slug": "robogoat",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 26,
+    "deck": [
+      {
+        "name": "CLOVEN COMBO",
+        "health": "5",
+        "description": "Deal 1 damage.\nDeal 2 damage.\nDeal 3 damage.",
+        "count": 2,
+        "order": 1
+      },
+      {
+        "name": "STAFF SLAM",
+        "health": "4",
+        "description": "Deal 5 damage to the lead Ranger.",
+        "count": 3,
+        "order": 2
+      },
+      {
+        "name": "CHARGING HEADBUTT",
+        "health": "4",
+        "description": "Deal 4 damage, unless a Ranger spends 2 [ENERGY] to prevent it.",
+        "count": 3,
+        "order": 3
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 52,
+    "name": "Roxy",
+    "slug": "roxy",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 23,
+    "expansion_id": 4,
+    "deck": [
+      {
+        "name": "SINISTER SABOTAGE",
+        "health": "6",
+        "description": "While this card is in play, each time 1 or more [ENERGY] is drained, 1 Ranger must discard the bottom card of their deck.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DOUBLE CHAIN GUNS",
+        "health": "4",
+        "description": "Deal 2 damage to 2 different Rangers twice.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "MORPH-X HEIST",
+        "health": "4",
+        "description": "Drain an amount of [ENERGY] equal to the number of undefeated food soldier cards in this battle. Deal 2 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "HEARTBREAKER",
+        "health": "5",
+        "description": "Drain 2 [ENERGY]. Deal 2 damage to a single Ranger twice.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 48,
+    "name": "Snide",
+    "slug": "snide",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 20,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "SPLIT PERSONALITY",
+        "health": "6",
+        "description": "One Ranger must shuffle their hand into their deck, then discard half of their deck (rounded up). They may then draw up to 3 cards.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "EXPLODING SWORD",
+        "health": "4",
+        "description": "Deal 5 damage to the Ranger with the most cards in their discard pile. Deal 2 damage to each other Ranger.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "SLASH TETHER",
+        "health": "3",
+        "description": "Drain 1 [ENERGY]. One Ranger must discard 2 cards from their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "DARK SIDE RUSH",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger. If a Ranger has more than 3 cards in their discard pile, deal them 5 damage instead.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 34,
+    "name": "Squatt",
+    "slug": "squatt",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 19,
+    "deck": [
+      {
+        "name": "I’M NOT READING THAT",
+        "health": "5",
+        "description": "While this card is in play, the effect text on all Ranger attack cards is ignored.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SHOOT!",
+        "health": "6",
+        "description": "Two Rangers must play a game of rock paper scissors.\nDeal 3 damage to the winner.\nDeal 6 damage to the loser.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "I HAVE AN IDEA",
+        "health": "4",
+        "description": "Each Ranger must draw 3 cards.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BLUNDERBUSTER",
+        "health": "4",
+        "description": "Each Ranger must roll 2 dice. Deal 3 damage to each Ranger for every [MISS] result that Ranger rolled.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 46,
+    "name": "Tenaya 7",
+    "slug": "tenaya-7",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 16,
+    "expansion_id": 36,
+    "deck": [
+      {
+        "name": "HAVOC BUSTER",
+        "health": "4",
+        "description": "Drain 2 [ENERGY]. Each Ranger must discard the top card of their deck.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "MIND SHOCK",
+        "health": "3",
+        "description": "One Ranger must choose 1 card from their hand and remove it from the game.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "BLASTER HAND",
+        "health": "4",
+        "description": "Deal 4 damage. The Ranger who suffers this damage must discard 1 card from their hand.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "HAND OF VENJIX",
+        "health": "4",
+        "description": "Deal 3 damage. If any cards are discarded for defense as a result of this damage, remove them from the game.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 32,
+    "name": "Terror Toad",
+    "slug": "terror-toad",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 1,
+    "expansion_id": 31,
+    "deck": [
+      {
+        "name": "HORN OF HUNGER",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger attacks Terror Toad, steal the top 2 cards of their deck. Shuggle those cards back to their decks when this card is defeated or when the battle ends.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "SWALLOW WHOLE",
+        "health": "5",
+        "description": "Steal 4 cards from the Rangers with the most cards in their hand. Return those cards to that Ranger’s hand when this card is defeated or when the battle ends.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "TIME TO CROAK",
+        "health": "3",
+        "description": "Deal 1 damage to each Ranger. Increase this damage by 1 for each combat card currently stolen by Terror Toad.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "TONGUE LASH",
+        "health": "4",
+        "description": "Drain 1 [ENERGY]. Deal 5 damage. Any cards discarded for defense are stolen instead. Return those cards to their discard piles when this card is defeated or when the battle ends.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 97,
+    "name": "Vypra",
+    "slug": "vypra",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 7,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 96,
+    "name": "Zurgane",
+    "slug": "zurgane",
+    "monster_type": "monster",
+    "nemesis_effect": null,
+    "season_id": 10,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 67,
+    "name": "Dayne",
+    "slug": "dayne",
+    "monster_type": "nemesis",
+    "nemesis_effect": "Each time an enemy card with the PASSIVE keyword resolves, deal 3 damage to the attached Ranger, then attach this card to any other Ranger in this battle.",
+    "season_id": 32,
+    "expansion_id": 4,
+    "deck": [
+      {
+        "name": "JUST AS PLANNED",
+        "health": "5",
+        "description": "While this card is in play, Rangers cannot place hit tokens on Dayne cards that have not yet resolved.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "ISOLATE PREY",
+        "health": "4",
+        "description": "While this card is in play, Dayne’s current nemesis is the only Ranger who can play combat cards. When this card resolves, deal 3 damage to each Ranger.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "PLASMA WHIP",
+        "health": "4",
+        "description": "While this card is in play, each time the ability of Dayne’s deployment card resolves, increase that damage by 1.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "BLINDING SHOT",
+        "health": "4",
+        "description": "While this card is in play, each time a Ranger rolls a [HIT][HIT] result during an attack, change it to a [MISS] result.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "BOUNTY BREAKER",
+        "health": "5",
+        "description": "Deal 5 damage. Attach Dayne’s deployment card to the Ranger who suffers this damage.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 64,
+    "name": "Deker",
+    "slug": "deker",
+    "monster_type": "nemesis",
+    "nemesis_effect": "After each Deker card resolves (even if it is defeated), the attached Ranger must draw 1 card.",
+    "season_id": 17,
+    "expansion_id": 33,
+    "deck": [
+      {
+        "name": "URAMASA",
+        "health": "5",
+        "description": "While this card is in play, after a Ranger draws 1 or more cards, they must discard 1 card from their hand.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "A WORTHY FOE",
+        "health": "5",
+        "description": "Deal 6 damage. Then Deker’s nemesis must perform an attack with a number of dice equal to the number of cards in their hand. Skip the next Ranger turn in this battle.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "A PROPER DUEL",
+        "health": "4",
+        "description": "Defeat and remove all foot soldier cards in the combat sequence. Deal 4 damage to each Ranger other than Deker’s nemesis.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "PEERLESS SLASH",
+        "health": "4",
+        "description": "Deal 2 damage to Deker’s nemesis. Increase this damage by 1 for each card in their hand.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 99,
+    "name": "Evil Dino Fury Blue Ranger",
+    "slug": "evil-dino-fury-blue-ranger",
+    "monster_type": "nemesis",
+    "nemesis_effect": "???",
+    "season_id": 25,
+    "expansion_id": 55,
+    "deck": [],
+    "locations": []
+  },
+  {
+    "id": 61,
+    "name": "Nadira",
+    "slug": "nadira",
+    "monster_type": "nemesis",
+    "nemesis_effect": "Nadira cards do not deal damage to the attached Ranger. Prevent any amount of HIT dealt to Nadira by the attached Ranger unless that Ranger pays 1 [ENERGY].",
+    "season_id": 8,
+    "expansion_id": 55,
+    "deck": [
+      {
+        "name": "LOOKING FABULOUS",
+        "health": "6",
+        "description": "While this card is in play, for every 2 foot soldier figures in this location, the health value of all Nadira cards is increased by 1. When this card resolves, drain 2 [ENERGY].",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "MANICURE MASSACRE",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger. During the next Ranger turn in this battle, only Nadira’s nemesis can play combat cards.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "LET ME PAINT MY NAILS",
+        "health": "4",
+        "description": "While this card is in play, each time a Ranger defeats a foot soldier card, deal 2 damage to each Ranger.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NUTS AND BOLTS",
+        "health": "3",
+        "description": "Reveal and resolve the top card of 2 foot soldier decks, one at a time, then return them and shuffle the decks. Ignore all passive effects of revealed cards with the PASSIVE keyword.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "SHOPPING SPREE",
+        "health": "6",
+        "description": "Drain an amount of [ENERGY] equal to this card’s health value. Reduce this amount by 1 for each hit token on this card.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 57,
+    "name": "Psycho Black",
+    "slug": "psycho-black",
+    "monster_type": "nemesis",
+    "nemesis_effect": "[PSYCHO]: Deal 3 damage to the attached Ranger and 2 damage to another Ranger.",
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO STAFF",
+        "health": "5",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF STONE",
+        "health": "6",
+        "description": "While this card is in play, the health value of all other enemy cards is increased by 1.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 58,
+    "name": "Psycho Blue",
+    "slug": "psycho-blue",
+    "monster_type": "nemesis",
+    "nemesis_effect": "[PSYCHO]: The attached Ranger must discard from their hand the card with the highest energy cost.",
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO AXE",
+        "health": "5",
+        "description": "Three different Rangers must each discard from their hand the card with the highest energy cost.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF FROST",
+        "health": "6",
+        "description": "While this card is in play, the shared energy pool cannot be greater than 2. Drain any excess [ENERGY].\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 60,
+    "name": "Psycho Green",
+    "slug": "psycho-green",
+    "monster_type": "nemesis",
+    "nemesis_effect": "[PSYCHO]: The attached Ranger and another Ranger must each discard the top card of their deck.\n",
+    "season_id": 33,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO DAGGER",
+        "health": "5",
+        "description": "Each Ranger must discard the top card of their deck.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF CRUELTY",
+        "health": "6",
+        "description": "While this card is in play, the first time each Ranger plays a card in the battle, they must discard the top card of their deck.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 59,
+    "name": "Psycho Pink",
+    "slug": "psycho-pink",
+    "monster_type": "nemesis",
+    "nemesis_effect": "[PSYCHO]: Drain 1 [ENERGY] and deal 2 damage to the attached Ranger.",
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO BOW",
+        "health": "5",
+        "description": "Drain 2 [ENERGY].\nDeal 3 damage to the Ranger with the fewest cards in their deck.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF THORNS",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger attacks this card or an adjacent enemy card, deal 2 damage to that Ranger.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 56,
+    "name": "Psycho Red",
+    "slug": "psycho-red",
+    "monster_type": "nemesis",
+    "nemesis_effect": "[PSYCHO]: Deal 4 damage to the attached Ranger.",
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO SWORD",
+        "health": "5",
+        "description": "Deal 5 damage to the lead Ranger.",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF FLAME",
+        "health": "6",
+        "description": "While this card is in play, each time a defeated enemy card resolves, deal 3 damage.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 102,
+    "name": "Psycho Yellow",
+    "slug": "psycho-yellow",
+    "monster_type": "nemesis",
+    "nemesis_effect": "[PSYCHO]: Deal 4 damage to the attached Ranger.",
+    "season_id": 5,
+    "expansion_id": 3,
+    "deck": [
+      {
+        "name": "PSYCHO ASSAULT",
+        "health": "5",
+        "description": "Deal 3 damage. If there are 2 or more Psycho Rangers in this location, deal 6 damage instead.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "PSYCHO BURST",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger. Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "PSYCHO STRIKE",
+        "health": "4",
+        "description": "Resolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "NEMESIS DRAIN",
+        "health": "3",
+        "description": "Drain 1 [ENERGY].\nResolve all [PSYCHO] effects.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "PSYCHO SLINGER",
+        "health": "5",
+        "description": "Three different Rangers must each discard from their hand the card with the most [SHIELD].",
+        "count": 1,
+        "order": 5
+      },
+      {
+        "name": "PATH OF VENOM",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger reveals a card for defense, remove 1 [SHIELD] from that card.\nWhen this card resolves, resolve all [PSYCHO] effects.",
+        "count": 1,
+        "order": 6
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 66,
+    "name": "Void Knight",
+    "slug": "void-knight",
+    "monster_type": "nemesis",
+    "nemesis_effect": "At the start of each battle, Void Knight deals an amount of damage equal to the total number of Zord and arsenal cards in play.",
+    "season_id": 24,
+    "expansion_id": 27,
+    "deck": [
+      {
+        "name": "VOID SHIELD",
+        "health": "3",
+        "description": "Increase this card’s health value by 1 for each Zord or arsenal card in play.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "VOID BLADE",
+        "health": "6",
+        "description": "Any Ranger may discard a Zord or arsenal card from play. If they do not, deal 5 damage to each Ranger.",
+        "count": 1,
+        "order": 2
+      },
+      {
+        "name": "PURPLE LIGHTNING",
+        "health": "4",
+        "description": "Deal 4 damage each to half of the Rangers in this battle (rounded up). This damage cannot be reduced by Zord or arsenal card effects.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "TEMPEST COUNTER",
+        "health": "5",
+        "description": "Each time this card or an adjacent enemy card is defeated, deal an amount of damage equal to that card’s health value. Increase this damage by 1 for each Zord or arsenal card in play.",
+        "count": 2,
+        "order": 4
+      },
+      {
+        "name": "ENERGY PULSE",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger. If that Ranger has at least 1 Zord or arsenal card in play, increase this damage by 2.",
+        "count": 2,
+        "order": 5
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 65,
+    "name": "Vrak",
+    "slug": "vrak",
+    "monster_type": "nemesis",
+    "nemesis_effect": "The Ranger with the most cards in their hand cannot play combat cards un til at least 1 Vrak card is defeated in this battle.",
+    "season_id": 18,
+    "expansion_id": 33,
+    "deck": [
+      {
+        "name": "FINAL FORM",
+        "health": "6",
+        "description": "While this card is in play, each time Vrak deals damage, it is dealt to each Ranger.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "DARK POWERS UNLEASHED",
+        "health": "5",
+        "description": "Deal 4 damage.\nDeal 4 damage.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "COMET FIST",
+        "health": "4",
+        "description": "Deal 2 damage to a single Ranger three times.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "GOSEI ORB",
+        "health": "3",
+        "description": "Deal 4 damage. Increase this damage by 1 for each other Gosei Orb in play and by 2 if Final Form is in play.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 63,
+    "name": "Zeltrax",
+    "slug": "zeltrax",
+    "monster_type": "nemesis",
+    "nemesis_effect": "Each time the attached Ranger suffers damage, increase that damage by 1.",
+    "season_id": 11,
+    "expansion_id": 32,
+    "deck": [
+      {
+        "name": "SHIELD OF ZELTRAX",
+        "health": "6",
+        "description": "While this card is in play, each time a Ranger performs an attack, they must remove all but 2 dice from that attack after rolling.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "GRIM VENDETTA",
+        "health": "5",
+        "description": "The lead Ranger may discard any number of cards from their hand. Then deal 3 damage to that Ranger for each card left in their hand.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "GRIP OF ZELTRAX",
+        "health": "4",
+        "description": "Drain 1 [ENERGY]. Deal 3 damage each to half of the Rangers in this battle (rounded up).",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "THUNDER GLADIUS",
+        "health": "3",
+        "description": "Deal 2 damage to each Ranger.\nDeal 2 damage to the lead Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  },
+  {
+    "id": 62,
+    "name": "Zen-Aku",
+    "slug": "zen-aku",
+    "monster_type": "nemesis",
+    "nemesis_effect": "Increase all damage Zen-Aku deals to any Ranger by 1 for each Zen-Aku card that has resolved (even if it is defeated).",
+    "season_id": 9,
+    "expansion_id": 5,
+    "deck": [
+      {
+        "name": "FULL MOON",
+        "health": "5",
+        "description": "While this card is in play, the health value of all unresolved Zen-Aku cards (including this one) is increased by 2.",
+        "count": 1,
+        "order": 1
+      },
+      {
+        "name": "ZORD CONTROL",
+        "health": "4",
+        "description": "Deal 3 damage.\nRepeat this effect once for each Zord card in play.",
+        "count": 2,
+        "order": 2
+      },
+      {
+        "name": "WAXING ARC",
+        "health": "3",
+        "description": "Deal 3 damage to a single Ranger twice.",
+        "count": 2,
+        "order": 3
+      },
+      {
+        "name": "CRESCENT WAVE",
+        "health": "4",
+        "description": "Deal 3 damage to each Ranger.",
+        "count": 3,
+        "order": 4
+      }
+    ],
+    "locations": []
+  }
+]

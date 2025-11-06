@@ -1,0 +1,377 @@
+[
+  {
+    "id": 54,
+    "name": "Alien",
+    "slug": "alien"
+  },
+  {
+    "id": 11,
+    "name": "Alternate Foot Soldier Deck",
+    "slug": "alternate-foot-soldier-deck"
+  },
+  {
+    "id": 2,
+    "name": "Blue Charge",
+    "slug": "blue-charge"
+  },
+  {
+    "id": 14,
+    "name": "Comic Book Character",
+    "slug": "comic-book-character"
+  },
+  {
+    "id": 23,
+    "name": "Crossover Character",
+    "slug": "crossover-character"
+  },
+  {
+    "id": 65,
+    "name": "Dai Shi Clan",
+    "slug": "dai-shi-clan"
+  },
+  {
+    "id": 57,
+    "name": "Dark Specter's Forces",
+    "slug": "dark-specter-s-forces"
+  },
+  {
+    "id": 68,
+    "name": "Demons",
+    "slug": "demons"
+  },
+  {
+    "id": 35,
+    "name": "Dillon's Family",
+    "slug": "dillon-s-family"
+  },
+  {
+    "id": 60,
+    "name": "Divatox's Crew",
+    "slug": "divatox-s-crew"
+  },
+  {
+    "id": 18,
+    "name": "Dream Ranger",
+    "slug": "dream-ranger"
+  },
+  {
+    "id": 64,
+    "name": "Evil Alliance",
+    "slug": "evil-alliance"
+  },
+  {
+    "id": 26,
+    "name": "Evil Ranger",
+    "slug": "evil-ranger"
+  },
+  {
+    "id": 27,
+    "name": "Evil Space Aliens",
+    "slug": "evil-space-aliens"
+  },
+  {
+    "id": 72,
+    "name": "Evil Zord",
+    "slug": "evil-zord"
+  },
+  {
+    "id": 40,
+    "name": "Evox Virus Army",
+    "slug": "evox-virus-army"
+  },
+  {
+    "id": 15,
+    "name": "Extra Charge",
+    "slug": "extra-charge"
+  },
+  {
+    "id": 75,
+    "name": "Fusion Ranger",
+    "slug": "fusion-ranger"
+  },
+  {
+    "id": 62,
+    "name": "Future",
+    "slug": "future"
+  },
+  {
+    "id": 69,
+    "name": "Galaxy Warriors",
+    "slug": "galaxy-warriors"
+  },
+  {
+    "id": 4,
+    "name": "Green Charge",
+    "slug": "green-charge"
+  },
+  {
+    "id": 24,
+    "name": "Has errata",
+    "slug": "has-errata"
+  },
+  {
+    "id": 37,
+    "name": "Holiday",
+    "slug": "holiday"
+  },
+  {
+    "id": 9,
+    "name": "Legendary Rangers (Dimensions in Danger)",
+    "slug": "legendary-rangers-dimensions-in-danger"
+  },
+  {
+    "id": 39,
+    "name": "Lord Draven's Forces",
+    "slug": "lord-draven-s-forces"
+  },
+  {
+    "id": 59,
+    "name": "Lord Zedd's New Forces",
+    "slug": "lord-zedd-s-new-forces"
+  },
+  {
+    "id": 67,
+    "name": "Lothor's Army",
+    "slug": "lothor-s-army"
+  },
+  {
+    "id": 28,
+    "name": "Machine Empire",
+    "slug": "machine-empire"
+  },
+  {
+    "id": 71,
+    "name": "Mega Boss",
+    "slug": "mega-boss"
+  },
+  {
+    "id": 31,
+    "name": "Mesogog's Army",
+    "slug": "mesogog-s-army"
+  },
+  {
+    "id": 43,
+    "name": "Mind Controlled",
+    "slug": "mind-controlled"
+  },
+  {
+    "id": 33,
+    "name": "Moltor's Forces",
+    "slug": "moltor-s-forces"
+  },
+  {
+    "id": 25,
+    "name": "Monster of the Week",
+    "slug": "monster-of-the-week"
+  },
+  {
+    "id": 32,
+    "name": "Morlocks",
+    "slug": "morlocks"
+  },
+  {
+    "id": 76,
+    "name": "Movie Exclusive",
+    "slug": "movie-exclusive"
+  },
+  {
+    "id": 30,
+    "name": "Mutants from the Future",
+    "slug": "mutants-from-the-future"
+  },
+  {
+    "id": 42,
+    "name": "New Power Coalition",
+    "slug": "new-power-coalition"
+  },
+  {
+    "id": 46,
+    "name": "Nighloks",
+    "slug": "nighloks"
+  },
+  {
+    "id": 16,
+    "name": "Not recommended for Key Deck play",
+    "slug": "not-recommended-for-key-deck-play"
+  },
+  {
+    "id": 13,
+    "name": "Once & Always",
+    "slug": "once-always"
+  },
+  {
+    "id": 44,
+    "name": "Orgs",
+    "slug": "orgs"
+  },
+  {
+    "id": 41,
+    "name": "Paired Monster",
+    "slug": "paired-monster"
+  },
+  {
+    "id": 5,
+    "name": "Pink Charge",
+    "slug": "pink-charge"
+  },
+  {
+    "id": 17,
+    "name": "Promethea Rangers",
+    "slug": "promethea-rangers"
+  },
+  {
+    "id": 53,
+    "name": "Rafkon",
+    "slug": "rafkon"
+  },
+  {
+    "id": 1,
+    "name": "Red Charge",
+    "slug": "red-charge"
+  },
+  {
+    "id": 58,
+    "name": "Repulsa Family",
+    "slug": "repulsa-family"
+  },
+  {
+    "id": 8,
+    "name": "Retro Rangers",
+    "slug": "retro-rangers"
+  },
+  {
+    "id": 21,
+    "name": "Robot",
+    "slug": "robot"
+  },
+  {
+    "id": 22,
+    "name": "Romero Family",
+    "slug": "romero-family"
+  },
+  {
+    "id": 73,
+    "name": "Russell Family",
+    "slug": "russell-family"
+  },
+  {
+    "id": 61,
+    "name": "Scorpius and Trakeena's Army",
+    "slug": "scorpius-and-trakeena-s-army"
+  },
+  {
+    "id": 74,
+    "name": "Sentai Exclusive Ranger",
+    "slug": "sentai-exclusive-ranger"
+  },
+  {
+    "id": 55,
+    "name": "Sirian",
+    "slug": "sirian"
+  },
+  {
+    "id": 6,
+    "name": "Sixth Charge",
+    "slug": "sixth-charge"
+  },
+  {
+    "id": 36,
+    "name": "Sledge's Crew",
+    "slug": "sledge-s-crew"
+  },
+  {
+    "id": 70,
+    "name": "Squid Ink Inc.",
+    "slug": "squid-ink-inc"
+  },
+  {
+    "id": 56,
+    "name": "The Anointed",
+    "slug": "the-anointed"
+  },
+  {
+    "id": 48,
+    "name": "The Armada",
+    "slug": "the-armada"
+  },
+  {
+    "id": 12,
+    "name": "The Return",
+    "slug": "the-return"
+  },
+  {
+    "id": 50,
+    "name": "The Robot Military",
+    "slug": "the-robot-military"
+  },
+  {
+    "id": 38,
+    "name": "Tommy Oliver",
+    "slug": "tommy-oliver"
+  },
+  {
+    "id": 49,
+    "name": "Toxic Beasts",
+    "slug": "toxic-beasts"
+  },
+  {
+    "id": 20,
+    "name": "Toyline Exclusive",
+    "slug": "toyline-exclusive"
+  },
+  {
+    "id": 63,
+    "name": "Troobian Empire",
+    "slug": "troobian-empire"
+  },
+  {
+    "id": 29,
+    "name": "United Alliance of Evil",
+    "slug": "united-alliance-of-evil"
+  },
+  {
+    "id": 34,
+    "name": "Venjix Computer Network",
+    "slug": "venjix-computer-network"
+  },
+  {
+    "id": 66,
+    "name": "Venjix Virus",
+    "slug": "venjix-virus"
+  },
+  {
+    "id": 7,
+    "name": "Veteran Red Rangers",
+    "slug": "veteran-red-rangers"
+  },
+  {
+    "id": 19,
+    "name": "Video Game Exclusive",
+    "slug": "video-game-exclusive"
+  },
+  {
+    "id": 52,
+    "name": "Void Family",
+    "slug": "void-family"
+  },
+  {
+    "id": 51,
+    "name": "Vrak's Army",
+    "slug": "vrak-s-army"
+  },
+  {
+    "id": 47,
+    "name": "Warstar",
+    "slug": "warstar"
+  },
+  {
+    "id": 3,
+    "name": "Yellow Charge",
+    "slug": "yellow-charge"
+  },
+  {
+    "id": 45,
+    "name": "Zeltrax's Forces",
+    "slug": "zeltrax-s-forces"
+  }
+]

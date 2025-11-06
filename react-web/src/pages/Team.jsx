@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import RangerCard from '../components/cards/RangerCard';
-import sanity from '../lib/sanityClient';
+import { database } from '../database';
+import { Q } from '@nozbe/watermelondb';
 
 export default function Team() {
 	const { team: teamParam } = useParams();
@@ -12,31 +13,58 @@ export default function Team() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const query = `*[_type == 'team' && slug.current == '${teamParam}'] {
-				name,
-				"rangers": *[_type == 'ranger' && rangerInfo.team._ref == ^._id] | order(rangerInfo.order asc) {
-					_id,
-					name,
-					rangerInfo {
-						...,
-						'color': color.title,
-						'slug': slug.current,
-						'team': team->name,
-						'teamPosition': teamPosition.current
-					},
-					rangerCards {
-						...,
-						'image': image.asset->url,
-					}
+			try {
+				const teamsCollection = database.get('teams');
+				const rangersCollection = database.get('rangers');
+				
+				// Find team by slug
+				const teams = await teamsCollection
+					.query(Q.where('slug', teamParam))
+					.fetch();
+				
+				if (teams.length === 0) {
+					console.error('Team not found');
+					setLoadingState(false);
+					return;
 				}
-			}[0]`;
-
-			const data = await sanity.fetch(query);
-
-			setTeam(data?.name || '');
-			setRangers(data?.rangers || []);
-
-			setTimeout(() => setLoadingState(false), 500);
+				
+				const teamRecord = teams[0];
+				
+				// Get all rangers for this team
+				const teamRangers = await rangersCollection
+					.query(
+						Q.where('team_id', teamRecord.id),
+						Q.where('published', true)
+					)
+					.fetch();
+				
+				// Transform rangers to match component structure
+				const transformedRangers = teamRangers.map(r => ({
+					_id: r.id,
+					name: r.name,
+					rangerInfo: {
+						slug: r.slug,
+						team: teamRecord.name,
+						color: r.color,
+						teamPosition: r.teamPosition,
+						cardTitle: r.cardTitle,
+						title: r.title
+					},
+					rangerCards: {
+						image: r.imageUrl,
+						abilityName: r.abilityName,
+						abilityDesc: r.abilityDesc
+					}
+				}));
+				
+				setTeam(teamRecord.name);
+				setRangers(transformedRangers);
+				
+				setTimeout(() => setLoadingState(false), 500);
+			} catch (error) {
+				console.error('Error fetching team:', error);
+				setLoadingState(false);
+			}
 		};
 
 		fetchData();

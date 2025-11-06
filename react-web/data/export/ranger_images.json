@@ -1,0 +1,375 @@
+[
+	{
+		"name": "Jason Lee Scott",
+		"title": "Mighty Morphin Red Ranger",
+		"ability": "Leadership",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/738af094239859bb09c15a8ba3d8a0a82772dd54-517x517.png"
+	},
+	{
+		"name": "Jason Lee Scott",
+		"title": "Mighty Morphin Red Ranger (Dragon Shield)",
+		"ability": "Legacy of the Dragon",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/d05b59e38f5b32f707441520269f60bb0b9bde32-517x517.png"
+	},
+	{
+		"name": "Rocky Desantos",
+		"title": "Mighty Morphin Red Ranger",
+		"ability": "Bravery",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/f94ca6e76b5ac24d067cf99b9bb72d5e7327e4fd-517x517.png"
+	},
+	{
+		"name": "Billy Cranston",
+		"title": "Mighty Morphin Blue Ranger",
+		"ability": "Strategize",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/9b0d641a74c26547182c43eac292fb0f6fddc0b2-517x517.png"
+	},
+	{
+		"name": "Zack Taylor",
+		"title": "Mighty Morphin Black Ranger",
+		"ability": "Hip-Hop Kido",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/77d96f96b37a4480edbb38c6c32b6986222a951a-517x517.png"
+	},
+	{
+		"name": "Adam Park",
+		"title": "Mighty Morphin Black Ranger",
+		"ability": "Adaptable",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/626458edef6827e4dedbc7913c0872f2dcedcae8-517x517.png"
+	},
+	{
+		"name": "Trini Kwan",
+		"title": "Mighty Morphin Yellow Ranger",
+		"ability": "Double Strike",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/3e1577251f821b0bdb8273cf530875fcbe69d8b6-517x517.png"
+	},
+	{
+		"name": "Aisha Campbell",
+		"title": "Mighty Morphin Yellow Ranger",
+		"ability": "Momentum",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/952ef0711ee7d2b21cf40b87ae6878228fe251e1-517x517.png"
+	},
+	{
+		"name": "Kimberly Ann Hart",
+		"title": "Mighty Morphin Pink Ranger",
+		"ability": "Quick Shot",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/d0315f94ea076d53ce2949996d55336149db3019-517x517.png"
+	},
+	{
+		"name": "Katherine Hillard",
+		"title": "Mighty Morphin Pink Ranger",
+		"ability": "Agile",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/4927ac7d637f690328ecba15b47ed13672dab416-518x517.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Mighty Morphin Green Ranger",
+		"ability": "Loner",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/1e3390a054faa7115a86961ad12c2eec41bb985d-517x517.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Mighty Morphin Green Ranger",
+		"ability": "Gift of the Dragon",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/18675f3b122350ee3e84569bb31848b1dda04c7a-517x518.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Mighty Morphin White Ranger",
+		"ability": "Guardian's Light",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/b0f7530b44ce633bc8925b7f1d7fb8bf7179ac25-517x517.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Mighty Morphin White Ranger",
+		"ability": "Rallying Light",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/fe3e8138892fdcbbe3c0d5437ced64830a9d3c9e-517x517.png"
+	},
+	{
+		"name": "Farkas \"Bulk\" Bulkmeier",
+		"title": "Mighty Morphin Purple Ranger",
+		"ability": "Big Bully",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/f9b247a8f8b7d52659ddaea87e9160f7428a5a1d-517x517.png"
+	},
+	{
+		"name": "Eugene \"Skull\" Skullovitch",
+		"title": "Mighty Morphin Orange Ranger",
+		"ability": "Wingman",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/feb850f3be1c83777b6cf3dbc807edd7704e832e-517x517.png"
+	},
+	{
+		"name": "Alpha 5",
+		"title": "Helpful A.I.",
+		"ability": "Recovery Boost",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/1f98a11a326d65a6c30d916a4d35fb3cb35e0ad1-517x518.png"
+	},
+	{
+		"name": "Alpha 5",
+		"title": "Autonomous Support (Non-Player Variant)",
+		"ability": "A Friend Indeed",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/d787923b1cacf1380c11a1683e1be7f2a8082bb6-519x519.png"
+	},
+	{
+		"name": "Alpha 5",
+		"title": "Servant of Zordon",
+		"ability": "Mission Control",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/8c5acdbcdd8c3140ca25a293c9e3593f11a4c4e0-519x519.png"
+	},
+	{
+		"name": "Alpha 5",
+		"title": "Loyal Robot",
+		"ability": "Aye-yi-yi!",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/3d63f82a32542cdb73949dd55345571177fa7881-518x517.png"
+	},
+	{
+		"name": "Ninjor",
+		"title": "Creator of the Power Coins",
+		"ability": "The Power of Ninja!",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/0148c2290a95d7abd1bda1bb5ad3748569ce94da-517x517.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Zeo Red Ranger",
+		"ability": "Shining Star",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/fdadb3ef013ec02fe673cf77749536d740b9f02c-517x518.png"
+	},
+	{
+		"name": "Adam Park",
+		"title": "Zeo Green Ranger",
+		"ability": "Vanguard",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/2c586e74279d33e3380008a19f6501e60239236d-518x517.png"
+	},
+	{
+		"name": "Rocky Desantos",
+		"title": "Zeo Blue Ranger",
+		"ability": "Called Shot",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/51ea149905492524d1fc43557fe5eff371adbc29-517x517.png"
+	},
+	{
+		"name": "Tanya Sloan",
+		"title": "Zeo Yellow Ranger",
+		"ability": "Critical Strike",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/bf983af007ec99019d847474067f1a01fc3be1e3-517x517.png"
+	},
+	{
+		"name": "Katherine Hillard",
+		"title": "Zeo Pink Ranger",
+		"ability": "One Step Ahead",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/f86706bcb508021696211035a65fd2e6cf246792-517x517.png"
+	},
+	{
+		"name": "Jason Lee Scott",
+		"title": "Zeo Gold Ranger",
+		"ability": "Heart of Gold",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/ee8a4cc6d5d1b22ff99debcc05be2d6d4d06270a-517x517.png"
+	},
+	{
+		"name": "Trey of Triforia",
+		"title": "Zeo Gold Ranger",
+		"ability": "Power of Triforia",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/55e681cd0218b727abecfe8ed6315e2022008479-517x517.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Turbo Red Ranger",
+		"ability": "Shift Into Turbo",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/09ecb336dabf0dd28c36cdcdfbc974b683e1e7a4-517x517.png"
+	},
+	{
+		"name": "Andros",
+		"title": "Red Space Ranger",
+		"ability": "Covert Tactics",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/87d22ea4379dfe73aa6002796942be9b51afde4a-517x517.png"
+	},
+	{
+		"name": "T.J. Johnson",
+		"title": "Blue Space Ranger",
+		"ability": "Level Headed",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/b6f608969139b4a85c8661a0409f1b840495a8bb-517x517.png"
+	},
+	{
+		"name": "Carlos Vallerte",
+		"title": "Black Space Ranger",
+		"ability": "Hot Blooded",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/495ea692b4ef8e3554e1ca163406917c53b115db-517x517.png"
+	},
+	{
+		"name": "Ashley Hammond",
+		"title": "Yellow Space Ranger",
+		"ability": "Optimism",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/6ed20d23981db3fd8ec3a69641c7924060a845c4-517x517.png"
+	},
+	{
+		"name": "Cassie Chan",
+		"title": "Pink Space Ranger",
+		"ability": "Ready to Rock",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/9585b490f2754698998c6a758db13bdd9e5470a9-517x517.png"
+	},
+	{
+		"name": "Zhane",
+		"title": "Silver Space Ranger",
+		"ability": "Silver Charm",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/03c7d37e663d54eaeef867ae9ade5175f0a4ba76-110x110.png"
+	},
+	{
+		"name": "Mysterious Hero",
+		"title": "Phantom Ranger",
+		"ability": "Cloaking Device",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/f2953030225627786d623f962aa5bec444a3012d-517x517.png"
+	},
+	{
+		"name": "Mike Corbett",
+		"title": "Magna Defender",
+		"ability": "Avenging Knight",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/2804bde30a6aa05678cd82d6c85d826096c33c38-517x518.png"
+	},
+	{
+		"name": "Ryan Mitchell",
+		"title": "Lightspeed Rescue Titanium Ranger",
+		"ability": "Unbreakable",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/3adada465c75061c8ef68c04d4ca50fcda484ec6-110x110.png"
+	},
+	{
+		"name": "Jen Scotts",
+		"title": "Time Force Pink Ranger",
+		"ability": "Contingency",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/b28a7ed9dca45b7c8f72bbba0e9b6080d2a62865-517x517.png"
+	},
+	{
+		"name": "Cameron Watanabe",
+		"title": "Ninja Storm Green Samurai Ranger",
+		"ability": "Super Samurai Mode",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/bbe68ea1538c744c95483a7e311b73b070d94be5-110x110.png"
+	},
+	{
+		"name": "Conner McKnight",
+		"title": "Dino Thunder Red Ranger",
+		"ability": "Swift Striker",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/d4fb7e27d4f62b3147090ac10cf2f4143f98bb6c-110x110.png"
+	},
+	{
+		"name": "Ethan James",
+		"title": "Dino Thunder Blue Ranger",
+		"ability": "Clever Solution",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/8eeff268890e6ff3179cd1169560a2fa615d8be9-110x110.png"
+	},
+	{
+		"name": "Kira Ford",
+		"title": "Dino Thunder Yellow Ranger",
+		"ability": "Perfect Pitch",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/7ee6297e719a1a56af83e93274d15020e107a9c6-110x110.png"
+	},
+	{
+		"name": "Tommy Oliver",
+		"title": "Dino Thunder Black Ranger",
+		"ability": "Legendary Mentor",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/bcc7448ad74ec5bd88a1dd382093e98cb0eee1d9-517x517.png"
+	},
+	{
+		"name": "Trent Mercer",
+		"title": "Dino Thunder White Ranger",
+		"ability": "Fierce Impact",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/5d4eda4aece789730eb6469c6f2ca0de2fdbdde6-110x110.png"
+	},
+	{
+		"name": "Anubis Cruger",
+		"title": "S.P.D. Shadow Ranger",
+		"ability": "Squad Commander!",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/aa81ef64fd7d67ca0f57cad842fd7ac79bcf676b-517x517.png"
+	},
+	{
+		"name": "Robert \"RJ\" James",
+		"title": "Jungle Fury Wolf Ranger",
+		"ability": "Unorthododox Master",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/559ceff4032dacfc8cf6515ce3e847a92c198931-110x110.png"
+	},
+	{
+		"name": "Lauren Shiba",
+		"title": "Super Samurai Red Ranger",
+		"ability": "True Focus",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/d0b7cb96bbf8d74b3b543f8ca24c7f09848edf8b-517x517.png"
+	},
+	{
+		"name": "Jason Lee Scott",
+		"title": "Omega Red Ranger",
+		"ability": "Omega Fire Power",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/aed35d57e136cc2da6ddd46ece8b8d3e99c8d655-110x110.png"
+	},
+	{
+		"name": "Zack Taylor",
+		"title": "Omega Black Ranger",
+		"ability": "Omega Air Power",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/ede9060a960abb7a37707f1c00ef2d0f78d9d287-110x110.png"
+	},
+	{
+		"name": "Trini Kwan",
+		"title": "Omega Yellow Ranger",
+		"ability": "Omega Earth Power",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/b16d79abb771be0cc8f80bb818436521407d5461-110x110.png"
+	},
+	{
+		"name": "Ellarien",
+		"title": "Violet Solar Ranger",
+		"ability": "A Light in the Darkness",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/ad7e111e1d99ffa419b9669f22ec0aec32656fe1-110x110.png"
+	},
+	{
+		"name": "Marvin \"Marv\" Shih",
+		"title": "HyperForce Red Ranger",
+		"ability": "Determination",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/4543fca759dc6939d480f9515028dfaf869e36ff-517x517.png"
+	},
+	{
+		"name": "Eddie Banks",
+		"title": "HyperForce Blue Ranger",
+		"ability": "Technician",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/ded37803ab7de5aa89aad4dd811fa73d8b5faf32-518x517.png"
+	},
+	{
+		"name": "Vesper Vasquez",
+		"title": "HyperForce Black Ranger",
+		"ability": "Cry Havoc",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/30240cf3b97d04efa49d2263181e33a9a47aab5c-517x517.png"
+	},
+	{
+		"name": "Jack Thomas",
+		"title": "HyperForce Yellow Ranger",
+		"ability": "Steadfast",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/ff47b808bd366079a4014f347fc109ea13984296-517x517.png"
+	},
+	{
+		"name": "Chloe Ashford",
+		"title": "HyperForce Pink Ranger",
+		"ability": "Impulsive",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/7738964bc4e7092de38973b55f905631dd6cb5b8-517x517.png"
+	},
+	{
+		"name": "Kimberly Ann Hart",
+		"title": "Rebel Ranger Slayer",
+		"ability": "Finishing Shot",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/7cdc2300bb4372d16a57bb328ae07d1dd6f19363-517x517.png"
+	},
+	{
+		"name": "Joe Shih",
+		"title": "HyperForce Green Ranger",
+		"ability": "Enduring Strength",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/e502f3662d6f7515f08cb26104eafc2486ef94c3-110x110.png"
+	},
+	{
+		"name": "Devon Daniels",
+		"title": "Beast Morphers Red Ranger",
+		"ability": "Quick Wits",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/7a116a05c1ebe050f50a9aa7a5dd7c9c7e3ac242-110x110.png"
+	},
+	{
+		"name": "Ravi Shaw",
+		"title": "Beast Morphers Blue Ranger",
+		"ability": "Grid Battleforce Training",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/ebd4fd00bd3299870f173936747e4004527619a9-110x110.png"
+	},
+	{
+		"name": "Zoey Reeves",
+		"title": "Beast Morphers Yellow Ranger",
+		"ability": "Problem Solver",
+		"imageUrl": "https://cdn.sanity.io/images/8cmhkwlo/production/6193a735bc708444c7d57a49852ff6031c08bc07-110x110.png"
+	}
+]
+

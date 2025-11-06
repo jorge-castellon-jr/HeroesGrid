@@ -22,10 +22,15 @@ export default defineConfig([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parser: '@babel/eslint-parser',
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
+        requireConfigFile: true,
+        babelOptions: {
+          configFile: './.babelrc',
+        },
       },
     },
     rules: {

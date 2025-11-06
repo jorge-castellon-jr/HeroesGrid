@@ -1,0 +1,282 @@
+[
+  {
+    "id": 27,
+    "name": "ACADEMY POWER",
+    "slug": "academy-power",
+    "cost": "R",
+    "type": "team",
+    "description": "During each Ranger turn this battle, instead of playing a card, any Ranger may discard a card from their hand. If they do, they may perform an attack with 2 dice.",
+    "uses": null,
+    "expansion_id": 55
+  },
+  {
+    "id": 3,
+    "name": "ANIMARIUM ARMOR",
+    "slug": "animarium-armor",
+    "cost": "2",
+    "type": "armor",
+    "description": "Use when you reveal a card for defense. Add 1 [SHIELD] to that card.",
+    "uses": "3",
+    "expansion_id": 27
+  },
+  {
+    "id": 13,
+    "name": "BLACK BOX",
+    "slug": "black-box",
+    "cost": "4",
+    "type": "powerup",
+    "description": "Use when you play an attack card. Double the amount of [HIT] dealt by that attack.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 23,
+    "name": "CROWN OF THE COINLESS",
+    "slug": "crown-of-the-coinless",
+    "cost": "4",
+    "type": "armor",
+    "description": "When any Ranger spends at least 1 [ENERGY] to play a card, place 1 hit token on this card (max 3). Use before you roll dice for an attack. When you do, remove all hit...",
+    "uses": "3",
+    "expansion_id": 55
+  },
+  {
+    "id": 5,
+    "name": "DEFENDER VEST",
+    "slug": "defender-vest",
+    "cost": "3",
+    "type": "armor",
+    "description": "Use after you resolve a card. The next time any Ranger suffers damage in this battle, reduce that damage by the amount of [ENERGY] spent to play that card.",
+    "uses": "2",
+    "expansion_id": 27
+  },
+  {
+    "id": 24,
+    "name": "DEFENDER WHEEL",
+    "slug": "defender-wheel",
+    "cost": "4",
+    "type": "powerup",
+    "description": "Use at any time. Reach 1 exhausted Zord card of your choice.",
+    "uses": null,
+    "expansion_id": 55
+  },
+  {
+    "id": 6,
+    "name": "DINO CHARGE BATTLIZER",
+    "slug": "dino-charge-battlizer",
+    "cost": "4",
+    "type": "armor",
+    "description": "Use when you perform an attack. Another Ranger may reveal an attack card with an energy cost of 1 or zero from their hand. If they do, your attack gains the effect text of that card.",
+    "uses": "3",
+    "expansion_id": 27
+  },
+  {
+    "id": 8,
+    "name": "DINO KNIGHT MODE",
+    "slug": "dino-knight-mode",
+    "cost": "5",
+    "type": "armor",
+    "description": "Use when you reveal a card for defense. Gain 1 [ENERGY] for each [SHIELD] and [CHROMAFURY] icon on that card.",
+    "uses": "2",
+    "expansion_id": 27
+  },
+  {
+    "id": 2,
+    "name": "DRAGON SHIELD",
+    "slug": "dragon-shield",
+    "cost": "5",
+    "type": "armor",
+    "description": "Use to resolve one of the following effects:\nAfter you resolve an attack, perform an additional attack with 3 dice.\nWhen you suffer damage. Reduce that damage by 2. Then deal 2 [HIT] to an enemy card of your choice\n",
+    "uses": "2",
+    "expansion_id": 27
+  },
+  {
+    "id": 7,
+    "name": "HYPERFORCE BATTLIZER",
+    "slug": "hyperforce-battlizer",
+    "cost": "3",
+    "type": "armor",
+    "description": "Use at the start of a battle. The Rangers may ignore the FAST keyword to take the first turn in battle.",
+    "uses": "2",
+    "expansion_id": 27
+  },
+  {
+    "id": 16,
+    "name": "LIGHTS OF ORION",
+    "slug": "lights-of-orion",
+    "cost": "R",
+    "type": "team",
+    "description": "Until the end of this battle, each time a Ranger plays a card, they may draw 1 card to reduce it's energy cost by 1.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 15,
+    "name": "METALLIC ARMOR",
+    "slug": "metallic-armor",
+    "cost": "R",
+    "type": "team",
+    "description": "During this battle, the first time each Ranger reveals a card for defense, they may treat it as having a shield value of 4.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 20,
+    "name": "POWER OF THE SOLARIX",
+    "slug": "power-of-the-solarix",
+    "cost": "R",
+    "type": "team",
+    "description": "Until the end of this battle, each time a Ranger uses a once-per-battle ability, they may then return 1 card from their discard pile to their hand.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 4,
+    "name": "QUANTUM MEGABATTLE ARMOR",
+    "slug": "quantum-megabattle-armor",
+    "cost": "2",
+    "type": "armor",
+    "description": "Use after you roll dice for an attack. You may convert 1 [MISS] result to a [HIT] result or 1 [HIT] result to a [HIT][HIT] result.",
+    "uses": "2",
+    "expansion_id": 27
+  },
+  {
+    "id": 26,
+    "name": "RADBUG ",
+    "slug": "radbug",
+    "cost": "3",
+    "type": "powerup",
+    "description": "???",
+    "uses": null,
+    "expansion_id": 55
+  },
+  {
+    "id": 1,
+    "name": "RED BATTLIZER ARMOR",
+    "slug": "red-battlizer-armor",
+    "cost": "3",
+    "type": "armor",
+    "description": "Use before you roll dice for an attack. Add 1 die to that attack.",
+    "uses": "3",
+    "expansion_id": 27
+  },
+  {
+    "id": 9,
+    "name": "RED FURY MODE",
+    "slug": "red-fury-mode",
+    "cost": "4",
+    "type": "armor",
+    "description": "Use before you roll dice for an attack. Add 2 dice to that attack. After that attack resolves, another Ranger must suffer damage equal to the number of [MISS] results rolled.",
+    "uses": "2",
+    "expansion_id": 27
+  },
+  {
+    "id": 18,
+    "name": "S.W.A.T. ARMOR",
+    "slug": "s-w-a-t-armor",
+    "cost": "R",
+    "type": "team",
+    "description": "During this battle, the first time each Ranger spends [ENERGY] to play a card or use a character ability, they may first deal 1 [HIT] to an enemy card of their choice.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 21,
+    "name": "STEALTH SUIT",
+    "slug": "stealth-suit",
+    "cost": "3",
+    "type": "armor",
+    "description": "Use at any time. Move your figure from any location to this card or from this card to an other location of your choice.",
+    "uses": "2",
+    "expansion_id": 55
+  },
+  {
+    "id": 28,
+    "name": "STOLEN SENTRY POWER",
+    "slug": "stolen-sentry-power",
+    "cost": "R",
+    "type": "team",
+    "description": "???",
+    "uses": null,
+    "expansion_id": 55
+  },
+  {
+    "id": 17,
+    "name": "SUPER DINO MODE",
+    "slug": "super-dino-mode",
+    "cost": "R",
+    "type": "team",
+    "description": "During this battle, the first time each Ranger performs an attack, add 1 die to that attack.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 14,
+    "name": "SWORD OF DARKNESS",
+    "slug": "sword-of-darkness",
+    "cost": "4",
+    "type": "powerup",
+    "description": "Use during any Ranger turn in battle. Instead of playing a card, spend 3 [ENERGY] to deal 6 [HIT] to an enemy card of your choice.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 19,
+    "name": "SWORD OF LIGHT",
+    "slug": "sword-of-light",
+    "cost": "R",
+    "type": "team",
+    "description": "Until the end of this battle, each other Ranger is considered to have your character ability in addition to their own.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 10,
+    "name": "THE POWER OF SIX",
+    "slug": "the-power-of-six",
+    "cost": "6",
+    "type": "powerup",
+    "description": "Use to resolve one of the following effects:\nWhen any Ranger gains [ENERGY], they gain 6 [ENERGY] instead.\nWhen any Ranger rolls dice for an attack, they roll roll 6 dice instead.\nWhen any Ranger suffers damage, reduce that damage by 6\n",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 12,
+    "name": "THUNDER SLINGER",
+    "slug": "thunder-slinger",
+    "cost": "3",
+    "type": "powerup",
+    "description": "Use when any Ranger plays an attack card. Add 1 die to that attack for each [ENERGY] spent to play that card.",
+    "uses": null,
+    "expansion_id": 27
+  },
+  {
+    "id": 25,
+    "name": "TIME JET",
+    "slug": "time-jet",
+    "cost": "5",
+    "type": "powerup",
+    "description": "Each time you play a card, place it on this card after it resolves instead of discarding it. Use at the end of a battle. When you do, shuffle those cards back into your deck.",
+    "uses": null,
+    "expansion_id": 55
+  },
+  {
+    "id": 22,
+    "name": "TRIASSIC BATTLIZER",
+    "slug": "triassic-battlizer",
+    "cost": "2",
+    "type": "armor",
+    "description": "Use when you perform an attack to ignore the GUARD keyword when choosing a target for that attack.",
+    "uses": "3",
+    "expansion_id": 55
+  },
+  {
+    "id": 11,
+    "name": "ZEO JET CYCLES",
+    "slug": "zeo-jet-cycles",
+    "cost": "5",
+    "type": "powerup",
+    "description": "Use before the start of a battle. Move up to 2 Ranger figures from the center to the location of this battle.",
+    "uses": null,
+    "expansion_id": 27
+  }
+]
