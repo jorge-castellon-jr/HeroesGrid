@@ -51,8 +51,6 @@ const SyncManager = () => {
 	}
 
 	const clearCache = async () => {
-		if (!confirm('Clear all cached data and reload?')) return
-
 		try {
 			// Clear localStorage
 			localStorage.removeItem('heroes_grid_version')
