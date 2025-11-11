@@ -73,7 +73,6 @@ const RangerEditModal = ({ ranger, onClose, onSave }) => {
 			onClose();
 		} catch (error) {
 			console.error('Error saving:', error);
-			alert('Error saving: ' + error.message);
 		} finally {
 			setIsSaving(false);
 		}

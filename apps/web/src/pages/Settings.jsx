@@ -21,11 +21,10 @@ export default function Settings() {
         await Promise.all(registrations.map(reg => reg.unregister()));
       }
       
-      alert('Cache cleared successfully. The page will now reload.');
       window.location.reload(true);
     } catch (error) {
       console.error('Error clearing cache:', error);
-      alert('Error clearing cache: ' + error.message);
+      window.location.reload(true);
     }
   };
 

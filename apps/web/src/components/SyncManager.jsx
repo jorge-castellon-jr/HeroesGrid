@@ -68,7 +68,6 @@ const SyncManager = () => {
 				await Promise.all(cacheNames.map(name => caches.delete(name)))
 			}
 			
-			alert('Cache cleared! Reloading...')
 			window.location.reload()
 		} catch (err) {
 			setError('Error clearing cache: ' + err.message)

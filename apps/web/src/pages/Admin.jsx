@@ -271,7 +271,6 @@ export default function Admin() {
       loadData();
     } catch (error) {
       console.error('Error saving:', error);
-      alert('Error saving: ' + error.message);
     }
   };
 
@@ -305,7 +304,6 @@ export default function Admin() {
       );
     } catch (error) {
       console.error('Error toggling published status:', error);
-      alert('Error updating published status: ' + error.message);
     }
   };
 
@@ -331,7 +329,6 @@ export default function Admin() {
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error exporting:', error);
-      alert('Error exporting: ' + error.message);
     }
   };
 
@@ -343,11 +340,10 @@ export default function Admin() {
       await database.write(async () => {
         await database.unsafeResetDatabase();
       });
-      alert('Database reset successfully. The page will now reload.');
       window.location.reload();
     } catch (error) {
       console.error('Error resetting database:', error);
-      alert('Error resetting database: ' + error.message);
+      window.location.reload();
     }
   };
 
