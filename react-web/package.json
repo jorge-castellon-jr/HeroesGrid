@@ -9,7 +9,10 @@
     "build:db": "node scripts/build-db.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prettier": "prettier --config .prettierrc --write ."
+    "prettier": "prettier --config .prettierrc --write .",
+    "version:patch": "node scripts/bump-version.js patch",
+    "version:minor": "node scripts/bump-version.js minor",
+    "version:major": "node scripts/bump-version.js major"
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",
@@ -48,6 +51,8 @@
     "sass": "^1.35.1",
     "tailwindcss": "^2.2.0",
     "typescript": "^5.9.3",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-pwa": "^1.1.0",
+    "workbox-window": "^7.3.0"
   }
 }

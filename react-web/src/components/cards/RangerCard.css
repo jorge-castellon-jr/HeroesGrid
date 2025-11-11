@@ -3,6 +3,7 @@
 	flex: none;
 	justify-content: center;
 	align-items: center;
+	min-height: 12rem; /* Match the max-height of the image (max-h-48) */
 }
 
 .ranger__image.single {

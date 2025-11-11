@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
+import { syncDataIfNeeded } from '../services/syncService'
 
 const AppContext = createContext()
 
@@ -11,6 +12,8 @@ const initialState = {
 	initLoad: false,
 	loading: true,
 	darkMode: localStorage.getItem('darkMode') === 'true',
+	syncStatus: null,
+	syncProgress: null,
 }
 
 const reducer = (state, action) => {
@@ -29,6 +32,10 @@ const reducer = (state, action) => {
 			return { ...state, initLoad: action.payload }
 		case 'SET_LOADING_STATE':
 			return { ...state, loading: action.payload }
+		case 'SET_SYNC_STATUS':
+			return { ...state, syncStatus: action.payload }
+		case 'SET_SYNC_PROGRESS':
+			return { ...state, syncProgress: action.payload }
 		case 'TOGGLE_DARK_MODE':
 			return { ...state, darkMode: !state.darkMode }
 		default:
@@ -38,6 +45,31 @@ const reducer = (state, action) => {
 
 export const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
+
+	// Initialize data sync on first load
+	useEffect(() => {
+		const initSync = async () => {
+			try {
+				dispatch({ type: 'SET_LOADING_STATE', payload: true })
+				
+				const result = await syncDataIfNeeded({
+					onProgress: (progress) => {
+						dispatch({ type: 'SET_SYNC_PROGRESS', payload: progress })
+					}
+				})
+				
+				dispatch({ type: 'SET_SYNC_STATUS', payload: result })
+				dispatch({ type: 'SET_INIT_LOAD', payload: true })
+			} catch (error) {
+				console.error('Failed to sync data:', error)
+				dispatch({ type: 'SET_SYNC_STATUS', payload: { error: error.message } })
+			} finally {
+				dispatch({ type: 'SET_LOADING_STATE', payload: false })
+			}
+		}
+		
+		initSync()
+	}, [])
 
 	// Apply dark mode class to document element
 	useEffect(() => {

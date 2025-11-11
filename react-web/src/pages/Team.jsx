@@ -57,6 +57,13 @@ export default function Team() {
 					}
 				}));
 				
+				// Sort by team position
+				transformedRangers.sort((a, b) => {
+					const posA = a.rangerInfo.teamPosition || 999;
+					const posB = b.rangerInfo.teamPosition || 999;
+					return posA - posB;
+				});
+				
 				setTeam(teamRecord.name);
 				setRangers(transformedRangers);
 				

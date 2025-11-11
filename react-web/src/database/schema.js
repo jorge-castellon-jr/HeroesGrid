@@ -1,7 +1,7 @@
 import { appSchema, tableSchema } from '@nozbe/watermelondb';
 
 export default appSchema({
-	version: 5,
+	version: 6,
 	tables: [
 		tableSchema({
 			name: 'rulebooks',
@@ -58,7 +58,7 @@ export default appSchema({
 				{ name: 'is_once_per_battle', type: 'boolean' },
 				{ name: 'color', type: 'string', isIndexed: true },
 				{ name: 'type', type: 'string', isIndexed: true }, // core, sixth, extra, ally
-				{ name: 'team_position', type: 'string' },
+				{ name: 'team_position', type: 'number', isIndexed: true },
 				{ name: 'card_title', type: 'string', isOptional: true },
 				{ name: 'team_id', type: 'string', isIndexed: true },
 				{ name: 'expansion_id', type: 'string', isIndexed: true },

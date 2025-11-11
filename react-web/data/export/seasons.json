@@ -95,7 +95,7 @@
     "name": "Power Rangers Mystic Force",
     "slug": "power-rangers-mystic-force",
     "order": 2006,
-    "published": false
+    "published": true
   },
   {
     "id": "14",
@@ -144,7 +144,7 @@
     "name": "Power Rangers Dino Charge",
     "slug": "power-rangers-dino-charge",
     "order": 2015,
-    "published": false
+    "published": true
   },
   {
     "id": "21",

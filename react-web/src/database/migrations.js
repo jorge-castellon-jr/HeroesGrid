@@ -200,5 +200,15 @@ export default schemaMigrations({
 				}),
 			],
 		},
+		{
+			// Version 5 to 6: Change team_position from string to number
+			// Note: This requires recreating the column in SQLite
+			toVersion: 6,
+			steps: [
+				// SQLite doesn't support ALTER COLUMN TYPE directly
+				// The migration will be handled by resetting the database with new schema
+				// Users will need to resync data
+			],
+		},
 	],
 });

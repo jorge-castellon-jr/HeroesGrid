@@ -1,4 +1,5 @@
 import database from "./index"
+import { getTeamPositionFromColor } from "../utils/colorPosition"
 
 // Import all exported data
 import seasonsData from "../../data/export/seasons.json"
@@ -123,6 +124,22 @@ export async function seedRangers() {
 				(img) => img.name === ranger.name && img.ability === ranger.ability_name
 			)
 
+			// Use team_position from JSON if it exists and is a number, otherwise calculate
+			let teamPosition;
+			if (typeof ranger.team_position === 'number') {
+				// Use the value from JSON if it's already a number
+				teamPosition = ranger.team_position;
+			} else {
+				// Calculate based on ranger type for old data
+				if (ranger.type === 'core') {
+					teamPosition = getTeamPositionFromColor(ranger.color);
+				} else if (ranger.type === 'sixth') {
+					teamPosition = 6;
+				} else {
+					teamPosition = 7;
+				}
+			}
+
 			await rangersCollection.create((record) => {
 				record._raw.id = String(ranger.id)
 				record.name = ranger.name
@@ -133,7 +150,7 @@ export async function seedRangers() {
 				record.isOncePerBattle = ranger.is_once_per_battle
 				record.color = ranger.color
 				record.type = ranger.type
-				record.teamPosition = ranger.team_position
+				record.teamPosition = teamPosition
 				record.cardTitle = ranger.card_title
 				record.teamId = String(ranger.team_id)
 				record.expansionId = String(ranger.expansion_id)

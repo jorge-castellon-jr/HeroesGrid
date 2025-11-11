@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import Layout from './components/layout/Layout'
+import SyncLoader from './components/SyncLoader'
 import Home from './pages/Home'
 import AllRangers from './pages/AllRangers'
 import AllTeams from './pages/AllTeams'
@@ -18,6 +19,7 @@ import './App.css'
 function App() {
 	return (
 		<AppProvider>
+			<SyncLoader />
 			<Router>
 				<Layout>
 					<Routes>

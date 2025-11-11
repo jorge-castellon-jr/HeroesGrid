@@ -3,11 +3,14 @@ import { Link, useLocation } from 'react-router-dom'
 import PRIcons from '../PRIcons'
 import DarkModeToggle from '../DarkModeToggle'
 import database from '../../database'
+import { isAdminMode } from '../../utils/adminMode'
 import './FooterNav.scss'
 
 const FooterNav = () => {
 	const [menuOpen, setMenuOpen] = useState(false)
 	const location = useLocation()
+
+	const adminEnabled = isAdminMode()
 
 	const menu = [
 		{
@@ -46,6 +49,12 @@ const FooterNav = () => {
 			icon: "pr-hotg",
 			nuxt: true,
 		},
+		...(adminEnabled ? [{
+			title: "Admin",
+			to: "/admin",
+			icon: "pr-hotg",
+			nuxt: true,
+		}] : []),
 	]
 
 	const nuxtLinks = menu.filter(item => item.nuxt)

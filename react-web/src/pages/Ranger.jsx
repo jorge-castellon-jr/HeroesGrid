@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import RangerCard from '../components/cards/RangerCard';
+import RangerEditModal from '../components/RangerEditModal';
+import { isAdminMode } from '../utils/adminMode';
 
 const StackedCard = ({ card }) => {
   const wrapperRef = useRef(null);
@@ -41,7 +43,10 @@ export default function Ranger() {
   const { ranger: rangerParam } = useParams();
   const { setLoadingState } = useApp();
   const [ranger, setRanger] = useState(null);
+  const [rangerRecord, setRangerRecord] = useState(null); // Store the DB record
   const [isLoading, setIsLoading] = useState(true);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const adminEnabled = isAdminMode();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,6 +74,9 @@ export default function Ranger() {
         console.log('Raw Ranger Record:', r);
         console.log('Ranger _raw:', r._raw);
         console.log('Ranger published:', r.published);
+        
+        // Store the DB record for editing
+        setRangerRecord(r);
 
         const team = await r.team.fetch();
         console.log('Team:', team);
@@ -185,6 +193,105 @@ export default function Ranger() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rangerParam]);
 
+  const handleSave = async () => {
+    // Reload the ranger data after save
+    setIsLoading(true);
+    await fetchRangerData();
+    setIsLoading(false);
+  };
+
+  const fetchRangerData = async () => {
+    try {
+      await initializeDatabase();
+
+      const rangersCollection = database.get('rangers');
+      const rangers = await rangersCollection
+        .query(
+          Q.where('slug', rangerParam),
+          Q.where('published', true)
+        )
+        .fetch();
+
+      if (rangers.length === 0) return;
+
+      const r = rangers[0];
+      setRangerRecord(r);
+
+      const team = await r.team.fetch();
+      const rangerCardsCollection = database.get('ranger_cards');
+      const deckWithDetails = [];
+
+      if (r.deck && Array.isArray(r.deck)) {
+        for (const deckCard of r.deck) {
+          try {
+            const fullCards = await rangerCardsCollection
+              .query(Q.where('name', deckCard.card_name))
+              .fetch();
+
+            if (fullCards.length > 0) {
+              const fullCard = fullCards[0];
+              const cardType = fullCard.type?.toLowerCase() || 'maneuver';
+              const isAttack = cardType.includes('attack');
+
+              const transformedCard = {
+                name: (deckCard.override_name || deckCard.card_name || '').toUpperCase(),
+                shields: fullCard.shields || '0',
+                text: fullCard.description ? [fullCard.description] : [''],
+                team: team?.name || '',
+                color: r.color || 'red',
+                energy: fullCard.energyCost?.toString().toLowerCase() === 'x' ? -1 : parseInt(fullCard.energyCost) || 0,
+                type: cardType.split(':')[0].trim(),
+                quantity: deckCard.count,
+                order: deckCard.order
+              };
+
+              if (isAttack) {
+                transformedCard.attack = [];
+                if (fullCard.attackHit && fullCard.attackHit > 0) {
+                  transformedCard.attack.push({ value: fullCard.attackHit, fixed: true });
+                }
+                if (fullCard.attackDice && fullCard.attackDice > 0) {
+                  transformedCard.attack.push({ value: fullCard.attackDice, fixed: false });
+                }
+                if (transformedCard.attack.length === 0) {
+                  transformedCard.attack.push({ value: -1, fixed: false });
+                }
+              }
+
+              deckWithDetails.push(transformedCard);
+            }
+          } catch (error) {
+            console.error('Error fetching card:', deckCard.card_name, error);
+          }
+        }
+      }
+
+      const transformedRanger = {
+        name: r.name,
+        rangerInfo: {
+          slug: r.slug,
+          team: team?.name || '',
+          color: r.color,
+          teamPosition: r.teamPosition,
+          cardTitle: r.cardTitle,
+          title: r.title
+        },
+        rangerCards: {
+          image: r.imageUrl,
+          abilityName: r.abilityName,
+          abilityDesc: r.ability,
+          deck: deckWithDetails,
+          zords: []
+        },
+        deck: deckWithDetails
+      };
+
+      setRanger(transformedRanger);
+    } catch (error) {
+      console.error('Error fetching ranger:', error);
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-screen">
@@ -202,7 +309,29 @@ export default function Ranger() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto mt-6 ranger">
+    <div className="max-w-3xl mx-auto mt-6 ranger relative">
+      {/* Edit Button - Only visible in admin mode */}
+      {adminEnabled && rangerRecord && (
+        <button
+          onClick={() => setShowEditModal(true)}
+          className="fixed bottom-24 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-40"
+          title="Edit Ranger"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+        </button>
+      )}
+
+      {/* Edit Modal */}
+      {showEditModal && rangerRecord && (
+        <RangerEditModal
+          ranger={rangerRecord}
+          onClose={() => setShowEditModal(false)}
+          onSave={handleSave}
+        />
+      )}
+
       <RangerCard className="mb-10" ranger={ranger} single />
 
       {ranger.rangerCards?.deck?.length > 0 && (
