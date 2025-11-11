@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import PRIcons from '../PRIcons'
-import DarkModeToggle from '../DarkModeToggle'
 import { isAdminMode } from '../../utils/adminMode'
 import './FooterNav.scss'
 
@@ -54,10 +53,9 @@ const FooterNav = () => {
 			icon: "pr-hotg",
 			nuxt: true,
 		}] : []),
-	]
+	];
 
 	const nuxtLinks = menu.filter(item => item.nuxt)
-	const version = __APP_VERSION__
 
 	return (
 		<div>
@@ -75,9 +73,13 @@ const FooterNav = () => {
 					))}
 				</div>
 				<div className="flex flex-col gap-2 items-center mb-4">
-					<DarkModeToggle />
+					<Link 
+						to="/settings" 
+						className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+					>
+						Settings
+					</Link>
 				</div>
-				<span className="absolute bottom-0 left-0 px-4 py-6 text-sm text-gray-300 dark:text-gray-500">v{version}</span>
 			</nav>
 			<a onClick={() => setMenuOpen(!menuOpen)} className={`nav__link dark:bg-gray-800 dark:border-purple-600 ${menuOpen ? 'open' : ''}`} id="home-link">
 				<PRIcons />
@@ -102,9 +104,13 @@ const FooterNav = () => {
 							))}
 						</div>
 						<div className="flex flex-col gap-2 items-center mb-4">
-							<DarkModeToggle />
+							<Link 
+								to="/settings" 
+								className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+							>
+								Settings
+							</Link>
 						</div>
-						<span className="absolute bottom-0 left-0 px-4 py-6 text-sm text-gray-300 dark:text-gray-500">v{version}</span>
 					</nav>
 				</div>
 			)}
