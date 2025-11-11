@@ -13,13 +13,15 @@
 - [x] Configure Yarn 4 with `nodeLinker: node-modules`
 - [x] Test `turbo dev` successfully starts Vite
 
-## Phase 2: Deploy Web to Cloudflare Pages
-- [ ] Configure build command and output directory in package.json
-- [ ] Create Cloudflare Pages project
-- [ ] Set up environment variables in Cloudflare dashboard
-- [ ] Configure custom domain (if applicable)
-- [ ] Test deployment and verify site works
-- [ ] Set up automatic deployments from git
+## Phase 2: Deploy Web to Cloudflare Pages ✅
+- [x] Configure build command and output directory in package.json
+- [x] Create Cloudflare Pages project
+- [x] Set up environment variables in Cloudflare dashboard
+- [x] Configure custom domain (if applicable)
+- [x] Test deployment and verify site works
+- [x] Set up automatic deployments from git
+- [x] Add version from package.json to footer
+- [x] Move reset database button to admin page
 
 ## Phase 3: Print-to-Play PDF Feature
 - [ ] Research PDF generation library (PDFKit, jsPDF, or Puppeteer)

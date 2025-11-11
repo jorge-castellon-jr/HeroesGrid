@@ -335,6 +335,22 @@ export default function Admin() {
     }
   };
 
+  const handleResetDatabase = async () => {
+    if (!confirm('Are you sure you want to reset the database? This will delete ALL data and cannot be undone!')) {
+      return;
+    }
+    try {
+      await database.write(async () => {
+        await database.unsafeResetDatabase();
+      });
+      alert('Database reset successfully. The page will now reload.');
+      window.location.reload();
+    } catch (error) {
+      console.error('Error resetting database:', error);
+      alert('Error resetting database: ' + error.message);
+    }
+  };
+
   const filteredData = data.filter(item => {
     // Filter by ID if specified
     if (filterId) {
@@ -368,6 +384,18 @@ export default function Admin() {
       {/* Sync Manager */}
       <div className="mb-8">
         <SyncManager />
+      </div>
+
+      {/* Danger Zone */}
+      <div className="mb-8 p-4 border-2 border-red-500 rounded-lg bg-red-50 dark:bg-red-900/20">
+        <h2 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2">Danger Zone</h2>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Warning: This action cannot be undone!</p>
+        <button
+          onClick={handleResetDatabase}
+          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium"
+        >
+          Reset Database
+        </button>
       </div>
 
       {/* Tabs */}

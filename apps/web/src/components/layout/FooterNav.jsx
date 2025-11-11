@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import PRIcons from '../PRIcons'
 import DarkModeToggle from '../DarkModeToggle'
-import database from '../../database'
 import { isAdminMode } from '../../utils/adminMode'
 import './FooterNav.scss'
 
@@ -58,18 +57,7 @@ const FooterNav = () => {
 	]
 
 	const nuxtLinks = menu.filter(item => item.nuxt)
-	const version = import.meta.env.VITE_VERSION_NUMBER || "1.3.2"
-
-	const handleResetDatabase = async () => {
-		try {
-			await database.write(async () => {
-				await database.unsafeResetDatabase();
-			});
-			window.location.reload();
-		} catch (error) {
-			console.error('Error resetting database:', error);
-		}
-	}
+	const version = __APP_VERSION__
 
 	return (
 		<div>
@@ -88,12 +76,6 @@ const FooterNav = () => {
 				</div>
 				<div className="flex flex-col gap-2 items-center mb-4">
 					<DarkModeToggle />
-					<button 
-						onClick={handleResetDatabase}
-						className="px-4 py-2 text-xs text-white bg-red-600 rounded hover:bg-red-700"
-					>
-						Reset Database
-					</button>
 				</div>
 				<span className="absolute bottom-0 left-0 px-4 py-6 text-sm text-gray-300 dark:text-gray-500">v{version}</span>
 			</nav>
@@ -121,12 +103,6 @@ const FooterNav = () => {
 						</div>
 						<div className="flex flex-col gap-2 items-center mb-4">
 							<DarkModeToggle />
-							<button 
-								onClick={handleResetDatabase}
-								className="px-4 py-2 text-xs text-white bg-red-600 rounded hover:bg-red-700"
-							>
-								Reset Database
-							</button>
 						</div>
 						<span className="absolute bottom-0 left-0 px-4 py-6 text-sm text-gray-300 dark:text-gray-500">v{version}</span>
 					</nav>
