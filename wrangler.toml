@@ -1,0 +1,10 @@
+name = "heroes-grid"
+pages_build_output_dir = "apps/web/dist"
+
+[build]
+command = "yarn build"
+
+[build.upload]
+format = "service-worker"
+
+compatibility_date = "2024-01-01"
