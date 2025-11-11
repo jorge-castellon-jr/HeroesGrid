@@ -13,7 +13,24 @@
 - [x] Configure Yarn 4 with `nodeLinker: node-modules`
 - [x] Test `turbo dev` successfully starts Vite
 
-## Phase 2: Create API Package (tRPC + Cloudflare Worker)
+## Phase 2: Deploy Web to Cloudflare Pages
+- [ ] Configure build command and output directory in package.json
+- [ ] Create Cloudflare Pages project
+- [ ] Set up environment variables in Cloudflare dashboard
+- [ ] Configure custom domain (if applicable)
+- [ ] Test deployment and verify site works
+- [ ] Set up automatic deployments from git
+
+## Phase 3: Print-to-Play PDF Feature
+- [ ] Research PDF generation library (PDFKit, jsPDF, or Puppeteer)
+- [ ] Design card template layout (10-card deck structure)
+- [ ] Implement character card PDF generation in web app
+- [ ] Implement Zord card PDF generation in web app
+- [ ] Add print guides/cut lines to PDF output
+- [ ] Integrate PDF download button into web app UI
+- [ ] Test PDF generation with different rangers and zords
+
+## Phase 4: Create API Package (tRPC + Cloudflare Worker)
 - [ ] Create `apps/api` directory structure
 - [ ] Initialize Cloudflare Worker with Wrangler
 - [ ] Set up tRPC server configuration
@@ -24,23 +41,8 @@
 - [ ] Configure CORS for local development with web app
 - [ ] Add `apps/api/package.json` with dependencies
 - [ ] Add Wrangler configuration (`wrangler.toml`)
-
-## Phase 3: Shared Packages Setup
-- [ ] Create `packages/database` for shared Drizzle schemas and types
-- [ ] Create `packages/typescript-config` for shared tsconfig.json files
-- [ ] Create `packages/eslint-config` for shared ESLint configuration
-- [ ] Create `packages/types` for shared TypeScript types between web and api
-- [ ] Set up proper package exports and dependencies
-
-## Phase 4: Print-to-Play PDF Feature
-- [ ] Research PDF generation library (PDFKit, jsPDF, or Puppeteer)
-- [ ] Create `packages/pdf-generator` for shared PDF logic
-- [ ] Design card template layout (10-card deck structure)
-- [ ] Implement character card PDF generation
-- [ ] Implement Zord card PDF generation
-- [ ] Add print guides/cut lines to PDF output
-- [ ] Integrate PDF download into web app UI
-- [ ] Add tRPC endpoint for server-side PDF generation (optional)
+- [ ] Deploy API to Cloudflare Workers
+- [ ] Test API endpoints from deployed web app
 
 ## Phase 5: Authentication System (Discord OAuth)
 - [ ] Set up Discord OAuth application in Discord Developer Portal
@@ -74,16 +76,13 @@
 - [ ] Add search functionality for community rangers
 - [ ] Implement ranger detail modal/page from community
 
-## Phase 8: Final Polish & Deployment
+## Phase 8: Final Polish
 - [ ] Update all inter-package dependencies in `package.json` files
 - [ ] Test all Turborepo tasks (`turbo build`, `turbo dev`, `turbo lint`)
-- [ ] Configure Cloudflare Pages for web app deployment
-- [ ] Configure Cloudflare Worker deployment for API
-- [ ] Set up D1 database in Cloudflare production
 - [ ] Add environment variables documentation
 - [ ] Update README.md with new structure and commands
-- [ ] Test full workflow: dev → build → deploy
 - [ ] Clean up any remaining legacy code/config
+- [ ] Add contribution guidelines
 
 ---
 
