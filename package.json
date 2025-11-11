@@ -1,30 +1,19 @@
 {
-  "name": "HeroesGrid",
+  "name": "heroes-grid",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "yarn kill && lerna run --parallel dev",
-    "dev:react": "cd react-web && yarn dev",
-    "dev:studio": "cd studio && yarn dev",
-    "build": "yarn build:sanity && pwd && yarn build:web",
-    "build:web": "cd web && nuxt-ts build ../public/web",
-    "start:web": "cp .env ./studio/.env && cd web && nuxt-ts start",
-    "generate": "cd web && nuxt-ts generate",
-    "build:studio": "cd studio && sanity build ../public/studio -y && cd ..",
-    "start:studio": "cp .env ./studio/.env && cd studio && sanity start",
-    "postinstall": "yarn yarn",
-    "yarn": "yarn yarn:web && yarn yarn:studio",
-    "yarn:web": "cd web/ && yarn",
-    "yarn:studio": "cd studio/ && yarn",
-    "lt": "lt -p 3333 -s heroesgrid -l localhost",
-    "kill": "yarn kill:3333 && yarn kill:3000",
-    "kill:3000": "npx kill-port 3000",
-    "kill:3333": "npx kill-port 3333"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "preview": "turbo preview"
   },
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  },
+  "packageManager": "yarn@4.8.1",
   "dependencies": {
-    "localtunnel": "^2.0.1"
+    "turbo": "^2.6.0"
   }
 }

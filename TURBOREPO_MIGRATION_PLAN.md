@@ -1,15 +1,17 @@
 # HeroesGrid Turborepo Migration Plan
 
-## Phase 1: Setup & Clean Migration
-- [ ] Backup current project (git commit or branch)
-- [ ] Initialize new Turborepo structure at root level
-- [ ] Create `apps/` and `packages/` directories
-- [ ] Move `react-web` to `apps/web` (rename during move)
-- [ ] Update `apps/web/package.json` name to `@heroes-grid/web`
-- [ ] Remove old Lerna config and dependencies from root
-- [ ] Clean up unused folders (`web/`, `studio/`) from root
-- [ ] Create root `turbo.json` with pipeline configuration
-- [ ] Update root `package.json` with Turborepo scripts and workspaces
+## Phase 1: Setup & Clean Migration ✅
+- [x] Backup current project (git commit or branch)
+- [x] Initialize new Turborepo structure at root level
+- [x] Create `apps/` and `packages/` directories
+- [x] Move `react-web` to `apps/web` (rename during move)
+- [x] Update `apps/web/package.json` name to `@heroes-grid/web`
+- [x] Remove old Lerna config and dependencies from root
+- [x] Clean up unused folders (`web/`, `studio/`) from root
+- [x] Create root `turbo.json` with pipeline configuration
+- [x] Update root `package.json` with Turborepo scripts and workspaces
+- [x] Configure Yarn 4 with `nodeLinker: node-modules`
+- [x] Test `turbo dev` successfully starts Vite
 
 ## Phase 2: Create API Package (tRPC + Cloudflare Worker)
 - [ ] Create `apps/api` directory structure
