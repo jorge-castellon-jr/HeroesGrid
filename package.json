@@ -7,8 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
+    "sync-versions": "node scripts/sync-versions.js",
+    "dev": "yarn sync-versions && turbo dev",
+    "build": "yarn sync-versions && turbo build",
     "lint": "turbo lint",
     "preview": "turbo preview"
   },
