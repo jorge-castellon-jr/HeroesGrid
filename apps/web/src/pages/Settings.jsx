@@ -4,10 +4,6 @@ export default function Settings() {
   const version = __APP_VERSION__;
 
   const handleClearCache = async () => {
-    if (!confirm('Are you sure you want to clear the cache? This will reload the page.')) {
-      return;
-    }
-    
     try {
       // Clear service worker cache
       if ('caches' in window) {
