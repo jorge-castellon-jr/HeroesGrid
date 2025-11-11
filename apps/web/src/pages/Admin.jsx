@@ -333,9 +333,6 @@ export default function Admin() {
   };
 
   const handleResetDatabase = async () => {
-    if (!confirm('Are you sure you want to reset the database? This will delete ALL data and cannot be undone!')) {
-      return;
-    }
     try {
       await database.write(async () => {
         await database.unsafeResetDatabase();
