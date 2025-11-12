@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
 	const [quickOpen, setQuickOpen] = useState(false);
@@ -7,10 +8,17 @@ export default function NavBar() {
 		{
 			title: 'Rangers',
 			to: '#rangersTeam',
+			isHash: true,
 		},
 		{
 			title: 'Teams',
 			to: '#allTeams',
+			isHash: true,
+		},
+		{
+			title: 'My Rangers',
+			to: '/my-rangers',
+			isHash: false,
 		},
 	];
 
@@ -28,15 +36,25 @@ export default function NavBar() {
 					>
 						Quick Links
 					</span>
-					{menu.map((link) => (
-						<a
-							key={link.to}
-							className="px-4 ml-2 font-bold text-gray-800 hover:text-blue-dark"
-							href={link.to}
-						>
-							{link.title}
-						</a>
-					))}
+					{menu.map((link) =>
+						link.isHash ? (
+							<a
+								key={link.to}
+								className="px-4 ml-2 font-bold text-gray-800 hover:text-blue-dark"
+								href={link.to}
+							>
+								{link.title}
+							</a>
+						) : (
+							<Link
+								key={link.to}
+								className="px-4 ml-2 font-bold text-gray-800 hover:text-blue-dark"
+								to={link.to}
+							>
+								{link.title}
+							</Link>
+						)
+					)}
 				</div>
 			</div>
 		</nav>

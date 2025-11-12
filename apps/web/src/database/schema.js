@@ -1,7 +1,7 @@
 import { appSchema, tableSchema } from '@nozbe/watermelondb';
 
 export default appSchema({
-	version: 6,
+	version: 8,
 	tables: [
 		tableSchema({
 			name: 'rulebooks',
@@ -162,6 +162,29 @@ export default appSchema({
 				{ name: 'name', type: 'string' },
 				{ name: 'slug', type: 'string', isIndexed: true },
 				{ name: 'published', type: 'boolean', isIndexed: true },
+			],
+		}),
+
+		// Custom Rangers (User-created rangers)
+		tableSchema({
+			name: 'custom_rangers',
+			columns: [
+				{ name: 'name', type: 'string' },
+				{ name: 'slug', type: 'string', isIndexed: true },
+				{ name: 'username', type: 'string', isIndexed: true },
+				{ name: 'title', type: 'string', isOptional: true },
+				{ name: 'card_title', type: 'string', isOptional: true },
+				{ name: 'color', type: 'string', isIndexed: true },
+				{ name: 'type', type: 'string', isIndexed: true }, // core, sixth, extra, ally
+				{ name: 'ability_name', type: 'string' },
+				{ name: 'ability', type: 'string' },
+				{ name: 'deck', type: 'string' }, // JSON array of card objects
+				{ name: 'team_id', type: 'string', isOptional: true, isIndexed: true },
+				{ name: 'custom_team_name', type: 'string', isOptional: true, isIndexed: true },
+				{ name: 'team_position', type: 'number', isOptional: true },
+				{ name: 'published', type: 'boolean', isIndexed: true },
+				{ name: 'created_at', type: 'number' },
+				{ name: 'updated_at', type: 'number' },
 			],
 		}),
 	],

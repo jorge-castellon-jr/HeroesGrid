@@ -162,7 +162,7 @@ export default function RangerCard({ ranger, card, onPress, noWrapper, parentSca
 
 					<div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
 						{card.text && card.text.map((text, idx) => (
-							<p key={idx} className="ranger-card-description">{text}</p>
+							<p key={idx} className="ranger-card-description" style={{ whiteSpace: 'pre-wrap' }}>{text}</p>
 						))}
 					</div>
 					
@@ -174,7 +174,7 @@ export default function RangerCard({ ranger, card, onPress, noWrapper, parentSca
 				{/* Footer */}
 				<div className="ranger-card-footer" style={{ backgroundColor: mainColor }}>
 					<span className="ranger-card-footer-text" style={{ color: textColor }}>
-						{card.team} {card.color}
+						{card.cardTitle || (card.team && card.color ? `${card.team} ${card.color}` : '')}
 					</span>
 					<div className="ranger-card-stat-container">
 						<Shield size={10} color={textColor} strokeWidth={2.5} />

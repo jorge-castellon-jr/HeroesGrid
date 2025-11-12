@@ -15,6 +15,7 @@ import RangerCard from './models/RangerCard';
 import ArsenalCard from './models/ArsenalCard';
 import Tag from './models/Tag';
 import Location from './models/Location';
+import CustomRanger from './models/CustomRanger';
 
 // Create adapter - LokiJS is good for web
 const adapter = new LokiJSAdapter({
@@ -41,6 +42,7 @@ export const database = new Database({
 		ArsenalCard,
 		Tag,
 		Location,
+		CustomRanger,
 	],
 });
 

@@ -55,17 +55,17 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - Published defaults to false; will be used in Phase 8 for community features
 
 ### Implementation Tasks
-- [ ] Add `custom_rangers` table to WatermelonDB schema
-- [ ] Create CustomRanger model in `src/database/models/`
-- [ ] Update schema version and migrations
-- [ ] Implement "Create Custom Ranger" page at `/rangers/create`
-- [ ] Build ranger form UI with all fields
-- [ ] Implement team selector (dropdown of official teams + custom text input)
-- [ ] Build deck editor (add/edit/remove cards)
-- [ ] Implement "My Rangers" page at `/my-rangers` with list view
-- [ ] Add CRUD operations (create, edit, delete)
-- [ ] Implement custom ranger detail page at `/username/rangerslug`
-- [ ] Add local export/import functionality (JSON backup)
+- [x] Add `custom_rangers` table to WatermelonDB schema
+- [x] Create CustomRanger model in `src/database/models/`
+- [x] Update schema version and migrations
+- [x] Implement "Create Custom Ranger" page at `/rangers/create`
+- [x] Build ranger form UI with all fields
+- [x] Implement team selector (dropdown of official teams + custom text input)
+- [x] Build deck editor (add/edit/remove cards)
+- [x] Implement "My Rangers" page at `/my-rangers` with list view
+- [x] Add CRUD operations (create, edit, delete)
+- [x] Implement custom ranger detail page at `/my-rangers/:slug` (local-first, no username required yet)
+- [x] Add local export/import functionality (JSON backup)
 - [ ] Test all local data persistence and retrieval
 
 ## Phase 4: Print-to-Play PDF Feature

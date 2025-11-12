@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
+import { DialogProvider } from './contexts/DialogContext'
 import Layout from './components/layout/Layout'
 import SyncLoader from './components/SyncLoader'
 import Home from './pages/Home'
@@ -15,13 +16,17 @@ import Team from './pages/Team'
 import Ranger from './pages/Ranger'
 import Admin from './pages/Admin'
 import Settings from './pages/Settings'
+import CreateCustomRanger from './pages/CreateCustomRanger'
+import MyRangers from './pages/MyRangers'
+import CustomRangerDetail from './pages/CustomRangerDetail'
 import './App.css'
 
 function App() {
 	return (
 		<AppProvider>
-			<SyncLoader />
-			<Router>
+			<DialogProvider>
+				<SyncLoader />
+				<Router>
 				<Layout>
 					<Routes>
 					<Route path="/" element={<Home />} />
@@ -35,11 +40,15 @@ function App() {
 					<Route path="/rulebooks/:slug" element={<RulebookSingle />} />
 					<Route path="/admin" element={<Admin />} />
 					<Route path="/settings" element={<Settings />} />
+					<Route path="/rangers/create" element={<CreateCustomRanger />} />
+					<Route path="/my-rangers" element={<MyRangers />} />
+					<Route path="/my-rangers/:slug" element={<CustomRangerDetail />} />
 					<Route path="/:team" element={<Team />} />
 					<Route path="/:team/:ranger" element={<Ranger />} />
 					</Routes>
-				</Layout>
-			</Router>
+					</Layout>
+				</Router>
+			</DialogProvider>
 		</AppProvider>
 	)
 }

@@ -210,5 +210,43 @@ export default schemaMigrations({
 				// Users will need to resync data
 			],
 		},
+		{
+			// Version 6 to 7: Add custom_rangers table for user-created rangers
+			toVersion: 7,
+			steps: [
+				createTable({
+					name: 'custom_rangers',
+					columns: [
+						{ name: 'name', type: 'string' },
+						{ name: 'slug', type: 'string', isIndexed: true },
+						{ name: 'username', type: 'string', isIndexed: true },
+						{ name: 'title', type: 'string', isOptional: true },
+						{ name: 'color', type: 'string', isIndexed: true },
+						{ name: 'type', type: 'string', isIndexed: true },
+						{ name: 'ability_name', type: 'string' },
+						{ name: 'ability', type: 'string' },
+						{ name: 'deck', type: 'string' },
+						{ name: 'team_id', type: 'string', isOptional: true, isIndexed: true },
+						{ name: 'custom_team_name', type: 'string', isOptional: true, isIndexed: true },
+						{ name: 'team_position', type: 'number', isOptional: true },
+						{ name: 'published', type: 'boolean', isIndexed: true },
+						{ name: 'created_at', type: 'number' },
+						{ name: 'updated_at', type: 'number' },
+					],
+				}),
+			],
+		},
+		{
+			// Version 7 to 8: Add card_title to custom_rangers table
+			toVersion: 8,
+			steps: [
+				addColumns({
+					table: 'custom_rangers',
+					columns: [
+						{ name: 'card_title', type: 'string', isOptional: true },
+					],
+				}),
+			],
+		},
 	],
 });

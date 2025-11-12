@@ -30,6 +30,12 @@ const FooterNav = () => {
 			nuxt: true,
 		},
 		{
+			title: "My Rangers",
+			to: "/my-rangers",
+			icon: "morpher",
+			nuxt: true,
+		},
+		{
 			title: "Randomizer",
 			to: "/randomizer",
 			icon: "pr-hotg",
