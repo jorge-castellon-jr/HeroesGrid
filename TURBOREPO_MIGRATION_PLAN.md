@@ -25,12 +25,46 @@
 
 ## Phase 3: User Rangers & Teams System (Local First)
 **REMINDER: Build local-first with WatermelonDB. Cloud sync comes later.**
-- [ ] Create WatermelonDB schema for custom rangers (user-created, not from game data)
-- [ ] Create WatermelonDB schema for teams (team composition, local storage)
-- [ ] Implement "Create Custom Ranger" page in web app
-- [ ] Implement ranger builder UI (name, stats, abilities, custom fields)
-- [ ] Implement "My Rangers" page with CRUD operations
-- [ ] Implement "My Teams" page with team builder
+
+### Custom Rangers Schema
+Create a separate `custom_rangers` table (distinct from game data `rangers` table):
+
+**Fields:**
+- `name` (string) - Ranger's name
+- `slug` (string, indexed) - URL-friendly identifier
+- `username` (string, indexed) - For URL pattern: `/username/rangerslug`
+- `title` (string, optional) - Ranger title/designation
+- `color` (string, indexed) - Ranger color (red, blue, yellow, black, pink, green, white, gold, silver, purple, orange)
+- `type` (string, indexed) - Ranger type (core, sixth, extra, ally)
+- `ability_name` (string) - Name of the ranger's ability
+- `ability` (string) - Full ability description
+- `deck` (string) - JSON array of card objects: `[{ name, energyCost, type, description, shields, attackDice, attackHit }]`
+- `team_id` (string, optional, indexed) - References official `teams` table (for MMPR, etc.)
+- `custom_team_name` (string, optional, indexed) - For user-created team names
+- `team_position` (number, optional) - Position within team
+- `published` (boolean, indexed) - Default: false (for Phase 8 community features)
+- `created_at` (number) - Timestamp
+- `updated_at` (number) - Timestamp
+
+**Notes:**
+- ❌ NO `expansion_id` - not needed for custom rangers
+- ❌ NO `is_once_per_battle` - removed from schema
+- ❌ NO `tags` on deck cards - simplified
+- ❌ NO `image_url` - Phase 3 doesn't include images
+- Team assignment is hybrid: either official team (`team_id`) OR custom team name (`custom_team_name`), never both
+- Published defaults to false; will be used in Phase 8 for community features
+
+### Implementation Tasks
+- [ ] Add `custom_rangers` table to WatermelonDB schema
+- [ ] Create CustomRanger model in `src/database/models/`
+- [ ] Update schema version and migrations
+- [ ] Implement "Create Custom Ranger" page at `/rangers/create`
+- [ ] Build ranger form UI with all fields
+- [ ] Implement team selector (dropdown of official teams + custom text input)
+- [ ] Build deck editor (add/edit/remove cards)
+- [ ] Implement "My Rangers" page at `/my-rangers` with list view
+- [ ] Add CRUD operations (create, edit, delete)
+- [ ] Implement custom ranger detail page at `/username/rangerslug`
 - [ ] Add local export/import functionality (JSON backup)
 - [ ] Test all local data persistence and retrieval
 
