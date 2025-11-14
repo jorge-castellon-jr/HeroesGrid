@@ -568,7 +568,16 @@ const CreateCustomRanger = () => {
                             energy: card.energyCost,
                             shields: card.shields,
                             text: card.description ? [card.description] : [],
-                            attack: parseInt(card.attackDice) > 0 ? [{ value: parseInt(card.attackDice), fixed: false }] : [],
+                            attack: (() => {
+                              const attacks = [];
+                              if (parseInt(card.attackHit) > 0) {
+                                attacks.push({ value: parseInt(card.attackHit), fixed: true });
+                              }
+                              if (parseInt(card.attackDice) > 0) {
+                                attacks.push({ value: parseInt(card.attackDice), fixed: false });
+                              }
+                              return attacks;
+                            })(),
                             team: formData.customTeamName || '',
                           }}
                         />

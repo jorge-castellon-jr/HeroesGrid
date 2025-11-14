@@ -137,7 +137,7 @@ export default function RangerCard({ ranger, card, onPress, noWrapper, parentSca
 						<div key={idx}>
 							{attack.fixed ? (
 								<div className="ranger-card-fixed-attack">
-									<Sword size={14} strokeWidth={2.5} />
+									<Sword size={14} strokeWidth={2.5} color="black" />
 									<span className="ranger-card-stat-text" style={{ color: 'black', fontSize: 12, fontWeight: 'bold' }}>
 										{attack.value}
 									</span>
@@ -145,7 +145,7 @@ export default function RangerCard({ ranger, card, onPress, noWrapper, parentSca
 							) : (
 								<div className="ranger-card-dice-container">
 									{attack.value < 0 ? (
-										<span>Special</span>
+										<span style={{ color: subColor || mainColor, fontWeight: 'bold', fontSize: '12px' }}>Special</span>
 									) : (
 										[...Array(attack.value)].map((_, index) => (
 											<DiceIcon

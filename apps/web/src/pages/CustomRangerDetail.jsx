@@ -487,19 +487,28 @@ const CustomRangerDetail = () => {
                             />
                           </div>
                           <div className="mb-3 flex-1">
-                            <RangerCard
-                              card={{
-                                name: card.name,
-                                cardTitle: formData.cardTitle || formData.title,
-                                type: card.type === 'custom' ? card.customType : card.type,
-                                color: formData.color.charAt(0).toUpperCase() + formData.color.slice(1),
-                                energy: card.energyCost,
-                                shields: card.shields,
-                                text: card.description ? [card.description] : [],
-                                attack: parseInt(card.attackDice) > 0 ? [{ value: parseInt(card.attackDice), fixed: false }] : [],
-                                team: formData.customTeamName || formData.teamName || '',
-                              }}
-                            />
+                        <RangerCard
+                          card={{
+                            name: card.name,
+                            cardTitle: formData.cardTitle || formData.title,
+                            type: card.type === 'custom' ? card.customType : card.type,
+                            color: formData.color.charAt(0).toUpperCase() + formData.color.slice(1),
+                            energy: card.energyCost,
+                            shields: card.shields,
+                            text: card.description ? [card.description] : [],
+                            attack: (() => {
+                              const attacks = [];
+                              if (parseInt(card.attackHit) > 0) {
+                                attacks.push({ value: parseInt(card.attackHit), fixed: true });
+                              }
+                              if (parseInt(card.attackDice) > 0) {
+                                attacks.push({ value: parseInt(card.attackDice), fixed: false });
+                              }
+                              return attacks;
+                            })(),
+                            team: formData.customTeamName || formData.teamName || '',
+                          }}
+                        />
                           </div>
                           <div className="flex gap-2 pt-3 border-t border-border">
                             <Button
@@ -614,7 +623,16 @@ const CustomRangerDetail = () => {
                         energy: card.energyCost,
                         shields: card.shields,
                         text: card.description ? [card.description] : [],
-                        attack: parseInt(card.attackDice) > 0 ? [{ value: parseInt(card.attackDice), fixed: false }] : [],
+                        attack: (() => {
+                          const attacks = [];
+                          if (parseInt(card.attackHit) > 0) {
+                            attacks.push({ value: parseInt(card.attackHit), fixed: true });
+                          }
+                          if (parseInt(card.attackDice) > 0) {
+                            attacks.push({ value: parseInt(card.attackDice), fixed: false });
+                          }
+                          return attacks;
+                        })(),
                         team: ranger.teamName,
                       }}
                     />
