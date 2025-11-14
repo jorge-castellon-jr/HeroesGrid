@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import { DialogProvider } from './contexts/DialogContext'
+import { Toaster } from '@/components/ui/sonner'
 import Layout from './components/layout/Layout'
 import SyncLoader from './components/SyncLoader'
 import Home from './pages/Home'
@@ -25,6 +26,7 @@ function App() {
 	return (
 		<AppProvider>
 			<DialogProvider>
+				<Toaster />
 				<SyncLoader />
 				<Router>
 				<Layout>

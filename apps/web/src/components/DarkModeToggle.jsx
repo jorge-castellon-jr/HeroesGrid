@@ -1,18 +1,21 @@
 import { Moon, Sun } from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import { Switch } from '@/components/ui/switch'
 
 const DarkModeToggle = () => {
 	const { state, toggleDarkMode } = useApp()
 	const { darkMode } = state
 
 	return (
-		<button
-			onClick={toggleDarkMode}
-			className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-			aria-label="Toggle dark mode"
-		>
-			{darkMode ? <Sun size={20} /> : <Moon size={20} />}
-		</button>
+		<div className="flex items-center gap-2">
+			<Sun size={16} className="text-muted-foreground" />
+			<Switch
+				checked={darkMode}
+				onCheckedChange={toggleDarkMode}
+				aria-label="Toggle dark mode"
+			/>
+			<Moon size={16} className="text-muted-foreground" />
+		</div>
 	)
 }
 

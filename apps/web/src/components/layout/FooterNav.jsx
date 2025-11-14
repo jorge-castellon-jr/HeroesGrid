@@ -63,15 +63,15 @@ const FooterNav = () => {
 
 	const nuxtLinks = menu.filter(item => item.nuxt)
 
-	return (
+		return (
 		<div>
-			<nav className="nav desktop dark:bg-gray-900 dark:border-purple-600">
+			<nav className="nav desktop">
 				<div className="flex flex-wrap flex-1 md:flex-col md:w-full">
 					{nuxtLinks.map(link => (
 						<Link 
 							key={link.to} 
 							to={link.to} 
-							className={`nav__link dark:hover:bg-gray-800 ${location.pathname === link.to ? 'active dark:bg-gray-800 dark:text-purple-400' : ''}`}
+							className={`nav__link ${location.pathname === link.to ? 'active' : ''}`}
 						>
 							<PRIcons icon={link.icon} />
 							<span className="pt-2 text-sm capitalize">{link.title}</span>
@@ -81,20 +81,20 @@ const FooterNav = () => {
 				<div className="flex flex-col gap-2 items-center mb-4">
 					<Link 
 						to="/settings" 
-						className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+						className="px-4 py-2 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/80"
 					>
 						Settings
 					</Link>
 				</div>
 			</nav>
-			<a onClick={() => setMenuOpen(!menuOpen)} className={`nav__link dark:bg-gray-800 dark:border-purple-600 ${menuOpen ? 'open' : ''}`} id="home-link">
+			<a onClick={() => setMenuOpen(!menuOpen)} className={`nav__link ${menuOpen ? 'open' : ''}`} id="home-link">
 				<PRIcons />
 				<span className="hidden text-sm capitalize md:block">Menu</span>
 			</a>
 			{menuOpen && (
 				<div className={`nav__transition ${menuOpen ? 'nav__transition--enter' : 'nav__transition--leave'}`}>
 					<nav
-						className={`nav mobile dark:bg-gray-900 dark:border-purple-600 ${menuOpen ? 'open' : 'closed'}`}
+						className={`nav mobile ${menuOpen ? 'open' : 'closed'}`}
 						onClick={() => setMenuOpen(false)}
 					>
 						<div className="flex flex-wrap flex-1 md:flex-col md:w-full">
@@ -102,7 +102,7 @@ const FooterNav = () => {
 								<Link 
 									key={link.to} 
 									to={link.to} 
-									className={`nav__link dark:hover:bg-gray-800 ${location.pathname === link.to ? 'active dark:bg-gray-800 dark:text-purple-400' : ''}`}
+									className={`nav__link ${location.pathname === link.to ? 'active' : ''}`}
 								>
 									<PRIcons icon={link.icon} />
 									<span className="pt-2 text-sm capitalize">{link.title}</span>
@@ -112,7 +112,7 @@ const FooterNav = () => {
 						<div className="flex flex-col gap-2 items-center mb-4">
 							<Link 
 								to="/settings" 
-								className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+								className="px-4 py-2 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/80"
 							>
 								Settings
 							</Link>

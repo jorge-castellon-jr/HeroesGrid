@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
 import { database } from '../database';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const RangerEditModal = ({ ranger, onClose, onSave }) => {
 	const [relationData, setRelationData] = useState({ teams: [], expansions: [] });
@@ -97,225 +104,198 @@ const RangerEditModal = ({ ranger, onClose, onSave }) => {
 	if (!editingItem) return null;
 
 	return (
-		<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={onClose}>
-			<div 
-				className="bg-white dark:bg-gray-800 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-				onClick={(e) => e.stopPropagation()}
-			>
-				<div className="p-6">
-					<h2 className="text-2xl font-bold mb-4 dark:text-white">Edit {editingItem.name}</h2>
-
-					<div className="space-y-4">
-						{/* Name */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Name</label>
-							<input
-								type="text"
+		<Dialog open={!!editingItem} onOpenChange={onClose}>
+			<DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+				<DialogHeader>
+					<DialogTitle>Edit {editingItem.name}</DialogTitle>
+				</DialogHeader>
+				<div className="space-y-4 py-4">
+						<div className="space-y-2">
+							<Label htmlFor="name">Name</Label>
+							<Input
+								id="name"
 								value={editingItem.name || ''}
 								onChange={(e) => setEditingItem({ ...editingItem, name: e.target.value })}
-								className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 							/>
 						</div>
 
-						{/* Title */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Title</label>
-							<input
-								type="text"
+						<div className="space-y-2">
+							<Label htmlFor="title">Title</Label>
+							<Input
+								id="title"
 								value={editingItem.title || ''}
 								onChange={(e) => setEditingItem({ ...editingItem, title: e.target.value })}
-								className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 							/>
 						</div>
 
-						{/* Card Title Override */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Card Title (Override)</label>
-							<input
-								type="text"
+						<div className="space-y-2">
+							<Label htmlFor="cardTitle">Card Title (Override)</Label>
+							<Input
+								id="cardTitle"
 								value={editingItem.cardTitle || ''}
 								onChange={(e) => setEditingItem({ ...editingItem, cardTitle: e.target.value })}
-								className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 							/>
 						</div>
 
-						{/* Type & Color Row */}
 						<div className="grid grid-cols-2 gap-4">
-							<div>
-								<label className="block text-sm font-medium mb-1 dark:text-gray-200">Type</label>
-								<select
-									value={editingItem.type || ''}
-									onChange={(e) => setEditingItem({ ...editingItem, type: e.target.value })}
-									className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-								>
-									<option value="core">Core</option>
-									<option value="sixth">Sixth</option>
-									<option value="extra">Extra</option>
-									<option value="ally">Ally</option>
-								</select>
+							<div className="space-y-2">
+								<Label htmlFor="type">Type</Label>
+								<Select value={editingItem.type || ''} onValueChange={(value) => setEditingItem({ ...editingItem, type: value })}>
+									<SelectTrigger id="type">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="core">Core</SelectItem>
+										<SelectItem value="sixth">Sixth</SelectItem>
+										<SelectItem value="extra">Extra</SelectItem>
+										<SelectItem value="ally">Ally</SelectItem>
+									</SelectContent>
+								</Select>
 							</div>
 
-							<div>
-								<label className="block text-sm font-medium mb-1 dark:text-gray-200">Color</label>
-								<select
-									value={editingItem.color || ''}
-									onChange={(e) => setEditingItem({ ...editingItem, color: e.target.value })}
-									className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-								>
-									<option value="red">Red</option>
-									<option value="blue">Blue</option>
-									<option value="black">Black</option>
-									<option value="green">Green</option>
-									<option value="yellow">Yellow</option>
-									<option value="pink">Pink</option>
-									<option value="white">White</option>
-									<option value="gold">Gold</option>
-									<option value="silver">Silver</option>
-									<option value="purple">Purple</option>
-									<option value="orange">Orange</option>
-								</select>
+							<div className="space-y-2">
+								<Label htmlFor="color">Color</Label>
+								<Select value={editingItem.color || ''} onValueChange={(value) => setEditingItem({ ...editingItem, color: value })}>
+									<SelectTrigger id="color">
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="red">Red</SelectItem>
+										<SelectItem value="blue">Blue</SelectItem>
+										<SelectItem value="black">Black</SelectItem>
+										<SelectItem value="green">Green</SelectItem>
+										<SelectItem value="yellow">Yellow</SelectItem>
+										<SelectItem value="pink">Pink</SelectItem>
+										<SelectItem value="white">White</SelectItem>
+										<SelectItem value="gold">Gold</SelectItem>
+										<SelectItem value="silver">Silver</SelectItem>
+										<SelectItem value="purple">Purple</SelectItem>
+										<SelectItem value="orange">Orange</SelectItem>
+									</SelectContent>
+								</Select>
 							</div>
 						</div>
 
-						{/* Team Position */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Team Position</label>
+						<div className="space-y-2">
+							<Label htmlFor="teamPosition">Team Position</Label>
 							<div className="flex gap-2">
-								<button
+								<Button
 									type="button"
 									onClick={() => setEditingItem({ ...editingItem, teamPosition: Math.round(((editingItem.teamPosition || 0) - 0.1) * 10) / 10 })}
-									className="px-3 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-500 font-bold"
+									variant="outline"
+									size="icon"
 								>
 									−
-								</button>
-								<input
+								</Button>
+								<Input
+									id="teamPosition"
 									type="number"
 									step="any"
 									value={editingItem.teamPosition || ''}
 									onChange={(e) => setEditingItem({ ...editingItem, teamPosition: parseFloat(e.target.value) || null })}
-									className="flex-1 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 									placeholder="Auto-assigned based on type/color"
+									className="flex-1"
 								/>
-								<button
+								<Button
 									type="button"
 									onClick={() => setEditingItem({ ...editingItem, teamPosition: Math.round(((editingItem.teamPosition || 0) + 0.1) * 10) / 10 })}
-									className="px-3 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-500 font-bold"
+									variant="outline"
+									size="icon"
 								>
 									+
-								</button>
+								</Button>
 							</div>
 						</div>
 
-						{/* Ability Name */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Ability Name</label>
-							<input
-								type="text"
+						<div className="space-y-2">
+							<Label htmlFor="abilityName">Ability Name</Label>
+							<Input
+								id="abilityName"
 								value={editingItem.abilityName || ''}
 								onChange={(e) => setEditingItem({ ...editingItem, abilityName: e.target.value })}
-								className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 							/>
 						</div>
 
-						{/* Ability Description */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Ability Description</label>
-							<textarea
+						<div className="space-y-2">
+							<Label htmlFor="ability">Ability Description</Label>
+							<Textarea
+								id="ability"
 								value={editingItem.ability || ''}
 								onChange={(e) => setEditingItem({ ...editingItem, ability: e.target.value })}
 								rows={3}
-								className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 							/>
 						</div>
 
-						{/* Team & Expansion */}
 						<div className="grid grid-cols-2 gap-4">
-							<div>
-								<label className="block text-sm font-medium mb-1 dark:text-gray-200">Team</label>
-								<select
-									value={editingItem.teamId || ''}
-									onChange={(e) => setEditingItem({ ...editingItem, teamId: e.target.value })}
-									className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-								>
-									<option value="">Select team...</option>
-									{relationData.teams.map(team => (
-										<option key={team.id} value={team.id}>{team.name}</option>
-									))}
-								</select>
+							<div className="space-y-2">
+								<Label htmlFor="teamId">Team</Label>
+								<Select value={editingItem.teamId || ''} onValueChange={(value) => setEditingItem({ ...editingItem, teamId: value })}>
+									<SelectTrigger id="teamId">
+										<SelectValue placeholder="Select team..." />
+									</SelectTrigger>
+									<SelectContent>
+										{relationData.teams.map(team => (
+											<SelectItem key={team.id} value={team.id}>{team.name}</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
 							</div>
 
-							<div>
-								<label className="block text-sm font-medium mb-1 dark:text-gray-200">Expansion</label>
-								<select
-									value={editingItem.expansionId || ''}
-									onChange={(e) => setEditingItem({ ...editingItem, expansionId: e.target.value })}
-									className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-								>
-									<option value="">Select expansion...</option>
-									{relationData.expansions.map(expansion => (
-										<option key={expansion.id} value={expansion.id}>{expansion.name}</option>
-									))}
-								</select>
+							<div className="space-y-2">
+								<Label htmlFor="expansionId">Expansion</Label>
+								<Select value={editingItem.expansionId || ''} onValueChange={(value) => setEditingItem({ ...editingItem, expansionId: value })}>
+									<SelectTrigger id="expansionId">
+										<SelectValue placeholder="Select expansion..." />
+									</SelectTrigger>
+									<SelectContent>
+										{relationData.expansions.map(expansion => (
+											<SelectItem key={expansion.id} value={expansion.id}>{expansion.name}</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
 							</div>
 						</div>
 
-						{/* Image URL */}
-						<div>
-							<label className="block text-sm font-medium mb-1 dark:text-gray-200">Image URL</label>
-							<input
-								type="text"
+						<div className="space-y-2">
+							<Label htmlFor="imageUrl">Image URL</Label>
+							<Input
+								id="imageUrl"
 								value={editingItem.imageUrl || ''}
 								onChange={(e) => setEditingItem({ ...editingItem, imageUrl: e.target.value })}
-								className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 							/>
 						</div>
 
-						{/* Checkboxes */}
-						<div className="flex gap-4">
-							<div className="flex items-center">
-								<input
-									type="checkbox"
+						<div className="flex gap-6">
+							<div className="flex items-center space-x-2">
+								<Checkbox
 									id="isOncePerBattle"
 									checked={editingItem.isOncePerBattle || false}
-									onChange={(e) => setEditingItem({ ...editingItem, isOncePerBattle: e.target.checked })}
-									className="mr-2"
+									onCheckedChange={(checked) => setEditingItem({ ...editingItem, isOncePerBattle: checked })}
 								/>
-								<label htmlFor="isOncePerBattle" className="text-sm font-medium dark:text-gray-200">Once Per Battle</label>
+								<Label htmlFor="isOncePerBattle" className="cursor-pointer">Once Per Battle</Label>
 							</div>
 
-							<div className="flex items-center">
-								<input
-									type="checkbox"
+							<div className="flex items-center space-x-2">
+								<Checkbox
 									id="published"
 									checked={editingItem.published || false}
-									onChange={(e) => setEditingItem({ ...editingItem, published: e.target.checked })}
-									className="mr-2"
+									onCheckedChange={(checked) => setEditingItem({ ...editingItem, published: checked })}
 								/>
-								<label htmlFor="published" className="text-sm font-medium dark:text-gray-200">Published</label>
+								<Label htmlFor="published" className="cursor-pointer">Published</Label>
 							</div>
 						</div>
 					</div>
 
-					{/* Actions */}
-					<div className="flex justify-end space-x-3 mt-6">
-						<button
-							onClick={onClose}
-							disabled={isSaving}
-							className="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700 disabled:opacity-50"
-						>
-							Cancel
-						</button>
-						<button
-							onClick={handleSave}
-							disabled={isSaving}
-							className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
-						>
-							{isSaving ? 'Saving...' : 'Save Changes'}
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+				<DialogFooter>
+					<Button onClick={onClose} disabled={isSaving} variant="outline">
+						Cancel
+					</Button>
+					<Button onClick={handleSave} disabled={isSaving}>
+						{isSaving ? 'Saving...' : 'Save Changes'}
+					</Button>
+				</DialogFooter>
+			</DialogContent>
+		</Dialog>
 	);
 };
 

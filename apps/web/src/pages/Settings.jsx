@@ -1,4 +1,6 @@
 import DarkModeToggle from '../components/DarkModeToggle';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Settings() {
   const version = __APP_VERSION__;
@@ -32,53 +34,59 @@ export default function Settings() {
       </div>
 
       {/* Appearance Section */}
-      <div className="mb-8 bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 className="text-xl font-semibold mb-4 dark:text-white">Appearance</h2>
-        
-        <div className="flex items-center justify-between">
-          <div>
-            <label className="text-sm font-medium dark:text-gray-200">Theme</label>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Choose between light and dark mode
-            </p>
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle>Appearance</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-between">
+            <div>
+              <label className="text-sm font-medium">Theme</label>
+              <p className="text-xs text-muted-foreground mt-1">
+                Choose between light and dark mode
+              </p>
+            </div>
+            <DarkModeToggle />
           </div>
-          <DarkModeToggle />
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
       {/* Cache Management Section */}
-      <div className="mb-8 bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 className="text-xl font-semibold mb-4 dark:text-white">Cache Management</h2>
-        
-        <div className="mb-4">
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle>Cache Management</CardTitle>
+          <CardDescription>
             If you're experiencing issues with the app, try clearing the cache. This will remove all cached data and reload the application.
-          </p>
-          
-          <button
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button
             onClick={handleClearCache}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-medium"
+            variant="destructive"
           >
             Clear Cache
-          </button>
-        </div>
-      </div>
+          </Button>
+        </CardContent>
+      </Card>
 
       {/* About Section */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h2 className="text-xl font-semibold mb-4 dark:text-white">About</h2>
-        
-        <div className="space-y-2 text-sm">
-          <div className="flex justify-between">
-            <span className="text-gray-600 dark:text-gray-400">Version</span>
-            <span className="font-mono dark:text-white">{version}</span>
+      <Card>
+        <CardHeader>
+          <CardTitle>About</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Version</span>
+              <span className="font-mono">{version}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Storage</span>
+              <span>WatermelonDB</span>
+            </div>
           </div>
-          <div className="flex justify-between">
-            <span className="text-gray-600 dark:text-gray-400">Storage</span>
-            <span className="dark:text-white">WatermelonDB</span>
-          </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

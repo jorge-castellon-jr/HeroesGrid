@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 import { useApp } from '../../context/AppContext'
 import { initializeDatabase } from '../../database/seed'
 import FooterNav from './FooterNav'
-import Loading from './Loading'
 import './Layout.scss'
 
 const Layout = ({ children }) => {

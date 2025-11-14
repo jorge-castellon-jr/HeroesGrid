@@ -3,6 +3,14 @@ import { useSearchParams } from 'react-router-dom';
 import { database } from '../database';
 import { initializeDatabase } from '../database/seed';
 import SyncManager from '../components/SyncManager';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
 
 export default function Admin() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -380,44 +388,43 @@ export default function Admin() {
       </div>
 
       {/* Danger Zone */}
-      <div className="mb-8 p-4 border-2 border-red-500 rounded-lg bg-red-50 dark:bg-red-900/20">
-        <h2 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2">Danger Zone</h2>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Warning: This action cannot be undone!</p>
-        <button
-          onClick={handleResetDatabase}
-          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium"
-        >
-          Reset Database
-        </button>
-      </div>
+      <Card className="mb-8 border-2 border-red-500 bg-red-50 dark:bg-red-900/20">
+        <CardHeader>
+          <CardTitle className="text-red-600 dark:text-red-400">Danger Zone</CardTitle>
+          <CardDescription>Warning: This action cannot be undone!</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button onClick={handleResetDatabase} variant="destructive">
+            Reset Database
+          </Button>
+        </CardContent>
+      </Card>
 
       {/* Tabs */}
       <div className="flex space-x-2 mb-6 overflow-x-auto">
         {tabs.map(tab => (
-          <button
+          <Button
             key={tab.id}
             onClick={() => handleTabChange(tab.id)}
-            className={`px-4 py-2 rounded-lg whitespace-nowrap ${activeTab === tab.id
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
-              }`}
+            variant={activeTab === tab.id ? 'default' : 'secondary'}
+            className="whitespace-nowrap"
           >
             {tab.label}
-          </button>
+          </Button>
         ))}
       </div>
 
       {/* Actions */}
       <div className="flex justify-between items-center mb-6 gap-4">
         <div className="flex-1 flex gap-2">
-          <input
+          <Input
             type="text"
             placeholder="Search by name, slug, or title..."
             value={searchInput}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
+            className="flex-1"
           />
-          <input
+          <Input
             type="text"
             placeholder="Filter by ID..."
             value={filterId}
@@ -425,15 +432,12 @@ export default function Admin() {
               setFilterId(e.target.value);
               setSearchTerm('');
             }}
-            className="w-64 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 font-mono text-sm"
+            className="w-64 font-mono text-sm"
           />
         </div>
-        <button
-          onClick={handleExportJSON}
-          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-        >
+        <Button onClick={handleExportJSON} className="bg-green-600 hover:bg-green-700">
           Export JSON
-        </button>
+        </Button>
       </div>
 
       {/* Data Count */}
@@ -442,90 +446,94 @@ export default function Admin() {
       </p>
 
       {/* Data Table */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
+      <Card>
         <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead className="bg-gray-100 dark:bg-gray-700">
-              <tr>
-                <th className="px-4 py-3 text-left text-sm font-semibold dark:text-gray-200 sticky left-0 bg-gray-100 dark:bg-gray-700 z-10" style={{ minWidth: '100px', width: '100px' }}>Actions</th>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="sticky left-0 bg-background z-10" style={{ minWidth: '100px', width: '100px' }}>Actions</TableHead>
                 {getColumnConfig(activeTab).map(col => (
-                  <th key={col} className="px-4 py-3 text-left text-sm font-semibold dark:text-gray-200 whitespace-nowrap" style={{ minWidth: '200px', width: '200px' }}>
+                  <TableHead key={col} className="whitespace-nowrap" style={{ minWidth: '200px', width: '200px' }}>
                     {getColumnLabel(col)}
-                  </th>
+                  </TableHead>
                 ))}
-                <th className="px-4 py-3 text-left text-sm font-semibold dark:text-gray-200 whitespace-nowrap" style={{ minWidth: '300px', width: '300px' }}>ID</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                <TableHead className="whitespace-nowrap" style={{ minWidth: '300px', width: '300px' }}>ID</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {filteredData.map((item) => (
-                <tr key={item.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <td className="px-4 py-3 text-left sticky left-0 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 z-10" style={{ minWidth: '100px', width: '100px' }}>
+                <TableRow key={item.id}>
+                  <TableCell className="sticky left-0 bg-background z-10" style={{ minWidth: '100px', width: '100px' }}>
                     <div className="flex gap-2">
-                      <button
+                      <Button
                         onClick={() => handleEdit(item)}
-                        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium"
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 px-2"
                       >
                         Edit
-                      </button>
-                      <button
+                      </Button>
+                      <Button
                         onClick={() => handleDelete(item)}
-                        className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 text-sm font-medium"
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 px-2 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
                       >
                         Delete
-                      </button>
+                      </Button>
                     </div>
-                  </td>
+                  </TableCell>
                   {getColumnConfig(activeTab).map(col => {
                     const relationTab = getRelationInfo(col);
                     const isRelation = relationTab && item[col];
                     const relationName = isRelation ? getRelationName(col, item[col]) : null;
 
                     return (
-                      <td key={col} className="px-4 py-3 text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis" style={{ minWidth: '200px', width: '200px' }}>
+                      <TableCell key={col} className="whitespace-nowrap overflow-hidden text-ellipsis" style={{ minWidth: '200px', width: '200px' }}>
                         {col === 'name' ? (
-                          <span className="font-medium dark:text-white">{item[col] || '-'}</span>
+                          <span className="font-medium">{item[col] || '-'}</span>
                         ) : col === 'color' ? (
-                          <span className={`px-2 py-1 rounded text-xs ${item[col] ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200' : ''
-                            }`}>
+                          <span className={`px-2 py-1 rounded text-xs ${
+                            item[col] ? 'bg-secondary' : ''
+                          }`}>
                             {item[col] || '-'}
                           </span>
                         ) : col === 'description' ? (
                           <span className="max-w-xs truncate block" title={item[col]}>{item[col] || '-'}</span>
                         ) : col === 'imageUrl' ? (
                           item[col] ? (
-                            <a href={item[col]} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+                            <a href={item[col]} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                               View
                             </a>
                           ) : '-'
                         ) : isRelation ? (
-                          <button
+                          <Button
                             onClick={() => handleRelationClick(relationTab, item[col])}
-                            className="text-blue-600 dark:text-blue-400 hover:underline text-left"
+                            variant="link"
+                            className="h-auto p-0 text-primary"
                             title={`ID: ${item[col]}`}
                           >
                             {relationName}
-                          </button>
+                          </Button>
                         ) : col === 'published' || col === 'isOncePerBattle' ? (
-                          <input
-                            type="checkbox"
+                          <Checkbox
                             checked={item[col] || false}
-                            onChange={() => col === 'published' && handleTogglePublished(item.id, item[col])}
-                            className="h-4 w-4 cursor-pointer"
+                            onCheckedChange={() => col === 'published' && handleTogglePublished(item.id, item[col])}
                             disabled={col !== 'published'}
                           />
                         ) : (
                           item[col] != null ? String(item[col]) : '-'
                         )}
-                      </td>
+                      </TableCell>
                     );
                   })}
-                  <td className="px-4 py-3 text-xs text-gray-500 dark:text-gray-400 font-mono whitespace-nowrap overflow-hidden text-ellipsis" style={{ minWidth: '300px', width: '300px' }}>{item.id}</td>
-                </tr>
+                  <TableCell className="text-xs text-muted-foreground font-mono whitespace-nowrap overflow-hidden text-ellipsis" style={{ minWidth: '300px', width: '300px' }}>{item.id}</TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
-      </div>
+      </Card>
 
       {/* Edit Modal */}
       {editingItem && (
@@ -536,23 +544,21 @@ export default function Admin() {
 
               <div className="space-y-4">
                 {/* Basic Fields */}
-                <div>
-                  <label className="block text-sm font-medium mb-1 dark:text-gray-200">Name</label>
-                  <input
+                <div className="space-y-2">
+                  <Label>Name</Label>
+                  <Input
                     type="text"
                     value={editingItem.name || ''}
                     onChange={(e) => setEditingItem({ ...editingItem, name: e.target.value })}
-                    className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-1 dark:text-gray-200">Slug</label>
-                  <input
+                <div className="space-y-2">
+                  <Label>Slug</Label>
+                  <Input
                     type="text"
                     value={editingItem.slug || ''}
                     onChange={(e) => setEditingItem({ ...editingItem, slug: e.target.value })}
-                    className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   />
                 </div>
 
@@ -972,18 +978,12 @@ export default function Admin() {
               </div>
 
               <div className="flex justify-end space-x-3 mt-6">
-                <button
-                  onClick={() => setEditingItem(null)}
-                  className="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
-                >
+                <Button onClick={() => setEditingItem(null)} variant="outline">
                   Cancel
-                </button>
-                <button
-                  onClick={handleSave}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-                >
+                </Button>
+                <Button onClick={handleSave}>
                   Save Changes
-                </button>
+                </Button>
               </div>
             </div>
           </div>

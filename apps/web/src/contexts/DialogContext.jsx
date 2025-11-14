@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import { toast } from 'sonner';
 import Dialog from '../components/Dialog';
 
 const DialogContext = createContext();
@@ -36,7 +37,15 @@ export const DialogProvider = ({ children }) => {
 		setDialog((prev) => ({ ...prev, isOpen: false }));
 	};
 
-	// Helper functions for different dialog types
+	// Toast functions (non-blocking notifications)
+	const showToast = {
+		success: (message, options) => toast.success(message, options),
+		error: (message, options) => toast.error(message, options),
+		warning: (message, options) => toast.warning(message, options),
+		info: (message, options) => toast.info(message, options),
+	};
+
+	// Helper functions for dialog types (blocking modals)
 	const showSuccess = (message, title = 'Success') => {
 		showDialog({ title, message, type: 'success' });
 	};
@@ -61,6 +70,7 @@ export const DialogProvider = ({ children }) => {
 		<DialogContext.Provider
 			value={{
 				showDialog,
+				showToast,
 				showSuccess,
 				showError,
 				showWarning,

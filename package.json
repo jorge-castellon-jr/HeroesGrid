@@ -16,5 +16,8 @@
   "packageManager": "yarn@4.8.1",
   "dependencies": {
     "turbo": "^2.6.0"
+  },
+  "devDependencies": {
+    "shadcn": "^3.5.0"
   }
 }
