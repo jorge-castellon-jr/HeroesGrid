@@ -6,13 +6,16 @@ import { getColor } from '../utils/helpers';
 import { useDialog } from '../contexts/DialogContext';
 import RangerCard from '../components/cards/RangerCard';
 import CardEditorModal from '../components/CardEditorModal';
+import CharacterCardEditor from '../components/CharacterCardEditor';
+import ExistingRangerSelector from '../components/ExistingRangerSelector';
+import ExistingCardSelector from '../components/ExistingCardSelector';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2 } from 'lucide-react';
+import { Loader2, UserPlus } from 'lucide-react';
 
 const CreateCustomRanger = () => {
   const navigate = useNavigate();
@@ -38,8 +41,13 @@ const CreateCustomRanger = () => {
     published: false,
   });
   const [deck, setDeck] = useState(clonedData?.deck || []);
+  const [extraCharacters, setExtraCharacters] = useState(clonedData?.extraCharacters || []);
   const [editingCardIndex, setEditingCardIndex] = useState(null);
   const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+  const [isRangerSelectorOpen, setIsRangerSelectorOpen] = useState(false);
+  const [isCardSelectorOpen, setIsCardSelectorOpen] = useState(false);
+  const [rangerSelectorMode, setRangerSelectorMode] = useState('add');
+  const [replacingCharacterIndex, setReplacingCharacterIndex] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentCard, setCurrentCard] = useState({
     name: '',
@@ -145,6 +153,48 @@ const CreateCustomRanger = () => {
     return deck.reduce((total, card) => total + (parseInt(card.count) || 1), 0);
   };
 
+  const handlePrefillPrimaryCharacter = () => {
+    setRangerSelectorMode('primary');
+    setIsRangerSelectorOpen(true);
+  };
+
+  const handleAddExtraCharacter = () => {
+    setRangerSelectorMode('add');
+    setIsRangerSelectorOpen(true);
+  };
+
+  const handleReplaceCharacter = (index) => {
+    setReplacingCharacterIndex(index);
+    setRangerSelectorMode('replace');
+    setIsRangerSelectorOpen(true);
+  };
+
+  const handleRangerSelect = (characterData) => {
+    if (rangerSelectorMode === 'primary') {
+      // Replace primary character fields
+      setFormData(prev => ({
+        ...prev,
+        name: characterData.name,
+        title: characterData.title,
+        abilityName: characterData.abilityName,
+        ability: characterData.ability
+      }));
+    } else if (rangerSelectorMode === 'replace') {
+      // Replace extra character
+      const updated = [...extraCharacters];
+      updated[replacingCharacterIndex] = characterData;
+      setExtraCharacters(updated);
+      setReplacingCharacterIndex(null);
+    } else {
+      // Add as extra character
+      setExtraCharacters(prev => [...prev, characterData]);
+    }
+  };
+
+  const handleAddOfficialCards = (cards) => {
+    setDeck(prev => [...prev, ...cards]);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -180,6 +230,7 @@ const CreateCustomRanger = () => {
           ranger.abilityName = formData.abilityName;
           ranger.ability = formData.ability;
           ranger.deck = JSON.stringify(deck);
+          ranger.extraCharacters = extraCharacters.length > 0 ? JSON.stringify(extraCharacters) : null;
           ranger.teamId = formData.teamId || null;
           ranger.customTeamName = formData.customTeamName || null;
           ranger.teamPosition = formData.teamPosition || null;
@@ -210,10 +261,24 @@ const CreateCustomRanger = () => {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
-        {/* Basic Info */}
+        {/* Primary Character */}
         <Card>
           <CardHeader>
-            <CardTitle>Basic Information</CardTitle>
+            <div className="flex justify-between items-center">
+              <CardTitle>Primary Character</CardTitle>
+              <Button 
+                type="button" 
+                variant="outline" 
+                size="sm"
+                onClick={handlePrefillPrimaryCharacter}
+              >
+                <UserPlus className="mr-2 h-4 w-4" />
+                Prefill from Official Ranger
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2">
+              Main character information including name, color, type, and primary ability.
+            </p>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -236,18 +301,6 @@ const CreateCustomRanger = () => {
                 onChange={handleInputChange}
                 placeholder="e.g., Leader, Warrior"
               />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="cardTitle">Card Title (Override)</Label>
-              <Input
-                id="cardTitle"
-                name="cardTitle"
-                value={formData.cardTitle}
-                onChange={handleInputChange}
-                placeholder="e.g., MMPR Red Ranger"
-              />
-              <p className="text-xs text-muted-foreground">Optional: Overrides title on deck cards</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -282,6 +335,29 @@ const CreateCustomRanger = () => {
                   </SelectContent>
                 </Select>
               </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="abilityName">Ability Name *</Label>
+              <Input
+                id="abilityName"
+                name="abilityName"
+                value={formData.abilityName}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="ability">Ability Description *</Label>
+              <Textarea
+                id="ability"
+                name="ability"
+                value={formData.ability}
+                onChange={handleInputChange}
+                rows={4}
+                required
+              />
             </div>
           </CardContent>
         </Card>
@@ -341,34 +417,31 @@ const CreateCustomRanger = () => {
           </CardContent>
         </Card>
 
-        {/* Ability */}
+        {/* Extra Characters */}
         <Card>
           <CardHeader>
-            <CardTitle>Ability</CardTitle>
+            <div className="flex justify-between items-center">
+              <CardTitle>Extra Characters</CardTitle>
+              <Button 
+                type="button" 
+                variant="outline" 
+                size="sm"
+                onClick={handleAddExtraCharacter}
+              >
+                <UserPlus className="mr-2 h-4 w-4" />
+                Add from Official Ranger
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2">
+              Add additional character cards for alternate forms, power-ups, or different abilities.
+            </p>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="abilityName">Ability Name *</Label>
-              <Input
-                id="abilityName"
-                name="abilityName"
-                value={formData.abilityName}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="ability">Ability Description *</Label>
-              <Textarea
-                id="ability"
-                name="ability"
-                value={formData.ability}
-                onChange={handleInputChange}
-                rows={4}
-                required
-              />
-            </div>
+          <CardContent>
+            <CharacterCardEditor
+              extraCharacters={extraCharacters}
+              onCharactersChange={setExtraCharacters}
+              onReplaceCharacter={handleReplaceCharacter}
+            />
           </CardContent>
         </Card>
 
@@ -377,12 +450,34 @@ const CreateCustomRanger = () => {
           <CardHeader>
             <div className="flex justify-between items-center">
               <CardTitle>Deck </CardTitle>
-              <Button type="button" onClick={() => setIsCardModalOpen(true)}>
-                Add Card
-              </Button>
+              <div className="flex gap-2">
+                <Button type="button" onClick={() => setIsCardModalOpen(true)}>
+                  Add Custom Card
+                </Button>
+                <Button 
+                  type="button" 
+                  variant="outline"
+                  onClick={() => setIsCardSelectorOpen(true)}
+                >
+                  Add from Official Cards
+                </Button>
+              </div>
             </div>
           </CardHeader>
           <CardContent>
+            <div className="space-y-4 mb-6">
+              <div className="space-y-2">
+                <Label htmlFor="cardTitle">Card Title (Override)</Label>
+                <Input
+                  id="cardTitle"
+                  name="cardTitle"
+                  value={formData.cardTitle}
+                  onChange={handleInputChange}
+                  placeholder="e.g., MMPR Red Ranger"
+                />
+                <p className="text-xs text-muted-foreground">Optional: Overrides title on deck cards</p>
+              </div>
+            </div>
 
             <CardEditorModal
               isOpen={isCardModalOpen}
@@ -633,6 +728,24 @@ const CreateCustomRanger = () => {
           </Button>
         </div>
       </form>
+
+      {/* Modals */}
+      <ExistingRangerSelector
+        isOpen={isRangerSelectorOpen}
+        onClose={() => {
+          setIsRangerSelectorOpen(false);
+          setReplacingCharacterIndex(null);
+        }}
+        onSelect={handleRangerSelect}
+        mode={rangerSelectorMode === 'replace' ? 'replace' : 'add'}
+      />
+
+      <ExistingCardSelector
+        isOpen={isCardSelectorOpen}
+        onClose={() => setIsCardSelectorOpen(false)}
+        onSelect={handleAddOfficialCards}
+        mode="add"
+      />
     </div>
   );
 };

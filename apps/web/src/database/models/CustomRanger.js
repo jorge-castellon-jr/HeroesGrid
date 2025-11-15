@@ -25,6 +25,7 @@ export default class CustomRanger extends Model {
 	@date('updated_at') updatedAt;
 
 	@json('deck', (json) => json) deck;
+	@json('extra_characters', (json) => json) extraCharacters;
 
 	@relation('teams', 'team_id') team;
 }

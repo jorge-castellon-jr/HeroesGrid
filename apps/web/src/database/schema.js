@@ -1,7 +1,7 @@
 import { appSchema, tableSchema } from '@nozbe/watermelondb';
 
 export default appSchema({
-	version: 8,
+	version: 9,
 	tables: [
 		tableSchema({
 			name: 'rulebooks',
@@ -179,6 +179,7 @@ export default appSchema({
 				{ name: 'ability_name', type: 'string' },
 				{ name: 'ability', type: 'string' },
 				{ name: 'deck', type: 'string' }, // JSON array of card objects
+				{ name: 'extra_characters', type: 'string', isOptional: true }, // JSON array of extra character objects
 				{ name: 'team_id', type: 'string', isOptional: true, isIndexed: true },
 				{ name: 'custom_team_name', type: 'string', isOptional: true, isIndexed: true },
 				{ name: 'team_position', type: 'number', isOptional: true },

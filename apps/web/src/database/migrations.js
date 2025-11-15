@@ -248,5 +248,17 @@ export default schemaMigrations({
 				}),
 			],
 		},
+		{
+			// Version 8 to 9: Add extra_characters to custom_rangers table
+			toVersion: 9,
+			steps: [
+				addColumns({
+					table: 'custom_rangers',
+					columns: [
+						{ name: 'extra_characters', type: 'string', isOptional: true },
+					],
+				}),
+			],
+		},
 	],
 });

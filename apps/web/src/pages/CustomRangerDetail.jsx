@@ -6,12 +6,16 @@ import { getColor } from '../utils/helpers';
 import { useDialog } from '../contexts/DialogContext';
 import RangerCard from '../components/cards/RangerCard';
 import CardEditorModal from '../components/CardEditorModal';
+import CharacterCardEditor from '../components/CharacterCardEditor';
+import ExistingRangerSelector from '../components/ExistingRangerSelector';
+import ExistingCardSelector from '../components/ExistingCardSelector';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { UserPlus } from 'lucide-react';
 
 const CustomRangerDetail = () => {
   const { slug } = useParams();
@@ -23,8 +27,13 @@ const CustomRangerDetail = () => {
   const [teams, setTeams] = useState([]);
   const [formData, setFormData] = useState(null);
   const [deck, setDeck] = useState([]);
+  const [extraCharacters, setExtraCharacters] = useState([]);
   const [editingCardIndex, setEditingCardIndex] = useState(null);
   const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+  const [isRangerSelectorOpen, setIsRangerSelectorOpen] = useState(false);
+  const [isCardSelectorOpen, setIsCardSelectorOpen] = useState(false);
+  const [rangerSelectorMode, setRangerSelectorMode] = useState('add');
+  const [replacingCharacterIndex, setReplacingCharacterIndex] = useState(null);
   const [currentCard, setCurrentCard] = useState({
     name: '',
     energyCost: '0',
@@ -96,6 +105,7 @@ const CustomRangerDetail = () => {
         teamName: teamName || 'No Team',
         teamPosition: rangerRecord.teamPosition,
         deck: JSON.parse(rangerRecord.deck || '[]'),
+        extraCharacters: rangerRecord.extraCharacters ? JSON.parse(rangerRecord.extraCharacters) : [],
         createdAt: rangerRecord.createdAt,
         record: rangerRecord,
       };
@@ -114,6 +124,7 @@ const CustomRangerDetail = () => {
         teamPosition: rangerData.teamPosition || 1,
       });
       setDeck(rangerData.deck);
+      setExtraCharacters(rangerData.extraCharacters);
     } catch (error) {
       console.error('Error fetching ranger:', error);
       showError('Failed to load ranger');
@@ -190,6 +201,45 @@ const CustomRangerDetail = () => {
     return deck.reduce((total, card) => total + (parseInt(card.count) || 1), 0);
   };
 
+  const handlePrefillPrimaryCharacter = () => {
+    setRangerSelectorMode('primary');
+    setIsRangerSelectorOpen(true);
+  };
+
+  const handleAddExtraCharacter = () => {
+    setRangerSelectorMode('add');
+    setIsRangerSelectorOpen(true);
+  };
+
+  const handleReplaceCharacter = (index) => {
+    setReplacingCharacterIndex(index);
+    setRangerSelectorMode('replace');
+    setIsRangerSelectorOpen(true);
+  };
+
+  const handleRangerSelect = (characterData) => {
+    if (rangerSelectorMode === 'primary') {
+      setFormData(prev => ({
+        ...prev,
+        name: characterData.name,
+        title: characterData.title,
+        abilityName: characterData.abilityName,
+        ability: characterData.ability
+      }));
+    } else if (rangerSelectorMode === 'replace') {
+      const updated = [...extraCharacters];
+      updated[replacingCharacterIndex] = characterData;
+      setExtraCharacters(updated);
+      setReplacingCharacterIndex(null);
+    } else {
+      setExtraCharacters(prev => [...prev, characterData]);
+    }
+  };
+
+  const handleAddOfficialCards = (cards) => {
+    setDeck(prev => [...prev, ...cards]);
+  };
+
   const handleSave = async () => {
     if (!formData.name) {
       showWarning('Ranger name is required');
@@ -217,6 +267,7 @@ const CustomRangerDetail = () => {
           r.abilityName = formData.abilityName;
           r.ability = formData.ability;
           r.deck = JSON.stringify(deck);
+          r.extraCharacters = extraCharacters.length > 0 ? JSON.stringify(extraCharacters) : null;
           r.teamId = formData.teamId || null;
           r.customTeamName = formData.customTeamName || null;
           r.teamPosition = formData.teamPosition || null;
@@ -273,10 +324,24 @@ const CustomRangerDetail = () => {
           <h1 className="text-3xl font-bold mb-6 dark:text-gray-100">Edit Custom Ranger</h1>
 
           <div className="space-y-6">
-            {/* Basic Info */}
+            {/* Primary Character */}
             <Card>
               <CardHeader>
-                <CardTitle>Basic Information</CardTitle>
+                <div className="flex justify-between items-center">
+                  <CardTitle>Primary Character</CardTitle>
+                  <Button 
+                    type="button" 
+                    variant="outline" 
+                    size="sm"
+                    onClick={handlePrefillPrimaryCharacter}
+                  >
+                    <UserPlus className="mr-2 h-4 w-4" />
+                    Prefill from Official Ranger
+                  </Button>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Main character information including name, color, type, and primary ability.
+                </p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
@@ -299,18 +364,6 @@ const CustomRangerDetail = () => {
                     onChange={handleInputChange}
                     placeholder="e.g., Leader, Warrior"
                   />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="edit-cardTitle">Card Title (Override)</Label>
-                  <Input
-                    id="edit-cardTitle"
-                    name="cardTitle"
-                    value={formData.cardTitle}
-                    onChange={handleInputChange}
-                    placeholder="e.g., MMPR Red Ranger"
-                  />
-                  <p className="text-xs text-muted-foreground">Optional: Overrides title on deck cards</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -345,6 +398,29 @@ const CustomRangerDetail = () => {
                       </SelectContent>
                     </Select>
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="abilityName">Ability Name *</Label>
+                  <Input
+                    id="abilityName"
+                    name="abilityName"
+                    value={formData.abilityName}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="ability">Ability Description *</Label>
+                  <Textarea
+                    id="ability"
+                    name="ability"
+                    value={formData.ability}
+                    onChange={handleInputChange}
+                    rows={4}
+                    required
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -402,34 +478,31 @@ const CustomRangerDetail = () => {
               </CardContent>
             </Card>
 
-            {/* Ability */}
+            {/* Extra Characters */}
             <Card>
               <CardHeader>
-                <CardTitle>Ability</CardTitle>
+                <div className="flex justify-between items-center">
+                  <CardTitle>Extra Characters</CardTitle>
+                  <Button 
+                    type="button" 
+                    variant="outline" 
+                    size="sm"
+                    onClick={handleAddExtraCharacter}
+                  >
+                    <UserPlus className="mr-2 h-4 w-4" />
+                    Add from Official Ranger
+                  </Button>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Add additional character cards for alternate forms, power-ups, or different abilities.
+                </p>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="abilityName">Ability Name *</Label>
-                  <Input
-                    id="abilityName"
-                    name="abilityName"
-                    value={formData.abilityName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="ability">Ability Description *</Label>
-                  <Textarea
-                    id="ability"
-                    name="ability"
-                    value={formData.ability}
-                    onChange={handleInputChange}
-                    rows={4}
-                    required
-                  />
-                </div>
+              <CardContent>
+                <CharacterCardEditor
+                  extraCharacters={extraCharacters}
+                  onCharactersChange={setExtraCharacters}
+                  onReplaceCharacter={handleReplaceCharacter}
+                />
               </CardContent>
             </Card>
 
@@ -438,12 +511,34 @@ const CustomRangerDetail = () => {
               <CardHeader>
                 <div className="flex justify-between items-center">
                   <CardTitle>Deck ({getTotalCardCount()}/10 cards)</CardTitle>
-                  <Button type="button" onClick={() => setIsCardModalOpen(true)}>
-                    Add Card
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button type="button" onClick={() => setIsCardModalOpen(true)}>
+                      Add Custom Card
+                    </Button>
+                    <Button 
+                      type="button" 
+                      variant="outline"
+                      onClick={() => setIsCardSelectorOpen(true)}
+                    >
+                      Add from Official Cards
+                    </Button>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent>
+                <div className="space-y-4 mb-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="edit-cardTitle">Card Title (Override)</Label>
+                    <Input
+                      id="edit-cardTitle"
+                      name="cardTitle"
+                      value={formData.cardTitle}
+                      onChange={handleInputChange}
+                      placeholder="e.g., MMPR Red Ranger"
+                    />
+                    <p className="text-xs text-muted-foreground">Optional: Overrides title on deck cards</p>
+                  </div>
+                </div>
 
                 <CardEditorModal
                   isOpen={isCardModalOpen}
@@ -555,6 +650,24 @@ const CustomRangerDetail = () => {
               </Button>
             </div>
           </div>
+
+          {/* Modals */}
+          <ExistingRangerSelector
+            isOpen={isRangerSelectorOpen}
+            onClose={() => {
+              setIsRangerSelectorOpen(false);
+              setReplacingCharacterIndex(null);
+            }}
+            onSelect={handleRangerSelect}
+            mode={rangerSelectorMode === 'replace' ? 'replace' : 'add'}
+          />
+
+          <ExistingCardSelector
+            isOpen={isCardSelectorOpen}
+            onClose={() => setIsCardSelectorOpen(false)}
+            onSelect={handleAddOfficialCards}
+            mode="add"
+          />
         </div>
       </div>
     );
@@ -581,10 +694,10 @@ const CustomRangerDetail = () => {
           </div>
         </div>
 
-        {/* Basic Info */}
+        {/* Primary Character */}
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>{ranger.abilityName}</CardTitle>
+            <CardTitle>Primary Character: {ranger.abilityName}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="mb-4">{ranger.ability}</p>
@@ -600,6 +713,31 @@ const CustomRangerDetail = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Extra Characters */}
+        {ranger.extraCharacters && ranger.extraCharacters.length > 0 && (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle>Extra Characters ({ranger.extraCharacters.length})</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {ranger.extraCharacters.map((character, index) => (
+                  <div key={index} className="border-b last:border-b-0 pb-4 last:pb-0">
+                    <h4 className="font-semibold mb-1">{character.name}</h4>
+                    {character.title && (
+                      <p className="text-sm text-muted-foreground mb-2">{character.title}</p>
+                    )}
+                    <div className="bg-muted p-3 rounded">
+                      <p className="font-medium text-sm mb-1">{character.abilityName}</p>
+                      <p className="text-sm text-muted-foreground">{character.ability}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
 
         {/* Deck */}
