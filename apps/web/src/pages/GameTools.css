@@ -1,0 +1,109 @@
+.game-tools-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.game-tools-content {
+	flex: 1;
+	padding-bottom: 6rem;
+}
+
+.game-tools-tabs {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	background-color: white;
+	border-top: 2px solid #e5e7eb;
+	box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+	z-index: 50;
+}
+
+@media (prefers-color-scheme: dark) {
+	.game-tools-tabs {
+		background-color: #1f2937;
+		border-top-color: #374151;
+	}
+}
+
+.game-tools-tab {
+	flex: 1;
+	padding: 1rem;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	color: #6b7280;
+	font-weight: 500;
+}
+
+.game-tools-tab:hover {
+	background-color: #f3f4f6;
+	color: #1f2937;
+}
+
+@media (prefers-color-scheme: dark) {
+	.game-tools-tab {
+		color: #9ca3af;
+	}
+
+	.game-tools-tab:hover {
+		background-color: #374151;
+		color: #f9fafb;
+	}
+}
+
+.game-tools-tab.active {
+	color: #2563eb;
+	background-color: #eff6ff;
+	border-top: 3px solid #2563eb;
+	font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+	.game-tools-tab.active {
+		color: #60a5fa;
+		background-color: #1e3a8a;
+		border-top-color: #60a5fa;
+	}
+}
+
+.game-tools-tab span {
+	display: block;
+}
+
+/* Token Tracker Styles */
+.button {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	margin: 1rem 0;
+	transition: background-color 0.3s;
+	border: 1px solid #9ca3af;
+	border-radius: 0.5rem;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	width: 3.5rem;
+}
+
+.button:hover {
+	background-color: #d1d5db;
+}
+
+.bg {
+	background-color: #1d4ed8;
+	border-radius: 9999px;
+	opacity: 0.8;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	filter: blur(30px);
+}
+
+.count {
+	font-size: 3.75rem;
+	position: relative;
+	z-index: 10;
+	color: #fbbf24;
+}

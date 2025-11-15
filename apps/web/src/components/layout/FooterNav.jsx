@@ -36,20 +36,8 @@ const FooterNav = () => {
 			nuxt: true,
 		},
 		{
-			title: "Randomizer",
-			to: "/randomizer",
-			icon: "pr-hotg",
-			nuxt: true,
-		},
-		{
-			title: "Dice Roller",
-			to: "/dice",
-			icon: "pr-hotg",
-			nuxt: true,
-		},
-		{
-			title: "Token Tracker",
-			to: "/tokens",
+			title: "Companion",
+			to: "/game-tools",
 			icon: "pr-hotg",
 			nuxt: true,
 		},
