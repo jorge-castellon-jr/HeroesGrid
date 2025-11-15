@@ -328,9 +328,10 @@
     color-adjust: exact !important;
   }
   
-  /* Remove border radius for clean print edges */
+  /* Only remove bottom border radius to fix overflow issue */
   .ranger-card-container {
-    border-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
   
   .ranger-card-footer {

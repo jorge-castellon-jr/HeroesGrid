@@ -92,25 +92,88 @@ export default function PrintToPlay() {
       try {
         await initializeDatabase();
         const rangersCollection = database.get('rangers');
+        const customRangersCollection = database.get('custom_rangers');
         const rangerCardsCollection = database.get('ranger_cards');
         const fetchedRangers = [];
         const cards = [];
 
         for (const slug of rangerSlugs) {
-          const rangers = await rangersCollection
+          // Try official rangers first
+          let rangers = await rangersCollection
             .query(
               Q.where('slug', slug),
               Q.where('published', true)
             )
             .fetch();
+          
+          let isCustom = false;
+          // If not found, try custom rangers
+          if (rangers.length === 0) {
+            rangers = await customRangersCollection
+              .query(Q.where('slug', slug))
+              .fetch();
+            isCustom = true;
+          }
 
           if (rangers.length > 0) {
             const r = rangers[0];
-            const team = await r.team.fetch();
+            let team = null;
+            let deckData = [];
             
-            // Fetch full card details for deck
-            if (r.deck && Array.isArray(r.deck)) {
-              for (const deckCard of r.deck) {
+            if (isCustom) {
+              // Custom ranger - deck is stored as JSON
+              team = r.customTeamName ? { name: r.customTeamName } : (r.teamId ? await r.team.fetch() : null);
+              deckData = JSON.parse(r.deck || '[]');
+              
+              // Process custom ranger deck
+              for (const card of deckData) {
+                const transformedCard = {
+                  name: card.name.toUpperCase(),
+                  shields: card.shields || '0',
+                  text: card.description ? [card.description] : [''],
+                  team: team?.name || '',
+                  color: r.color || 'red',
+                  cardTitle: r.cardTitle || `${team?.name || ''} ${r.color || ''}`,
+                  energy: card.energyCost?.toString().toLowerCase() === 'x' ? -1 : parseInt(card.energyCost) || 0,
+                  type: card.type === 'custom' ? card.customType : card.type,
+                  quantity: card.count || 1,
+                };
+
+                // Add attack info if it's an attack card
+                if (card.type === 'attack') {
+                  transformedCard.attack = [];
+                  if (card.attackHit && parseInt(card.attackHit) > 0) {
+                    transformedCard.attack.push({
+                      value: parseInt(card.attackHit),
+                      fixed: true
+                    });
+                  }
+                  if (card.attackDice && parseInt(card.attackDice) > 0) {
+                    transformedCard.attack.push({
+                      value: parseInt(card.attackDice),
+                      fixed: false
+                    });
+                  }
+                  if (transformedCard.attack.length === 0) {
+                    transformedCard.attack.push({
+                      value: -1,
+                      fixed: false
+                    });
+                  }
+                }
+
+                // Add multiple copies based on count
+                for (let i = 0; i < (card.count || 1); i++) {
+                  cards.push(transformedCard);
+                }
+              }
+            } else {
+              // Official ranger
+              team = await r.team.fetch();
+              deckData = r.deck && Array.isArray(r.deck) ? r.deck : [];
+              
+              // Fetch full card details for official deck
+              for (const deckCard of deckData) {
                 const fullCards = await rangerCardsCollection
                   .query(Q.where('name', deckCard.card_name))
                   .fetch();
