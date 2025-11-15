@@ -38,12 +38,19 @@
 	width: 150px;
 	aspect-ratio: 2.5 / 3.5;
 	overflow: hidden;
-	border-radius: 0.75rem;
+	border-radius: 0.5rem;
 	user-select: none;
 	background-color: white;
 	display: flex;
 	flex-direction: column;
 	transform-origin: center center;
+}
+
+/* Remove shadow for print */
+@media print {
+	.ranger-card-container {
+		box-shadow: none !important;
+	}
 }
 
 /* Card Container inside wrapper */
@@ -159,8 +166,6 @@
 	align-items: center;
 	backface-visibility: hidden;
 	transform: translateZ(0);
-	border-bottom-left-radius: 0.5rem;
-	border-bottom-right-radius: 0.5rem;
 }
 
 .ranger-card-footer-text {

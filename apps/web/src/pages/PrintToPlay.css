@@ -1,0 +1,365 @@
+/* Print to Play Styles */
+
+.print-to-play-container {
+	min-height: 100vh;
+}
+
+/* Controls (hidden when printing) */
+.print-controls {
+	padding: 2rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.controls-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.print-button {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.5rem;
+	background-color: #3b82f6;
+	color: white;
+	border: none;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.print-button:hover {
+	background-color: #2563eb;
+}
+
+.rangers-info {
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.ranger-badge {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	background-color: #3b82f6;
+	color: white;
+	border-radius: 0.5rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+/* Print Pages Container */
+.print-pages {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+}
+
+/* A4 Page - 210mm × 297mm */
+/* Account for printer margins - most printers can't print within 0.25" of edge */
+.print-page {
+	width: 210mm;
+	height: 297mm;
+	background-color: white;
+	position: relative;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	page-break-after: always;
+	page-break-inside: avoid;
+	overflow: visible;
+}
+
+/* Cards Grid - 3x3 layout */
+.cards-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  row-gap: 0;
+  column-gap: 0;
+  /* Center grid on page - 3 cards × 69mm = 207mm, with small margins */
+  padding: 6mm 1.5mm;
+  line-height: 0; /* Remove any line-height spacing */
+}
+
+/* Individual card cell */
+.card-cell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  display: block; /* Use block instead of flex for print */
+}
+
+.card-cell-empty {
+	background-color: transparent;
+}
+
+/* Card wrapper with bleed - 3mm bleed on all sides */
+.card-wrapper-with-bleed {
+  /* Card: 63mm × 88mm (2.48" × 3.46") with 3mm bleed = 69mm × 94mm total */
+  width: 69mm;
+  height: 94mm;
+  position: relative;
+  padding: 3mm; /* User's fix for alignment */
+  margin: 0;
+  /* Colored background acts as bleed */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+  box-sizing: border-box; /* Include padding in size calculation */
+}
+
+/* Inner card wrapper - actual card size */
+.card-wrapper {
+	/* Poker card size: 63mm × 88mm (2.48" × 3.46") */
+	width: 63mm;
+	height: 88mm;
+	position: relative;
+	overflow: visible; /* Allow scaled card to show */
+}
+
+.card-wrapper .ranger-card-container {
+	/* Base card: 150px × 210px (2.5:3.5 ratio) */
+	/* Scaled: 150 * 1.587 = 238px × 210 * 1.587 = 333px */
+	/* Center in 63mm (238px) × 88mm (333px) container */
+
+	/* Old-school centering - bulletproof for print */
+	position: absolute;
+	width: 150px;
+	height: 210px;
+
+	/* Center point: container is 238px wide, scaled card is 238px */
+	/* So no offset needed for width */
+	/* Container is 333px tall, scaled card is 333px, so no offset for height */
+	left: 0;
+	top: 0;
+
+	transform: scale(1.587);
+	transform-origin: 0 0; /* Scale from top-left */
+
+	/* Remove shadow for print */
+	box-shadow: none !important;
+}
+
+/* Bleed & Cut Marks */
+.bleed-mark,
+.cut-mark {
+	position: absolute;
+	background-color: black;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+	color-adjust: exact;
+}
+
+/* Corner bleed marks (L-shaped) */
+.bleed-mark {
+	width: 5mm;
+	height: 1px;
+}
+
+.bleed-mark::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 5mm;
+	background-color: black;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+	color-adjust: exact;
+}
+
+.bleed-mark-tl {
+	top: 1mm;
+	left: 1mm;
+}
+
+.bleed-mark-tl::after {
+	top: 0;
+	left: 0;
+}
+
+.bleed-mark-tr {
+	top: 1mm;
+	right: 1mm;
+}
+
+.bleed-mark-tr::after {
+	top: 0;
+	right: 0;
+}
+
+.bleed-mark-bl {
+	bottom: 1mm;
+	left: 1mm;
+}
+
+.bleed-mark-bl::after {
+	bottom: 0;
+	left: 0;
+}
+
+.bleed-mark-br {
+	bottom: 1mm;
+	right: 1mm;
+}
+
+.bleed-mark-br::after {
+	bottom: 0;
+	right: 0;
+}
+
+/* Cut marks between cards */
+.cut-mark {
+	width: 3mm;
+	height: 1px;
+	z-index: 1000;
+}
+
+/* Row dividers (horizontal) */
+.cut-mark-row-1-left,
+.cut-mark-row-2-left {
+	left: 1mm;
+}
+
+.cut-mark-row-1-right,
+.cut-mark-row-2-right {
+	right: 1mm;
+}
+
+.cut-mark-row-1-left,
+.cut-mark-row-1-right {
+	top: calc(6mm + 94mm); /* First row break */
+}
+
+.cut-mark-row-2-left,
+.cut-mark-row-2-right {
+	top: calc(6mm + 94mm + 94mm); /* Second row break */
+}
+
+/* Column dividers (vertical) */
+.cut-mark-col-1-top,
+.cut-mark-col-2-top {
+	top: 1mm;
+}
+
+.cut-mark-col-1-bottom,
+.cut-mark-col-2-bottom {
+	bottom: 1mm;
+}
+
+.cut-mark-col-1-top,
+.cut-mark-col-1-bottom {
+	left: calc(1.5mm + 69mm); /* First column break */
+	width: 1px;
+	height: 3mm;
+}
+
+.cut-mark-col-2-top,
+.cut-mark-col-2-bottom {
+	left: calc(1.5mm + 69mm + 69mm); /* Second column break */
+	width: 1px;
+	height: 3mm;
+}
+
+/* Print-specific styles */
+@media print {
+	/* Hide everything except the print pages */
+	body * {
+		visibility: hidden;
+	}
+
+	.no-print,
+	.no-print * {
+		display: none !important;
+	}
+
+	.print-pages,
+	.print-pages * {
+		visibility: visible;
+	}
+
+	.print-pages {
+		padding: 0 !important;
+		margin: 0 !important;
+		display: block !important;
+	}
+
+	.print-page {
+		width: 210mm;
+		height: 297mm;
+		margin: 0 !important;
+		padding: 0 !important;
+		box-shadow: none;
+		page-break-after: always;
+		page-break-inside: avoid;
+		overflow: hidden;
+	}
+
+	/* Last page shouldn't force a new page */
+	.print-page:last-child {
+		page-break-after: avoid;
+	}
+
+	/* Hide screen-only containers that cause empty pages */
+	.print-pages {
+		margin: 0 !important;
+		padding: 0 !important;
+		gap: 0 !important;
+	}
+
+  /* Ensure cards and bleed render correctly */
+  .ranger-card-container,
+  .card-wrapper-with-bleed,
+  .bleed-mark,
+  .bleed-mark::after,
+  .cut-mark {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Remove border radius for clean print edges */
+  .ranger-card-container {
+    border-radius: 0 !important;
+  }
+  
+  .ranger-card-footer {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+	/* Force visibility of all print elements */
+	.print-page .bleed-mark,
+	.print-page .bleed-mark::after,
+	.print-page .cut-mark,
+	.print-page .cross-mark,
+	.print-page .cross-mark::before,
+	.print-page .cross-mark::after,
+	.card-wrapper-with-bleed {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+
+	@page {
+		size: A4;
+		margin: 0;
+	}
+}
+
+/* Screen-only: center pages and add shadows */
+@media screen {
+	.print-page {
+		margin: 0 auto;
+	}
+}

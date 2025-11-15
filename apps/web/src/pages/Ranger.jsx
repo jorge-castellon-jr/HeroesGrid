@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import RangerCard from '../components/cards/RangerCard';
 import RangerEditModal from '../components/RangerEditModal';
@@ -42,6 +42,7 @@ import { Q } from '@nozbe/watermelondb';
 export default function Ranger() {
   const { ranger: rangerParam } = useParams();
   const { setLoadingState } = useApp();
+  const navigate = useNavigate();
   const [ranger, setRanger] = useState(null);
   const [rangerRecord, setRangerRecord] = useState(null); // Store the DB record
   const [isLoading, setIsLoading] = useState(true);
@@ -336,7 +337,18 @@ export default function Ranger() {
 
       {ranger.rangerCards?.deck?.length > 0 && (
         <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Deck</h2>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold">Deck</h2>
+            <button
+              onClick={() => navigate(`/print-to-play?rangers=${rangerParam}`)}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+              </svg>
+              Print Deck
+            </button>
+          </div>
           <div className="grid grid-cols-2 gap-8">
             {ranger.rangerCards.deck.map((card, index) => (
               <StackedCard key={`${card.order || index}`} card={card} />

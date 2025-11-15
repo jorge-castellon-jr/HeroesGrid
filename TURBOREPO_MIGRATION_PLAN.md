@@ -68,14 +68,15 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [x] Add local export/import functionality (JSON backup)
 - [ ] Test all local data persistence and retrieval
 
-## Phase 4: Print-to-Play PDF Feature
-- [ ] Research PDF generation library (PDFKit, jsPDF, or Puppeteer)
-- [ ] Design card template layout (10-card deck structure)
-- [ ] Implement character card PDF generation in web app
-- [ ] Implement Zord card PDF generation in web app
-- [ ] Add print guides/cut lines to PDF output
-- [ ] Integrate PDF download button into web app UI
-- [ ] Test PDF generation with different rangers and zords
+## Phase 4: Print-to-Play Feature ✅
+- [x] Design card template layout (9-card per page A4 structure)
+- [x] Implement browser-based printing with A4 layout
+- [x] Create 3x3 card grid for optimal A4 printing
+- [x] Add 3mm bleed marks and cut lines to print output
+- [x] Implement print-to-play page with ranger deck support
+- [x] Add "Print Deck" button to ranger detail pages
+- [x] Support multiple rangers via URL query parameters
+- [x] Add toggle for showing/hiding bleed marks
 
 ## Phase 5: Create API Package (tRPC + Cloudflare Worker)
 - [ ] Create `apps/api` directory structure

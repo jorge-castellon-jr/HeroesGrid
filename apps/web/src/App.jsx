@@ -20,6 +20,7 @@ import Settings from './pages/Settings'
 import CreateCustomRanger from './pages/CreateCustomRanger'
 import MyRangers from './pages/MyRangers'
 import CustomRangerDetail from './pages/CustomRangerDetail'
+import PrintToPlay from './pages/PrintToPlay'
 import './App.css'
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 					<Route path="/rangers/create" element={<CreateCustomRanger />} />
 					<Route path="/my-rangers" element={<MyRangers />} />
 					<Route path="/my-rangers/:slug" element={<CustomRangerDetail />} />
+					<Route path="/print-to-play" element={<PrintToPlay />} />
 					<Route path="/:team" element={<Team />} />
 					<Route path="/:team/:ranger" element={<Ranger />} />
 					</Routes>
