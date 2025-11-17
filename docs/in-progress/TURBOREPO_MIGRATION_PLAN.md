@@ -78,19 +78,22 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [x] Support multiple rangers via URL query parameters
 - [x] Add toggle for showing/hiding bleed marks
 
-## Phase 5: Create API Package (tRPC + Cloudflare Worker)
-- [ ] Create `apps/api` directory structure
-- [ ] Initialize Cloudflare Worker with Wrangler
-- [ ] Set up tRPC server configuration
-- [ ] Install and configure Drizzle ORM with D1
-- [ ] Create Drizzle schema for game data (rangers, teams, expansions, etc.)
-- [ ] Set up database migrations folder structure
-- [ ] Create initial tRPC router for game data queries
-- [ ] Configure CORS for local development with web app
-- [ ] Add `apps/api/package.json` with dependencies
-- [ ] Add Wrangler configuration (`wrangler.toml`)
-- [ ] Deploy API to Cloudflare Workers
+## Phase 5: Create API Package (tRPC + Cloudflare Worker) ✅
+- [x] Create `apps/api` directory structure
+- [x] Initialize Cloudflare Worker with Wrangler
+- [x] Set up tRPC server configuration
+- [x] Install and configure Drizzle ORM with D1
+- [x] Create Drizzle schema for **user content only** (users, custom_rangers, settings)
+- [x] Set up database migrations folder structure
+- [x] Create initial tRPC router for custom rangers (CRUD operations)
+- [x] Configure CORS for local development with web app
+- [x] Add `apps/api/package.json` with dependencies
+- [x] Add Wrangler configuration (`wrangler.toml`)
+- [x] D1 database created and migration generated
+- [ ] Deploy API to Cloudflare Workers (ready to deploy)
 - [ ] Test API endpoints from deployed web app
+
+**Architecture Note:** Official game data (rangers, teams, expansions, etc.) stays in the web app's local WatermelonDB for offline-first performance. D1 only stores user-created content and authentication data.
 
 ## Phase 6: Authentication System (Discord OAuth)
 - [ ] Set up Discord OAuth application in Discord Developer Portal

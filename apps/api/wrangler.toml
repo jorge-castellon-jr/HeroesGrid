@@ -1,0 +1,17 @@
+name = "heroes-grid-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+
+# D1 Database Bindings
+[[d1_databases]]
+binding = "DB"
+database_name = "heroes-grid-db"
+database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
+
+# CORS headers for local development
+[env.development]
+name = "heroes-grid-api-dev"
+
+# Production environment
+[env.production]
+name = "heroes-grid-api"

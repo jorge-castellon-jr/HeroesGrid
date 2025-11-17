@@ -1,0 +1,28 @@
+{
+  "name": "@heroes-grid/api",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy",
+    "db:generate": "npx drizzle-kit generate",
+    "db:migrate": "npx wrangler d1 execute heroes-grid-db --local --file=./drizzle/migrations/MIGRATION_FILE.sql",
+    "db:migrate:prod": "npx wrangler d1 execute heroes-grid-db --remote --file=./drizzle/migrations/MIGRATION_FILE.sql",
+    "db:studio": "npx drizzle-kit studio",
+    "db:query": "npx wrangler d1 execute heroes-grid-db --local --command"
+  },
+  "dependencies": {
+    "@trpc/server": "^11.0.0",
+    "drizzle-orm": "^0.33.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "better-sqlite3": "^12.4.1",
+    "drizzle-kit": "^0.24.0",
+    "typescript": "^5.6.3",
+    "wrangler": "^4.47.0"
+  }
+}
