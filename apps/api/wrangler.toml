@@ -9,6 +9,13 @@ binding = "DB"
 database_name = "heroes-grid-db"
 database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
 
+[observability]
+[observability.logs]
+enabled = false
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
 # Environment Variables (non-secret)
 # Secrets (DISCORD_CLIENT_SECRET, SESSION_SECRET) should be set via:
 # wrangler secret put <KEY>
