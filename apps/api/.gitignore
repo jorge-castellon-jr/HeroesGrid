@@ -3,6 +3,5 @@ dist/
 .wrangler/
 .dev.vars
 .env
-drizzle/
 *.log
 .DS_Store
