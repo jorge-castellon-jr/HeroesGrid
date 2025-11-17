@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "69373b4a-19c2-460d-9ce5-be1b2f905ce6",
+  "id": "be72d19b-605a-4fc0-9d61-b4ccb722f51d",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "custom_ranger_likes": {

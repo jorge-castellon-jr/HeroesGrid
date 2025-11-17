@@ -8,6 +8,7 @@ account_id = "5096cb420b709537de9b69234149a1f2"
 binding = "DB"
 database_name = "heroes-grid-db"
 database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
+migrations_dir = "drizzle/migrations"
 
 [observability]
 [observability.logs]
@@ -37,6 +38,7 @@ name = "heroes-grid-api"
 binding = "DB"
 database_name = "heroes-grid-db"
 database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
+migrations_dir = "drizzle/migrations"
 
 [env.production.vars]
 DISCORD_CLIENT_ID = "1440060827037208748"
