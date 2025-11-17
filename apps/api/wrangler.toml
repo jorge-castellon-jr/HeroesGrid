@@ -15,7 +15,6 @@ migrations_dir = "drizzle/migrations"
 enabled = true
 head_sampling_rate = 1
 invocation_logs = true
-persist = true
 
 # Environment Variables (non-secret)
 # Secrets (DISCORD_CLIENT_SECRET, SESSION_SECRET) should be set via:
