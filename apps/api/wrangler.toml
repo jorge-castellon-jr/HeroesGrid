@@ -1,6 +1,7 @@
 name = "heroes-grid-api"
 main = "src/index.ts"
 compatibility_date = "2025-01-15"
+account_id = "5096cb420b709537de9b69234149a1f2"
 
 # D1 Database Bindings
 [[d1_databases]]
@@ -28,4 +29,4 @@ name = "heroes-grid-api"
 [env.production.vars]
 DISCORD_REDIRECT_URI = "https://discord.com/oauth2/authorize?client_id=1440060827037208748&response_type=code&redirect_uri=https%3A%2F%2Fapi.heroesgrid.com%2Fauth%2Fdiscord%2Fcallback&scope=identify"
 DISCORD_CALLBACK_URL = "https://api.heroesgrid.com/auth/discord/callback"
-FRONTEND_URL = "https://heroesgrid.com"
+FRONTEND_URL = "https://app.heroesgrid.com"
