@@ -33,6 +33,11 @@ name = "heroes-grid-api-dev"
 [env.production]
 name = "heroes-grid-api"
 
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "heroes-grid-db"
+database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
+
 [env.production.vars]
 DISCORD_CLIENT_ID = "1440060827037208748"
 DISCORD_REDIRECT_URI = "https://discord.com/oauth2/authorize?client_id=1440060827037208748&response_type=code&redirect_uri=https%3A%2F%2Fapi.heroesgrid.com%2Fauth%2Fdiscord%2Fcallback&scope=identify"
