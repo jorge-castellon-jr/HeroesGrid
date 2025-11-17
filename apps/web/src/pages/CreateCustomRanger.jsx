@@ -4,6 +4,8 @@ import { database } from '../database';
 import { Q } from '@nozbe/watermelondb';
 import { getColor } from '../utils/helpers';
 import { useDialog } from '../contexts/DialogContext';
+import { useAuth } from '../contexts/AuthContext';
+import { trpc } from '../utils/trpc';
 import RangerCard from '../components/cards/RangerCard';
 import CardEditorModal from '../components/CardEditorModal';
 import CharacterCardEditor from '../components/CharacterCardEditor';
@@ -21,6 +23,8 @@ const CreateCustomRanger = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { showError, showWarning, showToast } = useDialog();
+  const { isAuthenticated } = useAuth();
+  const trpcUtils = trpc.useUtils();
   const [teams, setTeams] = useState([]);
   
   // Check if we're cloning from location state
@@ -217,9 +221,10 @@ const CreateCustomRanger = () => {
       setIsSubmitting(true);
       const customRangersCollection = database.get('custom_rangers');
       const slug = generateSlug(formData.name);
+      let createdRanger = null;
 
       await database.write(async () => {
-        await customRangersCollection.create((ranger) => {
+        createdRanger = await customRangersCollection.create((ranger) => {
           ranger.name = formData.name;
           ranger.slug = slug;
           ranger.username = formData.username;
@@ -239,6 +244,17 @@ const CreateCustomRanger = () => {
           ranger.updatedAt = Date.now();
         });
       });
+
+      // Sync to cloud if authenticated
+      if (isAuthenticated && createdRanger) {
+        try {
+          const { syncSingleRanger } = await import('../services/customRangersSync');
+          await syncSingleRanger(trpcUtils.client, createdRanger.id);
+        } catch (syncError) {
+          console.error('Failed to sync to cloud:', syncError);
+          // Don't block local creation on sync failure
+        }
+      }
 
       showToast.success('Custom ranger created successfully!');
       setTimeout(() => navigate('/my-rangers'), 1500);

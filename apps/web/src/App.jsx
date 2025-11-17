@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import { DialogProvider } from './contexts/DialogContext'
+import { AuthProvider } from './contexts/AuthContext'
+import { TRPCProvider } from './components/TRPCProvider'
 import { Toaster } from '@/components/ui/sonner'
 import Layout from './components/layout/Layout'
 import SyncLoader from './components/SyncLoader'
@@ -19,15 +21,20 @@ import CreateCustomRanger from './pages/CreateCustomRanger'
 import MyRangers from './pages/MyRangers'
 import CustomRangerDetail from './pages/CustomRangerDetail'
 import PrintToPlay from './pages/PrintToPlay'
+import AuthCallback from './pages/AuthCallback'
+import AuthSuccess from './pages/AuthSuccess'
+import Profile from './pages/Profile'
 import './App.css'
 
 function App() {
 	return (
-		<AppProvider>
-			<DialogProvider>
-				<Toaster />
-				<SyncLoader />
-				<Router>
+		<TRPCProvider>
+			<AuthProvider>
+				<AppProvider>
+					<DialogProvider>
+					<Toaster />
+					<SyncLoader />
+					<Router>
 				<Layout>
 					<Routes>
 					<Route path="/" element={<Home />} />
@@ -43,13 +50,18 @@ function App() {
 					<Route path="/my-rangers" element={<MyRangers />} />
 					<Route path="/my-rangers/:slug" element={<CustomRangerDetail />} />
 					<Route path="/print-to-play" element={<PrintToPlay />} />
+					<Route path="/auth/callback" element={<AuthCallback />} />
+					<Route path="/auth/success" element={<AuthSuccess />} />
+					<Route path="/profile" element={<Profile />} />
 					<Route path="/:team" element={<Team />} />
 					<Route path="/:team/:ranger" element={<Ranger />} />
 					</Routes>
-					</Layout>
-				</Router>
-			</DialogProvider>
-		</AppProvider>
+						</Layout>
+						</Router>
+					</DialogProvider>
+				</AppProvider>
+			</AuthProvider>
+		</TRPCProvider>
 	)
 }
 

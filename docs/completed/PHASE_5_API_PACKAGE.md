@@ -268,6 +268,11 @@ The API is now ready for Phase 6: Authentication System
 - ✅ Schema matches WatermelonDB structure
 - ✅ Comprehensive documentation
 
+## Deployment & Testing Status
+
+- Deployment: Not performed in Phase 5. Scheduled for Phase 7 (after sync features).
+- Testing: End-to-end testing deferred. API will be tested during Phase 6 (auth flows, local) and Phase 7 (sync flows, local + remote).
+
 ## Conclusion
 
 Phase 5 is complete! The API package provides a solid foundation for the HeroesGrid backend. All infrastructure is in place for authentication (Phase 6), cloud sync (Phase 7), and community features (Phase 8).

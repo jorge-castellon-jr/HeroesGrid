@@ -8,10 +8,24 @@ binding = "DB"
 database_name = "heroes-grid-db"
 database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
 
-# CORS headers for local development
+# Environment Variables (non-secret)
+# Secrets (DISCORD_CLIENT_SECRET, SESSION_SECRET) should be set via:
+# wrangler secret put <KEY>
+[vars]
+DISCORD_CLIENT_ID = "1440060827037208748"
+DISCORD_REDIRECT_URI = "https://discord.com/oauth2/authorize?client_id=1440060827037208748&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8787%2Fauth%2Fdiscord%2Fcallback&scope=identify"
+DISCORD_CALLBACK_URL = "http://localhost:8787/auth/discord/callback"
+FRONTEND_URL = "http://localhost:5173"
+
+# Development environment
 [env.development]
 name = "heroes-grid-api-dev"
 
 # Production environment
 [env.production]
 name = "heroes-grid-api"
+
+[env.production.vars]
+DISCORD_REDIRECT_URI = "https://discord.com/oauth2/authorize?client_id=1440060827037208748&response_type=code&redirect_uri=https%3A%2F%2Fapi.heroesgrid.com%2Fauth%2Fdiscord%2Fcallback&scope=identify"
+DISCORD_CALLBACK_URL = "https://api.heroesgrid.com/auth/discord/callback"
+FRONTEND_URL = "https://heroesgrid.com"

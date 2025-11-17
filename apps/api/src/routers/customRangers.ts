@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { eq, desc, sql } from 'drizzle-orm';
-import { publicProcedure, router } from '../trpc';
+import { publicProcedure, protectedProcedure, router } from '../trpc';
 import { customRangers, customRangerLikes } from '../db/schema';
 
 export const customRangersRouter = router({
@@ -66,23 +66,20 @@ export const customRangersRouter = router({
         .get();
     }),
 
-  // Get user's custom rangers (requires auth in Phase 6)
-  getMyRangers: publicProcedure
-    .input(z.object({ userId: z.string() }))
-    .query(async ({ ctx, input }) => {
+  // Get user's custom rangers (requires auth)
+  getMyRangers: protectedProcedure.query(async ({ ctx }) => {
       return await ctx.db
         .select()
         .from(customRangers)
-        .where(eq(customRangers.userId, input.userId))
+        .where(eq(customRangers.userId, ctx.user.id))
         .orderBy(desc(customRangers.createdAt))
         .all();
     }),
 
-  // Create custom ranger (requires auth in Phase 6)
-  create: publicProcedure
+  // Create custom ranger (requires auth)
+  create: protectedProcedure
     .input(
       z.object({
-        userId: z.string(),
         name: z.string(),
         slug: z.string(),
         title: z.string().optional(),
@@ -106,6 +103,7 @@ export const customRangersRouter = router({
         .insert(customRangers)
         .values({
           id,
+          userId: ctx.user.id, // Use authenticated user's ID
           ...input,
         })
         .run();
@@ -113,12 +111,11 @@ export const customRangersRouter = router({
       return { id };
     }),
 
-  // Update custom ranger (requires auth in Phase 6)
-  update: publicProcedure
+  // Update custom ranger (requires auth)
+  update: protectedProcedure
     .input(
       z.object({
         id: z.string(),
-        userId: z.string(),
         name: z.string().optional(),
         title: z.string().optional(),
         cardTitle: z.string().optional(),
@@ -135,30 +132,114 @@ export const customRangersRouter = router({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      const { id, userId, ...updates } = input;
+      const { id, ...updates } = input;
 
       await ctx.db
         .update(customRangers)
         .set(updates)
         .where(
-          sql`${customRangers.id} = ${id} AND ${customRangers.userId} = ${userId}`
+          sql`${customRangers.id} = ${id} AND ${customRangers.userId} = ${ctx.user.id}`
         )
         .run();
 
       return { success: true };
     }),
 
-  // Delete custom ranger (requires auth in Phase 6)
-  delete: publicProcedure
-    .input(z.object({ id: z.string(), userId: z.string() }))
+  // Delete custom ranger (requires auth)
+  delete: protectedProcedure
+    .input(z.object({ id: z.string() }))
     .mutation(async ({ ctx, input }) => {
       await ctx.db
         .delete(customRangers)
         .where(
-          sql`${customRangers.id} = ${input.id} AND ${customRangers.userId} = ${input.userId}`
+          sql`${customRangers.id} = ${input.id} AND ${customRangers.userId} = ${ctx.user.id}`
         )
         .run();
 
       return { success: true };
+    }),
+
+  // Bulk upsert (for sync) - requires auth
+  bulkUpsert: protectedProcedure
+    .input(
+      z.object({
+        rangers: z.array(
+          z.object({
+            id: z.string(),
+            name: z.string(),
+            slug: z.string(),
+            title: z.string().optional(),
+            cardTitle: z.string().optional(),
+            color: z.string(),
+            type: z.string(),
+            abilityName: z.string(),
+            ability: z.string(),
+            deck: z.string(),
+            extraCharacters: z.string().optional(),
+            teamId: z.string().optional(),
+            customTeamName: z.string().optional(),
+            teamPosition: z.number().optional(),
+            published: z.boolean(),
+            createdAt: z.string(),
+            updatedAt: z.string(),
+          })
+        ),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      // Use transaction to upsert all rangers
+      for (const ranger of input.rangers) {
+        // Check if exists
+        const existing = await ctx.db
+          .select()
+          .from(customRangers)
+          .where(
+            sql`${customRangers.id} = ${ranger.id} AND ${customRangers.userId} = ${ctx.user.id}`
+          )
+          .get();
+
+        if (existing) {
+          // Update (exclude id and createdAt from update)
+          const { id, createdAt, ...updateData } = ranger;
+          await ctx.db
+            .update(customRangers)
+            .set({
+              ...updateData,
+              userId: ctx.user.id,
+              updatedAt: new Date(ranger.updatedAt),
+            })
+            .where(eq(customRangers.id, ranger.id))
+            .run();
+        } else {
+          // Insert
+          await ctx.db
+            .insert(customRangers)
+            .values({
+              ...ranger,
+              userId: ctx.user.id,
+              createdAt: new Date(ranger.createdAt),
+              updatedAt: new Date(ranger.updatedAt),
+            })
+            .run();
+        }
+      }
+
+      return { success: true, count: input.rangers.length };
+    }),
+
+  // Bulk delete (for sync) - requires auth
+  bulkDelete: protectedProcedure
+    .input(z.object({ ids: z.array(z.string()) }))
+    .mutation(async ({ ctx, input }) => {
+      for (const id of input.ids) {
+        await ctx.db
+          .delete(customRangers)
+          .where(
+            sql`${customRangers.id} = ${id} AND ${customRangers.userId} = ${ctx.user.id}`
+          )
+          .run();
+      }
+
+      return { success: true, count: input.ids.length };
     }),
 });

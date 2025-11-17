@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import PRIcons from '../PRIcons'
+import AuthButton from '../AuthButton'
 import { isAdminMode } from '../../utils/adminMode'
 import './FooterNav.scss'
 
@@ -67,6 +68,7 @@ const FooterNav = () => {
 					))}
 				</div>
 				<div className="flex flex-col gap-2 items-center mb-4">
+					<AuthButton />
 					<Link 
 						to="/settings" 
 						className="px-4 py-2 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/80"
@@ -98,6 +100,7 @@ const FooterNav = () => {
 							))}
 						</div>
 						<div className="flex flex-col gap-2 items-center mb-4">
+							<AuthButton />
 							<Link 
 								to="/settings" 
 								className="px-4 py-2 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/80"

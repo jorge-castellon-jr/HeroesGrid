@@ -42,21 +42,25 @@ The `wrangler d1 execute --local` command has a known issue with better-sqlite3 
 3. **Test with deployed version:**
    Deploy first, then test against the production D1 database.
 
-## 🚀 Ready for Production Deployment
+## 🚀 Deployment Plan (Not yet deployed)
 
-### Next Steps
+### Next Steps (Scheduled)
 
-1. **Apply Migration to Production:**
+1. **Apply Migration to Production (Phase 7):**
    ```bash
    wrangler d1 execute heroes-grid-db --remote --file=drizzle/migrations/0000_gorgeous_quicksilver.sql
    ```
 
-2. **Deploy Worker:**
+2. **Deploy Worker (Phase 7):**
    ```bash
    yarn deploy
    ```
 
-3. **Test Production Endpoint:**
+3. **Testing Timeline:**
+   - Phase 6: Local testing with web app (auth flows)
+   - Phase 7: End-to-end testing (sync flows, local + remote)
+
+4. **Test Production Endpoint (after deploy):**
    ```bash
    curl https://heroes-grid-api.YOUR-SUBDOMAIN.workers.dev/trpc/customRangers.getPublished
    ```

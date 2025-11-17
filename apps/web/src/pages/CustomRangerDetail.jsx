@@ -4,6 +4,8 @@ import { database } from '../database';
 import { Q } from '@nozbe/watermelondb';
 import { getColor } from '../utils/helpers';
 import { useDialog } from '../contexts/DialogContext';
+import { useAuth } from '../contexts/AuthContext';
+import { trpc } from '../utils/trpc';
 import RangerCard from '../components/cards/RangerCard';
 import CardEditorModal from '../components/CardEditorModal';
 import CharacterCardEditor from '../components/CharacterCardEditor';
@@ -21,6 +23,8 @@ const CustomRangerDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { showError, showWarning, showConfirm, showToast } = useDialog();
+  const { isAuthenticated } = useAuth();
+  const trpcUtils = trpc.useUtils();
   const [ranger, setRanger] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
@@ -275,6 +279,17 @@ const CustomRangerDetail = () => {
         });
       });
 
+      // Sync to cloud if authenticated
+      if (isAuthenticated) {
+        try {
+          const { syncSingleRanger } = await import('../services/customRangersSync');
+          await syncSingleRanger(trpcUtils.client, ranger.id);
+        } catch (syncError) {
+          console.error('Failed to sync update to cloud:', syncError);
+          // Don't block local update on sync failure
+        }
+      }
+
       showToast.success('Ranger updated successfully!');
       setIsEditing(false);
       await fetchRanger();
@@ -292,6 +307,17 @@ const CustomRangerDetail = () => {
           await database.write(async () => {
             await ranger.record.destroyPermanently();
           });
+
+          // Sync deletion to cloud if authenticated
+          if (isAuthenticated) {
+            try {
+              const { deleteSingleRangerFromCloud } = await import('../services/customRangersSync');
+              await deleteSingleRangerFromCloud(trpcUtils.client, ranger.id);
+            } catch (syncError) {
+              console.error('Failed to sync deletion to cloud:', syncError);
+              // Don't block local deletion on sync failure
+            }
+          }
 
           showToast.success('Ranger deleted successfully!');
           navigate('/my-rangers');

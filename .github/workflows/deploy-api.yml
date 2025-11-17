@@ -1,0 +1,73 @@
+name: Deploy API Worker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/api/**'
+      - '.github/workflows/deploy-api.yml'
+  workflow_dispatch:
+
+jobs:
+  # =================================================================
+  #  JOB 1: Check for file changes
+  #  This job determines if migrations need to be applied.
+  # =================================================================
+  check-files:
+    runs-on: ubuntu-latest
+    outputs:
+      run_migrations: ${{ steps.filter.outputs.migrations }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for drizzle migrations changes
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            migrations:
+              - 'apps/api/drizzle/**'
+
+  # =================================================================
+  #  JOB 2: Apply Database Migrations (Conditional)
+  #  Only runs if drizzle folder has changed.
+  # =================================================================
+  apply-migrations:
+    needs: check-files
+    if: needs.check-files.outputs.run_migrations == 'true'
+    runs-on: ubuntu-latest
+    name: Apply D1 Migrations
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply D1 Migrations
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/api
+          command: d1 migrations apply heroes-grid-db --remote
+
+  # =================================================================
+  #  JOB 3: Deploy Worker
+  #  Runs after migrations succeed or are skipped.
+  # =================================================================
+  deploy-worker:
+    needs: apply-migrations
+    if: always() && (needs.apply-migrations.result == 'success' || needs.apply-migrations.result == 'skipped')
+    runs-on: ubuntu-latest
+    name: Deploy API to Cloudflare Workers
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/api
+          command: deploy

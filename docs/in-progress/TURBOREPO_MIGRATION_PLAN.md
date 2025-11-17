@@ -90,8 +90,8 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [x] Add `apps/api/package.json` with dependencies
 - [x] Add Wrangler configuration (`wrangler.toml`)
 - [x] D1 database created and migration generated
-- [ ] Deploy API to Cloudflare Workers (ready to deploy)
-- [ ] Test API endpoints from deployed web app
+- [ ] Deploy API to Cloudflare Workers — Deferred to Phase 7 (Cloud Sync)
+- [ ] Test API endpoints from web app — Deferred to Phase 6 (Auth) and Phase 7 (Sync)
 
 **Architecture Note:** Official game data (rangers, teams, expansions, etc.) stays in the web app's local WatermelonDB for offline-first performance. D1 only stores user-created content and authentication data.
 
@@ -103,6 +103,7 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [ ] Create session management with D1
 - [ ] Add protected tRPC procedures
 - [ ] Implement user context in web app
+- [ ] Connect web app to API for auth (local only); test login/logout locally
 - [ ] Add login/logout UI components
 - [ ] Create user profile page
 
@@ -115,6 +116,8 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [ ] Implement sync strategy (last-write-wins or conflict resolution)
 - [ ] Add "Sync to Cloud" button in My Rangers/Teams pages
 - [ ] Add sync status indicator in UI
+- [ ] Deploy API to Cloudflare Workers (after local verification)
+- [ ] End-to-end testing: web app ↔ API (local and remote)
 - [ ] Test bi-directional sync (local → cloud → local)
 - [ ] Add share functionality (generate shareable URLs from cloud data)
 - [ ] Implement public ranger/team view pages
