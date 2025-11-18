@@ -75,12 +75,20 @@ const MyRangers = () => {
             id: ranger.id,
             name: ranger.name,
             slug: ranger.slug,
+            title: ranger.title,
+            cardTitle: ranger.cardTitle,
             color: ranger.color,
             type: ranger.type,
-            teamName: teamName || 'No Team',
+            teamId: ranger.teamId,
+            teamName: teamName || 'Custom Team',
+            customTeamName: ranger.customTeamName,
+            teamPosition: ranger.teamPosition,
             abilityName: ranger.abilityName,
+            ability: ranger.ability,
             deck: JSON.parse(ranger.deck || '[]'),
+            extraCharacters: ranger.extraCharacters ? JSON.parse(ranger.extraCharacters) : null,
             createdAt: ranger.createdAt,
+            updatedAt: ranger.updatedAt,
           };
         })
       );
@@ -161,6 +169,8 @@ const MyRangers = () => {
   };
 
   const exportRangers = () => {
+    // Export in same order as displayed (newest first)
+    // customRangers is already sorted by createdAt descending at line 97
     const dataStr = JSON.stringify(customRangers, null, 2);
     const dataBlob = new Blob([dataStr], { type: 'application/json' });
     const url = URL.createObjectURL(dataBlob);
