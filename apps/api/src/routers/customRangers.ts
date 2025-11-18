@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { eq, desc, sql } from 'drizzle-orm';
 import { publicProcedure, protectedProcedure, router } from '../trpc';
-import { customRangers, customRangerLikes } from '../db/schema';
+import { customRangers, customRangerLikes, users } from '../db/schema';
 
 export const customRangersRouter = router({
   // Get all published custom rangers (for community page)
@@ -24,16 +24,23 @@ export const customRangersRouter = router({
       return await ctx.db
         .select()
         .from(customRangers)
+        .innerJoin(users, eq(customRangers.userId, users.id))
         .where(eq(customRangers.published, true))
         .orderBy(orderBy)
         .limit(input.limit)
         .offset(input.offset)
-        .all();
+        .all()
+        .then((rows) =>
+          rows.map((row) => ({
+            ...row.custom_rangers,
+            username: row.users.username,
+          }))
+        );
     }),
 
   // Get custom ranger by ID
   getById: publicProcedure
-    .input(z.object({ id: z.string() }))
+    .input(z.object({ id: z.string(), viewerId: z.string().optional() }))
     .query(async ({ ctx, input }) => {
       const ranger = await ctx.db
         .select()
@@ -42,12 +49,12 @@ export const customRangersRouter = router({
         .get();
 
       if (ranger && ranger.published) {
-        // Increment view count
-        await ctx.db
-          .update(customRangers)
-          .set({ views: sql`${customRangers.views} + 1` })
-          .where(eq(customRangers.id, input.id))
-          .run();
+        // Only increment views if the viewer is not the creator
+        if (input.viewerId !== ranger.userId) {
+          await ctx.db.run(
+            sql`UPDATE ${customRangers} SET views = views + 1 WHERE id = ${input.id}`
+          );
+        }
       }
 
       return ranger;
@@ -67,13 +74,21 @@ export const customRangersRouter = router({
     }),
 
   // Get user's custom rangers (requires auth)
+  // Note: excludes 'likes' and 'views' as those are server-only stats, not synced
   getMyRangers: protectedProcedure.query(async ({ ctx }) => {
-      return await ctx.db
+      const rangers = await ctx.db
         .select()
         .from(customRangers)
         .where(eq(customRangers.userId, ctx.user.id))
         .orderBy(desc(customRangers.createdAt))
         .all();
+      
+      // Filter out server-only fields for sync
+      return rangers.map(ranger => {
+        // eslint-disable-next-line no-unused-vars
+        const { likes, views, ...rest } = ranger;
+        return rest;
+      });
     }),
 
   // Create custom ranger (requires auth)
@@ -241,5 +256,72 @@ export const customRangersRouter = router({
       }
 
       return { success: true, count: input.ids.length };
+    }),
+
+  // Like a ranger (requires auth)
+  like: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      // Check if already liked
+      const existing = await ctx.db
+        .select()
+        .from(customRangerLikes)
+        .where(
+          sql`${customRangerLikes.userId} = ${ctx.user.id} AND ${customRangerLikes.customRangerId} = ${input.id}`
+        )
+        .get();
+
+      if (existing) {
+        return { success: false, message: 'Already liked' };
+      }
+
+      // Add like
+      const likeId = crypto.randomUUID();
+      await ctx.db
+        .insert(customRangerLikes)
+        .values({
+          id: likeId,
+          userId: ctx.user.id,
+          customRangerId: input.id,
+        })
+        .run();
+
+      // Increment likes count (don't update updatedAt since likes are server-only stats)
+      await ctx.db.run(
+        sql`UPDATE ${customRangers} SET likes = likes + 1 WHERE id = ${input.id}`
+      );
+
+      return { success: true };
+    }),
+
+  // Unlike a ranger (requires auth)
+  unlike: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      // Find and delete like
+      const like = await ctx.db
+        .select()
+        .from(customRangerLikes)
+        .where(
+          sql`${customRangerLikes.userId} = ${ctx.user.id} AND ${customRangerLikes.customRangerId} = ${input.id}`
+        )
+        .get();
+
+      if (!like) {
+        return { success: false, message: 'Not liked' };
+      }
+
+      // Delete like
+      await ctx.db
+        .delete(customRangerLikes)
+        .where(eq(customRangerLikes.id, like.id))
+        .run();
+
+      // Decrement likes count (don't update updatedAt since likes are server-only stats)
+      await ctx.db.run(
+        sql`UPDATE ${customRangers} SET likes = likes - 1 WHERE id = ${input.id}`
+      );
+
+      return { success: true };
     }),
 });

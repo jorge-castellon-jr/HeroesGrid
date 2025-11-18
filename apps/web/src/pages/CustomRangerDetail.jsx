@@ -17,6 +17,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Switch } from '@/components/ui/switch';
 import { UserPlus } from 'lucide-react';
 
 const CustomRangerDetail = () => {
@@ -111,6 +112,7 @@ const CustomRangerDetail = () => {
         deck: JSON.parse(rangerRecord.deck || '[]'),
         extraCharacters: rangerRecord.extraCharacters ? JSON.parse(rangerRecord.extraCharacters) : [],
         createdAt: rangerRecord.createdAt,
+        published: rangerRecord.published,
         record: rangerRecord,
       };
 
@@ -126,6 +128,7 @@ const CustomRangerDetail = () => {
         teamId: rangerData.teamId,
         customTeamName: rangerData.customTeamName,
         teamPosition: rangerData.teamPosition || 1,
+        published: rangerData.published,
       });
       setDeck(rangerData.deck);
       setExtraCharacters(rangerData.extraCharacters);
@@ -275,6 +278,7 @@ const CustomRangerDetail = () => {
           r.teamId = formData.teamId || null;
           r.customTeamName = formData.customTeamName || null;
           r.teamPosition = formData.teamPosition || null;
+          r.published = formData.published;
           r.updatedAt = Date.now();
         });
       });
@@ -329,6 +333,37 @@ const CustomRangerDetail = () => {
       'Confirm Deletion',
       'Delete'
     );
+  };
+
+  const handleQuickPublish = async () => {
+    try {
+      await database.write(async () => {
+        await ranger.record.update((r) => {
+          r.published = !ranger.published;
+          r.updatedAt = Date.now();
+        });
+      });
+
+      // Sync to cloud if authenticated
+      if (isAuthenticated) {
+        try {
+          const { syncSingleRanger } = await import('../services/customRangersSync');
+          await syncSingleRanger(trpcUtils.client, ranger.id);
+        } catch (syncError) {
+          console.error('Failed to sync to cloud:', syncError);
+        }
+      }
+
+      // Update local state
+      const updatedRanger = { ...ranger, published: !ranger.published };
+      setRanger(updatedRanger);
+      showToast.success(
+        updatedRanger.published ? 'Published to community!' : 'Unpublished from community.'
+      );
+    } catch (error) {
+      console.error('Error toggling publish:', error);
+      showError('Failed to update publish status');
+    }
   };
 
   if (isLoading) {
@@ -665,6 +700,34 @@ const CustomRangerDetail = () => {
               </CardContent>
             </Card>
 
+            {/* Publish */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Publish</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-2">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <Label htmlFor="edit-published">Publish to Community</Label>
+                    <p className="text-xs text-muted-foreground mt-1 max-w-md">
+                      When published, this ranger will appear on the Community page and can be
+                      viewed by other players.
+                    </p>
+                  </div>
+                  <Switch
+                    id="edit-published"
+                    checked={!!formData.published}
+                    onCheckedChange={(checked) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        published: checked,
+                      }))
+                    }
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Actions */}
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button onClick={handleSave} className="w-full sm:flex-1" size="lg">
@@ -716,14 +779,23 @@ const CustomRangerDetail = () => {
               ← Back to My Rangers
             </Link>
           </Button>
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-start gap-4">
             <div>
               <h1 className="text-4xl font-bold mb-2 dark:text-gray-100">{ranger.name}</h1>
               {ranger.title && <p className="text-xl text-gray-600 dark:text-gray-300">{ranger.title}</p>}
             </div>
-            <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
-              {ranger.color.toUpperCase()}
-            </span>
+            <div className="flex flex-col items-end gap-3">
+              <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
+                {ranger.color.toUpperCase()}
+              </span>
+              <Button
+                onClick={handleQuickPublish}
+                variant={ranger.published ? 'default' : 'outline'}
+                size="sm"
+              >
+                {ranger.published ? '✓ Published' : 'Publish'}
+              </Button>
+            </div>
           </div>
         </div>
 

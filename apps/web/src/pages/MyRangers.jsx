@@ -87,6 +87,7 @@ const MyRangers = () => {
             ability: ranger.ability,
             deck: JSON.parse(ranger.deck || '[]'),
             extraCharacters: ranger.extraCharacters ? JSON.parse(ranger.extraCharacters) : null,
+            published: ranger.published,
             createdAt: ranger.createdAt,
             updatedAt: ranger.updatedAt,
           };
@@ -372,10 +373,22 @@ const MyRangers = () => {
               <div className={`h-2 ${getColor(ranger.color)}`}></div>
               <CardContent className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h2 className="text-xl font-bold">{ranger.name}</h2>
-                  <Badge className={`${getColor(ranger.color)} text-white border-0`}>
-                    {ranger.color.toUpperCase()}
-                  </Badge>
+                  <div>
+                    <h2 className="text-xl font-bold">{ranger.name}</h2>
+                    {ranger.title && (
+                      <p className="text-sm text-muted-foreground">{ranger.title}</p>
+                    )}
+                  </div>
+                  <div className="flex flex-col items-end gap-1">
+                    <Badge className={`${getColor(ranger.color)} text-white border-0`}>
+                      {ranger.color.toUpperCase()}
+                    </Badge>
+                    {ranger.published && (
+                      <span className="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
+                        Published
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <div className="space-y-2 text-sm text-muted-foreground mb-4">
@@ -388,7 +401,7 @@ const MyRangers = () => {
                 </div>
 
                 <div className="flex flex-col gap-2 sm:flex-row">
-                  <Button asChild className="w-full sm:flex-1" size="lg">
+                  <Button asChild className="w-full sm:flex-1" size="sm">
                     <Link to={`/my-rangers/${ranger.slug}`}>
                       View Details
                     </Link>

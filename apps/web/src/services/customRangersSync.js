@@ -59,8 +59,15 @@ async function getLocalRangers() {
  * Returns object with additions, updates, deletions needed
  */
 export function compareRangers(localRangers, cloudRangers) {
+  // Filter out server-only fields from cloud rangers before comparison
+  const normalizedCloudRangers = cloudRangers.map(r => {
+    // eslint-disable-next-line no-unused-vars
+    const { likes, views, ...rest } = r;
+    return rest;
+  });
+  
   const localMap = new Map(localRangers.map(r => [r.id, r]));
-  const cloudMap = new Map(cloudRangers.map(r => [r.id, r]));
+  const cloudMap = new Map(normalizedCloudRangers.map(r => [r.id, r]));
   
   const toCloud = []; // Rangers to push to cloud
   const toLocal = []; // Rangers to pull from cloud

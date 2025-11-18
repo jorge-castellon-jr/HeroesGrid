@@ -17,6 +17,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Switch } from '@/components/ui/switch';
 import { Loader2, UserPlus } from 'lucide-react';
 
 const CreateCustomRanger = () => {
@@ -277,6 +278,34 @@ const CreateCustomRanger = () => {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
+        {/* Publish */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Publish</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-2">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <Label htmlFor="published">Publish to Community</Label>
+                <p className="text-xs text-muted-foreground mt-1 max-w-md">
+                  When published, this ranger will appear on the Community page and can be
+                  viewed by other players.
+                </p>
+              </div>
+              <Switch
+                id="published"
+                checked={formData.published}
+                onCheckedChange={(checked) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    published: checked,
+                  }))
+                }
+              />
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Primary Character */}
         <Card>
           <CardHeader>

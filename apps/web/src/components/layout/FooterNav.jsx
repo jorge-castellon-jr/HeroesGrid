@@ -37,6 +37,12 @@ const FooterNav = () => {
 			nuxt: true,
 		},
 		{
+			title: "Community",
+			to: "/community",
+			icon: "pr-hotg",
+			nuxt: true,
+		},
+		{
 			title: "Companion",
 			to: "/game-tools",
 			icon: "pr-hotg",
