@@ -8,6 +8,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { trpc } from '../utils/trpc';
 import RangerCard from '../components/cards/RangerCard';
 import PublishSection from '../components/PublishSection';
+import ShareButton from '../components/ShareButton';
 import CardEditorModal from '../components/CardEditorModal';
 import CharacterCardEditor from '../components/CharacterCardEditor';
 import ExistingRangerSelector from '../components/ExistingRangerSelector';
@@ -25,7 +26,7 @@ const CustomRangerDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { showError, showWarning, showConfirm, showToast } = useDialog();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const trpcUtils = trpc.useUtils();
   const [ranger, setRanger] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -767,9 +768,14 @@ const CustomRangerDetail = () => {
               <h1 className="text-4xl font-bold mb-2 dark:text-gray-100">{ranger.name}</h1>
               {ranger.title && <p className="text-xl text-gray-600 dark:text-gray-300">{ranger.title}</p>}
             </div>
-            <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
-              {ranger.color.toUpperCase()}
-            </span>
+            <div className="flex flex-col items-end gap-3">
+              <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
+                {ranger.color.toUpperCase()}
+              </span>
+              {ranger.published && (
+                <ShareButton username={user?.username || 'unknown'} slug={ranger.slug} rangerName={ranger.name} />
+              )}
+            </div>
           </div>
         </div>
 

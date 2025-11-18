@@ -8,6 +8,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { trpc } from '../utils/trpc';
 import RangerCard from '../components/cards/RangerCard';
 import CommentsSection from '../components/comments/CommentsSection';
+import ShareButton from '../components/ShareButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -244,7 +245,8 @@ const CommunityRangerDetail = () => {
               <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
                 {ranger.color.toUpperCase()}
               </span>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap justify-end">
+                <ShareButton username={username} slug={ranger.slug} rangerName={ranger.name} />
                 <Button
                   onClick={handleLike}
                   variant={isLiked ? 'default' : 'outline'}
