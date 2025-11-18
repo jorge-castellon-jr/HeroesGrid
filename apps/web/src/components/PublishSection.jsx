@@ -1,8 +1,16 @@
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useAuth } from '@/contexts/AuthContext';
 
 const PublishSection = ({ published, onPublishChange }) => {
+  const { isAuthenticated } = useAuth();
+
+  // Only show publish section for authenticated users
+  if (!isAuthenticated) {
+    return null;
+  }
+
   return (
     <Card className="mb-6">
       <CardHeader>
