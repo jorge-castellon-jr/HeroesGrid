@@ -7,6 +7,7 @@ import { useDialog } from '../contexts/DialogContext';
 import { useAuth } from '../contexts/AuthContext';
 import { trpc } from '../utils/trpc';
 import RangerCard from '../components/cards/RangerCard';
+import PublishSection from '../components/PublishSection';
 import CardEditorModal from '../components/CardEditorModal';
 import CharacterCardEditor from '../components/CharacterCardEditor';
 import ExistingRangerSelector from '../components/ExistingRangerSelector';
@@ -378,6 +379,13 @@ const CustomRangerDetail = () => {
     return null;
   }
 
+  const handleEditPublishChange = (published) => {
+    setFormData((prev) => ({
+      ...prev,
+      published,
+    }));
+  };
+
   if (isEditing) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -385,6 +393,8 @@ const CustomRangerDetail = () => {
           <h1 className="text-3xl font-bold mb-6 dark:text-gray-100">Edit Custom Ranger</h1>
 
           <div className="space-y-6">
+            {/* Publish Section */}
+            <PublishSection published={formData.published} onPublishChange={handleEditPublishChange} />
             {/* Primary Character */}
             <Card>
               <CardHeader>
@@ -700,33 +710,6 @@ const CustomRangerDetail = () => {
               </CardContent>
             </Card>
 
-            {/* Publish */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Publish</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-2">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <Label htmlFor="edit-published">Publish to Community</Label>
-                    <p className="text-xs text-muted-foreground mt-1 max-w-md">
-                      When published, this ranger will appear on the Community page and can be
-                      viewed by other players.
-                    </p>
-                  </div>
-                  <Switch
-                    id="edit-published"
-                    checked={!!formData.published}
-                    onCheckedChange={(checked) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        published: checked,
-                      }))
-                    }
-                  />
-                </div>
-              </CardContent>
-            </Card>
 
             {/* Actions */}
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -784,20 +767,14 @@ const CustomRangerDetail = () => {
               <h1 className="text-4xl font-bold mb-2 dark:text-gray-100">{ranger.name}</h1>
               {ranger.title && <p className="text-xl text-gray-600 dark:text-gray-300">{ranger.title}</p>}
             </div>
-            <div className="flex flex-col items-end gap-3">
-              <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
-                {ranger.color.toUpperCase()}
-              </span>
-              <Button
-                onClick={handleQuickPublish}
-                variant={ranger.published ? 'default' : 'outline'}
-                size="sm"
-              >
-                {ranger.published ? '✓ Published' : 'Publish'}
-              </Button>
-            </div>
+            <span className={`px-4 py-2 rounded ${getColor(ranger.color)} text-white font-semibold`}>
+              {ranger.color.toUpperCase()}
+            </span>
           </div>
         </div>
+
+        {/* Publish Section */}
+        <PublishSection published={ranger.published} onPublishChange={handleQuickPublish} />
 
         {/* Primary Character */}
         <Card className="mb-6">
