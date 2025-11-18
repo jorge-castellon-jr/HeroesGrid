@@ -7,6 +7,7 @@ import { useDialog } from '../contexts/DialogContext';
 import { useAuth } from '../contexts/AuthContext';
 import { trpc } from '../utils/trpc';
 import RangerCard from '../components/cards/RangerCard';
+import CommentsSection from '../components/comments/CommentsSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -358,6 +359,9 @@ const CommunityRangerDetail = () => {
             )}
           </CardContent>
         </Card>
+
+        {/* Comments */}
+        <CommentsSection customRangerId={ranger.id} creatorId={ranger.userId} />
       </div>
     </div>
   );

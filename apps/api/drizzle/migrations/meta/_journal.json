@@ -8,6 +8,13 @@
       "when": 1763423147497,
       "tag": "0000_right_stone_men",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1763496178974,
+      "tag": "0001_chunky_hannibal_king",
+      "breakpoints": true
     }
   ]
 }

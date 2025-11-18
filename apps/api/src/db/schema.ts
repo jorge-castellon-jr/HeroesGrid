@@ -137,3 +137,52 @@ export const customRangerLikes = sqliteTable(
     ),
   })
 );
+
+// Custom Ranger Comments (for user comments on rangers)
+export const customRangerComments = sqliteTable(
+  "custom_ranger_comments",
+  {
+    id: text("id").primaryKey(),
+    customRangerId: text("custom_ranger_id")
+      .notNull()
+      .references(() => customRangers.id, { onDelete: "cascade" }),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    content: text("content").notNull(),
+    createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
+      () => new Date()
+    ),
+    updatedAt: integer("updated_at", { mode: "timestamp" }).$onUpdateFn(
+      () => new Date()
+    ),
+  },
+  (table) => ({
+    rangerIdIdx: index("comments_ranger_id_idx").on(table.customRangerId),
+    userIdIdx: index("comments_user_id_idx").on(table.userId),
+    createdAtIdx: index("comments_created_at_idx").on(table.createdAt),
+  })
+);
+
+// Custom Ranger Comment Likes (for tracking who liked what comment)
+export const customRangerCommentLikes = sqliteTable(
+  "custom_ranger_comment_likes",
+  {
+    id: text("id").primaryKey(),
+    commentId: text("comment_id")
+      .notNull()
+      .references(() => customRangerComments.id, { onDelete: "cascade" }),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
+      () => new Date()
+    ),
+  },
+  (table) => ({
+    userCommentIdx: index("comment_likes_user_comment_idx").on(
+      table.userId,
+      table.commentId
+    ),
+  })
+);
