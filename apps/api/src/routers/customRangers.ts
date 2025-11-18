@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { eq, desc, sql } from 'drizzle-orm';
+import { eq, desc, sql, count } from 'drizzle-orm';
 import { publicProcedure, protectedProcedure, router } from '../trpc';
 import { customRangers, customRangerLikes, users } from '../db/schema';
 
@@ -14,31 +14,52 @@ export const customRangersRouter = router({
       })
     )
     .query(async ({ ctx, input }) => {
-      const orderBy =
-        input.sortBy === 'likes'
-          ? desc(customRangers.likes)
-          : input.sortBy === 'popular'
-          ? desc(customRangers.views)
-          : desc(customRangers.createdAt);
-
-      return await ctx.db
-        .select()
+      // Build the base query with like counts
+      const query = ctx.db
+        .select({
+          id: customRangers.id,
+          userId: customRangers.userId,
+          name: customRangers.name,
+          slug: customRangers.slug,
+          title: customRangers.title,
+          cardTitle: customRangers.cardTitle,
+          color: customRangers.color,
+          type: customRangers.type,
+          abilityName: customRangers.abilityName,
+          ability: customRangers.ability,
+          deck: customRangers.deck,
+          extraCharacters: customRangers.extraCharacters,
+          teamId: customRangers.teamId,
+          customTeamName: customRangers.customTeamName,
+          teamPosition: customRangers.teamPosition,
+          published: customRangers.published,
+          likes: count(customRangerLikes.id),
+          views: customRangers.views,
+          createdAt: customRangers.createdAt,
+          updatedAt: customRangers.updatedAt,
+          username: users.username,
+        })
         .from(customRangers)
         .innerJoin(users, eq(customRangers.userId, users.id))
+        .leftJoin(customRangerLikes, eq(customRangers.id, customRangerLikes.customRangerId))
         .where(eq(customRangers.published, true))
-        .orderBy(orderBy)
+        .groupBy(customRangers.id, users.id);
+
+      // Apply sorting
+      const orderedQuery =
+        input.sortBy === 'likes'
+          ? query.orderBy(desc(count(customRangerLikes.id)))
+          : input.sortBy === 'popular'
+          ? query.orderBy(desc(customRangers.views))
+          : query.orderBy(desc(customRangers.createdAt));
+
+      return await orderedQuery
         .limit(input.limit)
         .offset(input.offset)
-        .all()
-        .then((rows) =>
-          rows.map((row) => ({
-            ...row.custom_rangers,
-            username: row.users.username,
-          }))
-        );
+        .all();
     }),
 
-  // Get custom ranger by ID
+  // Get custom ranger by ID with like count
   getById: publicProcedure
     .input(z.object({ id: z.string(), viewerId: z.string().optional() }))
     .query(async ({ ctx, input }) => {
@@ -55,6 +76,20 @@ export const customRangersRouter = router({
             sql`UPDATE ${customRangers} SET views = views + 1 WHERE id = ${input.id}`
           );
         }
+      }
+
+      // Get like count from table
+      if (ranger) {
+        const likeCountResult = await ctx.db
+          .select({ count: count(customRangerLikes.id) })
+          .from(customRangerLikes)
+          .where(eq(customRangerLikes.customRangerId, input.id))
+          .get();
+        
+        return {
+          ...ranger,
+          likes: likeCountResult?.count || 0,
+        };
       }
 
       return ranger;
@@ -275,7 +310,7 @@ export const customRangersRouter = router({
         return { success: false, message: 'Already liked' };
       }
 
-      // Add like
+      // Add like to tracking table
       const likeId = crypto.randomUUID();
       await ctx.db
         .insert(customRangerLikes)
@@ -285,11 +320,6 @@ export const customRangersRouter = router({
           customRangerId: input.id,
         })
         .run();
-
-      // Increment likes count (don't update updatedAt since likes are server-only stats)
-      await ctx.db.run(
-        sql`UPDATE ${customRangers} SET likes = likes + 1 WHERE id = ${input.id}`
-      );
 
       return { success: true };
     }),
@@ -311,17 +341,56 @@ export const customRangersRouter = router({
         return { success: false, message: 'Not liked' };
       }
 
-      // Delete like
+      // Delete like from tracking table
       await ctx.db
         .delete(customRangerLikes)
         .where(eq(customRangerLikes.id, like.id))
         .run();
 
-      // Decrement likes count (don't update updatedAt since likes are server-only stats)
-      await ctx.db.run(
-        sql`UPDATE ${customRangers} SET likes = likes - 1 WHERE id = ${input.id}`
-      );
-
       return { success: true };
+    }),
+
+  // Get rangers liked by current user (requires auth)
+  getLikedRangers: protectedProcedure
+    .input(
+      z.object({
+        limit: z.number().min(1).max(100).default(20),
+        offset: z.number().min(0).default(0),
+      })
+    )
+    .query(async ({ ctx, input }) => {
+      return await ctx.db
+        .select({
+          id: customRangers.id,
+          userId: customRangers.userId,
+          name: customRangers.name,
+          slug: customRangers.slug,
+          title: customRangers.title,
+          cardTitle: customRangers.cardTitle,
+          color: customRangers.color,
+          type: customRangers.type,
+          abilityName: customRangers.abilityName,
+          ability: customRangers.ability,
+          deck: customRangers.deck,
+          extraCharacters: customRangers.extraCharacters,
+          teamId: customRangers.teamId,
+          customTeamName: customRangers.customTeamName,
+          teamPosition: customRangers.teamPosition,
+          published: customRangers.published,
+          likes: count(customRangerLikes.id),
+          views: customRangers.views,
+          createdAt: customRangers.createdAt,
+          updatedAt: customRangers.updatedAt,
+          username: users.username,
+        })
+        .from(customRangerLikes)
+        .innerJoin(customRangers, eq(customRangerLikes.customRangerId, customRangers.id))
+        .innerJoin(users, eq(customRangers.userId, users.id))
+        .where(eq(customRangerLikes.userId, ctx.user.id))
+        .groupBy(customRangers.id, users.id)
+        .orderBy(desc(customRangerLikes.createdAt))
+        .limit(input.limit)
+        .offset(input.offset)
+        .all();
     }),
 });
