@@ -315,7 +315,7 @@ export default function Ranger() {
       {adminEnabled && rangerRecord && (
         <button
           onClick={() => setShowEditModal(true)}
-          className="fixed bottom-24 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition z-40"
+          className="fixed bottom-20 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition z-40 sm:bottom-24 sm:right-6 sm:p-4"
           title="Edit Ranger"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -317,7 +317,7 @@ const MyRangers = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold dark:text-gray-100">My Custom Rangers</h1>
           {isAuthenticated && lastSync && (
@@ -326,28 +326,29 @@ const MyRangers = () => {
             </p>
           )}
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-2 sm:justify-end">
           {isAuthenticated && (
             <Button
               onClick={handleManualSync}
               variant="outline"
               disabled={isSyncing}
+              className="w-full sm:w-auto"
             >
               {isSyncing ? 'Syncing...' : '☁️ Sync'}
             </Button>
           )}
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild className="w-full sm:w-auto">
             <label className="cursor-pointer">
               Import
               <input type="file" accept=".json" onChange={importRangers} className="hidden" />
             </label>
           </Button>
           {customRangers.length > 0 && (
-            <Button onClick={exportRangers} variant="secondary">
+            <Button onClick={exportRangers} variant="secondary" className="w-full sm:w-auto">
               Export All
             </Button>
           )}
-          <Button asChild>
+          <Button asChild className="w-full sm:w-auto">
             <Link to="/rangers/create">
               Create New Ranger
             </Link>
@@ -365,7 +366,7 @@ const MyRangers = () => {
           </Button>
         </div>
       ) : (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {customRangers.map((ranger) => (
             <Card key={ranger.id} className="overflow-hidden">
               <div className={`h-2 ${getColor(ranger.color)}`}></div>
@@ -386,8 +387,8 @@ const MyRangers = () => {
                   </p>
                 </div>
 
-                <div className="flex gap-2">
-                  <Button asChild className="flex-1" size="sm">
+                <div className="flex flex-col gap-2 sm:flex-row">
+                  <Button asChild className="w-full sm:flex-1" size="lg">
                     <Link to={`/my-rangers/${ranger.slug}`}>
                       View Details
                     </Link>
@@ -396,6 +397,7 @@ const MyRangers = () => {
                     onClick={() => handleClone(ranger.id, ranger.name)}
                     variant="secondary"
                     size="sm"
+                    className="w-full sm:w-auto"
                   >
                     Clone
                   </Button>
@@ -403,6 +405,7 @@ const MyRangers = () => {
                     onClick={() => handleDelete(ranger.id, ranger.name)}
                     variant="destructive"
                     size="sm"
+                    className="w-full sm:w-auto"
                   >
                     Delete
                   </Button>

@@ -353,13 +353,14 @@ const CustomRangerDetail = () => {
             {/* Primary Character */}
             <Card>
               <CardHeader>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <CardTitle>Primary Character</CardTitle>
                   <Button 
                     type="button" 
                     variant="outline" 
                     size="sm"
                     onClick={handlePrefillPrimaryCharacter}
+                    className="w-full sm:w-auto"
                   >
                     <UserPlus className="mr-2 h-4 w-4" />
                     Prefill from Official Ranger
@@ -507,13 +508,14 @@ const CustomRangerDetail = () => {
             {/* Extra Characters */}
             <Card>
               <CardHeader>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <CardTitle>Extra Characters</CardTitle>
                   <Button 
                     type="button" 
                     variant="outline" 
                     size="sm"
                     onClick={handleAddExtraCharacter}
+                    className="w-full sm:w-auto"
                   >
                     <UserPlus className="mr-2 h-4 w-4" />
                     Add from Official Ranger
@@ -535,16 +537,21 @@ const CustomRangerDetail = () => {
             {/* Deck Editor */}
             <Card>
               <CardHeader>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <CardTitle>Deck ({getTotalCardCount()}/10 cards)</CardTitle>
-                  <div className="flex gap-2">
-                    <Button type="button" onClick={() => setIsCardModalOpen(true)}>
+                  <div className="flex flex-col gap-2 sm:flex-row">
+                    <Button
+                      type="button"
+                      onClick={() => setIsCardModalOpen(true)}
+                      className="w-full sm:w-auto"
+                    >
                       Add Custom Card
                     </Button>
                     <Button 
                       type="button" 
                       variant="outline"
                       onClick={() => setIsCardSelectorOpen(true)}
+                      className="w-full sm:w-auto"
                     >
                       Add from Official Cards
                     </Button>
@@ -593,7 +600,7 @@ const CustomRangerDetail = () => {
                 {deck.length > 0 && (
                   <div>
                     <h3 className="font-semibold mb-3">Current Deck:</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                       {deck.map((card, index) => (
                         <div key={index} className="border border-border rounded-lg p-4 bg-card flex flex-col">
                           <div className="flex items-center gap-2 mb-3 pb-3 border-b border-border">
@@ -659,8 +666,8 @@ const CustomRangerDetail = () => {
             </Card>
 
             {/* Actions */}
-            <div className="flex gap-4">
-              <Button onClick={handleSave} className="flex-1" size="lg">
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button onClick={handleSave} className="w-full sm:flex-1" size="lg">
                 Save Changes
               </Button>
               <Button
@@ -669,7 +676,7 @@ const CustomRangerDetail = () => {
                   fetchRanger();
                 }}
                 variant="outline"
-                className="flex-1"
+                className="w-full sm:flex-1"
                 size="lg"
               >
                 Cancel
@@ -827,11 +834,11 @@ const CustomRangerDetail = () => {
         </Card>
 
         {/* Actions */}
-        <div className="flex gap-4">
-          <Button onClick={() => setIsEditing(true)} className="flex-1" size="lg">
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Button onClick={() => setIsEditing(true)} className="w-full sm:flex-1" size="lg">
             Edit Ranger
           </Button>
-          <Button onClick={handleDelete} variant="destructive" size="lg">
+          <Button onClick={handleDelete} variant="destructive" size="lg" className="w-full sm:w-auto">
             Delete
           </Button>
         </div>

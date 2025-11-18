@@ -327,7 +327,7 @@ const AllRangers = () => {
   return (
     <div>
       <h1 className="py-4 text-center">All Rangers</h1>
-      <div className="relative flex items-center justify-end mb-4 z-20">
+      <div className="relative flex flex-wrap items-center justify-end gap-2 mb-4 z-20">
         <div className="pr-6">Filter:</div>
         <div className="teams relative">
           <button className="relative z-30 w-32 mr-4 bg-white card content" onClick={() => dropdownClick('teams')}>
