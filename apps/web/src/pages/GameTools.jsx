@@ -86,17 +86,17 @@ export default function GameTools() {
 					image: null
 				});
 				
-				const footSoldiersData = fetchedEnemies
-					.filter(e => e.monsterType?.toLowerCase() === 'footsoldier')
-					.map(transformEnemy);
-				
-				const monstersData = fetchedEnemies
-					.filter(e => e.monsterType?.toLowerCase() === 'monster')
-					.map(transformEnemy);
-				
-				const mastersData = fetchedEnemies
-					.filter(e => e.monsterType?.toLowerCase() === 'master')
-					.map(transformEnemy);
+			const footSoldiersData = fetchedEnemies
+				.filter(e => ['foot', 'elite'].includes(e.monsterType?.toLowerCase()))
+				.map(transformEnemy);
+			
+			const monstersData = fetchedEnemies
+				.filter(e => ['monster', 'nemesis'].includes(e.monsterType?.toLowerCase()))
+				.map(transformEnemy);
+			
+			const mastersData = fetchedEnemies
+				.filter(e => e.monsterType?.toLowerCase() === 'boss')
+				.map(transformEnemy);
 				
 				const transformedExpansions = fetchedExpansions.map(e => ({
 					_id: e.id,
@@ -437,9 +437,9 @@ export default function GameTools() {
 										onClick={pickMaster}
 									>
 										Random Master
-										<span className="text-xs text-gray-400">
-											This includes Nemesis As Masters
-										</span>
+									<span className="text-xs text-gray-400">
+										Bosses only
+									</span>
 									</button>
 									<button
 										className="p-4 mx-auto my-4 transition-colors duration-300 card w-72 hover:bg-gray-300"

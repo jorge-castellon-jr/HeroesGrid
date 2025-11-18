@@ -12,7 +12,7 @@ export default function EnemyCard({ enemy, type = 'foot soldier' }) {
 
 	return (
 		<div className="w-full overflow-hidden border card lg:flex">
-			<div className={`lg:h-auto lg:w-48 flex-none ${getEnemyColor()}`}>
+			<div className={`lg:h-auto lg:w-48 flex-none flex items-center justify-center min-h-[12rem] ${getEnemyColor()}`}>
 				{enemy?.image && (
 					<img
 						className="p-4 mx-auto max-h-48 md:full"
