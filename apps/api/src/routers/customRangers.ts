@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { eq, desc, sql, count } from 'drizzle-orm';
+import { eq, desc, sql, count, and } from 'drizzle-orm';
 import { publicProcedure, protectedProcedure, router } from '../trpc';
-import { customRangers, customRangerLikes, users } from '../db/schema';
+import { customRangers, customRangerLikes, customRangerNotifications, users } from '../db/schema';
 
 export const customRangersRouter = router({
   // Get all published custom rangers (for community page)
@@ -310,6 +310,17 @@ export const customRangersRouter = router({
         return { success: false, message: 'Already liked' };
       }
 
+      // Get the ranger to find its creator
+      const ranger = await ctx.db
+        .select()
+        .from(customRangers)
+        .where(eq(customRangers.id, input.id))
+        .get();
+
+      if (!ranger) {
+        return { success: false, message: 'Ranger not found' };
+      }
+
       // Add like to tracking table
       const likeId = crypto.randomUUID();
       await ctx.db
@@ -320,6 +331,22 @@ export const customRangersRouter = router({
           customRangerId: input.id,
         })
         .run();
+
+      // Create notification for ranger creator (if not liking own ranger)
+      if (ranger.userId !== ctx.user.id) {
+        const notificationId = crypto.randomUUID();
+        await ctx.db
+          .insert(customRangerNotifications)
+          .values({
+            id: notificationId,
+            userId: ranger.userId,
+            type: 'like',
+            customRangerId: input.id,
+            relatedId: likeId,
+            actorId: ctx.user.id,
+          })
+          .run();
+      }
 
       return { success: true };
     }),

@@ -26,6 +26,7 @@ import AuthSuccess from './pages/AuthSuccess'
 import Profile from './pages/Profile'
 import Community from './pages/Community'
 import CommunityRangerDetail from './pages/CommunityRangerDetail'
+import NotificationsList from './components/notifications/NotificationsList'
 import './App.css'
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
 					<Route path="/rulebooks/:slug" element={<RulebookSingle />} />
 					<Route path="/community" element={<Community />} />
 					<Route path="/community/:username/:slug" element={<CommunityRangerDetail />} />
+					<Route path="/notifications" element={<NotificationsList />} />
 					<Route path="/admin" element={<Admin />} />
 					<Route path="/settings" element={<Settings />} />
 					<Route path="/rangers/create" element={<CreateCustomRanger />} />

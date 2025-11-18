@@ -186,3 +186,32 @@ export const customRangerCommentLikes = sqliteTable(
     ),
   })
 );
+
+// Custom Ranger Notifications (for notifying users of likes/comments)
+export const customRangerNotifications = sqliteTable(
+  "custom_ranger_notifications",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    type: text("type").notNull(), // 'like', 'comment'
+    customRangerId: text("custom_ranger_id")
+      .notNull()
+      .references(() => customRangers.id, { onDelete: "cascade" }),
+    relatedId: text("related_id"), // ID of the like or comment that triggered this
+    actorId: text("actor_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    read: integer("read", { mode: "boolean" }).default(false).notNull(),
+    createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(
+      () => new Date()
+    ),
+  },
+  (table) => ({
+    userIdIdx: index("notifications_user_id_idx").on(table.userId),
+    rangerIdIdx: index("notifications_ranger_id_idx").on(table.customRangerId),
+    readIdx: index("notifications_read_idx").on(table.read),
+    createdAtIdx: index("notifications_created_at_idx").on(table.createdAt),
+  })
+);

@@ -15,6 +15,13 @@
       "when": 1763496178974,
       "tag": "0001_chunky_hannibal_king",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1763497580351,
+      "tag": "0002_amusing_viper",
+      "breakpoints": true
     }
   ]
 }
