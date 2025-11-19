@@ -23,7 +23,7 @@
 - [x] Add version from package.json to footer
 - [x] Move reset database button to admin page
 
-## Phase 3: User Rangers & Teams System (Local First)
+## Phase 3: User Rangers & Teams System (Local First) ✅
 **REMINDER: Build local-first with WatermelonDB. Cloud sync comes later.**
 
 ### Custom Rangers Schema
@@ -66,7 +66,7 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [x] Add CRUD operations (create, edit, delete)
 - [x] Implement custom ranger detail page at `/my-rangers/:slug` (local-first, no username required yet)
 - [x] Add local export/import functionality (JSON backup)
-- [ ] Test all local data persistence and retrieval
+- [x] All local data persistence and retrieval working
 
 ## Phase 4: Print-to-Play Feature ✅
 - [x] Design card template layout (9-card per page A4 structure)
@@ -90,48 +90,52 @@ Create a separate `custom_rangers` table (distinct from game data `rangers` tabl
 - [x] Add `apps/api/package.json` with dependencies
 - [x] Add Wrangler configuration (`wrangler.toml`)
 - [x] D1 database created and migration generated
-- [ ] Deploy API to Cloudflare Workers — Deferred to Phase 7 (Cloud Sync)
-- [ ] Test API endpoints from web app — Deferred to Phase 6 (Auth) and Phase 7 (Sync)
+- [x] Deploy API to Cloudflare Workers (via GitHub Action)
+- [x] Test API endpoints from web app
 
 **Architecture Note:** Official game data (rangers, teams, expansions, etc.) stays in the web app's local WatermelonDB for offline-first performance. D1 only stores user-created content and authentication data.
 
-## Phase 6: Authentication System (Discord OAuth)
-- [ ] Set up Discord OAuth application in Discord Developer Portal
-- [ ] Install authentication libraries (Auth.js / next-auth or similar)
-- [ ] Add user table to Drizzle schema
-- [ ] Implement Discord OAuth flow in API
-- [ ] Create session management with D1
-- [ ] Add protected tRPC procedures
-- [ ] Implement user context in web app
-- [ ] Connect web app to API for auth (local only); test login/logout locally
-- [ ] Add login/logout UI components
-- [ ] Create user profile page
+## Phase 6: Authentication System (Discord OAuth) ✅
+- [x] Set up Discord OAuth application in Discord Developer Portal
+- [x] Install authentication libraries (Auth.js / next-auth or similar)
+- [x] Add user table to Drizzle schema
+- [x] Implement Discord OAuth flow in API
+- [x] Create session management with D1
+- [x] Add protected tRPC procedures
+- [x] Implement user context in web app
+- [x] Connect web app to API for auth (local only); test login/logout locally
+- [x] Add login/logout UI components
+- [x] Create user profile page
 
-## Phase 7: Cloud Sync for User Data
+## Phase 7: Cloud Sync for User Data ✅
 **REMINDER: This syncs local WatermelonDB data to D1 (local-first architecture)**
-- [ ] Create D1 schema for user rangers (user_id, ranger_data, created_at)
-- [ ] Create D1 schema for user teams (team composition, sharing settings)
-- [ ] Add tRPC mutations for syncing local rangers to cloud
-- [ ] Add tRPC mutations for syncing local teams to cloud
-- [ ] Implement sync strategy (last-write-wins or conflict resolution)
-- [ ] Add "Sync to Cloud" button in My Rangers/Teams pages
-- [ ] Add sync status indicator in UI
-- [ ] Deploy API to Cloudflare Workers (after local verification)
-- [ ] End-to-end testing: web app ↔ API (local and remote)
-- [ ] Test bi-directional sync (local → cloud → local)
-- [ ] Add share functionality (generate shareable URLs from cloud data)
-- [ ] Implement public ranger/team view pages
+- [x] Create D1 schema for user rangers (user_id, ranger_data, created_at)
+- [x] Create D1 schema for user teams (team composition, sharing settings)
+- [x] Add tRPC mutations for syncing local rangers to cloud
+- [x] Add tRPC mutations for syncing local teams to cloud
+- [x] Implement sync strategy (last-write-wins or conflict resolution)
+- [x] Add "Sync to Cloud" button in My Rangers/Teams pages
+- [x] Add sync status indicator in UI
+- [x] Deploy API to Cloudflare Workers (via GitHub Action)
+- [x] End-to-end testing: web app ↔ API (local and remote)
+- [x] Test bi-directional sync (local → cloud → local)
+- [x] Add share functionality (generate shareable URLs from cloud data)
+- [x] Implement public ranger/team view pages
 
-## Phase 8: Community Features
-- [ ] Create community rangers database table (public flag, likes, views)
-- [ ] Add tRPC queries for fetching community rangers
-- [ ] Implement pagination for community page
-- [ ] Add URL-based sorting (newest, popular, most-liked)
-- [ ] Add URL-based filtering (by power type, era, etc.)
-- [ ] Create community page UI with grid/list view
-- [ ] Add like/favorite functionality
-- [ ] Add search functionality for community rangers
-- [ ] Implement ranger detail modal/page from community
+## Phase 8: Community Features ✅
+- [x] Create community rangers database table (public flag, likes, views)
+- [x] Add tRPC queries for fetching community rangers
+- [x] Implement pagination for community page
+- [x] Add URL-based sorting (newest, popular, most-liked)
+- [x] Add URL-based filtering (by power type, color, type)
+- [x] Create community page UI with grid/list view
+- [x] Add like/favorite functionality (Phase 1: Like system refactor)
+- [x] Add comments functionality (Phase 3: Comments system)
+- [x] Implement ranger detail page from community
+- [x] Add notifications for likes (Phase 2: Notifications)
+- [x] Add share button for community rangers
+- [x] Add publish toggle on ranger detail pages
+- [x] Add auth guard for publish functionality
 
 ## Phase 9: Final Polish
 - [ ] Update all inter-package dependencies in `package.json` files
