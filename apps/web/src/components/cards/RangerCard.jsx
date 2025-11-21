@@ -211,17 +211,23 @@ export default function RangerCard({ ranger, card, onPress, noWrapper, parentSca
 		return `${teamName} ${color} Ranger`;
 	};
 
-	return (
-		<div className="w-full overflow-hidden border card sm:flex">
-			<div className="ranger__image" style={{ backgroundColor: rangerColors[rangerColor?.toLowerCase()] || '#ccc' }}>
-				{ranger?.rangerCards?.image && (
-					<img
-						className="p-4 rounded-full max-h-48"
-						src={`${ranger.rangerCards.image}?h=200`}
-						alt={ranger.name}
-					/>
-				)}
-			</div>
+		return (
+			<div className="w-full overflow-hidden border card sm:flex">
+				<div className="ranger__image" style={{ backgroundColor: rangerColors[rangerColor?.toLowerCase()] || '#ccc' }}>
+					{ranger?.rangerCards?.image && (
+						<div
+							style={{
+								width: '12rem',
+								height: '12rem',
+								overflow: 'hidden',
+								backgroundImage: `url('${ranger.rangerCards.image}?h=200')`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center top',
+								backgroundRepeat: 'no-repeat',
+							}}
+						/>
+					)}
+				</div>
 			<div className="flex flex-col justify-between w-full leading-normal bg-white content sm:p-2">
 				<span>
 					<p className="items-center font-bold text-gray-900 uppercase text-md">

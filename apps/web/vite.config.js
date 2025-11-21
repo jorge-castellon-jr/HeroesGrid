@@ -52,6 +52,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,json,md}'],
+        globIgnores: ['**/tts-assets/**/*'], // Exclude TTS assets from precaching
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB
         runtimeCaching: [
           {

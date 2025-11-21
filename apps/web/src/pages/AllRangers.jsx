@@ -8,6 +8,7 @@ import { initializeDatabase } from '../database/seed'
 import { Q } from '@nozbe/watermelondb'
 import { friendlyURL, getColor } from '../utils/helpers'
 import { isAdminMode } from '../utils/adminMode'
+import { updateAllRangerImages } from '../utils/updateRangerImages'
 import './AllRangers.scss'
 
 const AllRangers = () => {
@@ -19,6 +20,8 @@ const AllRangers = () => {
   const [colorsDropdown, setColorsDropdown] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [editingRanger, setEditingRanger] = useState(null)
+  const [isUpdatingImages, setIsUpdatingImages] = useState(false)
+  const [updateResults, setUpdateResults] = useState(null)
   const adminEnabled = isAdminMode()
 
   // Get filter state from URL
@@ -246,6 +249,26 @@ const AllRangers = () => {
     }
   }
 
+  const handleUpdateRangerImages = async () => {
+    setIsUpdatingImages(true)
+    try {
+      const results = await updateAllRangerImages()
+      setUpdateResults(results)
+      console.log('Update results:', results)
+      // Refresh the data
+      await handleSaveEdit()
+    } catch (error) {
+      console.error('Error updating ranger images:', error)
+      setUpdateResults({
+        error: error.message,
+        updated: 0,
+        total: 0
+      })
+    } finally {
+      setIsUpdatingImages(false)
+    }
+  }
+
   const filteredRangers = useMemo(() => {
     let filtered = rangers
 
@@ -327,6 +350,31 @@ const AllRangers = () => {
   return (
     <div>
       <h1 className="py-4 text-center">All Rangers</h1>
+      
+      {/* Update Images Button - Admin only */}
+      {adminEnabled && (
+        <div className="flex justify-center mb-4 gap-2">
+          <button
+            onClick={handleUpdateRangerImages}
+            disabled={isUpdatingImages}
+            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition"
+          >
+            {isUpdatingImages ? 'Updating Images...' : 'Update Ranger Images from TTS'}
+          </button>
+          {updateResults && (
+            <div className="px-4 py-2 bg-blue-100 text-blue-900 rounded">
+              {updateResults.error ? (
+                <p className="text-red-600">Error: {updateResults.error}</p>
+              ) : (
+                <div>
+                  <p>Updated: {updateResults.updated} | Skipped: {updateResults.skipped} | Not found: {updateResults.notFound}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+      
       <div className="relative flex flex-wrap items-center justify-end gap-2 mb-4 z-20">
         <div className="pr-6">Filter:</div>
         <div className="teams relative">

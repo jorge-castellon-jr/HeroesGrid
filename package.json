@@ -11,7 +11,8 @@
     "dev": "yarn sync-versions && turbo dev",
     "build": "yarn sync-versions && turbo build",
     "lint": "turbo lint",
-    "preview": "turbo preview"
+    "preview": "turbo preview",
+    "extract": "node apps/web/scripts/extract-tts.js"
   },
   "packageManager": "yarn@4.8.1",
   "dependencies": {
