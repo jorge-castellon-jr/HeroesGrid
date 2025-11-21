@@ -181,7 +181,7 @@
     "slug": "mystic-force",
     "season_id": "13",
     "generation": 2006,
-    "published": false
+    "published": true
   },
   {
     "id": "17",
@@ -341,6 +341,6 @@
     "slug": "solar",
     "season_id": "26",
     "generation": 9999,
-    "published": false
+    "published": true
   }
 ]

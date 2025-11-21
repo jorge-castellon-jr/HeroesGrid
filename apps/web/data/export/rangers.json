@@ -73,7 +73,7 @@
     "deck": "[{\"card_id\":1,\"card_name\":\"TEAM TACTICS\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":2,\"card_name\":\"LEAD THE CHARGE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":3,\"card_name\":\"TYRANNO SLASH\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":4,\"card_name\":\"BLOCK\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":5,\"card_name\":\"BLADE BLASTER\",\"card_type\":\"ATTACK: SPECIAL\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":6,\"card_name\":\"POWER SWORD\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[{\"id\":1,\"name\":\"Red Charge\"},{\"id\":14,\"name\":\"Comic Book Character\"}]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "5",
@@ -377,7 +377,7 @@
     "deck": "[{\"card_id\":39,\"card_name\":\"RAPID HIT\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":40,\"card_name\":\"EXPLOIT OPENING\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":41,\"card_name\":\"LEAPFROG STRIKE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":42,\"card_name\":\"COSMIC CANNON\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":5,\"card_name\":\"BLADE BLASTER\",\"card_type\":\"ATTACK: SPECIAL\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":38,\"card_name\":\"POWER AXE\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[{\"id\":4,\"name\":\"Green Charge\"},{\"id\":8,\"name\":\"Retro Rangers\"}]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "21",
@@ -598,7 +598,7 @@
     "is_once_per_battle": false,
     "color": "blue",
     "type": "ally",
-    "team_position": 8,
+    "team_position": 8.1,
     "card_title": "Alpha 5",
     "team_id": "1",
     "expansion_id": "26",
@@ -719,7 +719,7 @@
     "deck": "[{\"card_id\":93,\"card_name\":\"HAVE HOPE\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":6,\"card_name\":\"POWER SWORD\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":\"ELTARIAN STRIKE\",\"order\":2},{\"card_id\":94,\"card_name\":\"FORCE OF WILL\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":95,\"card_name\":\"EVIL BEGONE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":96,\"card_name\":\"MAY THE POWER PROTECT YOU\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":97,\"card_name\":\"LIGHT OF ELTAR\",\"card_type\":\"REACTION\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[{\"id\":14,\"name\":\"Comic Book Character\"},{\"id\":16,\"name\":\"Not recommended for Key Deck play\"}]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "295",
@@ -814,7 +814,7 @@
     "deck": "[{\"card_id\":98,\"card_name\":\"NINJA VANISH\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":99,\"card_name\":\"SHADOW BURST\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":100,\"card_name\":\"FROG STYLE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":101,\"card_name\":\"NINJA STRIKE\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":4},{\"card_id\":102,\"card_name\":\"NINJETTI POWER\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":103,\"card_name\":\"SHADOW CLONE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":6}]",
     "tags": "[{\"id\":4,\"name\":\"Green Charge\"}]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "161",
@@ -1270,7 +1270,7 @@
     "deck": "[{\"card_id\":148,\"card_name\":\"EARNEST IMPACT\",\"card_type\":\"ATTACK: SPECIAL\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":149,\"card_name\":\"PERFECT OPPORTUNITY\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":150,\"card_name\":\"BLUE SHIFT BLAST\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":151,\"card_name\":\"YOUTHFUL SPIRIT\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":146,\"card_name\":\"AUTO BLASTER\",\"card_type\":\"ATTACK: SPECIAL\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":152,\"card_name\":\"TURBO HAND BLASTERS\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[{\"id\":2,\"name\":\"Blue Charge\"}]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "51",
@@ -2258,7 +2258,7 @@
     "deck": "[{\"card_id\":326,\"card_name\":\"SCORCHING HEAT\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":327,\"card_name\":\"IGNITE\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":328,\"card_name\":\"PHOENIX BLAST\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":329,\"card_name\":\"FIRE STRIKE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":330,\"card_name\":\"MYSTIC MORPHER\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":331,\"card_name\":\"MAGI STAFF RED\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[{\"id\":1,\"name\":\"Red Charge\"},{\"id\":73,\"name\":\"Russell Family\"}]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "87",
@@ -2277,7 +2277,7 @@
     "deck": "[{\"card_id\":332,\"card_name\":\"STUNNING SPELL\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":333,\"card_name\":\"SPARKING STRIKE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":162,\"card_name\":\"PHANTOM LASER\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":\"BOLT SHOT\",\"order\":3},{\"card_id\":334,\"card_name\":\"GATHERING STORM\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":330,\"card_name\":\"MYSTIC MORPHER\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":335,\"card_name\":\"MAGI STAFF YELLOW\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "88",
@@ -2296,7 +2296,7 @@
     "deck": "[{\"card_id\":336,\"card_name\":\"Rising Tide\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":337,\"card_name\":\"WAVE STRIKE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":338,\"card_name\":\"HEALING STREAM\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":330,\"card_name\":\"MYSTIC MORPHER\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":4}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "89",
@@ -2315,7 +2315,7 @@
     "deck": "[{\"card_id\":340,\"card_name\":\"BUTTERFLY KICK\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":341,\"card_name\":\"HOWLING WIND\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":342,\"card_name\":\"MIMIC STRIKE\",\"card_type\":\"ATTACK: SPECIAL\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":343,\"card_name\":\"SOOTHING BREEZE\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":330,\"card_name\":\"MYSTIC MORPHER\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":344,\"card_name\":\"MAGI STAFF PINK\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "90",
@@ -2344,7 +2344,7 @@
     "ability_name": "For Honor",
     "ability": "Once per battle, when any Ranger reveals a card for defense with no ★ ability, you may reveal a card from your hand and use it's ★  ability as though it were revealed for defense.",
     "is_once_per_battle": true,
-    "color": "crimson",
+    "color": "red",
     "type": "ally",
     "team_position": 7,
     "card_title": null,
@@ -4272,7 +4272,7 @@
     "deck": "[{\"card_id\":167,\"card_name\":\"LET’S ROCKET!\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":168,\"card_name\":\"PIERCE DEFENSES\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":169,\"card_name\":\"MEGA DRILL BREAKER\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":170,\"card_name\":\"TELEKINESIS\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":171,\"card_name\":\"ASTRO BLASTER\",\"card_type\":\"REACTION\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":172,\"card_name\":\"SPIRAL SABER\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "127",
@@ -4291,7 +4291,7 @@
     "deck": "[{\"card_id\":116,\"card_name\":\"INTERCEPTING STRIKE\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":117,\"card_name\":\"RAPID KICKS\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":118,\"card_name\":\"CHAIN COMBO\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":119,\"card_name\":\"BUILDING MOMENTUM\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":114,\"card_name\":\"POWER POD SWORD\",\"card_type\":\"REACTION\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":120,\"card_name\":\"POWER DOUBLE CLUBS\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "128",
@@ -4310,7 +4310,7 @@
     "deck": "[{\"card_id\":427,\"card_name\":\"SPIN CUTTER\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":428,\"card_name\":\"TALON SLASH\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":429,\"card_name\":\"CLANDESTINE TACTICS\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":430,\"card_name\":\"DARK ENCORE\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":431,\"card_name\":\"DARK ENERGEM\",\"card_type\":\"MANEUVER\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":432,\"card_name\":\"SPINO BLADE\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "129",
@@ -4329,7 +4329,7 @@
     "deck": "[{\"card_id\":83,\"card_name\":\"VETERAN INSTINCTS\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":84,\"card_name\":\"PTERA KICK\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":85,\"card_name\":\"PIERCING SHOT\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":86,\"card_name\":\"SCORNED SHOT\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":5,\"card_name\":\"BLADE BLASTER\",\"card_type\":\"ATTACK: SPECIAL\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":27,\"card_name\":\"ARROW SHOT\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":\"BOW OF DARKNESS\",\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "130",
@@ -4348,7 +4348,7 @@
     "deck": "[{\"card_id\":203,\"card_name\":\"SACRIFICE\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":204,\"card_name\":\"MAGNA DEFENSE\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":205,\"card_name\":\"NOBLE BLOW\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":206,\"card_name\":\"VALIANT CHARGE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":207,\"card_name\":\"MAGNA BLASTER\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":208,\"card_name\":\"MAGNA BLADE\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "131",
@@ -4367,7 +4367,7 @@
     "deck": "[{\"card_id\":261,\"card_name\":\"CLEVER TACTICS\",\"card_type\":\"MANEUVER\",\"count\":2,\"override_name\":null,\"order\":1},{\"card_id\":262,\"card_name\":\"PERFECT STRIKE\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":2},{\"card_id\":263,\"card_name\":\"CROSS COUNTER\",\"card_type\":\"REACTION\",\"count\":2,\"override_name\":null,\"order\":3},{\"card_id\":264,\"card_name\":\"CYCLONE SLASH\",\"card_type\":\"ATTACK\",\"count\":2,\"override_name\":null,\"order\":4},{\"card_id\":265,\"card_name\":\"SAMURAI SHIELD\",\"card_type\":\"REACTION\",\"count\":1,\"override_name\":null,\"order\":5},{\"card_id\":266,\"card_name\":\"SAMURAI SABER\",\"card_type\":\"ATTACK\",\"count\":1,\"override_name\":null,\"order\":6}]",
     "tags": "[]",
     "image_url": null,
-    "published": true
+    "published": false
   },
   {
     "id": "248",
