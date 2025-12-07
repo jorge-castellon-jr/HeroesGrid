@@ -16,6 +16,12 @@ enabled = true
 head_sampling_rate = 1
 invocation_logs = true
 
+# R2 Bucket Binding
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "heroes-grid"
+remote = true
+
 # Environment Variables (non-secret)
 # Secrets (DISCORD_CLIENT_SECRET, SESSION_SECRET) should be set via:
 # wrangler secret put <KEY>

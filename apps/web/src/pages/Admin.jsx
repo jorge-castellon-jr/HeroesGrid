@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { database } from '../database';
 import { initializeDatabase } from '../database/seed';
 import SyncManager from '../components/SyncManager';
+import BulkImageUploader from '../components/BulkImageUploader';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -441,6 +442,11 @@ export default function Admin() {
       {/* Sync Manager */}
       <div className="mb-8">
         <SyncManager />
+      </div>
+
+      {/* Bulk Image Uploader */}
+      <div className="mb-8">
+        <BulkImageUploader />
       </div>
 
       {/* Danger Zone */}

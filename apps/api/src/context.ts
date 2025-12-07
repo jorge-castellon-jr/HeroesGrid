@@ -3,6 +3,7 @@ import { drizzle } from 'drizzle-orm/d1';
 
 export interface Env {
   DB: D1Database;
+  R2: R2Bucket;
   DISCORD_CLIENT_ID: string;
   DISCORD_CLIENT_SECRET: string;
   DISCORD_REDIRECT_URI: string;
