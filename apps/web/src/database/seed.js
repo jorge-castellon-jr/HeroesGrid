@@ -112,54 +112,52 @@ export async function seedRangers() {
 	const rangersCollection = database.get("rangers")
 
 	const existingCount = await rangersCollection.query().fetchCount()
+	console.log('🔍 Rangers existing count:', existingCount)
+	console.log('🔍 rangersData length:', rangersData.length)
+	console.log('🔍 First ranger in rangersData:', rangersData[0]?.name, '(ID:', rangersData[0]?.id, ')')
 	if (existingCount > 0) {
-		console.log("Rangers already seeded")
+		console.log("Rangers already seeded, skipping")
 		return
 	}
 
-	await database.write(async () => {
-		for (const ranger of rangersData) {
-			// Find matching image by name and ability
-			const imageMatch = rangerImagesData.find(
-				(img) => img.name === ranger.name && img.ability === ranger.ability_name
-			)
-
-			// Use team_position from JSON if it exists and is a number, otherwise calculate
-			let teamPosition;
-			if (typeof ranger.team_position === 'number') {
-				// Use the value from JSON if it's already a number
-				teamPosition = ranger.team_position;
-			} else {
-				// Calculate based on ranger type for old data
-				if (ranger.type === 'core') {
-					teamPosition = getTeamPositionFromColor(ranger.color);
-				} else if (ranger.type === 'sixth') {
-					teamPosition = 6;
+		await database.write(async () => {
+			for (const ranger of rangersData) {
+				// Use team_position from JSON if it exists and is a number, otherwise calculate
+				let teamPosition;
+				if (typeof ranger.team_position === 'number') {
+					// Use the value from JSON if it's already a number
+					teamPosition = ranger.team_position;
 				} else {
-					teamPosition = 7;
+					// Calculate based on ranger type for old data
+					if (ranger.type === 'core') {
+						teamPosition = getTeamPositionFromColor(ranger.color);
+					} else if (ranger.type === 'sixth') {
+						teamPosition = 6;
+					} else {
+						teamPosition = 7;
+					}
 				}
-			}
 
-			await rangersCollection.create((record) => {
-				record._raw.id = String(ranger.id)
-				record.name = ranger.name
-				record.slug = ranger.slug
-				record.title = ranger.title
-				record.abilityName = ranger.ability_name
-				record.ability = ranger.ability
-				record.isOncePerBattle = ranger.is_once_per_battle
-				record.color = ranger.color
-				record.type = ranger.type
-				record.teamPosition = teamPosition
-				record.cardTitle = ranger.card_title
-				record.teamId = String(ranger.team_id)
-				record.expansionId = String(ranger.expansion_id)
-				record.deck = typeof ranger.deck === 'string' ? JSON.parse(ranger.deck) : ranger.deck
-				record.tags = typeof ranger.tags === 'string' ? JSON.parse(ranger.tags) : ranger.tags
-				record.imageUrl = imageMatch?.imageUrl || null
-				record.published = ranger.published ?? ranger.ability_name !== "???"
-			})
-		}
+				await rangersCollection.create((record) => {
+					record._raw.id = String(ranger.id)
+					record.name = ranger.name
+					record.slug = ranger.slug
+					record.title = ranger.title
+					record.abilityName = ranger.ability_name
+					record.ability = ranger.ability
+					record.isOncePerBattle = ranger.is_once_per_battle
+					record.color = ranger.color
+					record.type = ranger.type
+					record.teamPosition = teamPosition
+					record.cardTitle = ranger.card_title
+					record.teamId = String(ranger.team_id)
+					record.expansionId = String(ranger.expansion_id)
+					record.deck = typeof ranger.deck === 'string' ? JSON.parse(ranger.deck) : ranger.deck
+					record.tags = typeof ranger.tags === 'string' ? JSON.parse(ranger.tags) : ranger.tags
+					record.imageUrl = ranger.image_url || null
+					record.published = ranger.published ?? ranger.ability_name !== "???"
+				})
+			}
 		console.log(`✅ Seeded ${rangersData.length} rangers`)
 	})
 }

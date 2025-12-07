@@ -322,19 +322,75 @@ export default function Admin() {
 
       const jsonData = records.map(r => {
         const obj = { ...r._raw };
-        // Only remove WatermelonDB internal fields
         delete obj._status;
         delete obj._changed;
+        
+        // Parse JSON fields that might be stored as strings
+        if (obj.deck && typeof obj.deck === 'string') {
+          try {
+            obj.deck = JSON.parse(obj.deck);
+          } catch (e) {
+            console.warn('Failed to parse deck:', e);
+          }
+        }
+        
+        if (obj.tags && typeof obj.tags === 'string') {
+          try {
+            obj.tags = JSON.parse(obj.tags);
+          } catch (e) {
+            console.warn('Failed to parse tags:', e);
+          }
+        }
+        
+        if (obj.locations && typeof obj.locations === 'string') {
+          try {
+            obj.locations = JSON.parse(obj.locations);
+          } catch (e) {
+            console.warn('Failed to parse locations:', e);
+          }
+        }
+        
+        if (obj.compatible_ranger_ids && typeof obj.compatible_ranger_ids === 'string') {
+          try {
+            obj.compatible_ranger_ids = JSON.parse(obj.compatible_ranger_ids);
+          } catch (e) {
+            console.warn('Failed to parse compatible_ranger_ids:', e);
+          }
+        }
+        
+        if (obj.compatible_team_ids && typeof obj.compatible_team_ids === 'string') {
+          try {
+            obj.compatible_team_ids = JSON.parse(obj.compatible_team_ids);
+          } catch (e) {
+            console.warn('Failed to parse compatible_team_ids:', e);
+          }
+        }
+        
         return obj;
       });
 
-      const blob = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/json' });
+      const jsonString = JSON.stringify(jsonData, null, 2);
+      
+      // Copy to clipboard
+      await navigator.clipboard.writeText(jsonString);
+      
+      // Log to console
+      console.log(`%c=== ${activeTab.toUpperCase()} EXPORT ===`, 'color: green; font-weight: bold; font-size: 14px');
+      console.log(jsonData);
+      console.log(`%c✓ JSON copied to clipboard! Total records: ${jsonData.length}`, 'color: blue; font-weight: bold');
+      
+      // Try blob download
+      const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
       a.download = `${activeTab}.json`;
+      document.body.appendChild(a);
       a.click();
-      URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+      }, 100);
     } catch (error) {
       console.error('Error exporting:', error);
     }
@@ -493,9 +549,8 @@ export default function Admin() {
                         {col === 'name' ? (
                           <span className="font-medium">{item[col] || '-'}</span>
                         ) : col === 'color' ? (
-                          <span className={`px-2 py-1 rounded text-xs ${
-                            item[col] ? 'bg-secondary' : ''
-                          }`}>
+                          <span className={`px-2 py-1 rounded text-xs ${item[col] ? 'bg-secondary' : ''
+                            }`}>
                             {item[col] || '-'}
                           </span>
                         ) : col === 'description' ? (
