@@ -24,6 +24,7 @@ export default class Ranger extends Model {
 	@field("image_url") imageUrl
 	@field("published") published
 
+	@json("display_image", (json) => json) displayImage
 	@json("deck", (json) => json) deck
 	@json("tags", (json) => json) tags
 

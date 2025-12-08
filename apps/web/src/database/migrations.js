@@ -260,5 +260,29 @@ export default schemaMigrations({
 				}),
 			],
 		},
+		{
+			// Version 9 to 10: Add display_image JSON column to rangers, ranger_cards, and arsenal_cards
+			toVersion: 10,
+			steps: [
+				addColumns({
+					table: 'rangers',
+					columns: [
+						{ name: 'display_image', type: 'string', isOptional: true },
+					],
+				}),
+				addColumns({
+					table: 'ranger_cards',
+					columns: [
+						{ name: 'display_image', type: 'string', isOptional: true },
+					],
+				}),
+				addColumns({
+					table: 'arsenal_cards',
+					columns: [
+						{ name: 'display_image', type: 'string', isOptional: true },
+					],
+				}),
+			],
+		},
 	],
 });

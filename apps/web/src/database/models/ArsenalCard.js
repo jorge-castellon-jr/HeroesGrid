@@ -1,5 +1,5 @@
 import { Model } from "@nozbe/watermelondb"
-import { field, relation } from "@nozbe/watermelondb/decorators"
+import { field, relation, json } from "@nozbe/watermelondb/decorators"
 
 export default class ArsenalCard extends Model {
 	static table = "arsenal_cards"
@@ -17,6 +17,8 @@ export default class ArsenalCard extends Model {
 	@field("attack_hit") attackHit
 	@field("expansion_id") expansionId
 	@field("published") published
+
+	@json("display_image", (json) => json) displayImage
 
 	@relation("expansions", "expansion_id") expansion
 }

@@ -1,7 +1,7 @@
 import { appSchema, tableSchema } from '@nozbe/watermelondb';
 
 export default appSchema({
-	version: 9,
+	version: 10,
 	tables: [
 		tableSchema({
 			name: 'rulebooks',
@@ -65,6 +65,7 @@ export default appSchema({
 				{ name: 'deck', type: 'string' }, // JSON array of deck cards
 				{ name: 'tags', type: 'string' }, // JSON array of tag objects
 				{ name: 'image_url', type: 'string', isOptional: true },
+				{ name: 'display_image', type: 'string', isOptional: true },
 				{ name: 'published', type: 'boolean', isIndexed: true },
 			],
 		}),
@@ -125,6 +126,7 @@ export default appSchema({
 				{ name: 'attack_dice', type: 'number' },
 				{ name: 'attack_hit', type: 'number' },
 				{ name: 'expansion_id', type: 'string', isOptional: true, isIndexed: true },
+				{ name: 'display_image', type: 'string', isOptional: true },
 				{ name: 'published', type: 'boolean', isIndexed: true },
 			],
 		}),
@@ -141,6 +143,7 @@ export default appSchema({
 				{ name: 'attack_dice', type: 'number' },
 				{ name: 'attack_hit', type: 'number' },
 				{ name: 'expansion_id', type: 'string', isOptional: true, isIndexed: true },
+				{ name: 'display_image', type: 'string', isOptional: true },
 				{ name: 'published', type: 'boolean', isIndexed: true },
 			],
 		}),

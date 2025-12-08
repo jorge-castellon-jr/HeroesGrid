@@ -1,9 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import RangerCard from '../components/cards/RangerCard';
 import RangerEditModal from '../components/RangerEditModal';
+import RangerImageToggle from '../components/RangerImageToggle';
+import { useImageToggle } from '../hooks/useImageToggle';
+import { buildImageUrl, getSpriteSheetStyle } from '../utils/imageHelpers';
 import { isAdminMode } from '../utils/adminMode';
+import { database } from '../database';
+import { initializeDatabase } from '../database/seed';
+import { Q } from '@nozbe/watermelondb';
 
 const StackedCard = ({ card }) => {
   const wrapperRef = useRef(null);
@@ -35,9 +41,6 @@ const StackedCard = ({ card }) => {
     </div>
   );
 };
-import { database } from '../database';
-import { initializeDatabase } from '../database/seed';
-import { Q } from '@nozbe/watermelondb';
 
 export default function Ranger() {
   const { ranger: rangerParam } = useParams();
@@ -47,7 +50,16 @@ export default function Ranger() {
   const [rangerRecord, setRangerRecord] = useState(null); // Store the DB record
   const [isLoading, setIsLoading] = useState(true);
   const [showEditModal, setShowEditModal] = useState(false);
+  const { useImages, toggleUseImages } = useImageToggle();
   const adminEnabled = isAdminMode();
+  const imageRef = useRef(null);
+  const [imgTick, setImgTick] = useState(0);
+
+  // Recompute sprite style once the image is loaded (naturalWidth/Height available)
+  const spriteStyle = useMemo(() => {
+    if (!useImages || !ranger?.rangerCards?.displayImage) return null;
+    return getSpriteSheetStyle(ranger.rangerCards.displayImage, imageRef.current);
+  }, [useImages, ranger?.rangerCards?.displayImage, imgTick]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,7 +87,10 @@ export default function Ranger() {
         console.log('Raw Ranger Record:', r);
         console.log('Ranger _raw:', r._raw);
         console.log('Ranger published:', r.published);
-        
+        console.log('Ranger displayImage from DB:', r.displayImage);
+        console.log('Ranger displayImage type:', typeof r.displayImage);
+        console.log('All ranger fields:', Object.keys(r._raw || {}));
+
         // Store the DB record for editing
         setRangerRecord(r);
 
@@ -172,6 +187,7 @@ export default function Ranger() {
           },
           rangerCards: {
             image: r.imageUrl,
+            displayImage: r.displayImage,
             abilityName: r.abilityName,
             abilityDesc: r.ability,
             deck: deckWithDetails,
@@ -279,6 +295,7 @@ export default function Ranger() {
         },
         rangerCards: {
           image: r.imageUrl,
+          displayImage: r.displayImage,
           abilityName: r.abilityName,
           abilityDesc: r.ability,
           deck: deckWithDetails,
@@ -311,6 +328,37 @@ export default function Ranger() {
 
   return (
     <div className="max-w-3xl mx-auto mt-6 ranger relative">
+      {/* Image Toggle */}
+      <div className="flex justify-end mb-4">
+        <RangerImageToggle useImages={useImages} onToggle={toggleUseImages} />
+      </div>
+
+      {/* Display image if toggle is enabled and displayImage exists, otherwise show component */}
+      {useImages && ranger.rangerCards?.displayImage ? (
+        <div className="mb-10 flex justify-center">
+          {/* preload image to get natural dimensions */}
+          <img
+            ref={imageRef}
+            src={buildImageUrl(ranger.rangerCards.displayImage)}
+            alt=""
+            onLoad={() => setImgTick((v) => v + 1)}
+            style={{
+              display: 'none',
+            }}
+          />
+          <div
+            style={{
+              backgroundImage: `url('${buildImageUrl(ranger.rangerCards.displayImage)}')`,
+              aspectRatio: '768/444',
+              ...(spriteStyle || {}),
+            }}
+            className="w-full rounded-lg shadow-lg"
+          />
+        </div>
+      ) : (
+        <RangerCard className="mb-10" ranger={ranger} single />
+      )}
+
       {/* Edit Button - Only visible in admin mode */}
       {adminEnabled && rangerRecord && (
         <button
@@ -332,8 +380,6 @@ export default function Ranger() {
           onSave={handleSave}
         />
       )}
-
-      <RangerCard className="mb-10" ranger={ranger} single />
 
       {ranger.rangerCards?.deck?.length > 0 && (
         <div className="mb-10">

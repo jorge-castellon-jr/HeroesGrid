@@ -3,7 +3,6 @@ import { useSearchParams } from 'react-router-dom';
 import { database } from '../database';
 import { initializeDatabase } from '../database/seed';
 import SyncManager from '../components/SyncManager';
-import BulkImageUploader from '../components/BulkImageUploader';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -325,7 +324,7 @@ export default function Admin() {
         const obj = { ...r._raw };
         delete obj._status;
         delete obj._changed;
-        
+
         // Parse JSON fields that might be stored as strings
         if (obj.deck && typeof obj.deck === 'string') {
           try {
@@ -334,7 +333,7 @@ export default function Admin() {
             console.warn('Failed to parse deck:', e);
           }
         }
-        
+
         if (obj.tags && typeof obj.tags === 'string') {
           try {
             obj.tags = JSON.parse(obj.tags);
@@ -342,7 +341,7 @@ export default function Admin() {
             console.warn('Failed to parse tags:', e);
           }
         }
-        
+
         if (obj.locations && typeof obj.locations === 'string') {
           try {
             obj.locations = JSON.parse(obj.locations);
@@ -350,7 +349,7 @@ export default function Admin() {
             console.warn('Failed to parse locations:', e);
           }
         }
-        
+
         if (obj.compatible_ranger_ids && typeof obj.compatible_ranger_ids === 'string') {
           try {
             obj.compatible_ranger_ids = JSON.parse(obj.compatible_ranger_ids);
@@ -358,7 +357,7 @@ export default function Admin() {
             console.warn('Failed to parse compatible_ranger_ids:', e);
           }
         }
-        
+
         if (obj.compatible_team_ids && typeof obj.compatible_team_ids === 'string') {
           try {
             obj.compatible_team_ids = JSON.parse(obj.compatible_team_ids);
@@ -366,20 +365,28 @@ export default function Admin() {
             console.warn('Failed to parse compatible_team_ids:', e);
           }
         }
-        
+
+        if (obj.display_image && typeof obj.display_image === 'string') {
+          try {
+            obj.display_image = JSON.parse(obj.display_image);
+          } catch (e) {
+            console.warn('Failed to parse display_image:', e);
+          }
+        }
+
         return obj;
       });
 
       const jsonString = JSON.stringify(jsonData, null, 2);
-      
+
       // Copy to clipboard
       await navigator.clipboard.writeText(jsonString);
-      
+
       // Log to console
       console.log(`%c=== ${activeTab.toUpperCase()} EXPORT ===`, 'color: green; font-weight: bold; font-size: 14px');
       console.log(jsonData);
       console.log(`%c✓ JSON copied to clipboard! Total records: ${jsonData.length}`, 'color: blue; font-weight: bold');
-      
+
       // Try blob download
       const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
@@ -442,11 +449,6 @@ export default function Admin() {
       {/* Sync Manager */}
       <div className="mb-8">
         <SyncManager />
-      </div>
-
-      {/* Bulk Image Uploader */}
-      <div className="mb-8">
-        <BulkImageUploader />
       </div>
 
       {/* Danger Zone */}

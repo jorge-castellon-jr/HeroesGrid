@@ -1,0 +1,26 @@
+{
+	"description": "Sprite sheet dimensions for ranger character images in R2 bucket",
+	"generatedAt": "2025-12-08T06:35:00.000Z",
+	"images": {
+		"FF9A2B8A-face.png": {
+			"columns": 6,
+			"rows": 7
+		},
+		"9E3665EB-face.png": {
+			"columns": 6,
+			"rows": 5
+		},
+		"60BC38E1-face.png": {
+			"columns": 7,
+			"rows": 5
+		},
+		"DBE39636-face.png": {
+			"columns": 3,
+			"rows": 3
+		},
+		"45CC639E-face.png": {
+			"columns": 3,
+			"rows": 3
+		}
+	}
+}

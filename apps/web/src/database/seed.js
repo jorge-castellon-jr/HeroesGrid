@@ -152,10 +152,11 @@ export async function seedRangers() {
 					record.cardTitle = ranger.card_title
 					record.teamId = String(ranger.team_id)
 					record.expansionId = String(ranger.expansion_id)
-					record.deck = typeof ranger.deck === 'string' ? JSON.parse(ranger.deck) : ranger.deck
-					record.tags = typeof ranger.tags === 'string' ? JSON.parse(ranger.tags) : ranger.tags
-					record.imageUrl = ranger.image_url || null
-					record.published = ranger.published ?? ranger.ability_name !== "???"
+				record.deck = typeof ranger.deck === 'string' ? JSON.parse(ranger.deck) : ranger.deck
+				record.tags = typeof ranger.tags === 'string' ? JSON.parse(ranger.tags) : ranger.tags
+				record.imageUrl = ranger.image_url || null
+				record.displayImage = ranger.display_image ? JSON.stringify(ranger.display_image) : null
+				record.published = ranger.published ?? ranger.ability_name !== "???"
 				})
 			}
 		console.log(`✅ Seeded ${rangersData.length} rangers`)
@@ -269,6 +270,7 @@ export async function seedRangerCards() {
 				record.attackDice = card.attack_dice;
 				record.attackHit = card.attack_hit;
 				record.expansionId = card.expansion_id ? String(card.expansion_id) : null;
+				record.displayImage = card.display_image ? JSON.stringify(card.display_image) : null;
 				record.published = card.published ?? true;
 			})
 		}
@@ -298,6 +300,7 @@ export async function seedArsenalCards() {
 				record.attackDice = card.attack_dice;
 				record.attackHit = card.attack_hit;
 				record.expansionId = card.expansion_id ? String(card.expansion_id) : null;
+				record.displayImage = card.display_image ? JSON.stringify(card.display_image) : null;
 				record.published = card.published ?? true;
 			})
 		}

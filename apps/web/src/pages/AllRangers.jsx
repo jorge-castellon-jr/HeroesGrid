@@ -1,14 +1,16 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { useApp } from '../context/AppContext'
 import RangerCard from '../components/cards/RangerCard'
+import RangerImageToggle from '../components/RangerImageToggle'
 import RangerEditModal from '../components/RangerEditModal'
+import DisplayImageSelector from '../components/DisplayImageSelector'
+import RangerDisplayImage from '../components/RangerDisplayImage'
 import { database } from '../database'
-import { initializeDatabase } from '../database/seed'
 import { Q } from '@nozbe/watermelondb'
-import { friendlyURL, getColor } from '../utils/helpers'
+import { initializeDatabase } from '../database/seed'
+import { useImageToggle } from '../hooks/useImageToggle'
 import { isAdminMode } from '../utils/adminMode'
-import { updateAllRangerImages } from '../utils/updateRangerImages'
+import { friendlyURL, getColor } from '../utils/helpers'
 import './AllRangers.scss'
 
 const AllRangers = () => {
@@ -20,9 +22,9 @@ const AllRangers = () => {
   const [colorsDropdown, setColorsDropdown] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [editingRanger, setEditingRanger] = useState(null)
-  const [isUpdatingImages, setIsUpdatingImages] = useState(false)
-  const [updateResults, setUpdateResults] = useState(null)
+  const [editingImage, setEditingImage] = useState(null)
   const adminEnabled = isAdminMode()
+  const { useImages, toggleUseImages } = useImageToggle()
 
   // Get filter state from URL
   const checkedTeams = useMemo(() => {
@@ -80,12 +82,12 @@ const AllRangers = () => {
         const transformedRangers = (await Promise.all(
           fetchedRangers.map(async (r) => {
             const team = await r.team.fetch()
-            
+
             // Skip rangers whose team is not published
             if (!team || !publishedTeamIds.has(team.id)) {
               return null
             }
-            
+
             // Store the DB record for editing
             recordsMap.set(r.slug, r)
             return {
@@ -101,6 +103,7 @@ const AllRangers = () => {
               },
               rangerCards: {
                 image: r.imageUrl,
+                displayImage: r.displayImage,
                 abilityName: r.abilityName,
                 abilityDesc: r.abilityDesc
               }
@@ -177,12 +180,12 @@ const AllRangers = () => {
     const transformedRangers = (await Promise.all(
       fetchedRangers.map(async (r) => {
         const team = await r.team.fetch()
-        
+
         // Skip rangers whose team is not published
         if (!team || !publishedTeamIds.has(team.id)) {
           return null
         }
-        
+
         recordsMap.set(r.slug, r)
         return {
           name: r.name,
@@ -197,6 +200,7 @@ const AllRangers = () => {
           },
           rangerCards: {
             image: r.imageUrl,
+            displayImage: r.displayImage,
             abilityName: r.abilityName,
             abilityDesc: r.abilityDesc
           }
@@ -246,26 +250,6 @@ const AllRangers = () => {
       await handleSaveEdit()
     } catch (error) {
       console.error('Error updating team position:', error)
-    }
-  }
-
-  const handleUpdateRangerImages = async () => {
-    setIsUpdatingImages(true)
-    try {
-      const results = await updateAllRangerImages()
-      setUpdateResults(results)
-      console.log('Update results:', results)
-      // Refresh the data
-      await handleSaveEdit()
-    } catch (error) {
-      console.error('Error updating ranger images:', error)
-      setUpdateResults({
-        error: error.message,
-        updated: 0,
-        total: 0
-      })
-    } finally {
-      setIsUpdatingImages(false)
     }
   }
 
@@ -349,32 +333,11 @@ const AllRangers = () => {
 
   return (
     <div>
-      <h1 className="py-4 text-center">All Rangers</h1>
-      
-      {/* Update Images Button - Admin only */}
-      {adminEnabled && (
-        <div className="flex justify-center mb-4 gap-2">
-          <button
-            onClick={handleUpdateRangerImages}
-            disabled={isUpdatingImages}
-            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition"
-          >
-            {isUpdatingImages ? 'Updating Images...' : 'Update Ranger Images from TTS'}
-          </button>
-          {updateResults && (
-            <div className="px-4 py-2 bg-blue-100 text-blue-900 rounded">
-              {updateResults.error ? (
-                <p className="text-red-600">Error: {updateResults.error}</p>
-              ) : (
-                <div>
-                  <p>Updated: {updateResults.updated} | Skipped: {updateResults.skipped} | Not found: {updateResults.notFound}</p>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
-      
+      <div className="flex items-center justify-between px-4 py-4">
+        <h1 className="text-center flex-1">All Rangers</h1>
+        <RangerImageToggle useImages={useImages} onToggle={toggleUseImages} />
+      </div>
+
       <div className="relative flex flex-wrap items-center justify-end gap-2 mb-4 z-20">
         <div className="pr-6">Filter:</div>
         <div className="teams relative">
@@ -457,65 +420,47 @@ const AllRangers = () => {
           {filteredRangers.map((ranger, i) => (
             <div
               key={i}
-              className={`relative p-3 w-1/2 flex ${
-                i % 2 === 0 ? 'justify-end' : 'justify-start'
-              }`}
+              className={`relative p-3 w-1/2 flex ${i % 2 === 0 ? 'justify-end' : 'justify-start'
+                }`}
             >
               {/* Edit Button - Only visible in admin mode */}
               {adminEnabled && (
-                <button
-                  onClick={(e) => handleEditClick(e, ranger)}
-                  className="absolute top-6 right-6 bg-blue-600 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 transition z-10"
-                  title="Edit Ranger"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                  </svg>
-                </button>
+                <>
+                  <button
+                    onClick={(e) => handleEditClick(e, ranger)}
+                    className="absolute top-6 right-6 bg-blue-600 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 transition z-10"
+                    title="Edit Ranger"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setEditingImage(ranger); }}
+                    className={`absolute top-6 right-16 p-2 rounded-full shadow-lg transition z-10 ${
+                      ranger.rangerCards?.displayImage
+                        ? 'bg-purple-600 hover:bg-purple-700'
+                        : 'bg-green-600 hover:bg-green-700'
+                    } text-white`}
+                    title={ranger.rangerCards?.displayImage ? 'Edit Display Image' : 'Set Display Image'}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </>
               )}
 
-              {/* Team Position Controls - Only visible in admin mode */}
-              {adminEnabled && (
-                <div className="absolute bottom-6 right-6 flex gap-1 z-10">
-                  <button
-                    onClick={(e) => handleTeamPositionChange(e, ranger, -1)}
-                    className="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-1 rounded shadow-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition font-bold text-sm"
-                    title="Decrease team position by 1"
-                  >
-                    −−
-                  </button>
-                  <button
-                    onClick={(e) => handleTeamPositionChange(e, ranger, -0.1)}
-                    className="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 px-2 py-1 rounded shadow-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition font-bold text-sm"
-                    title="Decrease team position by 0.1"
-                  >
-                    −
-                  </button>
-                  <div className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 px-2 py-1 rounded shadow-lg text-gray-900 dark:text-gray-100 font-semibold text-sm min-w-[3rem] text-center">
-                    {ranger.rangerInfo.teamPosition || 0}
-                  </div>
-                  <button
-                    onClick={(e) => handleTeamPositionChange(e, ranger, 0.1)}
-                    className="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 px-2 py-1 rounded shadow-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition font-bold text-sm"
-                    title="Increase team position by 0.1"
-                  >
-                    +
-                  </button>
-                  <button
-                    onClick={(e) => handleTeamPositionChange(e, ranger, 1)}
-                    className="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-1 rounded shadow-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition font-bold text-sm"
-                    title="Increase team position by 1"
-                  >
-                    ++
-                  </button>
-                </div>
-              )}
-              
+
               <Link
                 className="no-underline flex-1"
                 to={`/${friendlyURL(ranger.rangerInfo.team)}/${ranger.rangerInfo.slug}`}
               >
-                <RangerCard className="lg:max-w-lg" noDesc ranger={ranger} sanity />
+                {useImages && ranger.rangerCards?.displayImage ? (
+                  <RangerDisplayImage displayImage={ranger.rangerCards.displayImage} />
+                ) : (
+                  <RangerCard className="lg:max-w-lg" noDesc ranger={ranger} sanity />
+                )}
               </Link>
             </div>
           ))}
@@ -528,6 +473,31 @@ const AllRangers = () => {
           ranger={editingRanger}
           onClose={() => setEditingRanger(null)}
           onSave={handleSaveEdit}
+        />
+      )}
+
+      {/* Display Image Selector Modal */}
+      {editingImage && (
+        <DisplayImageSelector
+          ranger={editingImage}
+          onClose={() => setEditingImage(null)}
+          onSave={async (displayImageData) => {
+            const record = rangerRecords.get(editingImage.rangerInfo.slug)
+            if (!record) return
+
+            try {
+              await database.write(async () => {
+                await record.update((r) => {
+                  r.displayImage = displayImageData
+                })
+              })
+
+              await handleSaveEdit()
+              setEditingImage(null)
+            } catch (error) {
+              console.error('Error updating display image:', error)
+            }
+          }}
         />
       )}
     </div>

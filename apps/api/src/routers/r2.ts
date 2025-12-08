@@ -81,4 +81,25 @@ export const r2Router = router({
       throw new Error(`Failed to list assets: ${error}`);
     }
   }),
+
+  listAssetsByPath: publicProcedure
+    .input(z.object({ path: z.string() }))
+    .query(async ({ input, ctx }) => {
+      const { path } = input;
+      
+      // Ensure path starts with 'assets/'
+      const prefix = path.startsWith('assets/') ? path : `assets/${path}`;
+      
+      try {
+        const list = await ctx.env.R2.list({ prefix });
+        return list.objects.map((obj) => ({
+          key: obj.key,
+          filename: obj.key.split('/').pop() || obj.key,
+          size: obj.size,
+          uploaded: obj.uploaded,
+        }));
+      } catch (error) {
+        throw new Error(`Failed to list assets: ${error}`);
+      }
+    }),
 });
