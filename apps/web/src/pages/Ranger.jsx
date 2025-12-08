@@ -4,8 +4,8 @@ import { useApp } from '../context/AppContext';
 import RangerCard from '../components/cards/RangerCard';
 import RangerEditModal from '../components/RangerEditModal';
 import RangerImageToggle from '../components/RangerImageToggle';
+import RangerDisplayImage from '../components/RangerDisplayImage';
 import { useImageToggle } from '../hooks/useImageToggle';
-import { buildImageUrl, getSpriteSheetStyle } from '../utils/imageHelpers';
 import { isAdminMode } from '../utils/adminMode';
 import { database } from '../database';
 import { initializeDatabase } from '../database/seed';
@@ -52,14 +52,6 @@ export default function Ranger() {
   const [showEditModal, setShowEditModal] = useState(false);
   const { useImages, toggleUseImages } = useImageToggle();
   const adminEnabled = isAdminMode();
-  const imageRef = useRef(null);
-  const [imgTick, setImgTick] = useState(0);
-
-  // Recompute sprite style once the image is loaded (naturalWidth/Height available)
-  const spriteStyle = useMemo(() => {
-    if (!useImages || !ranger?.rangerCards?.displayImage) return null;
-    return getSpriteSheetStyle(ranger.rangerCards.displayImage, imageRef.current);
-  }, [useImages, ranger?.rangerCards?.displayImage, imgTick]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -336,24 +328,7 @@ export default function Ranger() {
       {/* Display image if toggle is enabled and displayImage exists, otherwise show component */}
       {useImages && ranger.rangerCards?.displayImage ? (
         <div className="mb-10 flex justify-center">
-          {/* preload image to get natural dimensions */}
-          <img
-            ref={imageRef}
-            src={buildImageUrl(ranger.rangerCards.displayImage)}
-            alt=""
-            onLoad={() => setImgTick((v) => v + 1)}
-            style={{
-              display: 'none',
-            }}
-          />
-          <div
-            style={{
-              backgroundImage: `url('${buildImageUrl(ranger.rangerCards.displayImage)}')`,
-              aspectRatio: '768/444',
-              ...(spriteStyle || {}),
-            }}
-            className="w-full rounded-lg shadow-lg"
-          />
+          <RangerDisplayImage displayImage={ranger.rangerCards.displayImage} />
         </div>
       ) : (
         <RangerCard className="mb-10" ranger={ranger} single />
