@@ -9,6 +9,7 @@ binding = "DB"
 database_name = "heroes-grid-db"
 database_id = "4c6e2175-f321-44c3-ae02-d26262dd7374"
 migrations_dir = "drizzle/migrations"
+remote = true
 
 [observability]
 [observability.logs]
