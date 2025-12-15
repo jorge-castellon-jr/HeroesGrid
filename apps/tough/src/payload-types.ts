@@ -69,6 +69,9 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'roadmap-items': RoadmapItem;
+    'roadmap-votes': RoadmapVote;
+    'roadmap-comments': RoadmapComment;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +81,9 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'roadmap-items': RoadmapItemsSelect<false> | RoadmapItemsSelect<true>;
+    'roadmap-votes': RoadmapVotesSelect<false> | RoadmapVotesSelect<true>;
+    'roadmap-comments': RoadmapCommentsSelect<false> | RoadmapCommentsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -122,6 +128,9 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  discordId?: string | null;
+  discordUsername?: string | null;
+  discordAvatar?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -159,6 +168,59 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roadmap-items".
+ */
+export interface RoadmapItem {
+  id: number;
+  title: string;
+  summary?: string | null;
+  details?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  status: 'planned' | 'in_progress' | 'done';
+  priority?: number | null;
+  upvoteCount?: number | null;
+  commentCount?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roadmap-votes".
+ */
+export interface RoadmapVote {
+  id: number;
+  item: number | RoadmapItem;
+  user: number | User;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roadmap-comments".
+ */
+export interface RoadmapComment {
+  id: number;
+  item: number | RoadmapItem;
+  user: number | User;
+  body: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -188,6 +250,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'roadmap-items';
+        value: number | RoadmapItem;
+      } | null)
+    | ({
+        relationTo: 'roadmap-votes';
+        value: number | RoadmapVote;
+      } | null)
+    | ({
+        relationTo: 'roadmap-comments';
+        value: number | RoadmapComment;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -236,6 +310,9 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  discordId?: T;
+  discordUsername?: T;
+  discordAvatar?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -268,6 +345,42 @@ export interface MediaSelect<T extends boolean = true> {
   filesize?: T;
   width?: T;
   height?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roadmap-items_select".
+ */
+export interface RoadmapItemsSelect<T extends boolean = true> {
+  title?: T;
+  summary?: T;
+  details?: T;
+  status?: T;
+  priority?: T;
+  upvoteCount?: T;
+  commentCount?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roadmap-votes_select".
+ */
+export interface RoadmapVotesSelect<T extends boolean = true> {
+  item?: T;
+  user?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "roadmap-comments_select".
+ */
+export interface RoadmapCommentsSelect<T extends boolean = true> {
+  item?: T;
+  user?: T;
+  body?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

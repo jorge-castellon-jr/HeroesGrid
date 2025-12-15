@@ -9,6 +9,9 @@ import { r2Storage } from '@payloadcms/storage-r2'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { RoadmapItems } from './collections/RoadmapItems'
+import { RoadmapVotes } from './collections/RoadmapVotes'
+import { RoadmapComments } from './collections/RoadmapComments'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -28,7 +31,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, RoadmapItems, RoadmapVotes, RoadmapComments],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -8,6 +8,19 @@ export const Users: CollectionConfig = {
   auth: true,
   fields: [
     // Email added by default
-    // Add more fields as needed
+    {
+      name: 'discordId',
+      type: 'text',
+      unique: true,
+      index: true,
+    },
+    {
+      name: 'discordUsername',
+      type: 'text',
+    },
+    {
+      name: 'discordAvatar',
+      type: 'text',
+    },
   ],
 }

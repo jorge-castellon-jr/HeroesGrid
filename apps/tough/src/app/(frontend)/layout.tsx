@@ -1,18 +1,51 @@
 import React from 'react'
 import './styles.css'
+import Link from 'next/link'
+import { ThemeToggle } from './theme-toggle'
 
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: 'Tough',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <main>{children}</main>
+        <script
+          // Prevent theme flash before hydration.
+          dangerouslySetInnerHTML={{
+            __html: `
+(() => {
+  try {
+    const stored = localStorage.getItem('theme');
+    const theme = stored === 'light' || stored === 'dark'
+      ? stored
+      : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+  } catch (e) {}
+})();
+`,
+          }}
+        />
+        <header className="rm-topbar">
+          <div className="rm-topbarInner">
+            <Link className="rm-brand" href="/">
+              Tough
+            </Link>
+            <nav className="rm-nav">
+              <Link className="rm-navLink" href="/roadmap">
+                Roadmap
+              </Link>
+            </nav>
+            <div className="rm-topbarRight">
+              <ThemeToggle />
+            </div>
+          </div>
+        </header>
+        <main className="rm-main">{children}</main>
       </body>
     </html>
   )
