@@ -12,6 +12,7 @@ import { Media } from './collections/Media'
 import { RoadmapItems } from './collections/RoadmapItems'
 import { RoadmapVotes } from './collections/RoadmapVotes'
 import { RoadmapComments } from './collections/RoadmapComments'
+import { isEditorOrAdmin } from './access/roles'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -27,6 +28,7 @@ const cloudflare =
 export default buildConfig({
   admin: {
     user: Users.slug,
+    access: ({ req }) => isEditorOrAdmin(req.user as any),
     importMap: {
       baseDir: path.resolve(dirname),
     },

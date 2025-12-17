@@ -11,6 +11,12 @@ export async function GET(request: Request) {
   const clientId = process.env.DISCORD_CLIENT_ID
   const redirectUri = process.env.DISCORD_REDIRECT_URI
 
+  if (process.env.DEBUG_AUTH === '1') {
+    console.log(
+      `\n\n[tough][auth][discord][start] url=${url.toString()} returnTo=${returnTo} hasClientId=${Boolean(clientId)} hasRedirectUri=${Boolean(redirectUri)}\n\n`,
+    )
+  }
+
   if (!clientId || !redirectUri) {
     return NextResponse.json(
       { error: 'Missing DISCORD_CLIENT_ID or DISCORD_REDIRECT_URI' },
@@ -46,6 +52,11 @@ export async function GET(request: Request) {
     maxAge: 60 * 10,
   })
 
+  if (process.env.DEBUG_AUTH === '1') {
+    console.log(
+      `\n\n[tough][auth][discord][redirect] authorize=${authorize.origin}${authorize.pathname} state=${state.slice(0, 8)}… secureCookie=${secure}\n\n`,
+    )
+  }
   return res
 }
 

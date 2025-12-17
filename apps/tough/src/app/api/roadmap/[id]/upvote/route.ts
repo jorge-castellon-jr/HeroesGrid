@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server'
-import { getPayload } from 'payload'
 
-import config from '@/payload.config'
+import { getPayloadClient } from '@/getPayloadClient'
 
 export async function POST(request: Request, context: { params: { id: string } }) {
   const { id } = context.params
-  const payload = await getPayload({ config: await config })
+  const payload = await getPayloadClient()
 
   const { user } = await payload.auth({ headers: request.headers })
   if (!user) return NextResponse.json({ error: 'Login required' }, { status: 401 })

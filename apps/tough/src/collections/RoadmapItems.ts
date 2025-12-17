@@ -1,5 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
+import { isEditorOrAdmin } from '../access/roles'
+
 export const RoadmapItems: CollectionConfig = {
   slug: 'roadmap-items',
   admin: {
@@ -8,12 +10,10 @@ export const RoadmapItems: CollectionConfig = {
   },
   access: {
     read: () => true,
-    // NOTE: For now, any authenticated Payload user can manage roadmap items.
-    // If you later want stricter separation (admin vs public Discord users),
-    // add roles to `users` and gate create/update/delete accordingly.
-    create: ({ req }) => Boolean(req.user),
-    update: ({ req }) => Boolean(req.user),
-    delete: ({ req }) => Boolean(req.user),
+    // Only admin/editor can manage roadmap items.
+    create: ({ req }) => isEditorOrAdmin(req.user as any),
+    update: ({ req }) => isEditorOrAdmin(req.user as any),
+    delete: ({ req }) => isEditorOrAdmin(req.user as any),
   },
   fields: [
     {

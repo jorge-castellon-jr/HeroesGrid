@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getPayload } from 'payload'
-
-import config from '@/payload.config'
+import { getPayloadClient } from '@/getPayloadClient'
 
 type DiscordMe = {
   id: string
@@ -13,6 +11,71 @@ type DiscordMe = {
 function randomPassword() {
   // Strong enough, not user-facing.
   return `discord_${crypto.randomUUID()}_${crypto.randomUUID()}`
+}
+
+function getCookieValue(cookieHeader: string, name: string): string | undefined {
+  const parts = cookieHeader.split(';')
+  for (const part of parts) {
+    const trimmed = part.trim()
+    if (!trimmed.startsWith(`${name}=`)) continue
+    const raw = trimmed.slice(name.length + 1)
+    try {
+      return decodeURIComponent(raw)
+    } catch {
+      return raw
+    }
+  }
+  return undefined
+}
+
+function splitSetCookieHeader(headerValue: string): string[] {
+  // Some runtimes collapse multiple Set-Cookie headers into one comma-separated string.
+  // We must not split on the comma inside Expires.
+  const out: string[] = []
+  let start = 0
+  let inExpires = false
+
+  for (let i = 0; i < headerValue.length; i++) {
+    const ch = headerValue[i]
+
+    // detect start of Expires= attribute (case-insensitive)
+    if (!inExpires && headerValue.slice(i, i + 8).toLowerCase() === 'expires=') {
+      inExpires = true
+      i += 7
+      continue
+    }
+
+    if (inExpires && ch === ';') {
+      inExpires = false
+      continue
+    }
+
+    if (!inExpires && ch === ',') {
+      const candidate = headerValue.slice(start, i).trim()
+      if (candidate) out.push(candidate)
+      start = i + 1
+    }
+  }
+
+  const last = headerValue.slice(start).trim()
+  if (last) out.push(last)
+  return out
+}
+
+function describeSetCookie(setCookie: string) {
+  const parts = setCookie.split(';').map((p) => p.trim())
+  const [nameValue, ...attrs] = parts
+  const name = nameValue?.split('=')?.[0] || '(unknown)'
+  const value = nameValue?.split('=').slice(1).join('=') || ''
+  const lowerAttrs = attrs.map((a) => a.toLowerCase())
+  const secure = lowerAttrs.includes('secure')
+  const httpOnly = lowerAttrs.includes('httponly')
+  const sameSite = attrs.find((a) => a.toLowerCase().startsWith('samesite=')) || ''
+  const path = attrs.find((a) => a.toLowerCase().startsWith('path=')) || ''
+  const domain = attrs.find((a) => a.toLowerCase().startsWith('domain=')) || ''
+  const maxAge = attrs.find((a) => a.toLowerCase().startsWith('max-age=')) || ''
+  const expires = attrs.find((a) => a.toLowerCase().startsWith('expires=')) || ''
+  return { name, valueLen: value.length, secure, httpOnly, sameSite, path, domain, maxAge, expires }
 }
 
 async function exchangeCodeForToken(params: {
@@ -64,16 +127,24 @@ export async function GET(request: Request) {
   const code = url.searchParams.get('code')
   const state = url.searchParams.get('state')
 
+  if (process.env.DEBUG_AUTH === '1') {
+    console.log(
+      `\n\n[tough][auth][discord][callback][start] url=${url.toString()} hasCode=${Boolean(code)} hasState=${Boolean(state)} cookieHeader=${Boolean(request.headers.get('cookie'))}\n\n`,
+    )
+  }
+
   if (!code || !state) {
     return NextResponse.json({ error: 'Missing code/state' }, { status: 400 })
   }
 
   const cookies = request.headers.get('cookie') || ''
-  const expectedState = cookies
-    .split(';')
-    .map((c) => c.trim())
-    .find((c) => c.startsWith('discord_oauth_state='))
-    ?.split('=')[1]
+  const expectedState = getCookieValue(cookies, 'discord_oauth_state')
+
+  if (process.env.DEBUG_AUTH === '1') {
+    console.log(
+      `\n\n[tough][auth][discord][callback][state] expectedState=${expectedState ? expectedState.slice(0, 8) + '…' : 'missing'} gotState=${state.slice(0, 8)}…\n\n`,
+    )
+  }
 
   if (!expectedState || expectedState !== state) {
     return NextResponse.json({ error: 'Invalid state' }, { status: 400 })
@@ -83,6 +154,12 @@ export async function GET(request: Request) {
   const clientSecret = process.env.DISCORD_CLIENT_SECRET
   const redirectUri = process.env.DISCORD_REDIRECT_URI
 
+  if (process.env.DEBUG_AUTH === '1') {
+    console.log(
+      `\n\n[tough][auth][discord][callback][env] hasClientId=${Boolean(clientId)} hasClientSecret=${Boolean(clientSecret)} hasRedirectUri=${Boolean(redirectUri)} redirectUri=${redirectUri || 'missing'}\n\n`,
+    )
+  }
+
   if (!clientId || !clientSecret || !redirectUri) {
     return NextResponse.json(
       { error: 'Missing DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET, or DISCORD_REDIRECT_URI' },
@@ -90,11 +167,17 @@ export async function GET(request: Request) {
     )
   }
 
-  const payload = await getPayload({ config: await config })
+  const payload = await getPayloadClient()
 
   try {
     const token = await exchangeCodeForToken({ code, redirectUri, clientId, clientSecret })
     const me = await fetchDiscordMe(token.access_token)
+
+    if (process.env.DEBUG_AUTH === '1') {
+      console.log(
+        `\n\n[tough][auth][discord][callback][me] discordId=${me.id} username=${me.username} hasEmail=${Boolean(me.email)}\n\n`,
+      )
+    }
 
     const email = me.email && me.email.length > 0 ? me.email : `${me.id}@users.discord.invalid`
     const password = randomPassword()
@@ -150,6 +233,10 @@ export async function GET(request: Request) {
       })
     }
 
+    if (process.env.DEBUG_AUTH === '1') {
+      console.log(`\n\n[tough][auth][discord][callback][user] email=${email} existing=${Boolean(existing)}\n\n`)
+    }
+
     // Use Payload's own login endpoint to produce the correct auth cookie.
     const loginUrl = new URL('/api/users/login', request.url)
     const loginRes = await fetch(loginUrl, {
@@ -158,39 +245,63 @@ export async function GET(request: Request) {
       body: JSON.stringify({ email, password }),
     })
 
+    if (process.env.DEBUG_AUTH === '1') {
+      console.log(
+        `\n\n[tough][auth][discord][callback][payloadLogin] status=${loginRes.status} ok=${loginRes.ok} hasSetCookie=${Boolean(loginRes.headers.get('set-cookie'))}\n\n`,
+      )
+    }
+
     if (!loginRes.ok) {
       const text = await loginRes.text().catch(() => '')
       throw new Error(`Payload login failed (${loginRes.status}): ${text}`)
     }
 
-    const returnTo = cookies
-      .split(';')
-      .map((c) => c.trim())
-      .find((c) => c.startsWith('discord_oauth_returnTo='))
-      ?.split('=')
-      .slice(1)
-      .join('=')
+    const returnTo = getCookieValue(cookies, 'discord_oauth_returnTo')
 
     const redirectTo = returnTo && returnTo.startsWith('/') ? returnTo : '/roadmap'
     const res = NextResponse.redirect(new URL(redirectTo, request.url))
 
     // Forward auth cookies from Payload login response.
-    const setCookies =
-      // @ts-expect-error - available in some runtimes
-      (typeof loginRes.headers.getSetCookie === 'function' ? loginRes.headers.getSetCookie() : null) ||
-      (loginRes.headers.get('set-cookie') ? [loginRes.headers.get('set-cookie')] : [])
+    // @ts-expect-error - available in some runtimes
+    const setCookiesFromRuntime: string[] | undefined =
+      typeof loginRes.headers.getSetCookie === 'function' ? loginRes.headers.getSetCookie() : undefined
+    const setCookieHeader = loginRes.headers.get('set-cookie') || ''
+    const setCookies = setCookiesFromRuntime || (setCookieHeader ? splitSetCookieHeader(setCookieHeader) : [])
+
+    const cookieMeta = setCookies.map((c) => describeSetCookie(c))
+    if (process.env.DEBUG_AUTH === '1') {
+      console.log(
+        `\n\n[tough][auth][discord][callback][setCookie] redirectTo=${redirectTo} setCookieCount=${setCookies.length} setCookieHeaderLen=${setCookieHeader.length} cookies=${JSON.stringify(
+          cookieMeta,
+        )}\n\n`,
+      )
+    }
 
     for (const c of setCookies) {
       if (c) res.headers.append('set-cookie', c)
     }
 
-    // Clear temporary OAuth cookies.
-    res.cookies.set('discord_oauth_state', '', { path: '/', maxAge: 0 })
-    res.cookies.set('discord_oauth_returnTo', '', { path: '/', maxAge: 0 })
+    // Clear temporary OAuth cookies (append manually so we don't accidentally overwrite Set-Cookie).
+    res.headers.append('set-cookie', 'discord_oauth_state=; Path=/; Max-Age=0; SameSite=Lax')
+    res.headers.append('set-cookie', 'discord_oauth_returnTo=; Path=/; Max-Age=0; SameSite=Lax')
 
+    const finalSetCookieHeader = res.headers.get('set-cookie') || ''
+    const finalCookies = finalSetCookieHeader ? splitSetCookieHeader(finalSetCookieHeader) : []
+    if (process.env.DEBUG_AUTH === '1') {
+      console.log(
+        `\n\n[tough][auth][discord][callback][responseCookies] count=${finalCookies.length} cookies=${JSON.stringify(
+          finalCookies.map((c) => describeSetCookie(c)),
+        )}\n\n`,
+      )
+    }
+
+    if (process.env.DEBUG_AUTH === '1') {
+      console.log(`\n\n[tough][auth][discord][callback][done] redirecting\n\n`)
+    }
     return res
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
+    console.log(`\n\n[tough][auth][discord][callback][error] ${message}\n\n`)
     return NextResponse.json({ error: message }, { status: 500 })
   }
 }

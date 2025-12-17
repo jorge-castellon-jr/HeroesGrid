@@ -1,16 +1,15 @@
 import { headers as getHeaders } from 'next/headers'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getPayload } from 'payload'
 
-import config from '@/payload.config'
+import { getPayloadClient } from '@/getPayloadClient'
 import { LexicalRender } from '../lexical-render'
 import { RoadmapDetailClient } from './detail-client'
 
 export default async function RoadmapDetailPage(props: { params: Promise<{ id: string }> }) {
   const { id } = await props.params
   const headers = await getHeaders()
-  const payload = await getPayload({ config: await config })
+  const payload = await getPayloadClient()
 
   const { user } = await payload.auth({ headers })
 
@@ -67,7 +66,7 @@ export default async function RoadmapDetailPage(props: { params: Promise<{ id: s
           ) : (
             <div className="rm-userPill">
               <span className="rm-userDot" />
-              <span className="rm-userText">{user.email}</span>
+              <span className="rm-userText">{(user as any).discordUsername || user.email}</span>
               <form action="/api/auth/logout" method="post">
                 <button className="rm-linkButton" type="submit">
                   Logout

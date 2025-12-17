@@ -45,7 +45,11 @@ export function RoadmapCard(props: {
 
   return (
     <article className="rm-card">
-      <Link className="rm-cardOverlay" href={`/roadmap/${item.id}`} aria-label={`View details: ${item.title}`} />
+      <Link
+        className="rm-cardOverlay"
+        href={`/roadmap/${item.id}`}
+        aria-label={`View details: ${item.title}`}
+      />
       <div className="rm-cardTop">
         <div className="rm-status" data-status={item.status}>
           {item.status === 'in_progress'
@@ -66,7 +70,11 @@ export function RoadmapCard(props: {
             <span aria-hidden>▲</span>
             <span className="rm-iconCount">{upvoteCount}</span>
           </button>
-          <Link className="rm-iconButton" href={`/roadmap/${item.id}#comments`} title="View comments">
+          <Link
+            className="rm-iconButton"
+            href={`/roadmap/${item.id}#comments`}
+            title="View comments"
+          >
             <span aria-hidden>💬</span>
             <span className="rm-iconCount">{commentCount}</span>
           </Link>
@@ -84,4 +92,3 @@ export function RoadmapCard(props: {
     </article>
   )
 }
-

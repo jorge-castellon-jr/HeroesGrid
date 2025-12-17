@@ -128,6 +128,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  accountType: 'admin' | 'editor' | 'user';
   discordId?: string | null;
   discordUsername?: string | null;
   discordAvatar?: string | null;
@@ -310,6 +311,7 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  accountType?: T;
   discordId?: T;
   discordUsername?: T;
   discordAvatar?: T;

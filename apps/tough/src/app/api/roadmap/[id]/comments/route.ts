@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
-import { getPayload } from 'payload'
 
-import config from '@/payload.config'
+import { getPayloadClient } from '@/getPayloadClient'
 
 export async function GET(request: Request, context: { params: { id: string } }) {
   const { id } = context.params
@@ -9,7 +8,7 @@ export async function GET(request: Request, context: { params: { id: string } })
   const page = Number(url.searchParams.get('page') || '1')
   const limit = Math.min(50, Math.max(1, Number(url.searchParams.get('limit') || '20')))
 
-  const payload = await getPayload({ config: await config })
+  const payload = await getPayloadClient()
 
   const comments = await payload.find({
     collection: 'roadmap-comments',
@@ -26,7 +25,7 @@ export async function GET(request: Request, context: { params: { id: string } })
 
 export async function POST(request: Request, context: { params: { id: string } }) {
   const { id } = context.params
-  const payload = await getPayload({ config: await config })
+  const payload = await getPayloadClient()
 
   const { user } = await payload.auth({ headers: request.headers })
   if (!user) return NextResponse.json({ error: 'Login required' }, { status: 401 })
