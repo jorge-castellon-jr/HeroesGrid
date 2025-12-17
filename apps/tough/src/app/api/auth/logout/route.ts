@@ -32,10 +32,6 @@ function splitSetCookieHeader(headerValue: string): string[] {
 }
 
 export async function POST(request: Request) {
-  if (process.env.DEBUG_AUTH === '1') {
-    console.log(`\n\n[tough][auth][logout][start] hasCookieHeader=${Boolean(request.headers.get('cookie'))}\n\n`)
-  }
-
   // Use Payload's logout endpoint so cookies are cleared correctly.
   const logoutUrl = new URL('/api/users/logout', request.url)
   const logoutRes = await fetch(logoutUrl, {
@@ -53,19 +49,10 @@ export async function POST(request: Request) {
   const setCookieHeader = logoutRes.headers.get('set-cookie') || ''
   const setCookies = setCookiesFromRuntime || (setCookieHeader ? splitSetCookieHeader(setCookieHeader) : [])
 
-  if (process.env.DEBUG_AUTH === '1') {
-    console.log(
-      `\n\n[tough][auth][logout][payloadLogout] status=${logoutRes.status} ok=${logoutRes.ok} setCookieCount=${setCookies.length} setCookieHeaderLen=${setCookieHeader.length}\n\n`,
-    )
-  }
-
   for (const c of setCookies) {
     if (c) res.headers.append('set-cookie', c)
   }
 
-  if (process.env.DEBUG_AUTH === '1') {
-    console.log(`\n\n[tough][auth][logout][done] redirecting\n\n`)
-  }
   return res
 }
 

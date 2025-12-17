@@ -1,14 +1,16 @@
 import type { CollectionConfig } from 'payload'
 
 type RelationshipValue =
+  | number
   | string
   | {
       relationTo: string
-      value: string
+      value: number | string
     }
 
-function getRelId(value: RelationshipValue | undefined): string | undefined {
+function getRelId(value: RelationshipValue | undefined): number | string | undefined {
   if (!value) return undefined
+  if (typeof value === 'number') return value
   if (typeof value === 'string') return value
   return value.value
 }
@@ -52,7 +54,7 @@ export const RoadmapVotes: CollectionConfig = {
           if (!req.user) throw new Error('Login required')
 
           // Force vote ownership to the authenticated user.
-          const itemId = getRelId(data?.item)
+          const itemId = getRelId(data.item)
           if (!itemId) throw new Error('Missing item')
 
           const existing = await req.payload.find({
@@ -115,4 +117,3 @@ export const RoadmapVotes: CollectionConfig = {
     ],
   },
 }
-

@@ -127,24 +127,12 @@ export async function GET(request: Request) {
   const code = url.searchParams.get('code')
   const state = url.searchParams.get('state')
 
-  if (process.env.DEBUG_AUTH === '1') {
-    console.log(
-      `\n\n[tough][auth][discord][callback][start] url=${url.toString()} hasCode=${Boolean(code)} hasState=${Boolean(state)} cookieHeader=${Boolean(request.headers.get('cookie'))}\n\n`,
-    )
-  }
-
   if (!code || !state) {
     return NextResponse.json({ error: 'Missing code/state' }, { status: 400 })
   }
 
   const cookies = request.headers.get('cookie') || ''
   const expectedState = getCookieValue(cookies, 'discord_oauth_state')
-
-  if (process.env.DEBUG_AUTH === '1') {
-    console.log(
-      `\n\n[tough][auth][discord][callback][state] expectedState=${expectedState ? expectedState.slice(0, 8) + '…' : 'missing'} gotState=${state.slice(0, 8)}…\n\n`,
-    )
-  }
 
   if (!expectedState || expectedState !== state) {
     return NextResponse.json({ error: 'Invalid state' }, { status: 400 })
@@ -153,12 +141,6 @@ export async function GET(request: Request) {
   const clientId = process.env.DISCORD_CLIENT_ID
   const clientSecret = process.env.DISCORD_CLIENT_SECRET
   const redirectUri = process.env.DISCORD_REDIRECT_URI
-
-  if (process.env.DEBUG_AUTH === '1') {
-    console.log(
-      `\n\n[tough][auth][discord][callback][env] hasClientId=${Boolean(clientId)} hasClientSecret=${Boolean(clientSecret)} hasRedirectUri=${Boolean(redirectUri)} redirectUri=${redirectUri || 'missing'}\n\n`,
-    )
-  }
 
   if (!clientId || !clientSecret || !redirectUri) {
     return NextResponse.json(
@@ -172,12 +154,6 @@ export async function GET(request: Request) {
   try {
     const token = await exchangeCodeForToken({ code, redirectUri, clientId, clientSecret })
     const me = await fetchDiscordMe(token.access_token)
-
-    if (process.env.DEBUG_AUTH === '1') {
-      console.log(
-        `\n\n[tough][auth][discord][callback][me] discordId=${me.id} username=${me.username} hasEmail=${Boolean(me.email)}\n\n`,
-      )
-    }
 
     const email = me.email && me.email.length > 0 ? me.email : `${me.id}@users.discord.invalid`
     const password = randomPassword()
@@ -233,10 +209,6 @@ export async function GET(request: Request) {
       })
     }
 
-    if (process.env.DEBUG_AUTH === '1') {
-      console.log(`\n\n[tough][auth][discord][callback][user] email=${email} existing=${Boolean(existing)}\n\n`)
-    }
-
     // Use Payload's own login endpoint to produce the correct auth cookie.
     const loginUrl = new URL('/api/users/login', request.url)
     const loginRes = await fetch(loginUrl, {
@@ -244,12 +216,6 @@ export async function GET(request: Request) {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ email, password }),
     })
-
-    if (process.env.DEBUG_AUTH === '1') {
-      console.log(
-        `\n\n[tough][auth][discord][callback][payloadLogin] status=${loginRes.status} ok=${loginRes.ok} hasSetCookie=${Boolean(loginRes.headers.get('set-cookie'))}\n\n`,
-      )
-    }
 
     if (!loginRes.ok) {
       const text = await loginRes.text().catch(() => '')
@@ -269,14 +235,6 @@ export async function GET(request: Request) {
     const setCookies = setCookiesFromRuntime || (setCookieHeader ? splitSetCookieHeader(setCookieHeader) : [])
 
     const cookieMeta = setCookies.map((c) => describeSetCookie(c))
-    if (process.env.DEBUG_AUTH === '1') {
-      console.log(
-        `\n\n[tough][auth][discord][callback][setCookie] redirectTo=${redirectTo} setCookieCount=${setCookies.length} setCookieHeaderLen=${setCookieHeader.length} cookies=${JSON.stringify(
-          cookieMeta,
-        )}\n\n`,
-      )
-    }
-
     for (const c of setCookies) {
       if (c) res.headers.append('set-cookie', c)
     }
@@ -287,21 +245,9 @@ export async function GET(request: Request) {
 
     const finalSetCookieHeader = res.headers.get('set-cookie') || ''
     const finalCookies = finalSetCookieHeader ? splitSetCookieHeader(finalSetCookieHeader) : []
-    if (process.env.DEBUG_AUTH === '1') {
-      console.log(
-        `\n\n[tough][auth][discord][callback][responseCookies] count=${finalCookies.length} cookies=${JSON.stringify(
-          finalCookies.map((c) => describeSetCookie(c)),
-        )}\n\n`,
-      )
-    }
-
-    if (process.env.DEBUG_AUTH === '1') {
-      console.log(`\n\n[tough][auth][discord][callback][done] redirecting\n\n`)
-    }
     return res
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
-    console.log(`\n\n[tough][auth][discord][callback][error] ${message}\n\n`)
     return NextResponse.json({ error: message }, { status: 500 })
   }
 }

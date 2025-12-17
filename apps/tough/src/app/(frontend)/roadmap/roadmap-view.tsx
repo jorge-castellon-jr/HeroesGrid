@@ -112,12 +112,10 @@ export function RoadmapView(props: {
 
   React.useEffect(() => {
     const initial = getInitialView()
-    console.log(`\n\n[tough][ui][roadmapView][mount] initialView=${initial} isLoggedIn=${isLoggedIn} upvotedCount=${props.upvotedItemIds.length}\n\n`)
     setView(initial)
   }, [])
 
   function setAndPersist(next: ViewMode) {
-    console.log(`\n\n[tough][ui][roadmapView][toggle] next=${next}\n\n`)
     setView(next)
     try {
       window.localStorage.setItem('roadmap_view', next)

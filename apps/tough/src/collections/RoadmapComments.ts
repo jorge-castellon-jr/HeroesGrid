@@ -1,14 +1,16 @@
 import type { CollectionConfig } from 'payload'
 
 type RelationshipValue =
+  | number
   | string
   | {
       relationTo: string
-      value: string
+      value: number | string
     }
 
-function getRelId(value: RelationshipValue | undefined): string | undefined {
+function getRelId(value: RelationshipValue | undefined): number | string | undefined {
   if (!value) return undefined
+  if (typeof value === 'number') return value
   if (typeof value === 'string') return value
   return value.value
 }
@@ -59,7 +61,9 @@ export const RoadmapComments: CollectionConfig = {
       async ({ data, req, operation }) => {
         if (operation === 'create') {
           if (!req.user) throw new Error('Login required')
-          const itemId = getRelId(data?.item)
+          const itemId = getRelId(
+            (data as any)?.item ?? (req as any)?.body?.item ?? (req as any)?.data?.item,
+          )
           if (!itemId) throw new Error('Missing item')
           return { ...data, user: req.user.id }
         }

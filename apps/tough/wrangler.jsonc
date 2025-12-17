@@ -41,9 +41,6 @@
     //   "bucket_name": "<BUCKET_NAME>",
     // },
   ],
-  "vars": {
-    "DISCORD_REDIRECT_URI": "http://localhost:3001/api/auth/discord/callback"
-  },
 
   // Here's how to configure an additional environment
   // It can be deployed with `CLOUDFLARE_ENV=staging pnpm run deploy`
