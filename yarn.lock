@@ -18027,9 +18027,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tough@workspace:apps/tough":
+"tough-project@workspace:apps/tough":
   version: 0.0.0-use.local
-  resolution: "tough@workspace:apps/tough"
+  resolution: "tough-project@workspace:apps/tough"
   dependencies:
     "@opennextjs/cloudflare": "npm:^1.11.0"
     "@payloadcms/db-d1-sqlite": "npm:3.68.1"

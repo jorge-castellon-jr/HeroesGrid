@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { ThemeToggle } from './theme-toggle'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Tough',
+  description: 'Tough Project description',
+  title: 'Tough Project',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -33,7 +33,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <header className="rm-topbar">
           <div className="rm-topbarInner">
             <Link className="rm-brand" href="/">
-              Tough
+              Tough Project
             </Link>
             <nav className="rm-nav">
               <Link className="rm-navLink" href="/roadmap">
