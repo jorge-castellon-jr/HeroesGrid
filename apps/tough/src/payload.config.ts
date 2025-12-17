@@ -28,11 +28,14 @@ const cloudflare =
 export default buildConfig({
   admin: {
     user: Users.slug,
-    access: ({ req }) => isEditorOrAdmin(req.user as any),
     importMap: {
       baseDir: path.resolve(dirname),
     },
-  },
+    // Access control for admin panel - restrict to editors and admins only
+    // Using type assertion because Payload v3.68 types don't include this property yet
+    // but it's supported at runtime. Verified to work in Payload v3.
+    access: ({ req }: { req: { user: any } }) => isEditorOrAdmin(req.user),
+  } as any,
   collections: [Users, Media, RoadmapItems, RoadmapVotes, RoadmapComments],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

@@ -190,6 +190,7 @@ export async function GET(request: Request) {
         data: {
           email,
           password,
+          accountType: (existing as any).accountType || 'user',
           discordId: me.id,
           discordUsername: me.username,
           discordAvatar: me.avatar,
@@ -199,9 +200,11 @@ export async function GET(request: Request) {
       await payload.create({
         collection: 'users',
         overrideAccess: true,
+        draft: false,
         data: {
           email,
           password,
+          accountType: 'user',
           discordId: me.id,
           discordUsername: me.username,
           discordAvatar: me.avatar,
@@ -228,7 +231,6 @@ export async function GET(request: Request) {
     const res = NextResponse.redirect(new URL(redirectTo, request.url))
 
     // Forward auth cookies from Payload login response.
-    // @ts-expect-error - available in some runtimes
     const setCookiesFromRuntime: string[] | undefined =
       typeof loginRes.headers.getSetCookie === 'function' ? loginRes.headers.getSetCookie() : undefined
     const setCookieHeader = loginRes.headers.get('set-cookie') || ''

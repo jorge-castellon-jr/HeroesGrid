@@ -13,16 +13,22 @@ export default async function RoadmapDetailPage(props: { params: Promise<{ id: s
 
   const { user } = await payload.auth({ headers })
 
-  const item = await payload
-    .findByID({
+  let item: any = null
+  try {
+    item = await payload.findByID({
       collection: 'roadmap-items',
       id,
       depth: 0,
       overrideAccess: false,
     })
-    .catch(() => null)
+  } catch {
+    item = null
+  }
 
   if (!item) notFound()
+
+  const numericId = Number(id)
+  const itemIdForRelations = Number.isFinite(numericId) ? numericId : id
 
   const upvotedItemIds = new Set<string>()
   if (user) {
@@ -32,7 +38,7 @@ export default async function RoadmapDetailPage(props: { params: Promise<{ id: s
       limit: 1,
       overrideAccess: true,
       where: {
-        and: [{ user: { equals: user.id } }, { item: { equals: id } }],
+        and: [{ user: { equals: user.id } }, { item: { equals: itemIdForRelations } }],
       },
     })
     if (votes.totalDocs > 0) upvotedItemIds.add(id)

@@ -43,8 +43,18 @@ export default async function RoadmapPage() {
       },
     })
 
-    for (const vote of votes.docs as Array<{ item: string | { value: string } }>) {
-      const value = typeof vote.item === 'string' ? vote.item : vote.item.value
+    for (const vote of votes.docs) {
+      const item = (vote as any).item
+      let value: string | undefined
+      if (typeof item === 'number') {
+        value = String(item)
+      } else if (typeof item === 'string') {
+        value = item
+      } else if (item && typeof item === 'object' && 'value' in item) {
+        value = typeof item.value === 'number' ? String(item.value) : item.value
+      } else if (item && typeof item === 'object' && 'id' in item) {
+        value = typeof item.id === 'number' ? String(item.id) : String(item.id)
+      }
       if (value) upvotedItemIds.add(value)
     }
   }

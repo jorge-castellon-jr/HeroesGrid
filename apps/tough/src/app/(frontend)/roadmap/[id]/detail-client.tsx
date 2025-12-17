@@ -31,10 +31,15 @@ export function RoadmapDetailClient(props: {
     setError(null)
 
     const res = await fetch(`/api/roadmap/${id}/upvote`, { method: 'POST' })
-    const json = (await res.json().catch(() => null)) as
+    let json:
       | { upvoted: boolean; upvoteCount: number }
       | { error: string }
-      | null
+      | null = null
+    try {
+      json = (await res.json()) as typeof json
+    } catch {
+      json = null
+    }
 
     if (!res.ok || !json || 'error' in json) {
       setError((json && 'error' in json && json.error) || 'Unable to upvote')
@@ -73,10 +78,15 @@ export function RoadmapDetailClient(props: {
       body: JSON.stringify({ body: text }),
     })
 
-    const json = (await res.json().catch(() => null)) as
+    let json:
       | { comment: CommentDoc; commentCount: number }
       | { error: string }
-      | null
+      | null = null
+    try {
+      json = (await res.json()) as typeof json
+    } catch {
+      json = null
+    }
 
     if (!res.ok || !json || 'error' in json) {
       setError((json && 'error' in json && json.error) || 'Unable to comment')

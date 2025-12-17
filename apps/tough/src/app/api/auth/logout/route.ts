@@ -43,7 +43,6 @@ export async function POST(request: Request) {
 
   const res = NextResponse.redirect(new URL('/roadmap', request.url))
 
-  // @ts-expect-error - available in some runtimes
   const setCookiesFromRuntime: string[] | undefined =
     typeof logoutRes.headers.getSetCookie === 'function' ? logoutRes.headers.getSetCookie() : undefined
   const setCookieHeader = logoutRes.headers.get('set-cookie') || ''

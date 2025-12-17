@@ -29,11 +29,15 @@ export function RoadmapCard(props: {
     setError(null)
 
     const res = await fetch(`/api/roadmap/${item.id}/upvote`, { method: 'POST' })
-    const json = (await res.json()) as
+    let json:
       | { upvoted: boolean; upvoteCount: number }
       | { error: string }
-      | null
-    console.log(json)
+      | null = null
+    try {
+      json = (await res.json()) as typeof json
+    } catch {
+      json = null
+    }
 
     if (!res.ok || !json || 'error' in json) {
       setError((json && 'error' in json && json.error) || 'Unable to upvote')

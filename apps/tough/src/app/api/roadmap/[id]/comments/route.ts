@@ -40,7 +40,12 @@ export async function POST(request: Request, context: { params: Promise<{ id: st
 
   const req = { user, payload, headers: request.headers, body: {} } as any
 
-  const body = (await request.json().catch(() => null)) as { body?: string } | null
+  let body: { body?: string } | null = null
+  try {
+    body = (await request.json()) as { body?: string }
+  } catch {
+    body = null
+  }
   const text = (body?.body || '').trim()
   if (!text) return NextResponse.json({ error: 'Missing body' }, { status: 400 })
   if (text.length > 2000) return NextResponse.json({ error: 'Comment too long' }, { status: 400 })

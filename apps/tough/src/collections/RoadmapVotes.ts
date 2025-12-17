@@ -54,7 +54,9 @@ export const RoadmapVotes: CollectionConfig = {
           if (!req.user) throw new Error('Login required')
 
           // Force vote ownership to the authenticated user.
-          const itemId = getRelId(data.item)
+          const itemId = getRelId(
+            (data as any)?.item ?? (req as any)?.body?.item ?? (req as any)?.data?.item,
+          )
           if (!itemId) throw new Error('Missing item')
 
           const existing = await req.payload.find({
