@@ -1,3 +1,4 @@
+import { isAdmin } from '@/access/roles'
 import type { CollectionConfig } from 'payload'
 
 type RelationshipValue =
@@ -20,6 +21,7 @@ export const RoadmapVotes: CollectionConfig = {
   admin: {
     useAsTitle: 'id',
     defaultColumns: ['item', 'user', 'createdAt'],
+    hidden: ({ user }) => !isAdmin(user as any),
   },
   access: {
     read: ({ req }) => Boolean(req.user),

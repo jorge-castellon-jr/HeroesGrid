@@ -1,3 +1,4 @@
+import { isAdmin } from '@/access/roles'
 import type { CollectionConfig } from 'payload'
 
 type RelationshipValue =
@@ -20,6 +21,7 @@ export const RoadmapComments: CollectionConfig = {
   admin: {
     useAsTitle: 'id',
     defaultColumns: ['item', 'user', 'createdAt', 'updatedAt'],
+    hidden: ({ user }) => !isAdmin(user as any),
   },
   access: {
     read: () => true,
@@ -112,4 +114,3 @@ export const RoadmapComments: CollectionConfig = {
     ],
   },
 }
-

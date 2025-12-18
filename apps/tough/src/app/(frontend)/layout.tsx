@@ -1,7 +1,10 @@
 import React from 'react'
+import { headers as getHeaders } from 'next/headers'
 import './styles.css'
 import Link from 'next/link'
 import { ThemeToggle } from './theme-toggle'
+import { getPayloadClient } from '@/getPayloadClient'
+import { isEditorOrAdmin } from '@/access/roles'
 
 export const metadata = {
   description: 'Tough Project description',
@@ -10,6 +13,10 @@ export const metadata = {
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
+  const headers = await getHeaders()
+  const payload = await getPayloadClient()
+  const { user } = await payload.auth({ headers })
+  const showAdminLink = isEditorOrAdmin(user as any)
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -42,6 +49,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
               <Link className="rm-navLink" href="/polls">
                 Polls
               </Link>
+              {showAdminLink && (
+                <Link className="rm-navLink" href="/admin">
+                  Admin
+                </Link>
+              )}
             </nav>
             <div className="rm-topbarRight">
               <ThemeToggle />

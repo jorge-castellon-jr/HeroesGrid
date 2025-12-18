@@ -1,9 +1,12 @@
 import type { CollectionConfig } from 'payload'
 
-import { isEditorOrAdmin } from '../access/roles'
+import { isAdmin, isEditorOrAdmin } from '../access/roles'
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  admin: {
+    hidden: ({ user }) => !isAdmin(user as any),
+  },
   access: {
     read: () => true,
     create: ({ req }) => isEditorOrAdmin(req.user as any),

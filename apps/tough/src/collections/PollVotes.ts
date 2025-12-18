@@ -1,3 +1,4 @@
+import { isAdmin } from '@/access/roles'
 import type { CollectionConfig } from 'payload'
 
 type RelationshipValue =
@@ -20,6 +21,7 @@ export const PollVotes: CollectionConfig = {
   admin: {
     useAsTitle: 'id',
     defaultColumns: ['poll', 'user', 'optionIndex', 'createdAt'],
+    hidden: ({ user }) => !isAdmin(user as any),
   },
   access: {
     read: ({ req, id }) => {

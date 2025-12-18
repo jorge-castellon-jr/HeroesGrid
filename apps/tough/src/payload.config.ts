@@ -38,7 +38,7 @@ export default buildConfig({
     // but it's supported at runtime. Verified to work in Payload v3.
     access: ({ req }: { req: { user: any } }) => isEditorOrAdmin(req.user),
   } as any,
-  collections: [Users, Media, RoadmapItems, RoadmapVotes, RoadmapComments, Polls, PollVotes],
+  collections: [RoadmapItems, RoadmapVotes, RoadmapComments, Polls, PollVotes, Users, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
