@@ -9,6 +9,7 @@ type Poll = {
   totalVotes?: number | null
   endDate?: string | null
   isActive?: boolean | null
+  options?: Array<{ text: string }> | null
 }
 
 function isPollActive(poll: Poll): boolean {
@@ -16,6 +17,38 @@ function isPollActive(poll: Poll): boolean {
   const endDate = new Date(poll.endDate)
   const now = new Date()
   return endDate > now
+}
+
+function formatTimeRemaining(endDate: string): string {
+  const end = new Date(endDate)
+  const now = new Date()
+  const diff = end.getTime() - now.getTime()
+
+  if (diff <= 0) return 'Ended'
+
+  const totalHours = diff / (1000 * 60 * 60)
+  const totalMinutes = diff / (1000 * 60)
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+
+  // Priority: days, then hours (when < 12 hours total), then minutes (when < 30 min total)
+  if (days > 0) {
+    return `${days} day${days !== 1 ? 's' : ''} left`
+  }
+  if (totalHours < 12 && hours > 0) {
+    return `${hours} hour${hours !== 1 ? 's' : ''} left`
+  }
+  if (totalMinutes < 30 && minutes > 0) {
+    return `${minutes} minute${minutes !== 1 ? 's' : ''} left`
+  }
+  if (hours > 0) {
+    return `${hours} hour${hours !== 1 ? 's' : ''} left`
+  }
+  if (minutes > 0) {
+    return `${minutes} minute${minutes !== 1 ? 's' : ''} left`
+  }
+  return 'Less than a minute left'
 }
 
 export default async function PollsPage(props: { searchParams: Promise<{ status?: string }> }) {
@@ -36,11 +69,12 @@ export default async function PollsPage(props: { searchParams: Promise<{ status?
 
   const polls = (allPolls.docs ?? []) as unknown as Poll[]
 
-  // Calculate total votes for each poll
+  // Calculate total votes and winning option for each poll
   const pollsWithVotes = await Promise.all(
     polls.map(async (poll) => {
       const pollId = Number(poll.id)
       const pollIdForRelations = Number.isFinite(pollId) ? pollId : poll.id
+      const active = isPollActive(poll)
       
       const votes = await payload.find({
         collection: 'poll-votes',
@@ -49,9 +83,47 @@ export default async function PollsPage(props: { searchParams: Promise<{ status?
         where: { poll: { equals: pollIdForRelations } },
       })
       
+      let winningOption: string | null = null
+      
+      // For ended polls, calculate the winning option
+      if (!active && votes.totalDocs > 0 && poll.options && Array.isArray(poll.options)) {
+        const allVotes = await payload.find({
+          collection: 'poll-votes',
+          depth: 0,
+          limit: 1000,
+          overrideAccess: true,
+          where: { poll: { equals: pollIdForRelations } },
+        })
+
+        // Count votes per option
+        const optionCounts: Record<number, number> = {}
+        for (const vote of allVotes.docs) {
+          const optionIndex = (vote as any).optionIndex
+          if (typeof optionIndex === 'number') {
+            optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+          }
+        }
+
+        // Find the option(s) with the highest vote count
+        const maxCount = Math.max(...Object.values(optionCounts), 0)
+        const winningIndices = Object.entries(optionCounts)
+          .filter(([, count]) => count === maxCount)
+          .map(([index]) => Number(index))
+
+        // If there's a clear winner (or tie), show the first winning option
+        if (winningIndices.length > 0 && winningIndices[0] < poll.options.length) {
+          winningOption = poll.options[winningIndices[0]].text
+          // If there's a tie, indicate it
+          if (winningIndices.length > 1) {
+            winningOption = `${winningOption} (tie)`
+          }
+        }
+      }
+      
       return {
         ...poll,
         totalVotes: votes.totalDocs,
+        winningOption,
       }
     })
   )
@@ -131,6 +203,16 @@ export default async function PollsPage(props: { searchParams: Promise<{ status?
                   <div className="rm-countPill">{poll.totalVotes || 0} votes</div>
                 </div>
                 <h2 className="rm-cardTitle">{poll.title}</h2>
+                {poll.endDate && active && (
+                  <p className="rm-muted" style={{ marginTop: '8px', marginBottom: 0, fontSize: '14px' }}>
+                    {formatTimeRemaining(poll.endDate)}
+                  </p>
+                )}
+                {!active && (poll as any).winningOption && (
+                  <p className="rm-muted" style={{ marginTop: '8px', marginBottom: 0, fontSize: '14px', fontWeight: 600 }}>
+                    Winner: {(poll as any).winningOption}
+                  </p>
+                )}
                 <div className="rm-cardLinkRow">
                   <span className="rm-cardLinkText">View poll →</span>
                 </div>

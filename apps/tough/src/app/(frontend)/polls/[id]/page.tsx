@@ -20,14 +20,29 @@ function formatTimeRemaining(endDate: string): string {
 
   if (diff <= 0) return 'Ended'
 
+  const totalHours = diff / (1000 * 60 * 60)
+  const totalMinutes = diff / (1000 * 60)
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
 
-  if (days > 0) return `${days} day${days !== 1 ? 's' : ''} remaining`
-  if (hours > 0) return `${hours} hour${hours !== 1 ? 's' : ''} remaining`
-  if (minutes > 0) return `${minutes} minute${minutes !== 1 ? 's' : ''} remaining`
-  return 'Less than a minute remaining'
+  // Priority: days, then hours (when < 12 hours total), then minutes (when < 30 min total)
+  if (days > 0) {
+    return `${days} day${days !== 1 ? 's' : ''} left`
+  }
+  if (totalHours < 12 && hours > 0) {
+    return `${hours} hour${hours !== 1 ? 's' : ''} left`
+  }
+  if (totalMinutes < 30 && minutes > 0) {
+    return `${minutes} minute${minutes !== 1 ? 's' : ''} left`
+  }
+  if (hours > 0) {
+    return `${hours} hour${hours !== 1 ? 's' : ''} left`
+  }
+  if (minutes > 0) {
+    return `${minutes} minute${minutes !== 1 ? 's' : ''} left`
+  }
+  return 'Less than a minute left'
 }
 
 export default async function PollDetailPage(props: { params: Promise<{ id: string }> }) {
