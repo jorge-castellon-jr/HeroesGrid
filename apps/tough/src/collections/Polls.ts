@@ -53,6 +53,37 @@ export const Polls: CollectionConfig = {
       ],
     },
     {
+      name: 'pollType',
+      type: 'select',
+      required: true,
+      defaultValue: 'select',
+      options: [
+        { label: 'Select', value: 'select' },
+        { label: 'Ranking', value: 'ranking' },
+      ],
+      admin: {
+        position: 'sidebar',
+        description: 'Select: choose one or more options. Ranking: rank all options from best to worst.',
+      },
+    },
+    {
+      name: 'maxSelections',
+      type: 'number',
+      required: true,
+      defaultValue: 1,
+      admin: {
+        position: 'sidebar',
+        description: 'Maximum number of selections allowed (only used for select type). 1 = single choice, >1 = multiple choice.',
+      },
+      validate: async (value: unknown, { data }: { data: any }) => {
+        const pollType = (data as any)?.pollType
+        if (pollType === 'select' && (typeof value !== 'number' || value < 1)) {
+          return 'maxSelections must be at least 1 for select polls'
+        }
+        return true
+      },
+    },
+    {
       name: 'endDate',
       type: 'date',
       admin: {
@@ -89,6 +120,23 @@ export const Polls: CollectionConfig = {
           const options = (data as any)?.options
           if (!Array.isArray(options) || options.length < 2) {
             throw new Error('Poll must have at least 2 options')
+          }
+
+          // Validate pollType
+          const pollType = (data as any)?.pollType || 'select'
+          if (pollType !== 'select' && pollType !== 'ranking') {
+            throw new Error('pollType must be either "select" or "ranking"')
+          }
+
+          // Validate maxSelections for select type
+          if (pollType === 'select') {
+            const maxSelections = (data as any)?.maxSelections ?? 1
+            if (typeof maxSelections !== 'number' || maxSelections < 1) {
+              throw new Error('maxSelections must be at least 1 for select polls')
+            }
+            if (maxSelections > options.length) {
+              throw new Error('maxSelections cannot exceed the number of options')
+            }
           }
 
           // Compute isActive based on endDate

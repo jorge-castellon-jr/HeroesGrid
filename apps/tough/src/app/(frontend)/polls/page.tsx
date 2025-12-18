@@ -10,6 +10,7 @@ type Poll = {
   endDate?: string | null
   isActive?: boolean | null
   options?: Array<{ text: string }> | null
+  pollType?: 'select' | 'ranking' | null
 }
 
 function isPollActive(poll: Poll): boolean {
@@ -84,6 +85,7 @@ export default async function PollsPage(props: { searchParams: Promise<{ status?
       })
       
       let winningOption: string | null = null
+      const pollType = poll.pollType || 'select'
       
       // For ended polls, calculate the winning option
       if (!active && votes.totalDocs > 0 && poll.options && Array.isArray(poll.options)) {
@@ -95,27 +97,71 @@ export default async function PollsPage(props: { searchParams: Promise<{ status?
           where: { poll: { equals: pollIdForRelations } },
         })
 
-        // Count votes per option
-        const optionCounts: Record<number, number> = {}
-        for (const vote of allVotes.docs) {
-          const optionIndex = (vote as any).optionIndex
-          if (typeof optionIndex === 'number') {
-            optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+        if (pollType === 'ranking') {
+          // For ranking polls, calculate points per option
+          const optionPoints: Record<number, number> = {}
+          for (const vote of allVotes.docs) {
+            let rankedIndices = (vote as any).optionIndices
+            // Backward compatibility: convert old optionIndex to array
+            if (!Array.isArray(rankedIndices) && typeof (vote as any).optionIndex === 'number') {
+              rankedIndices = [(vote as any).optionIndex]
+            }
+            if (!Array.isArray(rankedIndices)) continue
+
+            const numOptions = rankedIndices.length
+            rankedIndices.forEach((optionIndex: number, position: number) => {
+              if (typeof optionIndex === 'number') {
+                const points = numOptions - position // 1-based: top = N, bottom = 1
+                optionPoints[optionIndex] = (optionPoints[optionIndex] || 0) + points
+              }
+            })
           }
-        }
 
-        // Find the option(s) with the highest vote count
-        const maxCount = Math.max(...Object.values(optionCounts), 0)
-        const winningIndices = Object.entries(optionCounts)
-          .filter(([, count]) => count === maxCount)
-          .map(([index]) => Number(index))
+          // Find the option(s) with the highest points
+          const maxPoints = Math.max(...Object.values(optionPoints), 0)
+          const winningIndices = Object.entries(optionPoints)
+            .filter(([, points]) => points === maxPoints)
+            .map(([index]) => Number(index))
 
-        // If there's a clear winner (or tie), show the first winning option
-        if (winningIndices.length > 0 && winningIndices[0] < poll.options.length) {
-          winningOption = poll.options[winningIndices[0]].text
-          // If there's a tie, indicate it
-          if (winningIndices.length > 1) {
-            winningOption = `${winningOption} (tie)`
+          // If there's a clear winner (or tie), show the first winning option
+          if (winningIndices.length > 0 && winningIndices[0] < poll.options.length) {
+            winningOption = poll.options[winningIndices[0]].text
+            // If there's a tie, indicate it
+            if (winningIndices.length > 1) {
+              winningOption = `${winningOption} (tie)`
+            }
+          }
+        } else {
+          // For select polls, count votes per option
+          const optionCounts: Record<number, number> = {}
+          for (const vote of allVotes.docs) {
+            let optionIndices = (vote as any).optionIndices
+            // Backward compatibility: convert old optionIndex to array
+            if (!Array.isArray(optionIndices) && typeof (vote as any).optionIndex === 'number') {
+              optionIndices = [(vote as any).optionIndex]
+            }
+            if (Array.isArray(optionIndices)) {
+              for (const optionIndex of optionIndices) {
+                if (typeof optionIndex === 'number') {
+                  optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+                }
+              }
+            }
+          }
+
+          // Find the option(s) with the highest vote count
+          const maxCount = Math.max(...Object.values(optionCounts), 0)
+          const winningIndices = Object.entries(optionCounts)
+            .filter(([, count]) => count === maxCount)
+            .map(([index]) => Number(index))
+
+          // If there's a clear winner (or tie), show the first winning option
+          if (winningIndices.length > 0 && winningIndices[0] < poll.options.length) {
+            winningOption = poll.options[winningIndices[0]].text
+            // If there's a tie, indicate it
+            if (winningIndices.length > 1) {
+              winningOption = `${winningOption} (tie)`
+            }
           }
         }
       }

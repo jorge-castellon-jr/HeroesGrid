@@ -1142,3 +1142,26 @@ html[data-theme='dark'] .rm-pollOptionBar {
   align-items: center;
   justify-content: flex-start;
 }
+
+.rm-rankArrowButton {
+  appearance: none;
+  transition: all 0.2s;
+}
+
+.rm-rankArrowButton:hover:not(:disabled) {
+  border-color: rgba(109, 40, 217, 0.35);
+  background:
+    radial-gradient(1200px 400px at 0% 0%, rgba(109, 40, 217, 0.25), rgba(0, 0, 0, 0)),
+    radial-gradient(900px 360px at 100% 0%, rgba(37, 99, 235, 0.2), rgba(0, 0, 0, 0)),
+    var(--rm-surface);
+  transform: scale(1.05);
+}
+
+.rm-rankArrowButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.rm-rankArrowButton:focus-visible {
+  outline: 3px solid var(--rm-ring);
+  outline-offset: 2px;
+}

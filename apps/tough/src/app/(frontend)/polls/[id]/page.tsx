@@ -68,8 +68,10 @@ export default async function PollDetailPage(props: { params: Promise<{ id: stri
 
   const pollId = Number(id)
   const pollIdForRelations = Number.isFinite(pollId) ? pollId : id
+  const pollType = (poll.pollType || 'select') as 'select' | 'ranking'
+  const maxSelections = poll.maxSelections ?? 1
 
-  let userVote: { optionIndex: number } | null = null
+  let userVote: { optionIndices?: number[]; optionIndex?: number } | null = null
   if (user) {
     const votes = await payload.find({
       collection: 'poll-votes',
@@ -82,6 +84,10 @@ export default async function PollDetailPage(props: { params: Promise<{ id: stri
     })
     if (votes.totalDocs > 0) {
       userVote = votes.docs[0] as any
+      // Backward compatibility: convert old optionIndex to optionIndices
+      if (!userVote.optionIndices && typeof userVote.optionIndex === 'number') {
+        userVote.optionIndices = [userVote.optionIndex]
+      }
     }
   }
 
@@ -97,8 +103,10 @@ export default async function PollDetailPage(props: { params: Promise<{ id: stri
   })
   const totalVotes = votes.totalDocs
 
-  // If user has voted or poll has ended, get vote counts for each option
+  // Get initial vote data based on poll type
   let initialVoteCounts: Array<{ optionIndex: number; count: number }> = []
+  let initialRankingResults: Array<{ optionIndex: number; points: number; voteCount: number }> = []
+
   if (userVote || !active) {
     const allVotes = await payload.find({
       collection: 'poll-votes',
@@ -108,24 +116,71 @@ export default async function PollDetailPage(props: { params: Promise<{ id: stri
       where: { poll: { equals: pollIdForRelations } },
     })
 
-    // Count votes per option
-    const optionCounts: Record<number, number> = {}
-    for (const vote of allVotes.docs) {
-      const optionIndex = (vote as any).optionIndex
-      if (typeof optionIndex === 'number') {
-        optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+    if (pollType === 'ranking') {
+      // Calculate points per option for ranking polls
+      const optionPoints: Record<number, number> = {}
+      const optionVoteCounts: Record<number, number> = {}
+
+      for (const vote of allVotes.docs) {
+        let rankedIndices = (vote as any).optionIndices
+        // Backward compatibility: convert old optionIndex to array
+        if (!Array.isArray(rankedIndices) && typeof (vote as any).optionIndex === 'number') {
+          rankedIndices = [(vote as any).optionIndex]
+        }
+        if (!Array.isArray(rankedIndices)) continue
+
+        const numOptions = rankedIndices.length
+        rankedIndices.forEach((optionIndex: number, position: number) => {
+          if (typeof optionIndex === 'number') {
+            const points = numOptions - position // 1-based: top = N, bottom = 1
+            optionPoints[optionIndex] = (optionPoints[optionIndex] || 0) + points
+            optionVoteCounts[optionIndex] = (optionVoteCounts[optionIndex] || 0) + 1
+          }
+        })
       }
+
+      initialRankingResults = Object.entries(optionPoints).map(([index, points]) => ({
+        optionIndex: Number(index),
+        points,
+        voteCount: optionVoteCounts[Number(index)] || 0,
+      }))
+
+      // Sort by points (descending), then by optionIndex
+      initialRankingResults.sort((a, b) => {
+        if (b.points !== a.points) return b.points - a.points
+        return a.optionIndex - b.optionIndex
+      })
+    } else {
+      // Count votes per option for select polls
+      const optionCounts: Record<number, number> = {}
+      for (const vote of allVotes.docs) {
+        let optionIndices = (vote as any).optionIndices
+        // Backward compatibility: convert old optionIndex to array
+        if (!Array.isArray(optionIndices) && typeof (vote as any).optionIndex === 'number') {
+          optionIndices = [(vote as any).optionIndex]
+        }
+        if (Array.isArray(optionIndices)) {
+          for (const optionIndex of optionIndices) {
+            if (typeof optionIndex === 'number') {
+              optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+            }
+          }
+        }
+      }
+
+      initialVoteCounts = Object.entries(optionCounts).map(([index, count]) => ({
+        optionIndex: Number(index),
+        count,
+      }))
+
+      // Sort by optionIndex
+      initialVoteCounts.sort((a, b) => a.optionIndex - b.optionIndex)
     }
-
-    // Convert to array format
-    initialVoteCounts = Object.entries(optionCounts).map(([index, count]) => ({
-      optionIndex: Number(index),
-      count,
-    }))
-
-    // Sort by optionIndex
-    initialVoteCounts.sort((a, b) => a.optionIndex - b.optionIndex)
   }
+
+  // Extract user's vote data
+  const initialOptionIndices = userVote?.optionIndices || null
+  const initialRankedIndices = pollType === 'ranking' ? initialOptionIndices : null
 
   return (
     <div className="rm-shell">
@@ -181,12 +236,16 @@ export default async function PollDetailPage(props: { params: Promise<{ id: stri
           <h2 className="rm-h2">Vote</h2>
           <PollClient
             pollId={id}
+            pollType={pollType}
             isLoggedIn={Boolean(user)}
             initiallyVoted={Boolean(userVote)}
-            initialOptionIndex={userVote?.optionIndex ?? null}
+            initialOptionIndices={pollType === 'select' ? initialOptionIndices : null}
+            initialRankedIndices={initialRankedIndices}
             initialTotalVotes={totalVotes}
-            initialVoteCounts={initialVoteCounts}
+            initialVoteCounts={pollType === 'select' ? initialVoteCounts : undefined}
+            initialRankingResults={pollType === 'ranking' ? initialRankingResults : undefined}
             options={options}
+            maxSelections={maxSelections}
             hasEnded={!active}
           />
         </div>

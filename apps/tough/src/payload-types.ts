@@ -234,6 +234,14 @@ export interface Poll {
     id?: string | null;
   }[];
   /**
+   * Select: choose one or more options. Ranking: rank all options from best to worst.
+   */
+  pollType: 'select' | 'ranking';
+  /**
+   * Maximum number of selections allowed (only used for select type). 1 = single choice, >1 = multiple choice.
+   */
+  maxSelections: number;
+  /**
    * Optional end date/time (UTC). If not set, poll never expires.
    */
   endDate?: string | null;
@@ -254,9 +262,17 @@ export interface PollVote {
   poll: number | Poll;
   user: number | User;
   /**
-   * Index of the selected option (0-based)
+   * For select polls: array of selected option indices [0] or [0, 2]. For ranking polls: array of option indices in rank order (top to bottom) [3, 1, 0, 2].
    */
-  optionIndex: number;
+  optionIndices:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -420,6 +436,8 @@ export interface PollsSelect<T extends boolean = true> {
         text?: T;
         id?: T;
       };
+  pollType?: T;
+  maxSelections?: T;
   endDate?: T;
   isActive?: T;
   totalVotes?: T;
@@ -433,7 +451,7 @@ export interface PollsSelect<T extends boolean = true> {
 export interface PollVotesSelect<T extends boolean = true> {
   poll?: T;
   user?: T;
-  optionIndex?: T;
+  optionIndices?: T;
   updatedAt?: T;
   createdAt?: T;
 }

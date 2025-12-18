@@ -20,7 +20,7 @@ export const PollVotes: CollectionConfig = {
   slug: 'poll-votes',
   admin: {
     useAsTitle: 'id',
-    defaultColumns: ['poll', 'user', 'optionIndex', 'createdAt'],
+    defaultColumns: ['poll', 'user', 'optionIndices', 'createdAt'],
     hidden: ({ user }) => !isAdmin(user as any),
   },
   access: {
@@ -53,11 +53,12 @@ export const PollVotes: CollectionConfig = {
       admin: { readOnly: true },
     },
     {
-      name: 'optionIndex',
-      type: 'number',
+      name: 'optionIndices',
+      type: 'json',
       required: true,
       admin: {
-        description: 'Index of the selected option (0-based)',
+        description:
+          'For select polls: array of selected option indices [0] or [0, 2]. For ranking polls: array of option indices in rank order (top to bottom) [3, 1, 0, 2].',
       },
     },
   ],
@@ -90,43 +91,49 @@ export const PollVotes: CollectionConfig = {
             }
           }
 
-          // Validate optionIndex
-          const optionIndex = (data as any)?.optionIndex ?? (req as any)?.body?.optionIndex
-          if (typeof optionIndex !== 'number' || optionIndex < 0) {
-            throw new Error('Invalid optionIndex')
-          }
-
+          const pollType = (poll as any)?.pollType || 'select'
           const options = (poll as any)?.options || []
-          if (optionIndex >= options.length) {
-            console.log('optionIndex out of range')
-            console.log('poll', poll)
-            console.log('options', options)
-            throw new Error('optionIndex out of range')
+          const optionIndices =
+            (data as any)?.optionIndices ?? (req as any)?.body?.optionIndices ?? (req as any)?.data?.optionIndices
+
+          // Validate optionIndices based on poll type
+          if (!Array.isArray(optionIndices) || optionIndices.length === 0) {
+            throw new Error('optionIndices must be a non-empty array')
           }
 
-          // Check if user already voted for this poll
-          const existing = await req.payload.find({
-            collection: 'poll-votes',
-            limit: 1,
-            overrideAccess: true,
-            where: {
-              and: [{ poll: { equals: pollId } }, { user: { equals: req.user.id } }],
-            },
-          })
-
-          if (existing.totalDocs > 0) {
-            // If voting for the same option, we'll delete the vote (toggle off)
-            // This is handled in the API route, but we can allow the create here
-            // and the API will handle the toggle logic
-            const existingVote = existing.docs[0] as any
-            if (existingVote.optionIndex === optionIndex) {
-              // Same option - this will be toggled off in the API
-              throw new Error('Already voted for this option (use toggle)')
+          if (pollType === 'select') {
+            const maxSelections = (poll as any)?.maxSelections ?? 1
+            if (optionIndices.length > maxSelections) {
+              throw new Error(`Cannot select more than ${maxSelections} option(s)`)
             }
-            // Different option - delete old vote first (handled in API)
-            throw new Error('Already voted (use toggle to change)')
+            if (optionIndices.length < 1) {
+              throw new Error('Must select at least 1 option')
+            }
+            // Check for duplicates
+            const uniqueIndices = new Set(optionIndices)
+            if (uniqueIndices.size !== optionIndices.length) {
+              throw new Error('Cannot select the same option multiple times')
+            }
+          } else if (pollType === 'ranking') {
+            // For ranking, must rank all options exactly once
+            if (optionIndices.length !== options.length) {
+              throw new Error(`Must rank all ${options.length} options`)
+            }
+            // Check for duplicates
+            const uniqueIndices = new Set(optionIndices)
+            if (uniqueIndices.size !== optionIndices.length) {
+              throw new Error('Cannot rank the same option multiple times')
+            }
           }
 
+          // Validate all indices are within range
+          for (const index of optionIndices) {
+            if (typeof index !== 'number' || index < 0 || index >= options.length) {
+              throw new Error(`Invalid option index: ${index}`)
+            }
+          }
+
+          // Note: We no longer check for existing votes here - the API will handle updates
           return { ...data, user: req.user.id }
         }
 

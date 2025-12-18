@@ -48,6 +48,9 @@ export async function GET(request: Request, context: { params: Promise<{ id: str
     return NextResponse.json({ error: 'Results not available' }, { status: 403 })
   }
 
+  const pollType = poll?.pollType || 'select'
+  const options = poll?.options || []
+
   // Get all votes for this poll
   const allVotes = await payload.find({
     collection: 'poll-votes',
@@ -57,24 +60,73 @@ export async function GET(request: Request, context: { params: Promise<{ id: str
     where: { poll: { equals: pollId } },
   })
 
-  // Count votes per option
-  const optionCounts: Record<number, number> = {}
-  for (const vote of allVotes.docs) {
-    const optionIndex = (vote as any).optionIndex
-    if (typeof optionIndex === 'number') {
-      optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+  if (pollType === 'ranking') {
+    // For ranking polls, calculate points per option
+    // Points = position from top (1-based: top = N points, bottom = 1 point)
+    const optionPoints: Record<number, number> = {}
+    const optionVoteCounts: Record<number, number> = {}
+
+    for (const vote of allVotes.docs) {
+      let rankedIndices = (vote as any).optionIndices
+      // Backward compatibility: convert old optionIndex to array
+      if (!Array.isArray(rankedIndices) && typeof (vote as any).optionIndex === 'number') {
+        rankedIndices = [(vote as any).optionIndex]
+      }
+      if (!Array.isArray(rankedIndices)) continue
+
+      const numOptions = rankedIndices.length
+      // Top position gets N points, 2nd gets N-1, etc.
+      rankedIndices.forEach((optionIndex: number, position: number) => {
+        if (typeof optionIndex === 'number') {
+          const points = numOptions - position // 1-based: top = N, bottom = 1
+          optionPoints[optionIndex] = (optionPoints[optionIndex] || 0) + points
+          optionVoteCounts[optionIndex] = (optionVoteCounts[optionIndex] || 0) + 1
+        }
+      })
     }
+
+    // Convert to array format with points
+    const results = Object.entries(optionPoints).map(([index, points]) => ({
+      optionIndex: Number(index),
+      points,
+      voteCount: optionVoteCounts[Number(index)] || 0,
+    }))
+
+    // Sort by points (descending), then by optionIndex
+    results.sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points
+      return a.optionIndex - b.optionIndex
+    })
+
+    return NextResponse.json({ results, pollType: 'ranking' })
+    } else {
+      // For select polls, count votes per option (current logic)
+      const optionCounts: Record<number, number> = {}
+      for (const vote of allVotes.docs) {
+        let optionIndices = (vote as any).optionIndices
+        // Backward compatibility: convert old optionIndex to array
+        if (!Array.isArray(optionIndices) && typeof (vote as any).optionIndex === 'number') {
+          optionIndices = [(vote as any).optionIndex]
+        }
+        if (Array.isArray(optionIndices)) {
+          for (const optionIndex of optionIndices) {
+            if (typeof optionIndex === 'number') {
+              optionCounts[optionIndex] = (optionCounts[optionIndex] || 0) + 1
+            }
+          }
+        }
+      }
+
+    // Convert to array format
+    const results = Object.entries(optionCounts).map(([index, count]) => ({
+      optionIndex: Number(index),
+      count,
+    }))
+
+    // Sort by optionIndex
+    results.sort((a, b) => a.optionIndex - b.optionIndex)
+
+    return NextResponse.json({ results, pollType: 'select' })
   }
-
-  // Convert to array format
-  const results = Object.entries(optionCounts).map(([index, count]) => ({
-    optionIndex: Number(index),
-    count,
-  }))
-
-  // Sort by optionIndex
-  results.sort((a, b) => a.optionIndex - b.optionIndex)
-
-  return NextResponse.json({ results })
 }
 
