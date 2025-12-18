@@ -12,6 +12,8 @@ import { Media } from './collections/Media'
 import { RoadmapItems } from './collections/RoadmapItems'
 import { RoadmapVotes } from './collections/RoadmapVotes'
 import { RoadmapComments } from './collections/RoadmapComments'
+import { Polls } from './collections/Polls'
+import { PollVotes } from './collections/PollVotes'
 import { isEditorOrAdmin } from './access/roles'
 
 const filename = fileURLToPath(import.meta.url)
@@ -36,7 +38,7 @@ export default buildConfig({
     // but it's supported at runtime. Verified to work in Payload v3.
     access: ({ req }: { req: { user: any } }) => isEditorOrAdmin(req.user),
   } as any,
-  collections: [Users, Media, RoadmapItems, RoadmapVotes, RoadmapComments],
+  collections: [Users, Media, RoadmapItems, RoadmapVotes, RoadmapComments, Polls, PollVotes],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

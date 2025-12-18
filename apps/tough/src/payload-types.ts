@@ -72,6 +72,8 @@ export interface Config {
     'roadmap-items': RoadmapItem;
     'roadmap-votes': RoadmapVote;
     'roadmap-comments': RoadmapComment;
+    polls: Poll;
+    'poll-votes': PollVote;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -84,6 +86,8 @@ export interface Config {
     'roadmap-items': RoadmapItemsSelect<false> | RoadmapItemsSelect<true>;
     'roadmap-votes': RoadmapVotesSelect<false> | RoadmapVotesSelect<true>;
     'roadmap-comments': RoadmapCommentsSelect<false> | RoadmapCommentsSelect<true>;
+    polls: PollsSelect<false> | PollsSelect<true>;
+    'poll-votes': PollVotesSelect<false> | PollVotesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -222,6 +226,59 @@ export interface RoadmapComment {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "polls".
+ */
+export interface Poll {
+  id: number;
+  title: string;
+  details?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  options: {
+    text: string;
+    id?: string | null;
+  }[];
+  /**
+   * Optional end date/time (UTC). If not set, poll never expires.
+   */
+  endDate?: string | null;
+  /**
+   * Computed: true if poll has no end date or end date is in the future.
+   */
+  isActive?: boolean | null;
+  totalVotes?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "poll-votes".
+ */
+export interface PollVote {
+  id: number;
+  poll: number | Poll;
+  user: number | User;
+  /**
+   * Index of the selected option (0-based)
+   */
+  optionIndex: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -263,6 +320,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'roadmap-comments';
         value: number | RoadmapComment;
+      } | null)
+    | ({
+        relationTo: 'polls';
+        value: number | Poll;
+      } | null)
+    | ({
+        relationTo: 'poll-votes';
+        value: number | PollVote;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -381,6 +446,36 @@ export interface RoadmapCommentsSelect<T extends boolean = true> {
   item?: T;
   user?: T;
   body?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "polls_select".
+ */
+export interface PollsSelect<T extends boolean = true> {
+  title?: T;
+  details?: T;
+  options?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  endDate?: T;
+  isActive?: T;
+  totalVotes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "poll-votes_select".
+ */
+export interface PollVotesSelect<T extends boolean = true> {
+  poll?: T;
+  user?: T;
+  optionIndex?: T;
   updatedAt?: T;
   createdAt?: T;
 }

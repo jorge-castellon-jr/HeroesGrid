@@ -39,6 +39,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
               <Link className="rm-navLink" href="/roadmap">
                 Roadmap
               </Link>
+              <Link className="rm-navLink" href="/polls">
+                Polls
+              </Link>
             </nav>
             <div className="rm-topbarRight">
               <ThemeToggle />
