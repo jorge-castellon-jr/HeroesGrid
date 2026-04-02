@@ -10,6 +10,7 @@
     "sync-versions": "node scripts/sync-versions.js",
     "dev": "yarn sync-versions && turbo dev",
     "build": "yarn sync-versions && turbo build",
+    "build:cf": "cd apps/web && yarn build",
     "lint": "turbo lint",
     "preview": "turbo preview",
     "extract": "node apps/web/scripts/extract-tts.js"
