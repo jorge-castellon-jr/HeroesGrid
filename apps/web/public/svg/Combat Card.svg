@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 744 1039" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:9;">
+    <g transform="matrix(1,0,0,1,-593,0)">
+        <g id="Artboard1" transform="matrix(1,0,0,2.366743,593,0)">
+            <rect x="0" y="0" width="744" height="439" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="744" height="439"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="bottom_frame" transform="matrix(1,0,0,1,1,0)">
+                    <g transform="matrix(37.2,0,0,9.562332,-0,-4112.670128)">
+                        <rect x="0" y="457" width="20" height="19" style="fill:white;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,0,6.337825)">
+                        <g transform="matrix(21.258065,0,0,0.422522,-4102.701488,148.326021)">
+                            <path d="M227.999,750.05L193.001,750.05L186.366,609L193.001,467.95C193.001,467.95 196.853,549.845 198.141,577.213C198.405,582.839 198.764,586 199.138,586L221.862,586C222.236,586 222.595,582.839 222.859,577.213C224.147,549.845 227.999,467.95 227.999,467.95L234.634,609L227.999,750.05Z" style="fill:rgb(8,6,5);"/>
+                        </g>
+                        <g transform="matrix(21.258065,0,0,0.422522,-4102.701488,148.326021)">
+                            <path d="M227.999,750.05L220.708,750.05L214.261,687.95L212.617,630.95L213.975,586L221.862,586C222.236,586 222.595,582.839 222.859,577.213C224.147,549.845 227.999,467.95 227.999,467.95L234.634,609L227.999,750.05Z" style="fill:rgb(128,130,133);"/>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,0,-2.323869)">
+                        <g id="shield_1" transform="matrix(0.202817,0,0,0.085695,797.366966,385.966986)">
+                            <g transform="matrix(1,0,0,1,-593,0)">
+                                <path d="M140,609C57.561,526.87 25.738,466.728 10.424,413.759C6.646,400.553 4.729,386.884 4.729,373.149C4.455,345.369 4.455,293 4.455,293C66.534,292.888 101.092,278.901 114,254L166,254C178.908,278.901 213.466,292.888 275.545,293C275.545,293 275.545,352.677 275.545,378.414C275.547,386.983 274.49,395.52 272.398,403.83C258.081,459.217 227.646,521.682 140,609Z" style="fill:url(#_Linear2);"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,-593,0)">
+                                <path d="M140,609C46.767,516.115 18.272,451.355 5.181,393.286C4.701,391.139 4.459,388.946 4.459,386.746C4.455,369.86 4.455,293 4.455,293C66.534,292.888 101.092,278.901 114,254L166,254C178.908,278.901 213.466,292.888 275.545,293L275.545,386.746C275.546,388.946 275.304,391.14 274.824,393.287C261.728,451.355 233.233,516.115 140,609ZM140,563C208.581,494.676 229.879,446.892 239.679,404.109C240.171,401.936 240.418,399.715 240.418,397.488L240.418,328.893C194.427,328.81 168.825,318.448 159.262,300L120.738,300C111.175,318.448 85.573,328.81 39.582,328.893C39.582,328.893 39.582,383.441 39.589,397.488C39.589,399.715 39.837,401.935 40.328,404.107C50.121,446.892 71.419,494.676 140,563Z" style="fill:url(#_Linear3);"/>
+                            </g>
+                        </g>
+                        <g id="shield_2" transform="matrix(0.202817,0,0,0.085695,720.366966,385.966986)">
+                            <g transform="matrix(1,0,0,1,-593,0)">
+                                <path d="M140,609C57.561,526.87 25.738,466.728 10.424,413.759C6.646,400.553 4.729,386.884 4.729,373.149C4.455,345.369 4.455,293 4.455,293C66.534,292.888 101.092,278.901 114,254L166,254C178.908,278.901 213.466,292.888 275.545,293C275.545,293 275.545,352.677 275.545,378.414C275.547,386.983 274.49,395.52 272.398,403.83C258.081,459.217 227.646,521.682 140,609Z" style="fill:url(#_Linear4);"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,-593,0)">
+                                <path d="M140,609C46.767,516.115 18.272,451.355 5.181,393.286C4.701,391.139 4.459,388.946 4.459,386.746C4.455,369.86 4.455,293 4.455,293C66.534,292.888 101.092,278.901 114,254L166,254C178.908,278.901 213.466,292.888 275.545,293L275.545,386.746C275.546,388.946 275.304,391.14 274.824,393.287C261.728,451.355 233.233,516.115 140,609ZM140,563C208.581,494.676 229.879,446.892 239.679,404.109C240.171,401.936 240.418,399.715 240.418,397.488L240.418,328.893C194.427,328.81 168.825,318.448 159.262,300L120.738,300C111.175,318.448 85.573,328.81 39.582,328.893C39.582,328.893 39.582,383.441 39.589,397.488C39.589,399.715 39.837,401.935 40.328,404.107C50.121,446.892 71.419,494.676 140,563Z" style="fill:url(#_Linear5);"/>
+                            </g>
+                        </g>
+                        <g id="shield_3" transform="matrix(0.202817,0,0,0.085695,644.366966,385.966986)">
+                            <g transform="matrix(1,0,0,1,-593,0)">
+                                <path d="M140,609C57.561,526.87 25.738,466.728 10.424,413.759C6.646,400.553 4.729,386.884 4.729,373.149C4.455,345.369 4.455,293 4.455,293C66.534,292.888 101.092,278.901 114,254L166,254C178.908,278.901 213.466,292.888 275.545,293L275.545,378.414C275.547,386.983 274.49,395.52 272.398,403.83C258.081,459.217 227.646,521.682 140,609Z" style="fill:url(#_Linear6);"/>
+                            </g>
+                            <g transform="matrix(1,0,0,1,-593,0)">
+                                <path d="M140,609C46.767,516.115 18.272,451.355 5.181,393.286C4.701,391.139 4.459,388.946 4.459,386.746C4.455,369.86 4.455,293 4.455,293C66.534,292.888 101.092,278.901 114,254L166,254C178.908,278.901 213.466,292.888 275.545,293L275.545,386.746C275.546,388.946 275.304,391.14 274.824,393.287C261.728,451.355 233.233,516.115 140,609ZM140,563C208.581,494.676 229.879,446.892 239.679,404.109C240.171,401.936 240.418,399.715 240.418,397.488L240.418,328.893C194.427,328.81 168.825,318.448 159.262,300L120.738,300C111.175,318.448 85.573,328.81 39.582,328.893C39.582,328.893 39.582,383.441 39.589,397.488C39.589,399.715 39.837,401.935 40.328,404.107C50.121,446.892 71.419,494.676 140,563Z" style="fill:url(#_Linear7);"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="matrix(21.258065,0,0,0.422522,-4102.822581,0)">
+                        <path d="M199.138,632C198.764,632 198.405,635.161 198.141,640.787C196.853,668.155 193.001,750.05 193.001,750.05L186.366,609L193.001,467.95C193.001,467.95 196.853,549.845 198.141,577.213C198.405,582.839 198.764,586 199.138,586L221.862,586C222.236,586 222.595,582.839 222.859,577.213C224.147,549.845 227.999,467.95 227.999,467.95L234.634,609L227.999,750.05C227.999,750.05 224.147,668.155 222.859,640.787C222.595,635.161 222.236,632 221.862,632L199.138,632Z" style="fill:rgb(8,6,5);"/>
+                    </g>
+                </g>
+                <g id="Top-frame" serif:id="Top frame">
+                    <g id="Back-frame" serif:id="Back frame">
+                        <g transform="matrix(1,0,0,0.422522,0,-11.196824)">
+                            <path d="M754,16.5L744,88C744,88 717.971,114.029 698.638,133.362C685.511,146.489 667.706,153.864 649.141,153.864L98.495,153.864C79.93,153.864 62.125,146.489 48.997,133.362C28.499,112.863 0,84.364 -0,84.364L-10,16.5L754,16.5Z" style="fill:white;"/>
+                        </g>
+                        <g transform="matrix(1,0,0,0.422522,0,-11.196824)">
+                            <path d="M744,88C744,88 717.971,114.029 698.638,133.362C685.511,146.489 667.706,153.864 649.141,153.864L98.495,153.864C79.93,153.864 62.125,146.489 48.997,133.362C28.499,112.863 0,84.364 0,84.364" style="fill:none;stroke:black;stroke-width:21px;"/>
+                        </g>
+                    </g>
+                    <g id="Energy" transform="matrix(1,0,0,0.422522,1,0)">
+                        <g transform="matrix(1.371429,0,0,1.371429,-38.64531,-15.858705)">
+                            <circle cx="101.5" cy="85.5" r="52.5" style="fill:white;"/>
+                        </g>
+                        <g transform="matrix(1.371429,0,0,1.371429,-38.64531,-15.858705)">
+                            <path d="M101.5,33C130.476,33 154,56.524 154,85.5C154,114.476 130.476,138 101.5,138C72.524,138 49,114.476 49,85.5C49,56.524 72.524,33 101.5,33ZM101.5,48.225C122.073,48.225 138.775,64.927 138.775,85.5C138.775,106.073 122.073,122.775 101.5,122.775C80.927,122.775 64.225,106.073 64.225,85.5C64.225,64.927 80.927,48.225 101.5,48.225Z" style="fill:url(#_Linear8);"/>
+                        </g>
+                    </g>
+                </g>
+                <g id="edit_text">
+                    <g id="edit_team" transform="matrix(1,0,0,0.422522,92.484375,411.615315)">
+                        <text x="0px" y="40.206px" style="font-family:'AlteDIN1451Mittelschriftgepraegt', 'Alte DIN 1451 Mittelschrift gepraegt', sans-serif;font-size:28.333px;fill:white;">[<tspan x="8.155px 21.014px 36.502px 50.398px 65.886px 80.862px 95.243px " y="40.206px 40.206px 40.206px 40.206px 40.206px 40.206px 40.206px ">change]</tspan></text>
+                    </g>
+                    <g id="edit_text1" serif:id="edit_text" transform="matrix(1,0,0,0.422522,46.617188,294.131188)">
+                        <g transform="matrix(33.333333,0,0,33.333333,390.637238,129.28907)">
+                        </g>
+                        <text x="260.371px" y="129.289px" style="font-family:'FuturaStd-Book', 'Futura Std', sans-serif;font-size:33.333px;fill:rgb(35,31,32);">[<tspan x="271.204px 287.404px 305.337px 324.904px 342.837px 362.504px 380.137px " y="129.289px 129.289px 129.289px 129.289px 129.289px 129.289px 129.289px ">change]</tspan></text>
+                    </g>
+                    <g id="edit_attack" transform="matrix(1,0,0,0.422522,67.617188,284.977653)">
+                        <g transform="matrix(33.333333,0,0,33.333333,477.303905,39.165365)">
+                        </g>
+                        <text x="131.704px" y="39.165px" style="font-family:'Futura-Bold', 'Futura', sans-serif;font-weight:700;font-size:33.333px;fill:rgb(35,31,32);">A<tspan x="157.671px 175.804px 192.771px 218.904px 242.537px 269.271px 280.937px 292.604px 305.637px 329.271px 357.371px 384.437px 415.604px 445.271px 464.604px " y="39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px 39.165px ">TTACK: [CHANGE]</tspan></text>
+                    </g>
+                    <g id="edit_energy" transform="matrix(1,0,0,0.422522,25,26.698087)">
+                        <g transform="matrix(100,0,0,100,98.25469,72.5)">
+                        </g>
+                        <text x="54.855px" y="72.5px" style="font-family:'AmericanCaptain', 'American Captain';font-size:100px;">0</text>
+                    </g>
+                    <g id="edit_name" transform="matrix(1,0,0,0.422522,146.851562,10.295664)">
+                        <g transform="matrix(66.666667,0,0,66.666667,380.372655,48.333333)">
+                        </g>
+                        <text x="187.573px" y="48.333px" style="font-family:'AmericanCaptain', 'American Captain';font-size:66.667px;fill:rgb(35,31,32);">[<tspan x="201.506px 225.573px 255.239px 285.039px 313.773px 342.639px 367.106px " y="48.333px 48.333px 48.333px 48.333px 48.333px 48.333px 48.333px ">CHANGE]</tspan></text>
+                    </g>
+                    <g id="edit_team_logo" transform="matrix(0.888889,0,0,0.375575,-522.555556,46.101807)">
+                        <circle cx="643" cy="995.5" r="36" style="fill:white;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(190.545455,257,-336.547619,249.52381,4.454545,296)"><stop offset="0" style="stop-color:rgb(230,183,43);stop-opacity:1"/><stop offset="0.25" style="stop-color:rgb(236,201,95);stop-opacity:1"/><stop offset="0.5" style="stop-color:white;stop-opacity:1"/><stop offset="0.6" style="stop-color:rgb(245,226,170);stop-opacity:1"/><stop offset="0.71" style="stop-color:rgb(235,197,83);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(230,183,43);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1,-404,529.047619,-1.309524,140,704)"><stop offset="0" style="stop-color:black;stop-opacity:1"/><stop offset="0.2" style="stop-color:black;stop-opacity:0.6"/><stop offset="0.42" style="stop-color:black;stop-opacity:0.19"/><stop offset="1" style="stop-color:black;stop-opacity:0"/></linearGradient>
+        <linearGradient id="_Linear4" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(190.545455,257,-336.547619,249.52381,4.454545,296)"><stop offset="0" style="stop-color:rgb(230,183,43);stop-opacity:1"/><stop offset="0.25" style="stop-color:rgb(236,201,95);stop-opacity:1"/><stop offset="0.5" style="stop-color:white;stop-opacity:1"/><stop offset="0.6" style="stop-color:rgb(245,226,170);stop-opacity:1"/><stop offset="0.71" style="stop-color:rgb(235,197,83);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(230,183,43);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear5" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1,-404,529.047619,-1.309524,140,704)"><stop offset="0" style="stop-color:black;stop-opacity:1"/><stop offset="0.2" style="stop-color:black;stop-opacity:0.6"/><stop offset="0.42" style="stop-color:black;stop-opacity:0.19"/><stop offset="1" style="stop-color:black;stop-opacity:0"/></linearGradient>
+        <linearGradient id="_Linear6" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(190.545455,257,-336.547619,249.52381,4.454545,296)"><stop offset="0" style="stop-color:rgb(230,183,43);stop-opacity:1"/><stop offset="0.25" style="stop-color:rgb(236,201,95);stop-opacity:1"/><stop offset="0.5" style="stop-color:white;stop-opacity:1"/><stop offset="0.6" style="stop-color:rgb(245,226,170);stop-opacity:1"/><stop offset="0.71" style="stop-color:rgb(235,197,83);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(230,183,43);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear7" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-1,-404,529.047619,-1.309524,140,704)"><stop offset="0" style="stop-color:black;stop-opacity:1"/><stop offset="0.2" style="stop-color:black;stop-opacity:0.6"/><stop offset="0.42" style="stop-color:black;stop-opacity:0.19"/><stop offset="1" style="stop-color:black;stop-opacity:0"/></linearGradient>
+        <linearGradient id="_Linear8" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(105,0,0,105,49,85.5)"><stop offset="0" style="stop-color:rgb(69,74,84);stop-opacity:1"/><stop offset="0.28" style="stop-color:rgb(77,82,93);stop-opacity:1"/><stop offset="0.51" style="stop-color:rgb(107,113,125);stop-opacity:1"/><stop offset="0.72" style="stop-color:rgb(77,82,92);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(69,74,84);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
